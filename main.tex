@@ -1,4 +1,4 @@
-\documentclass[degree=master,tocarialchapter]{thuthesis}
+\documentclass[degree=bachelor,tocarialchapter]{thuthesis}
 % 选项
 %   degree=[bachelor|master|doctor|postdoctor], % 必选，学位类型
 %   language=[chinese|english], % 可选（默认：chinese），论文的主要语言
@@ -12,6 +12,26 @@
 
 % 定义所有的图片文件在 figures 子目录下
 \graphicspath{{figures/}}
+
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\usepackage{hyperref}
+
+\newcommand{\Hmode}{H-mode}
+% \usepackage[T1]{fontenc} //This may cause some alignment problem in cover
+\usepackage[utf8]{inputenc}
+
+\usepackage{xspace}
+
+\newcommand{\Poincare}{Poincar\'e\xspace}
+\newcommand{\adele}{ad\`ele\xspace}
+\newcommand{\Cech}{\v{C}ech\xspace}
+\newcommand{\Erdos}{Erd\H{o}s\xspace}
+\makeatletter
+\newcommand{\etale}{\'etal\@ifstar{\'e}{e\xspace}}
+\makeatother
 
 % 可以在这里修改配置文件中的定义。导言区可以使用中文。
 % \def\myname{薛瑞尼}
@@ -34,8 +54,14 @@
 
 %%% 正文部分
 \mainmatter
-\input{data/chap01}
-\input{data/chap02}
+\input{data/chap_intro}
+\input{data/chap_simulation}
+\input{data/chap_fourier_poincare}
+\input{data/chap_particlediff}
+\input{data/chap_turb_transport}
+\input{data/chap_conclusion}
+% \input{data/chap01}
+% \input{data/chap02}
 
 
 %%% 其它部分
@@ -52,9 +78,9 @@
 
 %% 参考文献
 % 只能选择一种参考文献格式
-\bibliographystyle{thuthesis-numeric}      % 顺序编码制
+% \bibliographystyle{thuthesis-numeric}      % 顺序编码制
 % \bibliographystyle{thuthesis-author-year}  % 著者-出版年制
-% \bibliographystyle{thuthesis-bachelor}     % 本科生参考文献的著录格式
+\bibliographystyle{thuthesis-bachelor}     % 本科生参考文献的著录格式
 \bibliography{ref/refs}
 
 
@@ -62,9 +88,9 @@
 \input{data/ack}
 
 %% 附录
-\begin{appendix}
-\input{data/appendix01}
-\end{appendix}
+% \begin{appendix}
+% \input{data/appendix01}
+% \end{appendix}
 
 %% 个人简历
 \input{data/resume}
