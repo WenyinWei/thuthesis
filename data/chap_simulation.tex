@@ -2,28 +2,53 @@
 
 \section{Numerical Methods}
 模拟用到了 XX 工具，它采用了 XX 的数值方法进行计算。
+本章节介绍了多种通过不同数值方法对于线圈激发的真空中电磁场进行计算和傅里叶分析。通过 SU2 程序采用有限体积方法，FEniCS 采用有限元方法，
 
-\subsection{Finite Volumn?? Method}
-对数值方法进行介绍。
+\subsection{Finite Volume Method}
+在有限体积法进行计算的过程中，我们所储存的变量值是偏微分返程中守恒量在网格中的平均值。与之类似但有些不同的是，在有限元法中，我们用试函数使得所计算得到的函数是函数空间中最优的函数。
 
 \subsection{Physics Equations}
+在本研究中主要问题是真空中的磁场模拟和磁谱模数分析。下面列出极其经典的 \textit{Maxwell} 方程。
+
+
+
+
+Optional 如果有时间的话，考虑等离子体的反馈
+
 Single / Two-fluid MHD?
 
 Linear / Nonlinear Response?
 
-\subsection{CFL condition analysis}
+\subsubsection{CFL condition analysis}
 
 
 以下对三种扰动场仿真模拟细节陈述。
 \section{共振扰动场线圈 RMP}
 \subsection{Condition Configuration}
-\subsection{Result Analysis}
+\subsection{分析}
 \section{高 m 线圈 High m Coil}
 \subsection{Condition Configuration}
-\subsection{Result Analysis}
+\subsection{分析}
 \section{低杂波驱动的螺旋电流丝 HCF}
 \subsection{Condition Configuration}
-\subsection{Result Analysis}
+螺旋电流丝是由低杂波对等离子体进行加热的同时，等离子体环外侧剥削层（SOL）出现的和低杂波天线数目相同的电流丝。其造成的等离子体边界磁场影响使得粒子束流在偏滤器平板上的落点有所分裂，可见参考的文献。
+\subsection{分析}
 \section{扰动场协同效应 Collaborative Perturbance}
 \subsection{Condition Configuration}
-\subsection{Result Analysis}
+\subsection{分析}
+
+\section{傅里叶分析及庞加莱图 Fourier Analysis and Poincare Plot}
+
+\subsection{Fourier Analysis Introduction}
+
+\subsection{Poincare Plot Introduction}
+\Poincare 图的基本介绍可以在这里找到，稍后我会进行补充。
+\url{https://computing.llnl.gov/projects/starsapphire-data-driven-modeling-analysis/poincar%c3%a9-plots}
+
+
+
+以下对三种扰动场进行傅里叶分析 Fourier Analysis 和庞加莱图 \Poincare Plot。
+\subsection{共振扰动场线圈}
+\subsection{高 m 线圈}
+\subsection{低杂波驱动的螺旋电流丝}
+\subsection{扰动场协同效应 Collaborative Perturbance}
