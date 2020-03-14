@@ -1,0 +1,65 @@
+
+\chapter{GENRAY-CQL3D}
+以下对磁力线定迹和射线定迹问题中用到的两个程序的原理进行简单的介绍。
+\section{GENRAY}
+GENRAY 采用柱坐标系统 $\vect{r}=(R, \varphi, Z)$， 对应的折射率坐标 $\vect{N} = c\vect{k}/\omega = (N_r, M= rN_\varphi, N_z)$. $\vect{k}$ 波矢， $c$ 光速， $\omega = 2\pi f$， $f$ 波频。
+
+
+当物理问题中，光波波长小于局部空间尺度且频率大于介质参数变化时间尺度的逆时，便可以用几何光学的方法处理问题。几何光学中光波可以用缓变的幅度 $\vect{E}(\vect{r},t)$ 和快变的相位部分 $e^{i\psi(\vect{r},t)}$ 来描述。相位 $\psi$ 决定了波矢 $\vect{k}(\vect{r},t)$ 及角频率 $\omega = \omega(\vect{r},t)$， $\vect{k} =\nabla \psi$,$\omega=-\partial \psi/\partial t$。 $\vect{k}$ 和 $\omega$ 都为缓变函数。
+
+$N_{\parallel}=(\vect{N} \cdot \vect{B}) / B$ 是折射率沿磁场的纵向分量，$\vect{N}_{\perp}=\vect{N}-\vect{N}_{\parallel}$ 是其垂直分量。局部正交坐标系统建立 $(\vect{e}_x,\vect{e}_y,\vect{e}_z)$ 如下
+
+
+\begin{equation*}\vec{e}_{z}=\vec{B}/B, \vec{e}_{x}=\vec{N}_{\perp}/N_{\perp}, \vec{e}_{y}=\left[\vec{e}_{z} \times \vec{e}_{x}\right]\end{equation*}
+
+  
+$$\vec{E}=E_{x} \vec{e}_{x}+E_{y} \vec{e}_{y}+E_{z} \vec{e}_{z} \qquad \vec{N}=N_{\perp} \vec{e}_{x}+N_{\parallel} \vec{e}_{z}$$
+
+
+几何光学的近似得到波动方程
+
+\begin{equation}\nabla \times \nabla \times \vect{E}-\mu_0\varepsilon_0 \tens{\varepsilon} \cdot \vect{E}=0\end{equation}
+
+化为张量形式即为
+\begin{equation}
+  \tens{D} \cdot \vec{E}=\vec{0}
+\end{equation}
+
+$$\tens{D}=\tens{D}_{\alpha \beta}=\varepsilon_{\alpha \beta}+N_{\alpha} N_{\beta}-N^{2} \delta_{\alpha \beta}$$
+
+\begin{equation}\left(\begin{array}{ccc}
+  \varepsilon_{x x}-N_{\|}^{2} & \varepsilon_{x y} & \varepsilon_{x z}+N_{\|} N_{\perp} \\
+  \varepsilon_{y x} & \varepsilon_{y y}-N^{2} & \varepsilon_{y z} \\
+  \varepsilon_{z x}+N_{\|} N_{\perp} & \varepsilon_{z y} & \varepsilon_{z z}-N_{\perp}^{2}
+  \end{array}\right)\left(\begin{array}{c}
+  E_{x} \\
+  E_{y} \\
+  E_{z}
+\end{array}\right)=0\end{equation}
+
+电场强度解的任意性要求 $\tens{D}$ 张量作为矩阵的行列式等于 0
+\begin{equation}D\left(\vec{R}, N_{\parallel}, N_{\perp}, \omega\right)=\operatorname{det} D_{\alpha \beta}=0\end{equation}
+
+从而得到射线的移动迹线及折射率
+\begin{equation}\begin{aligned}
+  &\frac{d R}{d t}=-\frac{c}{\omega} \frac{\partial D / \partial N_{r}}{\partial D / \partial \omega}, \quad \frac{d N_{r}}{d t}=\frac{c}{\omega} \frac{\partial D / \partial R}{\partial D / \partial \omega}\\
+  &\frac{d \varphi}{d t}=-\frac{c}{\omega} \frac{\partial D / \partial M}{\partial D / \partial \omega}, \quad \frac{d M}{d t}=\frac{c}{\omega} \frac{\partial D / \partial \varphi}{\partial D / \partial \omega}\\
+  &\frac{d Z}{d t}=-\frac{c}{\omega} \frac{\partial D / \partial N_{z}}{\partial D / \partial \omega}, \quad \frac{d N_{z}}{d t}=\frac{c}{\omega} \frac{\partial D / \partial Z}{\partial D / \partial \omega}
+  \end{aligned}\end{equation}
+
+\section{CQL3D}
+CQL3D 是用来计算托卡马克中辅助加热的效果，它基于碰撞平均的 Fokker-Planck 方程进行了维度上的简化，计算了二维动量空间和径向空间上的的离子电子分布函数，大大简化了所需的计算维度。它和其他计算加热机制能量沉积的程序进行耦合之后可以对辅助加热的效率进行估计。
+
+% \emph{TODO，以下语音文字未转换完成}
+% 中性束注入功率，以及一个扩散，镜像输运模型，这个计算是通过一列平均的work plan，求解器进行的，运行在飞飞圆形的磁表面，给出了稳态下，环向平均。射频近视。射频波扩散，近似线性的扩散。同步辐射，中性束注入和镜像好散，扩散。CK13d和。射线确定继续向耦合，可以用来电子共振，电子回旋，低杂波和快播，一个中性束注入程序内，到一个。我们在这里描述这个程序，提供一个表达式和方法论来计算，AP系数从他每一项的过程中，并给出标定应用来检验程序主要部分的有效性。
+
+% 一个完全的folk，plank处理手段对射频波获中迅速加热在托卡马克中，时间尺度超过碰撞时间。通常要求，一个方程的解，至少需要在速度空间上有两个维度，并且要求在。卫星空间上有两个维度，也就是说我们假设，电子和离子的分布函数，都依赖于和环向方位角和背景磁场的方位角无关，并且和托卡马克中心对称轴的环向角，无关。在对称方向，托卡马克的对称方向。和通常的情况相吻合，其中，我MIGA私事，粒子的回旋频率。并且达到环向平衡态的时间，在一个层面上，相对来说是短的，相对于，碰撞平均时间和输液时间
+
+% 。你原来的进一步的维度简化，发生在单钻。历史的一段时间，相对于碰撞时间来说是短的时候，目前的。目前这一带的大型托卡马克实验装置，经常工作在大部分等离子体位于碰撞相交区，而且，通常情况下来说，非麦克斯韦的粒子也是就是有辅助加热和电流驱动产生的他们通常在低通胀率区，在这样的情况下，碰撞平均。环向移动，历史的皇上移动。或者碰撞平均是合适的，将blank方程，变成了一个真的稍微的问题，因为粒子的分布函数，变成了一个依赖于极向脚的分布函数，变成了常数，但被表达用来做。无碰撞，阐述运动常数。我们用剩下的三个变量作为。单位质量动量幅度。螺纹角c塔，从磁场方向。从最小磁场的方向。在一个层面上，和一个镜像坐标，这些坐标都是相对独立的，对一个三维碰撞平均，QQ blank程序，也就是这篇论文的焦点，我们的这篇文章的重点在于将这个程序细致的描绘，并且通过一些重要的标定应用托卡马克中中的应用来检验它程序，他从CPU中继承过来，包含了一个二维的动量空间分布多粒子相对论性碰撞平均碰撞是线性的IP层方程，求解器，运行在一个径向分布的，非圆形漆面上。可以和射频波极限竞技程序或者中性束，乘机程序相配合。FC方程中的粒子原来源于辅助加热系统。伴随着逻辑自洽的非麦克斯韦分布，变形分布函数。
+
+% cql三d程序，他从c区l中继承过来的基础上进行发展，包括了一个动量空间二维的，多粒子的，相对论性的碰撞平均的，碰撞的和近似线性的FC方程求解器，运行在一个镜像，镜像吃面飞圆形石面上。镜像书韵也被考虑进来了，通过考虑静下扩散和粒子螺旋转子。加减算子。于是这个程序提供了对于书院来说的。完全分布函数。在目前的输赢程序对比中。这个程序，书韵，分布函数的所有动量而不紧，而不是三个动量。密度能量。行，环向动量，然而q13d，目前并不提供一种自洽的节和时间变化的安排法拉第定理，这个程序和3.3d是比较类似的。等等等等程序，但她因为一些地方而有所不同，更大的通用性，支持多粒子运算。更大数量的耦合成绩包，支持非圆形的吃面和其他方面，包括数值计算方法。
+
+% 得到一个碰撞平均径线性射频，plank常数的方法，由于结合朗道，移动时间和回旋粒子相互作用，是新的，并且有大福的，有大量篇幅进行讨论，同步辐射，对电子的非热效应显著的增强了，并且我们在此描述了对我们对此过程的模型，镜像书院包含一些新的特性。
+
+
+% 程序在下面4个应用中得到了实践，这些应用主要是为了对程序进行标定，但也。说明了程序应用范围，可能的应用范围。对香蕉区欧姆电阻，电导率再低的或者高的你环境比精确的吻合，之前的分析计算。电子回旋阻尼通过射频，你线性算子和相对论性设上关系，得到了，我和她较好的店子，回旋阻尼。在内衣特的等离子体中中性束，电流驱动，被计算了。它和电流驱动的吻合比较好，在一个完全全粒子的，对粒子分布函数的对待中。和一个APP程序求得的解，对只有离子分布函数加上一个合适的解析计算电子贡献的计算，对于中线束电流驱动，我们也说明。逃逸电子的上坡，散播。。通过定向输运在一个典型的托卡马克请坐。

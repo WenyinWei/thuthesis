@@ -8,37 +8,37 @@
   %=====
   % 秘级
   %=====
-  secretlevel={秘密},
-  secretyear={10},
+  % secretlevel={秘密},
+  % secretyear={10},
   %
   %=========
   % 中文信息
   %=========
-  ctitle={EAST 托卡马克上多种三维扰动磁场对等离子体边界磁拓扑影响的的协同优化模拟研究},
+  ctitle={EAST 托卡马克上多种三维扰动磁场对等离子体边界磁拓扑影响的协同优化模拟研究},
   cdegree={工学本科},
   cdepartment={工程物理系},
   cmajor={工程物理},
   cauthor={魏文崟},
   csupervisor={梁云峰教授},
-  % cassosupervisor={高喆教授}, % 副指导老师
+  cassosupervisor={高喆教授}, % 副指导老师
   ccosupervisor={高喆教授}, % 联合指导老师
   % 日期自动使用当前时间，若需指定按如下方式修改：
   % cdate={超新星纪元},
   %
   % 博士后专有部分
-  catalognumber     = {},  % 可以留空
-  udc               = {},  % 可以留空
-  id                = {},  % 可以留空： id={},
-  cfirstdiscipline  = {},  % 流动站（一级学科）名称
-  cseconddiscipline = {},  % 专 业（二级学科）名称
-  postdoctordate    = {},  % 工作完成日期
-  postdocstartdate  = {},  % 研究工作起始时间
-  postdocenddate    = {},  % 研究工作期满时间
+  % catalognumber     = {},  % 可以留空
+  % udc               = {},  % 可以留空
+  % id                = {},  % 可以留空： id={},
+  % cfirstdiscipline  = {},  % 流动站（一级学科）名称
+  % cseconddiscipline = {},  % 专 业（二级学科）名称
+  % postdoctordate    = {},  % 工作完成日期
+  % postdocstartdate  = {},  % 研究工作起始时间
+  % postdocenddate    = {},  % 研究工作期满时间
   %
   %=========
   % 英文信息
   %=========
-  etitle={Collaborative Optimization Study on the Effects of 3D Perturbation Magnetic Fields on Plasma Boundary Magnetic Topology in EAST tokamak},
+  etitle={Collaborative Optimization of Multiple 3D Magnetic Perturbation Fields according to Their Effects on Plasma Edge Magnetic Topology in EAST tokamak},
   % 这块比较复杂，需要分情况讨论：
   % 1. 学术型硕士
   %    edegree：必须为Master of Arts或Master of Science（注意大小写）
@@ -63,28 +63,18 @@
   % edate={December, 2005},
   %
   % 关键词用“英文逗号”分割
-  ckeywords={扰动场, 边界局域模, 共振扰动场线圈, 高 m 线圈, 低杂波, 螺旋电流丝, 螺旋辐射带, 粒子扩散推断},
-  ekeywords={TeX, LaTeX, CJK, template, thesis}
+  ckeywords={扰动场, 边界局域模, 共振磁扰动, 高 m 线圈, 低杂波, 螺旋电流丝, 螺旋辐射带},
+  ekeywords={magnetic perturbation field, edge localized mode (ELM), resonant magnetic perturbation (RMP)，high m coil, lower-hybrid (LH), helical current filament (HCL), helical radiation belt (HRB)}
 }
 
 % 定义中英文摘要和关键字
 \begin{cabstract}
-  本课题来自目前的先进托卡马克位型所面临的现实问题，尽管高参数的 \Hmode 使得聚变达到所需参数目标变得现实了许多，但是它同时也带来了新的问题。\Hmode 下等离子体边界蕴含的高自由能——主要由高压力梯度和强电流密度导致，引起了边界局域模不稳定性。边界局域模会引起热负荷和粒子流强出现周期性或近似周期性的峰值，而这在 DEMO 堆中是不被允许的。
+  本课题来自目前的先进托卡马克位型所面临的现实问题，尽管参数优良的 \Hmode 等离子体使得聚变达到所需参数目标变得更加现实，但同时也带来了新的问题。\Hmode 下等离子体边界高压力梯度和强电流密度蕴含的自由能，引起了边界局域模不稳定性。边界局域模会引起热负荷和粒子流强出现近似周期性的脉冲峰值，而这在 DEMO 堆中是不被允许的。
 
-% （TODO:先后顺序未验证）
-  为了抑制边界局域模， EAST 上先后测试了共振扰动场线圈 RMP、高 m 线圈和低杂波驱动的螺旋电流丝，这三种扰动场产生机制有所差异，适用的范围也不尽相同。为了使扰动场相互配合达到最优的削弱乃至抑制边界局域模的效果，对它们在等离子体边界造成的扰动场协同作用的研究是很有必要的。 \textit{\textbf{(1)}} \textbf{共振扰动场线圈}，该线圈布置在腔内，由它激发起环向模数为 $n=1,2$ 的扰动场后在 EAST 可以抑制边界局域模。 \textit{\textbf{(2)}} \textbf{高 m 线圈}，是 EAST 团队近两年实验中的线圈，在等离子体环外加上一组四个的线圈，它的特征是环向模数 n 较宽，极向模数 m 较高。 \textit{\textbf{(3)}} 由低杂波驱动的\textbf{螺旋电流丝}，低杂波原本用于以朗道阻尼驱动芯部等离子体的电流，但它在等离子体边界会激发出螺旋电流丝，从而调节边界磁拓扑，具体的物理机制还不甚明晰。但由于低杂波天线不像共振扰动场线圈在腔内，它具有应用在 DEMO 堆及日后商业堆的潜力。
+  为了抑制边界局域模， EAST 上先后测试了共振磁扰动线圈 RMP、高 m 线圈和低杂波驱动的螺旋电流丝，这三种扰动场产生机制有所差异，适用的范围也不尽相同。为了使扰动场相互配合达到最优的弱化乃至抑制边界局域模的效果，对它们在等离子体边界造成的扰动场协同作用的研究是很有必要的。 \textit{\textbf{(1)}} \textbf{低场侧低 n 线圈}，该线圈布置在腔内，由它激发起环向模数为 $n=1,2$ 的扰动场后在 \east， \ddd 等托卡马克装置上验证了其抑制边界局域模的效应。 \textit{\textbf{(2)}} \textbf{高 m 线圈}，是 EAST 团队近两年实验中的线圈，在等离子体环外加上一组四个的线圈，它的特征是扰动场环向模数 $n$ 分布较宽，极向模数 $m$ 较高，由于一套高 $m$ 线圈只分布在一个环向截面处，扰动场的局域性很强。 \textit{\textbf{(3)}} 由低杂波驱动的\textbf{螺旋电流丝}，低杂波原本用于以朗道阻尼驱动芯部等离子体的电流，但实验还发现它在等离子体边界会激发出螺旋电流丝，电流丝产生的具体物理机制还不甚明晰，但其亦具备调节边界磁拓扑的能力。由于低杂波天线不像共振磁扰动线圈在腔内易受到损坏且激发出的螺旋电流丝紧靠边界，它具有应用在 DEMO 堆及日后商业堆灵活地调节磁拓扑的潜力。
 
-  到这一步为止，边界磁拓扑在扰动场作用下的改变，也就是随机场的傅里叶分析和 \Poincare 图应已完成，在此基础上基于磁场扩散反推粒子扩散，就可以对粒子在边界上的运动有一个直观的认识。这一步需要修改一个小型的轨迹跟踪的 code，但物理上的关系是很清楚的，解决起来应该不是特别困难。从矢量场得出磁力线和其他粒子轨迹的数值方法可以做一些小小的改进。
+  本文将会对边界磁拓扑在扰动场作用下的变化做出（磁流体）电磁分析，绘制近边界磁面的傅里叶谱和 \Poincare 图，这构成了第二章的主要内容。在此之后，第三章将基于磁场弥散来进行粒子扩散的模拟，对粒子在边界上的运动建立直观的认识，通过修改 GENRAY-CQL3D 磁力线定迹程序可以较原来的模型更为精确。通过前面提到的多种扰动场对等离子体边界拓扑进行调节，从而对热负荷和粒子流在偏滤器上分布的优化，以避免脉冲式的 ELM 崩溃对壁材料造成显著的影响。最后，（如果还有时间的话Optional），通过在模拟工具中引入等离子体反馈后的随机场的计算，从而在湍流输运的角度解释磁场边界拓扑对粒子输运和热流的影响。
   
-  老师在这里安排了第三步，但是不太记得了。
-
-  如果可以的话，作者想从湍流输运的角度解释磁场边界拓扑对输运的影响。但我担心没有时间完成这一部分，这样可以避免这一篇论文通篇都是模拟的内容。
-  % 本文的创新点主要有：
-  % \begin{itemize}
-  %   \item 用例子来解释模板的使用方法；
-  %   \item 用废话来填充无关紧要的部分；
-  %   \item 一边学习摸索一边编写新代码。
-  % \end{itemize}
 
 \end{cabstract}
 
@@ -92,23 +82,23 @@
 % \ckeywords{\TeX, \LaTeX, CJK, 模板, 论文}
 
 \begin{eabstract}
-   An abstract of a dissertation is a summary and extraction of research work
-   and contributions. Included in an abstract should be description of research
-   topic and research objective, brief introduction to methodology and research
-   process, and summarization of conclusion and contributions of the
-   research. An abstract should be characterized by independence and clarity and
-   carry identical information with the dissertation. It should be such that the
-   general idea and major contributions of the dissertation are conveyed without
-   reading the dissertation.
+  %  An abstract of a dissertation is a summary and extraction of research work
+  %  and contributions. Included in an abstract should be description of research
+  %  topic and research objective, brief introduction to methodology and research
+  %  process, and summarization of conclusion and contributions of the
+  %  research. An abstract should be characterized by independence and clarity and
+  %  carry identical information with the dissertation. It should be such that the
+  %  general idea and major contributions of the dissertation are conveyed without
+  %  reading the dissertation.
 
-   An abstract should be concise and to the point. It is a misunderstanding to
-   make an abstract an outline of the dissertation and words ``the first
-   chapter'', ``the second chapter'' and the like should be avoided in the
-   abstract.
+  %  An abstract should be concise and to the point. It is a misunderstanding to
+  %  make an abstract an outline of the dissertation and words ``the first
+  %  chapter'', ``the second chapter'' and the like should be avoided in the
+  %  abstract.
 
-   Key words are terms used in a dissertation for indexing, reflecting core
-   information of the dissertation. An abstract may contain a maximum of 5 key
-   words, with semi-colons used in between to separate one another.
+  %  Key words are terms used in a dissertation for indexing, reflecting core
+  %  information of the dissertation. An abstract may contain a maximum of 5 key
+  %  words, with semi-colons used in between to separate one another.
 \end{eabstract}
 
 % \ekeywords{\TeX, \LaTeX, CJK, template, thesis}

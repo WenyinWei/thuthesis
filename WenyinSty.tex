@@ -1,12 +1,62 @@
 \usepackage{xcolor}
-\renewcommand{\emph}[1]{\textcolor{purple}{\textit{#1}}}
+\renewcommand{\emph}[1]{\textcolor{purple}{\textit{#1}}} % for emph color
+
+%% Adding arrows to each term of an equation https://tex.stackexchange.com/questions/15735/adding-arrows-to-each-term-of-an-equation
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+% Define how TiKZ will draw the nodes
+\tikzset{mathterm/.style={draw=black,fill=white,rectangle,anchor=base}}
+\tikzstyle{every picture}+=[remember picture]
+\everymath{\displaystyle}
+
+\makeatletter
+
+% Designate a term in a math environment to point to
+% Syntax: \mathterm[node label]{some math}
+\newcommand\mathterm[2][]{%
+   \tikz [baseline] { \node [mathterm] (#1) {$#2$}; }}
+
+% A command to draw an arrow from the current position to a labelled math term
+% Default color=black, default arrow head=stealth
+% Syntax: \indicate[color]{term to point to}[path options]
+\newcommand\indicate[2][black]{%
+   \tikz [baseline] \node [inner sep=0pt,anchor=base] (i#2) {\vphantom|};
+   \@ifnextchar[{\@indicateopts{#1}{#2}}{\@indicatenoopts{#1}{#2}}}
+\def\@indicatenoopts#1#2{%
+   {\color{#1} \tikz[overlay] \path[line width=1pt,draw=#1,-stealth] (i#2) edge (#2);}}
+\def\@indicateopts#1#2[#3]{%
+   {\color{#1} \tikz[overlay] \path[line width=1pt,draw=#1,-stealth] (i#2) [#3] edge (#2);}}
+
+\makeatother
+% % example usage
+% \begin{gather}
+%     \mathterm[t1]{   \sum_{i=n}^m {i^2}   }   +
+%     \mathterm[t2]{   \int_0^t \mathrm d\:\!\tau   }   +
+%     \Gamma\bigl(n + \tfrac{1}{2}\bigr)   + 
+%     \mathterm[t3]{   \tfrac{1}{2}m\|\mathbf v\|^2   }
+%  \end{gather}
+ 
+ 
+%  \begin{itemize}
+%     \item  Power series \indicate[red]{t1}[out=0,in=-75]
+%     \item  Definite integral \indicate[blue]{t2}[out=0,in=-90]
+%     \item  Non-relativistic kinetic energy \indicate{t3}[out=0,in=-90]
+%  \end{itemize}
+%% end of Adding arrows to each term of an equation
 
 \usepackage{siunitx} % \SI{1.234}{\m\per\square\s} \SI{1e-4}{\metre}
 \DeclareSIUnit{\rad}{rad} % \rad is removed frmo siunitx 2 since it is not a SI unit. 
 
-\newcommand\Vect{\symbfup}
-\newcommand\Matr{\symbfit} % \matrix is defined in LaTeX2e kernel
-\newcommand\Tens{\symbfsfit}
+% \usepackage{amsmath}
+\newcommand\vect{\vec}
+\newcommand\matr{\mathbf} % \matrix is defined in LaTeX2e kernel
+\newcommand\tens{\mathcal}
+
+\usepackage{romannum}  % \Romannum{3} \romannum{3}
+
+
 \def\degree{${}^{\circ}$} % degree symbols
 \sisetup{math-micro=\text{µ},text-micro=µ} 
 % Very strange that the micro symbol does not appear in \SI{}{}, 
@@ -14,9 +64,9 @@
 \usepackage[super]{nth} % 1st, 2nd, ...
 
 
-
+% Conflict with thuthesis
 % \usepackage[math-style=ISO]{unicode-math} % XeTeX driver only supports unicode.  (hyperref)  Enabling option `unicode'. 
-% % Sometimes pasted texts may contain unicode math symbols which may cause compiling errors, the package is capable to help you skip those trivial errors caused by compiling those symbols which used to be uncompilable properly.
+% Sometimes pasted texts may contain unicode math symbols which may cause compiling errors, the package is capable to help you skip those trivial errors caused by compiling those symbols which used to be uncompilable properly.
 
 \usepackage{etoolbox}
 \newbool{isBeamer} 
@@ -47,3 +97,18 @@
 \makeatletter
 \newcommand{\etale}{\'etal\@ifstar{\'e}{e\xspace}}
 \makeatother
+
+
+
+\newcommand{\ddd}{ D\Romannum{3}-D } % cannot define \d3d
+\newcommand{\east}{ EAST }
+\newcommand{\mast}{ MAST }
+\newcommand{\iter}{ ITER }
+\newcommand{\acmod}{ Alcator C-Mod }
+
+\newcommand{\mdddc}{ M3D-C${}^1$ }
+
+% \newcommand{\ditherelm}{ Dithering Cycles }
+\newcommand{\typeone}{ \Romannum{1} 型}
+\newcommand{\typetwo}{ \Romannum{2} 型}
+\newcommand{\typethr}{ \Romannum{3} 型}
