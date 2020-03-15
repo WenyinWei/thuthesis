@@ -1,0 +1,62 @@
+\usepackage{xcolor}
+\renewcommand{\emph}[1]{\textcolor{purple}{\textit{#1}}} % for emph color
+
+\usepackage{siunitx} % \SI{1.234}{\m\per\square\s} \SI{1e-4}{\metre}
+\DeclareSIUnit{\rad}{rad} % \rad is removed frmo siunitx 2 since it is not a SI unit. 
+
+% \usepackage{amsmath}
+\newcommand\vect{\mathbf}
+% \newcommand\matr{\mathbf} % \matrix is defined in LaTeX2e kernel
+% \newcommand\tens{\mathcal}
+
+\usepackage{romannum}  % \Romannum{3} \romannum{3}
+
+
+\def\degree{${}^{\circ}$} % degree symbols
+\sisetup{math-micro=\text{µ},text-micro=µ} 
+% Very strange that the micro symbol does not appear in \SI{}{}, 
+% this is a bug found at https://tex.stackexchange.com/questions/33965/siunitx-µ-doesnt-work 
+\usepackage[super]{nth} % 1st, 2nd, ...
+
+
+% Conflict with thuthesis
+% \usepackage[math-style=ISO]{unicode-math} % XeTeX driver only supports unicode.  (hyperref)  Enabling option `unicode'. 
+% Sometimes pasted texts may contain unicode math symbols which may cause compiling errors, the package is capable to help you skip those trivial errors caused by compiling those symbols which used to be uncompilable properly.
+
+\usepackage{etoolbox}
+\newbool{isBeamer} 
+% \booltrue{isBeamer}
+\boolfalse{isBeamer}
+% \ifbool{isBeamer}{<true>}{<false>}
+
+\usepackage{booktabs}
+
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\usepackage{hyperref}
+
+
+% \usepackage[T1]{fontenc} //This may cause some alignment problem in cover
+\usepackage[utf8]{inputenc}
+
+
+% Special scientist naem 
+\usepackage{xspace}
+\newcommand{\Poincare}{Poincar\'e\xspace}
+\newcommand{\adele}{ad\`ele\xspace}
+\newcommand{\Cech}{\v{C}ech\xspace}
+\newcommand{\Erdos}{Erd\H{o}s\xspace}
+\makeatletter
+\newcommand{\etale}{\'etal\@ifstar{\'e}{e\xspace}}
+\makeatother
+
+
+\newcommand{\vE}{\vect{E}}
+\newcommand{\vx}{\vect{x}}
+\newcommand{\vv}{\vect{v}}
+\newcommand{\ftxv}{f(t, \vect{x}, \vect{v})}
+\newcommand{\bbRRR}{\bbR^{3}}
+\newcommand{\bbRx}{\bbR_{x}^{3}}
+\newcommand{\bbRv}{\bbR_{v}^{3}}

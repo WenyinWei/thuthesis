@@ -1,4 +1,4 @@
-\documentclass[degree=master,tocarialchapter]{thuthesis}
+\documentclass[degree=bachelor,language=english,tocarialchapter]{thuthesis}
 % 选项
 %   degree=[bachelor|master|doctor|postdoctor], % 必选，学位类型
 %   language=[chinese|english], % 可选（默认：chinese），论文的主要语言
@@ -12,6 +12,8 @@
 
 % 定义所有的图片文件在 figures 子目录下
 \graphicspath{{figures/}}
+\input{alphabetcmd.tex}
+\input{WenyinSty.tex}
 
 % 可以在这里修改配置文件中的定义。导言区可以使用中文。
 % \def\myname{薛瑞尼}
@@ -23,51 +25,50 @@
 \input{data/cover}
 % 如果使用授权说明扫描页，将可选参数中指定为扫描得到的 PDF 文件名，例如：
 % \makecover[scan-auth.pdf]
-\makecover
+% \makecover
 
 %% 目录
-\tableofcontents
+% \tableofcontents
 
 %% 符号对照表
-\input{data/denotation}
+% \input{data/denotation}
 
 
 %%% 正文部分
 \mainmatter
-\input{data/chap01}
-\input{data/chap02}
-
+% \input{data/chap01}
+\input{data/note.tex}
 
 %%% 其它部分
 \backmatter
 
 %% 本科生要这几个索引，研究生不要。选择性留下。
 % 插图索引
-\listoffigures
+% \listoffigures
 % 表格索引
-\listoftables
+% \listoftables
 % 公式索引
 \listofequations
 
 
 %% 参考文献
 % 只能选择一种参考文献格式
-\bibliographystyle{thuthesis-numeric}      % 顺序编码制
+% \bibliographystyle{thuthesis-numeric}      % 顺序编码制
 % \bibliographystyle{thuthesis-author-year}  % 著者-出版年制
-% \bibliographystyle{thuthesis-bachelor}     % 本科生参考文献的著录格式
+\bibliographystyle{thuthesis-bachelor}     % 本科生参考文献的著录格式
 \bibliography{ref/refs}
 
 
 %% 致谢
-\input{data/ack}
+% \input{data/ack}
 
 %% 附录
-\begin{appendix}
-\input{data/appendix01}
-\end{appendix}
+% \begin{appendix}
+% \input{data/appendix01}
+% \end{appendix}
 
 %% 个人简历
-\input{data/resume}
+% \input{data/resume}
 
 %% 本科生进行格式审查是需要下面这个表格，答辩可能不需要。选择性留下。
 % 综合论文训练记录表
