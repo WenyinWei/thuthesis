@@ -1,0 +1,949 @@
+\chapter{Global Solutions of non-relativistic Vlasov-Poisson System}
+\label{cha:global-VP}
+
+
+We restrict the Vlasov-Poisson problem in the 3D (non-relativistic) case in this chapter, and revisited the proof of to confirm the existence and uniqueness of classical solutions, by \cite{pfaffelmoser_global_1992} and \cite*{1991InMat.105..415L} respectively, for the initial data without the compact assumption in "$\vv$".
+
+\section{Global Existence}
+\cite{pfaffelmoser_global_1992} proved the global existence of $ \gamma=\pm 1$ cases, with almost the same assumptions given in last chapter. The existence result is shown by indicating that the supremum of velocity change of a local solution can not be controlled by a function $H_{v} \in C_{+}\left(\mathbf{R}_{0}^{+}\right)$, however, it did. The control aim is reached by pointing out how much acceleration of a particle can be given by the "neighboring" particles near its characteristic trajectory.
+
+In this section we consider the trajectories passing through a point $\vx$ of the configuration-space at a time $t$ and subsets of the velocity-space at $\vx$ and at time $t,$ that are defined by certain properties of the trajectories. We study, how the "largeness" of the subsets depends on these properties.
+
+
+\begin{assumption}
+    
+  \begin{enumerate}[(i)]
+    \item $f_0 \in L_{1}\left(\bbR^{n} \times \bbR^{n}\right), f_0 \geqslant 0$ satisfying $f_0$ satisfies \supremumf with constants $K_1, K_2$ and \lipOffVsphere with $H\in C_+([0,\infty))$
+    \item $\int_{\bbR^{n}} \vv^{2} f_0(\vx, \vv) d \vx, \vv<\infty$
+  \end{enumerate}
+\end{assumption}
+
+Let $f$ be the corresponding maximal solution of \eqvp on $[0, T)$. 
+
+% In this section we will prove some estimations which we need later and give a sufficient condition for the existence of global classical solutions of $(\mathrm{VP})$
+
+
+
+
+\begin{definition}
+    We define $h_{\vv}, h_{E}, h_{\rho}:[0, T)\rightarrow [0,+\infty)$ by 
+\[
+\begin{aligned}
+h_{v}(t) &:=\sup \left\{|\vect{V}(0, \tau, \vx, \vv)-\vv| | \vx, \vv \in \bbR^{n}, 0 \leqslant \tau \leqslant t\right\} \\
+h_{E}(t) &:=\sup \left\{|\vE(\tau, \vx)| | \vx \in \bbR^{3}, 0 \leqslant \tau \leqslant t\right\} \\
+h_{\rho}(t) &:=\sup \left\{|\rho(\tau, \vx)| | \vx \in \bbR^{3}, 0 \leqslant \tau \leqslant t\right\}
+\end{aligned}
+\]
+These functions are nondecreasing due to the supremum range. Their inter-control relation is presented in the following lemma. 
+\end{definition}
+
+\begin{lemma}
+    There exist $K_{10, E}, K_{10, \rho}>0,$ so that for all $t \in[0, T) \text { we have }$
+\[
+\begin{aligned}
+h_{E}(t) & \leqslant K_{10, E} h_{\rho}^{4 / 9}(t) \\
+h_{v}(t) & \leqslant \int_{0}^{t} h_{E}(s) d s \\
+h_{\rho}(t) & \leqslant K_{10, \rho}\left(1+h_{\vv}(t)\right)^{3}
+\end{aligned}
+\]
+\end{lemma}
+
+\begin{proof}
+  See \cite{pfaffelmoser_global_1992}, lemma 10.
+\end{proof}
+
+% DEFINITION AND LEMMA 10. 
+% Proof. Let $t \in\left[0, T\left[, \tau \in[0, t], \vx \in \bbR^{3}\right.\right.$
+% (3.6): If we set $r=R:=\|\rho(\tau)\|_{\infty}^{-5 / 9}$ in Lemma 9 , it follows that
+% \[
+% \begin{aligned}
+% |\vE(\tau, \vx)| & \leqslant c_{9,1}\|\rho(\tau)\|_{\infty} R+K_{9} R^{-4 / 5} \\
+% &=\left(c_{9,1}+K_{9}\right)\|\rho(\tau)\|_{\infty}^{4 / 9}
+% \end{aligned}
+% \]
+% We obtain (3.6) by taking the supremum.
+% (3.7)$: \quad[9, \text { Lemma } 2.5(\mathrm{i})]$
+
+% (3.8): Regarding the monotonicity of $h_{\vv},$ we have by [9, Lemma
+% $2.5(\mathrm{i})]$
+% \[
+% \|\rho(\tau)\|_{\infty} \leqslant K_{1,1}\left(K_{1,2}+h_{\vv}(t)\right)^{3}
+% \]
+% With $K_{10, \rho}:=K_{1,1} \max \left\{1, K_{1,2}^{3}\right\}$ the assertion follows by taking the supremum.
+
+
+\begin{proposition}
+  If there exists a $H_{v} \in C_{+}\left(\mathbf{R}_{0}^{+}\right),$ so that for all $t \in[0, T[$ we have
+\[
+h_{v}(t) \leqslant H_{v}(t)
+\]
+then $T=\infty,$ i.e., (VP) has a global solution.
+\end{proposition}
+
+
+\begin{proof}
+    The proposition is a clear result with means of \cite{HorstClasssicalI}. For solutions $f$ on an bounded interval $[0, t)$,  they can be continued onto an interval $[0, t+\varepsilon)$,  where $\varepsilon=\varepsilon(h_{v}(t))$ depends monotonically decreasing on $h_{\vv}(t)$. For bounded $T<\infty$ we can take $t>T-\varepsilon\left(H_{v}(T)\right),$ which is sufficient to continue $f$ onto $[0, t+\varepsilon)\subsetneq[0, T),$ which is a contradiction to the maximality of $[0, T)$.  The exact argument can be found in [12]
+
+\end{proof}
+
+
+% Remark. The content of Proposition 11 has been well known for a couple of years (see [5] ), but we did not find it in the literature in the version we needed.
+% 4. Special Sursets of the Vethrity-Spark
+
+
+% LEMMA $12 .$ Let $i, t \in \mathbf{R}, \quad i<t$ and $\vect{V} \in C\left([i, t], \bbR^{3}\right),$ so that $| \vect{V}(s)-$ $\vect{V}(t)\left|\leqslant \frac{1}{3}\right| \vect{V}(t) |$ on $[i, t] .$ and let $\vect{X}:[i, t] \rightarrow \bbR^{3}, s \mapsto \int_{t}^{s} \vect{V}(\sigma) d \sigma .$ Then $|\vect{X}|$ is
+% nonascending on $[i, t]$
+
+
+
+% Proof. By assumption we have for all $s \in[i, t[$
+% \[
+% \begin{aligned}
+% \left|\frac{\vect{X}^{\prime}(s)}{s-t}-\vect{V}(t)\right| &=\left|\frac{1}{s-t} \int_{t}^{s}(\vect{V}(\sigma)-\vect{V}(t)) d \sigma\right| \\
+% & \leqslant \frac{1}{t-s} \int_{s}^{t}|\vect{V}(\sigma)-\vect{V}(t)| d \sigma \\
+% & \leqslant \frac{1}{3(t-s)} \int_{s}^{t}|\vect{V}(t)| d \sigma \leqslant \frac{1}{3}|\vect{V}(t)|
+% \end{aligned}
+% \]
+% Now for all $\vx, \vy, \vect{z} \in \bbR^{3}$ with $|\vx-\vect{z}| \leqslant \frac{1}{3}|\vect{z}|,|\vy-\vect{z}| \leqslant \frac{1}{3}|\vect{z}|$ we have
+% \[
+% \begin{aligned}
+% \vx \vy &=(\vect{z}+(\vx-\vect{z}))(\vect{z}+(\vy-\vect{z})) \\
+% & \geqslant \vect{z}^{2}-(|\vx-\vect{z}|+|\vy-\vect{z}|)|\vect{z}|-|\vx-\vect{z}||\vy-\vect{z}| \\
+% & \geqslant \vect{z}^{2}-\frac{2}{3} \vect{z}^{2}-\left(\frac{1}{3}\right)^{2} \vect{z}^{2}=\frac{2}{9} \vect{z}^{2} \geqslant 0
+% \end{aligned}
+% \]
+% so that setting $\vx:=\vect{X}(s) /(s \quad t), \quad \vy:=\vect{V}(s), \quad \vect{z}:=\vect{V}(t),$ we obtain $(\vect{X}(s))$ $(s-t)) \vect{V}(s) \geqslant 0$ on $\left[t, t\left[. \text { Therefore, }(d / d s) \vect{X}^{2}(s)=2 \vect{X}(s) \vect{V}(s) \leqslant 0,\text { and the }\right.\right.$
+% assertion is proved.
+
+\begin{definition}
+% There exist $K_{13,1}, K_{13,2}, K_{13,3},$ so that for $t \in[0, T[$ $\vx \in \bbR^{3}, 0<\Delta_{1} \leqslant t$ and $d>0$ the following assertion is true. If we define
+
+\begin{enumerate}[(i)]
+
+  \item For $t \in[0, T)$ $\vx \in \bbR^{3}, 0<\Delta_{1} \leqslant t$ and $d>0$， define
+  \[
+  \Psi_{1}(t, \vx):=\left\{\vv \in \bbR^{3}\left|\exists s \in\left[t-\Delta_{1}, t\right]:\right| \vect{V}(s, t, \vx, \vv)-\vv |>d\right\}
+  \]
+
+% then, setting $l_{d}(t):=\ln ^{2 / 3}+\left(K_{13,2} d^{18 / 5} h_{\rho}^{1 / 5}(t)\right),$ we have
+% \[
+% \int_{\Psi_{1}(t, \vx)} f(t, \vx, \vv) d \vv \leqslant\|f_0\|_{\infty}\left(\frac{K_{13,1} h_{\rho}^{4 / 9}(t) l_{d}(t) \Delta_{1}}{1-K_{13,3} h_{\rho}^{16 / 45}(t) \Delta_{1} d^{-13 / 5}}\right)^{3}
+% \]
+% whenever the right-hand side is defined and positive.
+
+
+% \[
+% \begin{array}{l}
+% \left(K_{1 \times 1}:=24 c_{9,2} K_{8}^{5 / 9}, K_{13.2}:=\left(\frac{5}{4 K_{10 . E}}\right)^{9 / 5}\right. \\
+% \left.K_{13,3}:=2\left(c_{9,1}+K_{9}\right)\left(\frac{5}{4 K_{10, E}}\right)^{-4 / 5}\right)
+% \end{array}
+% \]
+
+
+\item 
+ Let $\Omega \subset \bbR^{3}, t \in\left[0, T\left[, 0<\Delta_{2} \leqslant \Delta_{1} \leqslant t, R>0 \text { and } \vx \in \bbR^{3}. \right.\right.$
+Further let $(\vect{X}^*, \vect{V}^*)$ be a solution of the characteristic system and define
+\[
+\Psi_{2}(t, \vx):=\left\{\vv \in \Omega\left|\exists s \in\left[t-\Delta_{1}, t-\Delta_{2}\right]:\right| \vect{X}(s, t, \vx, \vv)-\vect{X}^*(s) | \leqslant R\right\}
+\]
+
+% Then there exists $\bar{\vv} \in \bbR^{3},$ so that $\Psi_{2}(t, \vx) \subset B_{D}(\bar{\vv}),$ %where
+
+\end{enumerate}
+% \[
+% \begin{array}{l}
+% D:=\partial+\frac{R+|\vx-\hat{\vect{X}}(t)|}{\Delta_{2}}+\Delta_{1} \frac{K_{10, E}}{2} h_{\rho}^{4 / 9}(t) \\
+% \partial:=\sup \left\{|\vect{V}(s, t, \vx, \vv)-\vv| | t-\Delta_{1} \leqslant s \leqslant t, \vv \in \Omega\right\}
+% \end{array}
+% \]
+
+\end{definition}
+
+% Proof. Let $\hat{t}:=t-\left(1 / 2 K_{\text {to. } E}\right) d h_{\rho}^{-4 / 9}(t) .$ Then, according to Lemma 10 we have for all $s \in[\hat{t}, t] \cap \mathbf{R}_{0}^{+}, \vv \in \bbR^{3}$
+
+% \[
+% \begin{aligned}
+% |\vect{V}(s, t, \vx, \vv)-\vv| & \leqslant \int_{s}^{t}|\vE(\sigma, \vect{X}(\sigma, t, \vx, \vv))| d \sigma \leqslant(t-\hat{t}) h_{E}(t) \\
+% & \leqslant \frac{1}{2 K_{10, E}} d h_{\rho}^{-4 / 9}(t) K_{10, E} h_{\rho}^{4 / 9}(t) \leqslant \frac{d}{2}
+% \end{aligned}
+% \]
+% If $\tau_{1}:=t-\Delta_{1} \geqslant \hat{t},$ then by (4.9) we have $\Psi_{1}(t, \vx)=\varnothing,$ and the assertion is obviously valid. So for the following let $\tau_{1}<\hat{t}$. For $l=\left(l_{1}, l_{2}, l_{3}\right) \in \mathbf{Z}^{3}$ we define cubes $W_{l}:=\left\{\vv \in \bbR^{3} | 6 d l_{i} \leqslant \vect{\vv}_{i} \leqslant 6 d\left(l_{i}+1\right), i=1,2,3\right\}$ of edge-length
+% 6 dether let $J:=(2 \mathbf{Z})^{3}$ and $k \in\{0,1\}^{3}$ be arbitrary but fixed. Then we have dist $\left(W_{k+1}, W_{k+j_{2}}\right) \geqslant 6 d$ for $j_{1}, j_{2} \in J, j_{1} \neq j_{2},$ and by (4.9) it follows for $\vect{\vv}_{i} \in W_{k+j}, i=1,2$
+% \[
+% \begin{array}{l}
+% \left|\vect{X}\left(\hat{t}, t, \vx, \vect{\vv}_1\right)-\vect{X}\left(\hat{t}, t, \vx, \vect{\vv}_2\right)\right| \\
+% \quad=\left|\int_{t}^{i} \vect{V}\left(\sigma, t, \vx, \vect{\vv}_1\right) d \sigma-\int_{t}^{i} \vect{V}\left(\sigma, t, \vx, \vect{\vv}_2\right) d \sigma\right| \\
+% =| \int_{t}^{i}\left(\vect{V}\left(\sigma, t, \vx, \vect{\vv}_1\right)-\vect{\vv}_1\right) d \sigma+(\hat{t}-t)\left(\vect{\vv}_1-\vect{\vv}_2\right) \\
+% \quad-\int_{t}^{i}\left(\vect{V}\left(\sigma, t, \vx, \vect{\vv}_2\right)-\vect{\vv}_2\right) d \sigma | \\
+% \quad \geqslant(t-\hat{t})\left|\vect{\vv}_1-\vect{\vv}_2\right|-\int_{i}^{t}\left(\left|\vect{V}\left(\sigma, t, \vx, \vect{\vv}_1\right)-\vect{\vv}_1\right|+\left|\vect{V}\left(\sigma, t, \vx, \vect{\vv}_2\right)-\vect{\vv}_2\right|\right) d \sigma \\
+% \quad \geqslant(t-\hat{t}) \cdot 6 d-(t-\hat{t})\left(\frac{d}{2}+\frac{d}{2}\right) \\
+% =\frac{5}{2 K_{10, E}} d^{2} h_{\rho}^{-4 / 9}(t)
+% \end{array}
+% \]
+% For every $j \in J$ the function $F:\left[\tau_{1}, t\right] \times W_{k+j} \rightarrow \mathbf{R},(s, \vv) \mapsto|\vect{V}(s, t, \vx, \vv)-\vv|$
+% is continuous by Lemma $4(\mathrm{i})$ and, as $\left[\tau_{1}, t\right] \times W_{k+j}$ is compact, there exist $\left(s_{j}, \vect{\vv}_{j}\right) \in\left[\tau_{1}, t\right] \times W_{k+j}, \quad$ so $\quad$ that $\quad F\left(s_{j}, \vect{\vv}_{j}\right)=\sup \left\{F(s, \vv) |(s, \vv) \in\left[\tau_{1}, t\right] \times\right.$
+% $\left.W_{k+j}\right\} .$ Let such $\left(s,, \vect{\vv}_{j}\right)$ be fixed and let
+% \[
+% \begin{array}{c}
+% t_{j}:=\inf \left\{s \in\left[\tau_{1}, t\right]|\forall \sigma \in[s, t]:| \vect{V}\left(\sigma, t, \vx, \vect{\vv}_{j}\right)-\vect{\vv}_{j} | \leqslant d\right\}, \quad j \in J \\
+% \hat{J}^{k}:=\left\{j \in J | t_{j}>\tau_{1}\right\}, \quad \hat{J}_{n}:=\left\{j \in \hat{J}^{k}|| j | \leqslant n\right\}, \quad n \in \mathbf{N}
+% \end{array}
+% \]
+% Now let $j_{1}, j_{2} \in J, j_{1} \neq j_{2},$ and for $s \in[i, t]:=\left[t_{j}, t\right] \cap\left[t_{i_{2}}, t\right]$ define
+% \[
+% \vect{X}(s):=\vect{X}\left(s, t, \vx, \vect{\vv}_{j_{1}}\right)-\vect{X}\left(s, t, \vx, \vect{\vv}_{j_{2}}\right), \vect{V}(s):=\vect{V}\left(s, t, \vx, \vect{\vv}_{j_{1}}\right)-\vect{V}\left(s, t, \vx, \vect{\vv}_{j_{2}}\right)
+% \]
+
+% Then for $s \in[i, t]$ we have $\vect{X}(s)=\int_{t}^{s} \vect{V}(\sigma) d \sigma$ and, by definition of the $t_{j}$
+% \[
+% \begin{aligned}
+% |\vect{V}(s)-\vect{V}(t)| &=\left|\vect{V}\left(s, t, \vx, \vect{\vv}_{j_{1}}\right)-\vect{V}\left(s, t, \vx, \vect{\vv}_{n}\right)-\left(\vect{\vv}_{j_{1}}-\vect{\vv}_{h}\right)\right| \\
+% & \leqslant\left|\vect{V}\left(s, t, \vx, \vect{\vv}_{j_{1}}\right)-\vect{\vv}_{j_{1}}\right|+\left|\vect{V}\left(s, t, \vx, \vect{\vv}_{h_{2}}\right)-\vect{\vv}_{j}\right| \\
+% & \leqslant 2 d \leqslant \frac{1}{3}\left|\vect{\vv}_{j_{1}}-\vect{\vv}_{j_{2}}\right|=\frac{1}{3}|\vect{V}(t)|
+% \end{aligned}
+% \]
+% Thus the assumptions of Lemma 12 are satisfied, and together with (4.10) it follows for all $s \in\left[t_{1}, i\right] \cap\left[t_{j}, t\right]$
+% \[
+% \left|\vect{X}\left(s, t, \vx, \vect{\vv}_{j_{1}}\right)-\vect{X}\left(s, t, \vx, \vect{\vv}_{j_{2}}\right)\right| \geqslant \frac{5}{2 K_{10, E}} d^{2} h_{\rho}^{-4 / 9}(t)
+% \]
+% By definition of the $t_{j}$ and by (4.9) we now can estimate $\left|\hat{J}_{n}\right|, n \in \mathbf{N},$ as follows
+% \[
+% \begin{aligned}
+% d\left|\hat{J}_{n}\right| &=\sum_{j \in J_{n}}\left|\vect{V}\left(t_{j}, t, \vx, \vect{\vv}_{j}\right)-\vect{\vv}_{j}\right| \\
+% & \leqslant \sum_{j \in J_{n}}\left(\left|\vect{V}\left(t_{j}, t, \vx, \vect{\vv}_{j}\right)-\vect{V}\left(\hat{t}, t, \vx, \vect{\vv}_{j}\right)\right|+\left|\vect{V}\left(\hat{t}, t, \vx, \vect{\vv}_{j}\right)-\vect{\vv}_{j}\right|\right) \\
+% & \leqslant \sum_{j \in J_{n}}\left|\vect{V}\left(t_{j}, t, \vx, \vect{\vv}_{j}\right)-\vect{V}\left(\hat{t}, t, \vx, \vect{\vv}_{j}\right)\right|+\frac{d}{2}\left|\hat{J}_{n}\right|
+% \end{aligned}
+% \]
+% Now we define $R:=\left(5 / 4 K_{10, E}\right) d^{2} h_{\rho}^{-4 / 9}(t), r:=h_{\rho}^{-1}(t) R^{-4 / 5}$ and for $j \in \hat{J}_{n}$
+% \[
+% B_{j}(s):=\left\{\begin{array}{ll}
+% B_{R}\left(\vect{X}\left(s, t, \vx, \vect{\vv}_{j}\right)\right), & \text { if } \quad s \in\left[t_{j}, i\right] \\
+% \varnothing, & \text { if } \quad s \in\left[\tau_{1}, t_{j}[\right.
+% \end{array}\right.
+% \]
+% By Lemma 9 we can estimate $A$, as follows
+% \[
+% \begin{aligned}
+% A_{j} & \leqslant \int_{t_{j}}^{\hat{t}}\left|\vE\left(s, \vect{X}\left(s, t, \vx, \vect{\vv}_{j}\right)\right)\right| d s \\
+% & \leqslant \int_{t_{j}}^{i}\left(c_{9,1}\|\rho(s)\|_{\infty} r+c_{9,2}\|\rho(s)\|_{3, B_{f}(s)} \ln ^{2 / 3}\left(\frac{R}{r}\right)+K_{9} R^{-4 / 5}\right) d s \\
+% & \leqslant \int_{t_{j}}^{i}\left(c_{9,2}\|\rho(s)\|_{3, B_{j}(s)} l_{d}(t)+\frac{K_{13,3}}{2} d^{-8 / 5} h_{\rho}^{16 / 45}(t)\right) d s
+% \end{aligned}
+% \]
+% and consequently have
+% \[
+% \sum_{j \in J_{n}} A_{j} \leqslant \int_{\tau_{1}}^{i} c_{9,2} \underbrace{\sum_{j \in J_{n}}\|\rho(s)\|_{3, B_{j}(s)}}_{:=-\sum_{j}(s)} l_{d}(t) d s+\Delta_{1} \frac{K_{13,3}}{2} d^{-8 / s} h_{\rho}^{16 / 45}(t)\left|\hat{J}_{n}\right|
+% \]
+
+% Because of (4.11) we have for $s \in\left[\tau_{1}, \hat{t}\right]$ that the $B_{j}(s), j \in \hat{J}_{n},$ are pairwise disjoint and by Hoelder's inequality and Lemma 8 we can estimate $\Sigma(s)$ as follows
+
+% \[
+% \begin{array}{l}
+% \Sigma(s)-\sum_{j \in J_{n}}\left(\int_{B_{j}(s)}|\rho(s, \vy)|^{3} d \vy\right)^{1 / 3} \\
+% \quad \leqslant h_{\rho}^{4 / 9}(t) \sum_{j \in J_{n}} 1 \cdot\left(\int_{B_{j}(s)}|\rho(s, \vy)|^{5 / 3} d \vy\right)^{1 / 3} \\
+% \quad \leqslant h_{\rho}^{4 / 9}(t)\left|\hat{J}_{n}\right|^{2 / 3}\left(\sum_{j \in j_{n}} \int_{B_{j}(s)}|\rho(s, \vy)|^{5 / 3} d \vy\right)^{1 / 3} \\
+% \quad \leqslant h_{\rho}^{4 / 9}(t)\left|\hat{J}_{n}\right|^{2 / 3}\left(\int_{\mathbf{R}^{\prime}}|\rho(s, \vy)|^{5 / 3} d \vy\right)^{1 / 3} \\
+% \quad \leqslant h_{\rho}^{4 / 9}(t)\left|\hat{J}_{n}\right|^{2 / 3}\|\rho(s)\|_{5 / 3}^{5 / 9} \leqslant h_{\rho}^{4 / 9}(t)\left|\hat{J}_{n}\right|^{2 / 3} K_{8}^{5 / 9}
+% \end{array}
+% \]
+% It follows from (4.13)
+% \[
+% \begin{aligned}
+% \sum_{j \in J_{n}} A, \leqslant \Delta_{1} c_{9,2} K_{8}^{5 / 9} l_{d}(t) h_{\rho}^{4 / 9}(t)\left|\hat{J}_{n}\right|^{2 / 3} \\
+% &+\frac{K_{13,3}}{2} h_{\rho}^{16 / 45}(t) \Delta_{1} d^{-13 / 5} \cdot d\left|\hat{J}_{n}\right|
+% \end{aligned}
+% \]
+% and by (4.12) one has
+% \[
+% \left(\frac{1}{2}-\frac{K_{13,3}}{2} h_{\rho}^{16 / 45}(t) \Delta_{1} d^{-13 / 5}\right) d\left|\hat{J}_{n}\right| \leqslant \Delta_{1} c_{9,2} K_{8}^{5 / 9} l_{d}(t) h_{\rho}^{4 / 9}(t)\left|\hat{J}_{n}\right|^{2 / 3}
+% \]
+% As $\left|\hat{J}_{n}\right|<\infty$ by definition, we can resolve the inequality to $\left|\hat{J}_{n}\right|,$ if the lefthand side is positive and obtain in this case
+% \[
+% \left|\hat{J}^{k}\right|=\lim _{n \rightarrow \infty}\left|\hat{J}_{n}\right| \leqslant \frac{1}{d^{3}}\left(\frac{2 c_{9,2} K_{8}^{5 / 9} d_{d}(t) h_{\rho}^{4 / 9}(t) \Delta_{1}}{1-K_{13,3} h_{\rho}^{16 / 45}(t) \Delta_{1} d^{-13 / 5}}\right)^{3}
+% \]
+% Because $k$ was arbitrary, the last inequality is true for all $k \in\{0,1\}^{3},$ By definition of the $\hat{J}^{k}$ we have $\Psi_{1}(t, \vx) \subset \cup_{k \in\{0,1\}^{3}} \cup_{j \in J^{k}} W_{k+j} .$ Therefore, $\int_{\Psi_{1}(t, \vx)} f(t, \vx, \vv) d \vv \leqslant\|f_0\|_{\infty}(6 d)^{3} \sum_{k \in\{0,1\}^{3}}\left|\hat{J}^{k}\right|,$ from which the assertion
+% follows, since $\left|\{0,1\}^{3}\right|=8$
+
+
+
+
+
+
+% Remark. If we define for $d>0$ (using the notation of Lemma 13 ) $\Omega:=\bbR^{3} \backslash \Psi_{1}(t, \vx),$ then we have $\partial \leqslant d$
+% Proof. Let $t-\Delta_{1} \leqslant s \leqslant t-\Delta_{2}=: \tau_{2}, \vv \in \Omega,$ so that $|\vect{X}(s, t, \vx, \vv)-\hat{\vect{X}}(s)|$
+% $\leqslant R,$ and define $\bar{\vv}:=\left(\vx-\hat{\vect{X}}\left(\tau_{2}\right)\right) / \Delta_{2} .$ To prove the assertion, we have to show $|\vv-\bar{\vv}| \leqslant D .$ We have $\int_{t^{2}}^{\tau_{2}}(\hat{\vect{V}}(r)-\bar{\vv}) d r=\vx-\hat{\vect{X}}(t),$ and by the mean-
+% value theorem there exist $\sigma_{i} \in\left[\tau_{2}, t\right], i=1,2,3,$ so that $\hat{\vect{V}}_{i}\left(\sigma_{i}\right)-\bar{\vv}_{i}=$
+% $\left(x_{i}-\hat{\vect{X}}_{i}(t)\right) /-\Delta_{2}(\text { where } \hat{\vect{V}}_{i}, \bar{\vv}_{i}, \ldots \text { denote the } i$ th components of the vectors  $\hat{\vect{V}}, \bar{\vv}, \ldots) .$ Setting $w:=\left(1_{\left[t-d_{1}, \sigma_{1}\right]}, \ldots, 1_{\left[t-4_{1}, \sigma_{3}\right]}\right),$ we have
+% \[
+% \begin{aligned}
+% \left|\int_{\tau_{2}}^{s}(\hat{\vect{V}}(r)-\bar{\vv}) d r\right| &=\left|\int_{\tau_{2}}^{s} \frac{\vx-\hat{\vect{X}}(t)}{-\Delta_{2}}+\int_{t}^{r} w(\sigma) \vE(\sigma, \hat{\vect{X}}(\sigma)) d \sigma d r\right| \\
+% & \leqslant(t-s) \frac{|\vx-\hat{\vect{X}}(r)|}{\Delta_{2}}+\frac{1}{2}(t-s)^{2} h_{E}(t)
+% \end{aligned}
+% \]
+% Recalling Lemma $10,$ it follows that
+% \[
+% \left|\int_{t}^{s}(\vect{V}(r, t, \vx, \vv)-\bar{\vv}) d r\right|
+% \]
+% \[
+% \begin{array}{l}
+% =\left|\vect{X}(s, t, \vx, \vv)-\vx+(t-s) \frac{\vx-\hat{\vect{X}}\left(\tau_{2}\right) |}{\Delta_{2}}\right| \\
+% =\left|\vect{X}(s, t, \vx, \vv)-\hat{\vect{X}}(s)+\hat{\vect{X}}(s)-\hat{\vect{X}}\left(\tau_{2}\right)+\left(t-\Delta_{2}-s\right) \frac{\vx-\hat{\vect{X}}\left(\tau_{2}\right)}{\Delta_{2}}\right| \\
+% \leqslant|\vect{X}(s, t, \vx, \vv)-\hat{\vect{X}}(s)|+\left|\int_{\tau_{2}}^{s}(\hat{\vect{V}}(r)-\bar{\vv}) d r\right| \\
+% \leqslant R+(t-s) \frac{|\vx-\hat{\vect{X}}(t)|}{\Delta_{2}}+\frac{K_{10 . E}}{2}(t-s)^{2} h_{\rho}^{4 / 9}(t)
+% \end{array}
+% \]
+
+% Finally we obtain
+% \[
+% \begin{array}{l}
+% (t-s)|\vv-\bar{\vv}| \\
+% \quad=\left|\int_{t}^{s}(\vv-\bar{\vv}) d r\right| \\
+% \quad \leqslant \int_{s}^{t}|\vv-\vect{V}(r, t, \vx, \vv)| d r+\left|\int_{t}^{s}(\vect{V}(r, t, \vx, \vv)-\bar{\vv}) d r\right| \\
+% \quad \leqslant(t-s) \partial+R+(t-s) \frac{|\vx-\hat{\vect{X}}(t)|}{\Delta_{2}}+\frac{K_{10, E}}{2}(t-s)^{2} h_{\rho}^{4 / 9}(t)
+% \end{array}
+% \]
+% The assertion follows by dividing by $(t-s)$ and using $\Delta_{2} \leqslant(t-s) \leqslant \Delta_{1}$
+
+
+
+
+by which in section 6 we will estimate the influence of "high" densities near a given trajectory on its acceleration. This will turn out to be the crucial part of the proof.
+
+\begin{assumption}
+  \[
+  \lim _{t \rightarrow T} h_{v}(t)=\lim _{t \rightarrow T} h_{\rho}(t)=\infty
+  \]
+\end{assumption}
+
+% Remark. Because of General Assumption 15 there exists a $T_{0} \in[0, T[$ so that $h_{v}\left(T_{0}\right)>0 .$ According to (3.8) there exists a $K_{15, \rho}>0,$ so that for all $t \in\left[T_{0}, T[\right.$
+% \[
+% h_{\rho}(t) \leqslant \boldsymbol{K}_{15, \rho} h_{\vv}^{3}(t)
+% \]
+% LEMMA $16 .$ There exists $K_{16}>0,$ so that the following is true. Let $G \subset \bbR^{3}$ and$\Omega(\vx) \subset \bbR^{3}, \vx \in G,$ be measurable subsets of $\bbR^{3},$ so that $\Gamma:=$
+% $\{(\vx, \vv) | \vx \in G, \vv \in \Omega(\vx)\}$ is measurable. Further let $i, t \in[0, T[, i<t .\text { Define }$
+% \[
+% \begin{array}{l}
+% d:=\sup \{|\vect{V}(s, t, \vx, \vv)-\vv| | i \leqslant s \leqslant t,(\vx, \vv) \in \Gamma\} \\
+% \mu:=\inf \left\{\int_{\Omega(\vx)} f(t, \vx, \vv) d \vv | \vx \in G\right\}
+% \end{array}
+% \]
+% If $\mu>0,$ then we have
+% \[
+% \int_{A_{i d(T)}} \vv^{2} f(i, \vx, \vv) d(\vx, \vv) \geqslant\left(1-K_{16} \hat{d} \mu^{-1 / 3}\right) \int_{\Gamma} \vv^{2} f(t, \vx, \vv) d(\vx, \vv)
+% \]
+% \[
+% \left(K_{16}=2 c_{7,1.2}\|f_0\|_{\infty}^{1 / 5}\left(c_{7.0 .2}\|f_0\|_{\infty}^{2 / 5}\right)^{1 / 3} .\right)
+% \]
+% Proof. For $\vx \in G$ we have by Lemma 7
+% \[
+% \begin{aligned}
+% \int_{\Omega(\vx)} \vv^{2} f(t, \vx, \vv) d \vv & \geqslant\left(c_{7,0,2}\|f_0\|_{\infty}^{2 / 5}\right)^{-5 / 3}\left(\int_{\Omega(\vx)} f(t, \vx, \vv) d \vv\right)^{5 / 3} \\
+% & \geqslant\left(c_{7,0,2}\|f_0\|_{\infty}^{2 / 5}\right)^{-5 / 2} \mu^{5 / 3}
+% \end{aligned}
+% \]
+% Again by Lemma 7 it follows for $\vx \in G$
+% \[
+% \int_{\Omega(\vx)}|\vv| f(t, \vx, \vv) d \vv
+% \]
+% \[
+% \begin{array}{l}
+% \leqslant c_{7,1,2}\|f_0\|_{\infty}^{1 / 5}\left(\int_{\Omega(\vx)} \vv^{2} f(t, \vx, \vv) d \vv\right)^{4 / 5} \\
+% \leqslant c_{7,1,2}\|f_0\|_{\infty}^{1 / 5}\left(c_{7,0,2}\|f_0\|_{\infty}^{2 / 5}\right)^{1 / 3} \mu^{-1 / 3} \int_{\Omega(\vx)} \vv^{2} f(t, \vx, \vv) d \vv
+% \end{array}
+% \]
+% Therefore, because of $\vect{V}^{2}=(\vv-(\vv-\vect{V}))^{2} \geqslant \vv^{2}-2|\vv||\vv-\vect{V}|$ for $\vect{V}, \vv \in \bbR^{3}$
+% and using Lemma 4 (iv) and $(2.5),$ we can estimate
+% \[
+% \begin{array}{l}
+% \int_{A_{i, t}(\Gamma)} \vv^{2} f(i, \vx, \vv) d(\vx, \vv) \\
+% \quad=\int_{\Gamma} \vect{V}^{2}(\hat{t}, t, \vx, \vv) f(t, \vx, \vv) d(\vx, \vv) \\
+% \quad \geqslant \int_{\Gamma} \vv^{2} f(t, \vx, \vv) d(\vx, \vv) \\
+% \quad-2 \int_{G} \int_{\Omega(\vx)}|\vv||\vv-\vect{V}(t, t, \vx, \vv)| f(t, \vx, \vv) d \vv d \vx \\
+% \quad \geqslant \int_{\Gamma} \vv^{2} f(t, \vx, \vv) d(\vx, \vv)-K_{16} \hat{d} \mu^{-1 / 3} \int_{\Gamma} \vv^{2} f(t, \vx, \vv) d(\vx, \vv)
+% \end{array}
+% \]
+% and the assertion is proved.
+% LEMMA $17 .$ Let $0<\Delta_{2} \leqslant \Delta_{1} \leqslant T_{1} \leqslant t$ and $N:[0, t] \rightarrow \mathbf{R}_{0}^{+}$ be integrable
+% If there exists some $b>0,$ so that for all $s \in\left[T_{1}, t\right]$
+% \[
+% \sum_{0 \leqslant i \leqslant \Delta_{1} / \Delta_{2}} N^{3}\left(s-i \Delta_{2}\right) \leqslant b
+% \]
+% then we have for $s \in\left[T_{1}, t\right]$
+% \[
+% \int_{s}^{t} N(\sigma) d \sigma \leqslant t\left(4 \frac{\Delta_{2} b}{\Delta_{1}}\right)^{1 / 3}
+% \]
+% Proof. Obviously it is sufficient to prove the assertion for $s=T_{1}$. Let $n$ be the smallest integer with $\Delta_{1} n \geqslant t-T_{1}$ and define $s_{j}:=t-(n-j) \Delta_{1}$ for $j=0,1, \ldots, n .$ Then we have $0<s_{0} \leqslant T_{1}<s_{1} .$ Setting $N:=1_{\left[T_{1}, t\right]} N$ and using $\mathcal{A}_{1} / \mathcal{A}_{2}+1 \leqslant 2 \Delta_{1} / \mathcal{A}_{2},$ we obtain by Hoelder's inequality for $j=1, \ldots, n$
+% \[
+% \begin{aligned}
+% \int_{s_{j-1}}^{s_{j}} \hat{N}(s) d s & \leqslant \sum_{0 \leqslant i \leqslant \Delta_{1} / \Delta_{2}} \int_{s_{j}-(i+1)}^{s_{1}-i \Delta_{2}} \hat{N}(s) d s \\
+% &=\int_{s_{j}-\Delta_{2}}^{s_{j}}\left(\sum_{0 \leqslant i \leqslant \Delta_{1} / a_{2}} \hat{N}\left(s-i \Delta_{2}\right)\right) d s \\
+% & \leqslant \int_{s_{j}-\Delta_{2}}^{s_{j}}\left(2 \frac{\Delta_{1}}{\Delta_{2}}\right)^{2 / 3}\left(\sum_{0 \leqslant i \leqslant \Delta_{1} / \Delta_{2}} \hat{N}^{3}\left(s-i \Delta_{2}\right)\right)^{1 / 3} d s \\
+% & \leqslant\left(4 \Delta_{1}^{2} \Delta_{2} b\right)^{1 / 3}
+% \end{aligned}
+% \]
+% It follows that
+% \[
+% \int_{T_{1}}^{t} N(s) d s=\sum_{j=1}^{n} \int_{s_{j-1}}^{s_{j}} \hat{N}(s) d s \leqslant \sum_{j=1}^{n}\left(4 \Delta_{1}^{2} \Delta_{2} b\right)^{1 / 3}
+% \]
+% \[
+% \begin{array}{l}
+% \leqslant\left(\frac{t-T_{1}}{\Delta_{1}}+1\right)\left(4 \Delta_{1}^{2} \Delta_{2} b\right)^{1 / 3} \leqslant\left(t-\left(T_{1}-\Delta_{1}\right)\right)\left(4 \frac{\Delta_{2} b}{\Delta_{1}}\right)^{1 / 3} \\
+% \leqslant t\left(4 \frac{\Delta_{2} b}{\Delta_{1}}\right)^{1 / 3}
+% \end{array}
+% \]
+% and the assertion is proved.
+
+
+\begin{definition}
+  Define for $0 \leqslant \alpha \leqslant \beta, R>0$ and $s \in[0, T)$, $(\vect{X}^*, \vect{V}^*)$ of the characteristic system the following 
+\[
+\begin{array}{l}
+G_{\alpha}^{\beta}(s):=\left\{\vx \in B_{R}(\hat{X}(s)) | \alpha \leqslant \rho(s, \vx) \leqslant \beta\right\} \\
+N_{\alpha}^{\beta}(s):=\|\rho(s) \cdot 1_{G_{1}^{(s)}}\|_{3}
+\end{array}
+\]
+\end{definition}
+
+
+% \begin{lemma}
+%     There exist $K_{18,1}, K_{18,2}, T_{1} \in\left[T_{0}, T[,\text { so that for all }\right.$ $t \in\left[T_{1}, T[\text { and all solutions }(\hat{\vect{X}}, \hat{\vect{V}})\text { of the characteristic system the following }\right.$ assertion is true: Define for $0 \leqslant \alpha \leqslant \beta, R>0$ and $s \in[0, T[$
+% \[
+% \begin{array}{l}
+% G_{\alpha}^{\beta}(s):=\left\{\vx \in B_{R}(\hat{\vect{X}}(s)) | \alpha \leqslant \rho(s, \vx) \leqslant \beta\right\} \\
+% N_{\alpha}^{\beta}(s):=\|\rho(s)\|_{3, G_{1}^{(s)}}
+% \end{array}
+% \]
+% then for all $\alpha, \beta, R>0, \alpha \leqslant \beta,$ which satisfy
+% (i) $\quad \alpha \geqslant K_{13,2}^{-13 / 6} h_{\rho}^{4 / 15}(t)$
+% (ii) $\quad \alpha R^{-3 / 2} \geqslant K_{18,1}^{3 / 2}\|f_0\|_{\infty} \ln _{+}\left(h_{\rho}(t)\right) h_{\rho}^{2 / 3}(t)$
+
+% and all $s \in\left[T_{1}, t\right]$ we have
+% \[
+% \begin{array}{l}
+% \int_{s}^{t} N_{\alpha}^{\beta}(\sigma) d \sigma \leqslant K_{18,2} t \ln ^{2 / 9}\left(h_{\rho}(t)\right) h_{\rho}^{4 / 27}(t) R^{1 / 3} \alpha^{-2 / 9} \beta^{4 / 9} \\
+% \left(K_{18,1}=16 K_{13,1}\left(\frac{32}{3} \pi\right)^{1 / 3}\right. \\
+% \left.K_{18,2}=\left(4 K_{18,1}\|f_0\|_{\infty}^{2 / 3} \cdot 2\left(\frac{4}{3} c_{7,0,2}\|f_0\|_{\infty}^{2 / 5}\right)^{5 / 3} K_{6}\right)^{1 / 3}\right)
+% \end{array}
+% \]
+% \end{lemma}
+
+% Proof. Let $\tilde{K}_{1}:=\left(4 K_{13,1}\|f_0\|_{\infty}^{1 / 3}\right)^{-1}, \quad \tilde{K}_{2}:=4\left(\frac{32}{3} \pi\|f_0\|_{\infty}\right)^{1 / 3}$ and $T_{1}$
+% $\left[T_{0}, T\left[, \text { so that for all } t \in\left[T_{1}, T[ \text { the following conditions are satisfied }\right.\right.\right.$ (regard General Assumption 15 )
+% \[
+% \begin{aligned}
+% \ln _{+}^{2 / 3}\left(h_{\rho}^{1 / 5}(t)\right) \geqslant 1 & \\
+% K_{13,2} h_{\rho}^{7 / 13}(t) & \leqslant h_{\rho}(t) \\
+% 2 \tilde{K}_{1} h_{\rho}^{-1 / 9}(t) & \leqslant t \\
+% K_{13,3} \tilde{K}_{1} \ln _{+}^{-2 / 3}\left(h_{\rho}^{1 / 5}(t)\right) & \leqslant \frac{1}{2} \\
+% h_{\rho}^{-(4 / 45)(5 / 13)}(t) & \leqslant \frac{1}{\tilde{K}_{2}}\left(K_{13,2}^{-13 / 6} h_{\rho}^{4 / 15}(t)\right)^{8 / 39} \\
+% \tilde{K}_{1} \frac{K_{10 . E}}{2} \ln _{+}^{-2 / 3}\left(h_{\rho}^{1 / 5}(t)\right) & \leqslant \frac{1}{\tilde{K}_{2}} \\
+% K_{16}\left(\frac{4}{3}\right)^{1 / 3} K_{13,2}^{(13 / 6)(8 / 39)} h_{\rho}^{u}(t) & \leqslant \frac{1}{2}, \quad \text { with } u:=-\frac{4}{45} \cdot \frac{5}{13}-\frac{4}{15} \cdot \frac{8}{39}
+% \end{aligned}
+% \]
+% Whenever we use one of these conditions, we essentially say, that the actual inequality is true for "large" $h_{\rho}(t) .$ A nonsceptical reader can verify this qualitatively (regard (5.2) to obtain the "largeness" independent of $\alpha$ ). As the dependencies are difficult to survey, we give exact conditions. 
+
+% Now let $T_{1} \leqslant s \leqslant t$ be fixed and define (with $l_{d}(t)$ from Lemma 13 )
+% \[
+% \begin{aligned}
+% d &:=\left(h_{\rho}^{-4 / 45}(t) \alpha^{1 / 3}\right)^{5 / 13} \\
+% \Delta_{1} &:=\tilde{K}_{1} l_{d}^{-1}(t) h_{\rho}^{-4 / 9}(t) \alpha^{1 / 3}, \quad \Delta_{2}:=\tilde{K}_{2} R \alpha^{-1 / 3} \\
+% t_{i} &:=s-i \Delta_{2} \quad \text { for } \quad 0 \leqslant i \leqslant \Delta_{1} / \Delta_{2}
+% \end{aligned}
+% \]
+% W.l.o.g. we can assume $\alpha \leqslant h_{\rho}(t),$ because $G_{\vx}^{\beta}(s)=\varnothing$ for $\alpha>h_{\rho}(t)$ and $s \leqslant t$ Therefore, because of $(\mathrm{C} 2)$ and assumption (i) we have
+% \[
+% \ln _{+}^{2 / 3}\left(h_{\rho}^{1 / 5}(t)\right) \leqslant l_{d}(t) \leqslant \ln _{+}^{2 / 3}\left(h_{\rho}(t)\right)
+% \]
+
+% Using again $\alpha \leqslant h_{\rho}(t),$ we obtain by $(\mathrm{C} 1)$ and $(\mathrm{C} 3),$ that $\Delta_{1} \leqslant t_{i}$ $0 \leqslant i \leqslant \Delta_{1} / \Delta_{2} .$ Let for the following $0 \leqslant i \leqslant \Delta_{1} / \Delta_{2}, \vx \in G_{\alpha}^{\beta}\left(t_{i}\right)$ be fixed. Then
+% by Lemma 13 (using the notation there) and by (5.2) and $(\mathrm{C} 4)$ we obtain
+% \[
+% \begin{array}{l}
+% \int_{\Psi_{1}\left(t_{i}, \vx\right)} f\left(t_{i}, \vx, \vv\right) d \vv \\
+% \quad \leqslant\|f_0\|_{\infty}\left(\frac{K_{13.1} h_{\rho}^{4 / 9}\left(t_{i}\right) l_{d}\left(t_{i}\right) \Delta_{1}}{1-K_{13,3} h_{\rho}^{16 / 45}\left(t_{i}\right) \Delta_{1} d^{-13 / 5}}\right)^{3} \\
+% \quad \leqslant\|f_0\|_{\infty}\left(\frac{K_{13,1} h_{\rho}^{4 / 9}(t) l_{d}(t) \cdot \tilde{K}_{1} l_{d}^{-1}(t) h_{\rho}^{-4 / 9}(t) \alpha^{1 / 3}}{1-K_{13,3} h_{\rho}^{16 / 45}(t) \cdot \tilde{K}_{1} l_{d}^{-1}(t) h_{\rho}^{-4 / 9}(t) \alpha^{1 / 3} d^{-13 / 5}}\right)^{3} \\
+% \quad \leqslant\|f_0\|_{\infty}\left(\frac{\|f_0\|_{\infty}^{-1 / 3} \alpha^{1 / 3}}{4\left(1-\frac{1}{2}\right)}\right)^{3}=\frac{\alpha}{8}<\frac{\rho\left(t_{i}, \vx\right)}{8}
+% \end{array}
+% \]
+% By assumption (ii) we have $\Delta_{2} \leqslant \Delta_{1},$ so that $0<\Delta_{2} \leqslant \Delta_{1} \leqslant t_{i}, 0 \leqslant i \leqslant \Delta_{1} / \Delta_{2}$
+% Define $\Omega:=\bbR^{3} \backslash \Psi_{1}\left(t_{i}, \vx\right),$ then by Lemma 14 there exists $\bar{\vv} \in \bbR^{3},$ so that $\Psi_{2}\left(t_{i}, \vx\right) \subset B_{D}(\bar{\vv}),$ where
+% \[
+% D \leqslant d+\frac{R+\left|\vx-\hat{\vect{X}}\left(t_{i}\right)\right|}{\Delta_{2}}+\Delta_{1} \frac{K_{10, E}}{2} h_{p}^{4 / 9}\left(t_{i}\right)
+% \]
+% Because of (i) we have $K_{13,2}^{-13 / 6} h_{\rho}^{4 / 15}(t) \leqslant \alpha,$ and from (C5) it follows that
+% \[
+% d=h_{\rho}^{-(4 / 45)(5 / 13)}(t) \alpha^{5 / 39} \leqslant \frac{1}{\tilde{K}_{2}} \alpha^{(8+5) / 39}=\frac{1}{\tilde{K}_{2}} \alpha^{1 / 3}
+% \]
+% Because of $\vx \in G_{\alpha}^{\beta}\left(t_{i}\right) \subset B_{R}\left(\hat{\vect{X}}\left(t_{i}\right)\right)$ and by $(5.2),(\mathrm{C} 6),$ and the definition of $\Delta_{2}$ we obtain
+% \[
+% \begin{aligned}
+% D & \leqslant \frac{1}{\tilde{K}_{2}} \alpha^{1 / 3}+\frac{2 R}{\Delta_{2}}+\hat{K}_{1} \frac{K_{10, E}}{2} l_{d}^{-1}(t) \alpha^{1 / 3} \\
+% & \leqslant \frac{4}{\tilde{K}_{2}} \alpha^{1 / 3} \leqslant\left(\frac{32}{3} \pi\|f_0\|_{\infty}\right)^{-1 / 3} \alpha^{1 / 3}
+% \end{aligned}
+% \]
+% and therefore
+% \[
+% \int_{\Psi_{2}\left(t_{i}, \vx\right)} f\left(t_{i}, \vx, \vv\right) d \vv \leqslant\|f_0\|_{\infty} \frac{4}{3} \pi D^{3} \leqslant \frac{\alpha}{8} \leqslant \frac{\rho\left(t_{i}, \vx\right)}{8}
+% \]
+
+% We define $\Omega_{i}(\vx):=\bbR^{3} \backslash\left(\Psi_{2}\left(t_{i}, \vx\right) \cup \Psi_{1}\left(t_{i}, \vx\right)\right)$ and obtain from (5.3)
+% \[
+% \begin{array}{l}
+% \int_{\Omega_{i}(\vx)} f\left(t_{i}, \vx, \vv\right) d \vv \\
+% \quad \geqslant \int_{\bbR^{3}} f\left(t_{i}, \vx, \vv\right) d \vv-\left(\int_{\psi_{1}\left(t_{1}, \vx\right)} f\left(t_{i}, \vx, \vv\right) d \vv+\int_{\Psi_{2}\left(t_{i}, \vx\right)} f\left(t_{i}, \vx, \vv\right) d \vv\right) \\
+% \quad \geqslant \frac{3}{4} \rho\left(t_{t}, \vx\right)
+% \end{array}
+% \]
+% Finally we define $\Gamma_{t}:=\left\{(\vx, \vv) | \vx \in G_{\vx}^{\beta}\left(t_{i}\right), \vv \in \Omega_{i}(\vx)\right\},$ and by definition of $\Omega_{i}(\vx)$ and $\Psi_{2}\left(t_{i}, \vx\right)$ respectively we have $\left|\vect{X}\left(\cdot, t_{i}, \vx, \vv\right)-\hat{\vect{X}}\right| \geqslant R$ on $\left[t_{i}-\Delta_{1}, t_{i}-\Delta_{2}\right]$ for all $(\vx, \vv) \in \Gamma_{i} .$ Because $t_{j} \in\left[t_{i}-\Delta_{1}, t_{i}-\Delta_{2}\right]$ for $i<j \leqslant$
+% $\Delta_{1} / \Delta_{2},$ it follows that $\vect{X}\left(t_{j}, t_{i}, \vx, \vv\right) \notin G_{\alpha}^{\beta}\left(t_{j}\right) \subset B_{R}\left(\hat{\vect{X}}\left(t_{j}\right)\right),$ so that $A_{t, \text { if }}\left(\Gamma_{i}\right) \cap$
+% $\Gamma_{j}=\varnothing\left(\text { where } \Gamma_{j}, \text { of course, is defined like } \Gamma_{i}\right)$ and therefore
+% \[
+% A_{\vx-A_{1}, t_{i}}\left(\Gamma_{i}\right) \cap A_{s-A_{1}, t_{j}}\left(I_{j}\right)=\varnothing
+% \]
+% As $i$ was arbitrary, (5.5) is valid for all $i \neq j$ We now use Lemma $16 .$ The measurability of the sets $G_{\vx}^{\beta}\left(t_{i}\right), \Omega_{i}(\vx)$ for $\vx \in G_{\alpha}^{\beta}\left(t_{t}\right)$ and $\Gamma_{t}$ can easily be seen, as they are the inverse images of intervals in $\mathbf{R}$ under measurable functions (as for example $\vv \mapsto$ $\left.\sup _{t_{t}-d_{1} \leqslant s \leqslant t_{i}}\left|\vect{V}\left(s, t_{i}, \vx, \vv\right)-\vv\right|\right)$ or finite intersections of such inverse
+% images. Further by definition of $\Omega_{i}(\vx)$ and $\Psi_{1}\left(t_{i}, \vx\right),$ respectively we have
+% \[
+% \begin{array}{l}
+% \sup \left\{\left|\vect{V}\left(\tau, t_{i}, \vx, \vv\right)-\vv\right| | s-\Delta_{1} \leqslant \tau \leqslant t_{i},(\vx, \vv) \in \Gamma_{i}\right\} \\
+% \quad \leqslant \sup \left\{\left|\vect{V}\left(\tau, t_{i}, \vx, \vv\right)-\vv\right| | t_{i}-\Delta_{1} \leqslant \tau \leqslant t_{i},(\vx, \vv) \in \Gamma_{i}\right\} \leqslant d
+% \end{array}
+% \]
+% and by (5.4)
+% \[
+% \inf \left\{\int_{\Omega_{i}(\vx)} f\left(t_{i}, \vx, \vv\right) d \vv | \vx \in G_{\vx}^{\beta}\left(t_{i}\right)\right\}
+% \]
+% \[
+% \geqslant \inf \left\{\frac{3}{4} \rho\left(t_{i}, \vx\right) | \vx \in G_{\vx}^{\beta}\left(t_{i}\right)\right\} \geqslant \frac{3}{4} \alpha
+% \]
+% Thus we obtain by Lemma 16
+% \[
+% \begin{array}{l}
+% \int_{A_{j-t_{1} . t_{i}\left(T_{i}\right)}} \vv^{2} f\left(s-\Delta_{1}, \vx, \vv\right) d(\vx, \vv) \\
+% \quad \geqslant\left(1-K_{16} d\left(\frac{3}{4} \alpha\right)^{-1 / 3}\right) \int_{\Gamma_{i}} \vv^{2} f\left(t_{i}, \vx, \vv\right) d(\vx, \vv) \\
+% \quad \geqslant \frac{1}{2} \int_{T_{i}} \vv^{2} f\left(t_{i}, \vx, \vv\right) d(\vx, \vv)
+% \end{array}
+% \]
+% because by (i) and (C7) we have
+% \[
+% K_{16} d\left(\frac{3}{4} \alpha\right) \quad^{1 / 3}=K_{16}\left(\frac{4}{3}\right)^{1 / 3} h_{\rho}^{-(4 / 45)(3 / 13)}(t) \alpha^{-8 / 39} \leqslant \frac{1}{2}
+% \]
+% By (5.4) and Lemma 7 it follows for $0 \leqslant i \leqslant \Delta_{1} / \Delta_{2}$
+% \[
+% \begin{aligned}
+% \left(N_{\vx}^{\beta}\left(t_{i}\right)\right)^{3} &=\int_{G_{\vect{z}}^{\beta}\left(t_{i}\right)}\left|\rho\left(t_{i}, \vx\right)\right|^{3} d \vx \leqslant \beta^{4 / 3} \int_{G_{\vx}^{\beta}\left(t_{i}\right)}\left|\rho\left(t_{i}, \vx\right)\right|^{5 / 3} d \vx \\
+% & \leqslant \beta^{4 / 3} \int_{G_{\vx}^{\beta}\left(t_{i}\right)}\left(\frac{4}{3} \int_{\Omega_{i}(\vx)} f\left(t_{i}, \vx, \vv\right) d \vv\right)^{5 / 3} d \vx \\
+% & \leqslant\left(\frac{4}{3} c_{7,0,2}\|f_0\|_{\infty}^{2 / 5}\right)^{5 / 3} \beta^{4 / 3} \int_{G_{i}^{\beta}\left(t_{i}\right)} \int_{\Omega_{t}(\vx)} \vv^{2} f\left(t_{i}, \vx, \vv\right) d \vv d \vx
+% \end{aligned}
+% \]
+% Using $(5.6),(5.5),$ and Theorem 6 we obtain
+% \[
+% \begin{array}{l}
+% \sum_{0 \leqslant i \in d_{1} / A_{2}}\left(N_{\alpha}^{\beta}\left(t_{i}\right)\right)^{3} \\
+% \quad \leqslant\left(\frac{4}{3} c_{7,0,2}\|f_0\|_{\infty}^{2 / 5}\right)^{5 / 3} \beta^{4 / 3} \sum_{0 \leqslant i \leqslant A_{1} / d_{2}} \int_{\Gamma_{i}} \vv^{2} f\left(t_{i}, \vx, \vv\right) d(\vx, \vv) \\
+% \quad \leqslant 2\left(\frac{4}{3} c_{7,0,2}\|f_0\|_{\infty}^{2 / 5}\right)^{5 / 3} \beta^{4 / 3} \\
+% \quad \sum_{0 \leqslant i \leqslant A_{1} / A_{2}} \int_{A_{j-A_{1}, t_{1}}\left(T_{i}\right)} \vv^{2} f\left(s-\Delta_{1}, \vx, \vv\right) d(\vx, \vv) \\
+% \quad \leqslant 2\left(\frac{4}{3} c_{7,0,2}\|f_0\|_{\infty}^{2 / 5}\right)^{5 / 3} K_{6} \beta^{4 / 3}
+% \end{array}
+% \]
+% Because of (C3) we have $\Delta_{1} \leqslant T_{1},$ and by Lemma 17 we obtain
+% \[
+% \int_{s}^{t} N_{\alpha}^{\beta}(s) d s \leqslant t\left(4 \frac{\Delta_{1}}{\Delta_{1}} 2\left(\frac{4}{3} c_{7,0,2}\|f_0\|_{\infty}^{2 / s}\right)^{5 / 3} K_{6} \beta^{4 / 3}\right)^{1 / 3}
+% \]
+% \[
+% =K_{18,2} t\left(l_{d}(t) h_{\rho}^{4 / 9}(t) R \alpha^{-2 / 3} \beta^{4 / 3}\right)^{1 / 3}
+% \]
+% The assertion then follows by (5.2)
+
+\begin{theorem}
+Let $f_0$ satisfy the assumption made in this chapter. Then (VP) has a global solution, and for all $\varepsilon>0$ there exists a $K_{19,8}>0,$ so that for all $t \geqslant 0$
+we have
+\[
+h_{v}(t) \leqslant K_{19,6}(1+t)^{51 / 11+\varepsilon}
+\]
+\end{theorem}
+
+% Proof. In the case $\lim _{t \uparrow T} h_{\vv}(t)<\infty$ or $\lim _{t \uparrow T} h_{\rho}(t)<\infty$ we have (6.7)
+% for all $t \in[0, T[\text { even for smaller exponents (use Lemma } 10),$ so that by Proposition 11 the Theorem is proved. Thus let $\lim _{t \uparrow T} h_{\vv}(t)=$ $\lim _{t \uparrow T} h_{\rho}(t)=\infty,$ i.e., General Assumption 15 is satisfied.
+
+% Let $\delta>0$ and $T_{2} \in\left[T_{1}, T\left[. \text { so that for all } t \in\left[T_{2}, T[ \text { the following }\right.\right.\right.$ conditions are satisfied
+% \[
+% \begin{aligned}
+% \ln _{+}\left(h_{\rho}(t)\right) & \geqslant 1\left(\Rightarrow h_{\rho}(t)>1\right) \\
+% h_{\rho}^{10 / 17}(t) & \geqslant K_{13.2}^{-13 / 6} h_{\rho}^{4 / 15}(t) \\
+% h_{\rho}^{(10 / 17)(11 / 6)}(t) & \geqslant K_{18,1}^{3 / 2}\|f_0\|_{\infty} \ln \left(h_{\rho}(t)\right) h_{\rho}^{2 / 3}(t) \\
+% \ln ^{8 / 9}_{+}\left(h_{\rho}(t)\right) & \leqslant h_{\rho}^{\delta}(t)
+% \end{aligned}
+% \]
+% Assume $t \in\left[T_{2}, T[\text { and let }(\hat{\vect{X}}, \hat{\vect{V}})\text { be an arbitrary solution of the charac- }\right.$ teristic system. Furter let $10 / 17 \leqslant q<1$ and $k \in \mathbf{N} .$ Define for $i=0,1, \ldots, k$
+% \[
+% p_{i}:=\frac{1}{k}(i+(k-i) q), \quad \beta_{i}:=h_{\rho}^{p_{i}(t)}
+% \]
+% so that $\left(p_{0}, p_{1}, \ldots, p_{k}\right)$ is an equidistant partition of the interval $[q, 1],$ and let
+% \[
+% R:=h_{\rho}^{-5 q / 9}(t), \quad r:=h_{\rho}^{-1}(t) R^{-4 / 5}
+% \]
+% By (C8) $h_{\rho}^{q}(t) \geqslant h_{\rho}^{10 / 17}(t),$ and therefore, using (C9) and (C10), one can easily calculate that $\beta_{i-1}$ satisfies the assumptions (i) and (ii) of I.emma 18 for $i=1, \ldots, k .$ Recalling the notation given in that lemma, we obtain the following estimation
+% \[
+% \begin{aligned}
+% \int_{T_{2}}^{t} N_{\beta_{i-1}}^{\beta_{i}}(s) d s & \leqslant K_{18,2} t \ln _{+}^{2 / 9}\left(h_{\rho}(t)\right) h_{\rho}^{4 / 27}(t) R^{1 / 3} \beta_{i-1}^{-2 / 9} \beta_{i}^{4 / 9} \\
+% &=K_{18,2} t \ln ^{2 / 9}_{+}\left(h_{\rho}(t)\right) h_{\rho}^{\mu}(t)
+% \end{aligned}
+% \]
+% where $u_{i}:=\frac{1}{9}\left(\frac{4}{3}-5 q / 3-2 p_{i-1}+4 p_{i}\right) .$ Further we have by Lemma 8 for $s \in\left[T_{2}, t\right]$
+% \[
+% \begin{aligned}
+% \left(N_{0}^{\beta_{0}}(s)\right)^{3} & \leqslant \int_{G_{0}^{\beta_{0}}}|\rho(s, \vx)|^{3} d \vx \\
+% & \leqslant \beta_{0}^{4 / 3} \int_{\bbR^{3}}|\rho(s, \vx)|^{5 / 3} d \vx \leqslant K_{8}^{5 / 3} h_{\rho}^{4 q / 3}(t)
+% \end{aligned}
+% \]
+% It follows by Lemma $9(\text { regard }(\mathrm{C} 8))$
+% \[
+% \begin{aligned}
+% Z: &=\int_{T_{2}}^{t}|\vE(s, \hat{\vect{X}}(s))| d s \\
+% & \leqslant t\left(c_{9,1}+K_{9}\right) R^{-4 / 5}+c_{9,2} \ln _{+}^{2 / 3}\left(\frac{R}{r}\right) \int_{T_{2}}^{\prime} N_{0}^{\beta_{k}(s)} d s \\
+% & \leqslant \tilde{K}_{1} t h_{\rho}^{4 q / 9}(t)+c_{9,2} \ln ^{2 / 3}+\left(h_{\rho}^{1-q}(t)\right) \\
+% &\left(\int_{T_{2}}^{t} N_{0}^{\beta_{0}}(s) d s+\sum_{i=1}^{k} \int_{T_{2}}^{t} N_{\beta_{i-1}}^{\beta_{i}}(s) d s\right) \\
+% & \leqslant \tilde{K}_{2} t \ln _{+}^{2 / 3}\left(h_{\rho}(t)\right) h_{\rho}^{4 q / 9}(t)+\tilde{K}_{3} t \ln _{+}^{8 / 9}\left(h_{\rho}(t)\right) \sum_{t=1}^{k} h_{\rho}^{u_{i} t} t
+% \end{aligned}
+% \]
+% for suitable constants $\tilde{K}_{i}, i=1,2,3 .$ As $u_{i}$ is increasing in $i$ and using $(\mathrm{C} 8)$ we can continue the estimation as follows
+% \[
+% Z \leqslant \tilde{K}_{2} t \ln _{+}^{8 / 9}\left(h_{\rho}(t)\right) h_{\rho}^{4 q / 9}(t)+\widetilde{K}_{3} k t \ln _{+}^{8 / 9}\left(h_{\rho}(t)\right) h_{\rho}^{u_{k}}(t)
+% \]
+% Optimization in $q$ leads to $q=q_{k}:=(10 k+6) /(17 k+6),$ so that by (C11)
+% \[
+% Z \leqslant \tilde{K}_{4} t h_{\rho}^{4 q_{k} / 9+\delta}(t)
+% \]
+% for a suitable $\tilde{K}_{4},$ that depends on $k .$ Because $(\hat{\vect{X}}, \hat{\vect{V}})$ was arbitrary, we have $|\vect{V}(s, t, \vx, \vv)-\vv| \leqslant Z$ for all $s \in\left[T_{2}, t\right], \vx, \vv \in \bbR^{3}$ and obtain by Lemma 10
+% \[
+% \begin{aligned}
+% h_{\vv}(t) & \leqslant h_{\vv}\left(T_{2}\right)+\sup \left\{|\vect{V}(s, t, \vx, \vv)-\vv| | T_{2} \leqslant s \leqslant t, \vx, \vv \in \bbR^{3}\right\} \\
+% & \leqslant h_{\vv}\left(T_{2}\right)+\tilde{K}_{4} t h_{\rho}^{4 \eta_{t} / 9+s}(t) \\
+% & \leqslant h_{\vv}\left(T_{2}\right)+\tilde{K}_{5} t h_{\vv}^{4 q_{\vect{z}} / 3+3 s}(t)
+% \end{aligned}
+% \]
+% One easily calculates, that $4 q_{k} / 3<1$ for $k \in \mathbf{N}$. Thus for $\delta$ small enough, one can divide the last inequality by $h_{\vv}^{4 q_{k} / 3+3 \delta}(t)$ and using (C8) obtain
+% \[
+% h_{\vv}^{1-4 q_{k} / 3-3 \delta}(t) \leqslant h_{\vv}\left(T_{2}\right)+\tilde{K}_{5} t
+% \]
+% Therefore,
+% \[
+% h_{\vv}(t) \leqslant \tilde{K}_{6}(1+t)^{w(k, \delta)}
+% \]
+% where $w(k, \delta)=1 /\left(1-4 q_{k} / 3-3 \delta\right)$ and $\tilde{K}_{6}$ is a constant that depends on $k$ and via $T_{2}$ and $(\mathrm{C} 11)$ on $\delta .$ As $q_{k} \downarrow(10 / 17)$ for $k \rightarrow \infty,$ we have $w(k, \delta) \downarrow$ $(51 / 11)$ for $k \rightarrow \infty$ and $\delta \downarrow 0 .$ So we have (6.7) for $t \in[0, T[,\text { and the }$ assertion follows by Proposition 11.
+
+
+
+
+
+
+
+
+
+\section{Uniqueness}
+
+
+The uniqueness proof is based on the Lions-Perthame theorem and require the moment of $m\leqslant 6$ exist.
+\begin{theorem}\textit{(Lions-Perthame)}
+    Let $f_0\geq 0$,$f_0\in L^1\bigcap L^\infty (\bbRRR\times \bbRRR)$. We assume that  
+    \begin{equation}
+        \int_{\bbRRR \times \bbRRR}|\vv|^{m} f_{0}(\vx, \vv) d \vx d \vv<+\infty \quad \text { if } m<m_{0},
+    \end{equation}
+    where $3<m_0$. Then, there exists a solution $f\in C(\bbR^+; L^p(\bbRRR\times\bbRRR))\bigcap L^\infty (\bbR^+;L^\infty(\bbRRR\times \bbRRR))$ (for all $1\leq p < +\infty$) of Vlasov-Poisson system satisfying 
+    \begin{equation}
+    \sup _{t \in[0, T]} \iint_{ \mathbb{R}^{3} \times \mathbb{R}^{3}}|\vv|^{m} \ftxv d \vx d \vv<+\infty
+    \end{equation}
+\end{theorem}
+
+% In the first step of the proof, we prove some general estimates
+% on $\vE$. Then, we conclude assuming that the time interval $(0, T)$ on which we
+% solve the Vlasov-Poisson system is small enough and that $\vE$ is bounded in
+% $L^{3/2}(\bbRx)$, in fact which is false in general but holds true for bounded domains
+% of $\bbRx$. We relax this assumption on $\vE$ in a fourth and final step.
+
+% Due to the solution lying in general functional space $\mathscr{D}'$,  $
+%     \vE \cdot \nabla_{\vv} f=\operatorname{div}_{\vv}(\vE f)$
+    
+
+
+
+
+% \begin{proof}
+
+% Simplify the proof by handling smooth solutions first, \textit{i.e.}, $C^\infty$ with compact support. The \emph{standard approximation method} (see[5,6]) would be enough to say the estimates are uniform and expand the function space. Treat the $\vE\cdot \nabla_v f$ on the RHS as a source term safely in Vlasov-Poisson equation \eqref{eq:vp}, trace the characteristic and then integrate in $\vv$ to acquire $\rho(t,\vx)$. 
+
+
+% \begin{definition}
+%   Denote the supreme on $[0,t]$ of k-order moment of the solution in $|\vv|$ as follows:
+%   \begin{equation}
+%       M_{k}(t)=\sup _{0 \leq s \leq t} \int|\vv|^{k} f(s) d \vx d \vv
+%   \end{equation}
+%   \end{definition}
+
+% (\romannum{1}) \textit{General estimates on $\vE(t)$ and $M_k(t)$.} 
+
+% Follow the characteristic line along which $\left(\operatorname{div}_{\vv} \vE f\right)$ is treated as the source term,
+
+% \begin{equation}\begin{array}{ll}
+%   \dot{\vect{\vect{X}}}(s)=-\vv, & \vect{\vect{X}}(0)=\vx \\
+%   \dot{\vect{\vect{V}}}(s)=0, & \vect{\vect{V}}(0)=\vv, \quad 0 \leqq s \leqq T
+% \end{array}\end{equation}
+
+% \begin{equation}\begin{aligned}
+%   f(t, \vx, \vv)=&-\int_{0}^{t}\left(\operatorname{div}_{\vv} E f\right)(t-s, \vx-\vv s, \vv) d s+f_{0}(\vx-\vv t, \vv) \\
+%   =&-\int_{0}^{t} \operatorname{div}_{\vv}[\vE f(t-s, \vx-\vv s, \vv)] d s \\
+%   &-\int_{0}^{t} s \operatorname{div}_{\vx}[\vE f(t-s, \vx-\vv s, \vv)] d s+f_{0}(\vx-\vv t, \vv)
+%   \end{aligned}\end{equation}
+
+% The density comes from $f$ integrated in $\vv$ naturally,
+
+% \begin{equation}
+% \label{eq:rho_characteristic}
+% \rho(t, \vx)= -\operatorname{div}_{\vx} \int_{0}^{t} s \int_{\bbRv}[\vE f(t-s, \vx-\vv s, \vv)] d \vv d s+\int_{\bbRv} f_{0}(\vx-\vv t, \vv) d \vv\end{equation}
+
+
+
+% The above equation \eqref{eq:rho_characteristic} is then transformed to the following inequality concerning $\vE$ while the $\int_{\bbRv} f_0(\vx-\vv t, \vv) d\vv$ term could be controlled by a constant while only relies on the initial data:
+
+  
+% \begin{equation}\begin{aligned}\label{eq:E-norm-bound}
+%   \|\vE(t,\cdot)\|_{m+3}  \leq  &C+C\left\|\int_{0}^{t} s \int_{\mathbb{R}^{3}} \vE f(t-s, \vx-\vv s, \vv) d \vv d s\right\|_{m+3}\\
+%   \leq & C + C\left\| \int_{0}^{t_0} \dots   \right\| + C\left\| \int_{t_0}^{t} \dots   \right\|
+% \end{aligned}\end{equation}
+
+% and \emph{deduces} the following inequality between the derivative of $M_{k}(t)$ and its power.
+% \begin{equation}\label{eq:Mk-derivative-bound}
+%     \frac{d}{d t} M_{k}(t) \leq | \frac{d}{d t} \int|\vv|^{k} f(t) d \vx d \vv | 
+%      \leq C\|\vE(t)\|_{3+k} M_{k}(t)^{\frac{k+2}{k+3}},
+% \end{equation}
+% with which one can imply by Gronwall lemma that,
+% \begin{equation}M_{k}(t) \leqq C\left\{M_{k}(0)+\left(t \sup _{s \in(0, t)}\|\vE(s)\|_{3+k}\right)^{k+3}\right\}\end{equation}
+% confirming the bound of $M_{k}(t)$, which is restricted by the supreme $\vE$ during the time $(0,t)$
+
+
+% (\romannum{2}) \textit{Small time estimates.} 
+
+% Based on the above $\|\vE(t,\cdot)\|_{m+3}$ estimate \eqref{eq:E-norm-bound} and \emph{its integration on the time interval} $(0,t_0)$ for any $r>3/2$ and $t_0\leq t\leq T$. 
+
+% \begin{equation}\label{eq:E-norm-restricted-by-M}\left\|\int_{0}^{t_{0}} s d s \sup _{\tau \in(0, T)}\left(\int_{R^{3}}|\vE|^{r}(\tau, \vy) \frac{d \vy}{s^{3}}\right)^{1 / r}\left(\int_{\mathbb{R}^{3}} f(t-s, \vx-\vv s, \vv) d \vv\right)^{1 / r^{\prime}}\right\|_{m+3}\|f\|_{\infty}^{\left(r^{\prime}-1\right) / r^{\prime}} \leq C t_{0}^{\gamma}\left(1+M_{m}(t)^{\delta}\right),\end{equation} where $r^\prime$ is the conjugate exponent of $r$, $1/r+1/r^\prime=1$, $1\leq r^\prime <3$ and $C$ only depends upon the initial data, $\gamma=2-3 / r>0$ and $\delta=3(k+1)/(m+3)^2>0$, $m_0>k>m$. Here comes the limitation for $m_0>3$.
+
+
+% By choosing proper $\delta, \gamma>0 ; \gamma=2-3 / r$ and $\delta=3(k+3) /(m+3)^{2}, m_{0}>k>m$, it follows that there exists a bound for the above inequality,
+% \eqref{eq:E-norm-bound},
+
+% $$\|\vE(t)\|_{m+3} \leqq C\left(1+t^{\gamma} M_{m}(t)\right)^{\delta}.$$
+
+% While in the first step, we introduced \eqref{eq:Mk-derivative-bound}, the derivative of  $M_{k}(t)$ is bounded by the product of $\|\vE(t,\cdot)\|_{3+k}$ and $M_{k}(t)^{\frac{k+2}{k+3}}$. For $k=m$, the above two equations jointly give
+
+% $$\frac{d}{d t} M_{m}(t) \leqq C\left(M_{m}(t)^{\frac{m+2}{m+3}}+t^{\gamma} M_{m}(t)^{\delta+\frac{m+2}{m+3}}\right) ,$$
+% by which we acquire a bound imposed by $M_{k}(t)$ itself on a small time interval $[0,t_0]$ exclusive of the appearance $\|\vE(t,\cdot)\|_{3+k}$.
+
+% In the following proof, step (\romannum{3}) firstly proves the boundedness of the $M_m(t)$ on any time interval $(0,T)$ in the case $\vE(t, \cdot)\in L^{3/2}$, and then step (\romannum{4}) expanded the range to the general case.
+
+% (\romannum{3}) \textit{The case when $\vE\in L^{3/2}$.}
+
+% Here is an strong limitation on the functional space that the $\vE\in L^{3/2}(\bbRRR)$, which will be eased in the next step to be $\vE\in L^{3/2,\infty}(\bbRRR)$. , relaxed to the standard condition in the next step.
+
+% The estimates of $\|\int_{t_0}^{t}\|$ of \eqref{eq:E-norm-bound} can be acquired by a similar process in step \romannum{2} with $r=3/2$.  
+% \begin{equation}\|\vE(t)\|_{m+3} \leqq C+C t_{0}^{\gamma} M_{m}(t)^{\delta}+C\left|\log t_{0}\right| \sup _{\tau \in(0, T)}\|\vE(\tau)\|_{3 / 2} M_{m}(t)^{\frac{1}{m+3}}\end{equation}
+  
+% The estimate $\|\vE(t,\cdot)\|_{3+m}$ in \eqref{eq:E-norm-bound} combined with the bound acquired from \eqref{eq:E-norm-restricted-by-M}, choosing proper $t_0$, can give a bound of the derivative of $M_{m}(t)$ restricted by $M_{m}(t)$ itself on any time interval $(0,T)$.
+
+% \begin{equation}\frac{d}{d t} M_{m}(t) \leqq C\left(1+M_{m}(t)\left|\log M_{m}(t)\right|\right)\end{equation}
+% makes it possible to say $M_{m}(t)$ is bounded on any interval $(0,T)$.
+
+% (\romannum{4}) \textit{The general case.}
+
+% When $\vE\notin L^{3/2}(\bbRRR)$, similar to the step (\romannum{1}) treating $\vE\cdot \nabla_v f$ as a source term, the $\vE$ is decomposed into two parts: $\vE=\vE_1+\vect{F}$
+
+% \begin{equation}
+% E_{1}=\frac{\alpha}{4 \pi}\left(\chi_{R}(\vx) \nabla \frac{1}{|\vx|}\right) * \rho,
+% \end{equation}where $0 \leq \chi_R\leq 1$ is smooth such that $\chi_R(\vx) = 1 $ if $|\vx|\leq R$ and $\chi_R(\vx)=0$ if $|\vx|\geq 2R$. \footnote{But I am a little confused by the numerator why it is $\alpha$ \emph{rather than 1}. I think it is a typo.} The separation of field indeed let the field generated by inner particles and outer particles be clearly divided. Since $\chi_R(\vx)\nabla \frac{1}{|\vx|}$ benefits from boundedness in $L^1\bigcap L^{3/2}$ now, it follows that 
+
+% \begin{equation}
+% || E_{1}(t)||_{L^{3 / 2} \cap L^{15 / 4}} \leqq C(R),
+% \end{equation}
+% and the aforementioned step two and three can also be applied. While for the $\vect{F}$, we have 
+
+% \begin{equation}\|F\|_{L^{\infty}},\|\nabla F\|_{L^{\infty}},\left\|D^{2} F\right\|_{L^{\infty}} \leqq C / R\end{equation}
+
+% \begin{equation}\begin{array}{ll}
+%   \dot{\vect{\vect{X}}}(s)=-\vect{\vect{V}}(s), & \vect{\vect{X}}(0)=\vx \\
+%   \dot{\vect{\vect{V}}}(s)=-\vect{F}(t-s, \vect{\vect{X}}(s)), & \vect{\vect{V}}(0)=\vv, \quad 0 \leqq s \leqq T
+% \end{array}\end{equation}
+
+% \begin{equation}f(t, \vx, \vv)=\int_{0}^{t} \nabla_{\vect{V}}\left(\vE_{1} f\right)(t-s,\vect{\vect{X}}(s),\vect{\vect{V}}(s)) d s+f_{0}(\vect{\vect{X}}(t), \vect{\vect{V}}(t))\end{equation}
+    
+
+% Treat the $\vE_1  \cdot \nabla_v f$ as source term on the RHS of the Vlasov-Poisson equation and trace the characteristic again like step (\romannum{1}), then it yields similar equation as \eqref{eq:E-norm-bound}.
+
+% \begin{equation}\|\vE(t)\|_{m+3} \leqq C+C\left\|\int_{0}^{t} \int_{\mathbb{R}^{3}}\left(\frac{\partial \vx}{\partial \vect{V}}\right) E_{1} f(t-s, \vect{\vect{X}}(s), \vect{\vect{V}}(s)) d s d \vv\right\|_{m+3}\end{equation}
+
+  
+
+
+% \end{proof}
+
+
+
+
+% In this section we are going to prove the uniqueness of the solutions to Vlasov-Poisson Equation such that the force field $\vE$ is bounded $\left(L^{\infty}\right) .$ We will need some extra regularity results that require further assumptions on $f_{0}$
+% $(42) \quad \forall R, T>0, \quad \sup \left\{\left|\nabla f_{0}(y+\vv t, w)\right| ;|y-\vx| \leqq R,|w-\vv| \leqq R\right\}$
+% \[
+% \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3} ; L^{1}\left(\mathbb{R}_{\vv}^{3}\right) \cap L^{2}\left(\mathbb{R}_{\vv}^{3}\right)\right)
+% \]
+% where $V f_{0}$ refers to the $\vx$ and $\vv$ gradients of $f_{0} .$ Notice that the $L^{2}$ bound of (42) is satisfied if the $L^{1}$ bound holds and $f_{0}$ is lipschitz continuous in $\vx$ and $\vv .$ Our argument relies on the representation formula (28) and on the following regularity results.
+
+
+% \begin{lemma}
+% If $\rho(\vx, t) \in L^{\infty}\left((0, T) ; L^{\infty}\left(\mathbb{R}_{\vx}^{3}\right) \cap L^{1}\left(\mathbb{R}_{\vx}^{3}\right)\right),$ there is $\alpha>0(\alpha=\varepsilon^{-C T}$ for some
+% $C>0$ ) such that the characteristic curves
+% (43)
+% \[
+% \dot{X}_{i}(s)=V_{i}(s), \quad \dot{V}_{i}(s)=\vE\left(X_{i}(s), s\right)
+% \]
+% \[
+% X_{i}(t)=\vx_{i}, \quad V_{i}(t)=v_{i}, \quad i=1 \text { or } 2
+% \]
+% are uniquely defined and satisfy
+% (44) $\left|X_{1}(s)-X_{2}(s)\right|+\left|V_{1}(s)-V_{2}(s)\right| \leqq C\left(\left|\vx_{1}-\vx_{2}\right|^{\alpha}+\left|v_{1}-v_{2}\right|^{\alpha}\right) \quad \forall t, s \in[0, T]$
+% whenever $\vE$ is given by $\rho$ through Poisson Equation (2)-(3).
+% \end{lemma}
+
+
+% \begin{proof}
+%   Proof of Lemma 4.  In order to prove Lemma $4,$ we just need to prove
+%   (46)
+%   \[
+%   |\vE(\vx, t)-\vE(y, t)| \leqq C|\vx-y| \log \frac{1}{|\vx-y|}
+%   \]
+%   say for $|\vx-y| \leqq \frac{1}{2} .$ Indeed, the existence of solutions to (43) just follows from the continuity of $\vE$ in $\vx$. And the estimate follows from a Gronwall type argument on $Y_{i}=\left(X_{i}, V_{i}\right) ;$ we have for $0 \leqq s \leqq t \leqq T$
+%   \[
+%   \frac{d}{d s}\left|Y_{1}-Y_{2}\right| \leqq C\left|Y_{1}-Y_{2}\right| \log \left(\left|Y_{1}-Y_{2}\right|\right)^{-1}
+%   \]
+%   And thus, as long as $\left|Y_{1}-Y_{2}\right|(s)<1 / 2$, we have
+%   \[
+%   \log \left|Y_{1}-Y_{2}\right|(s) \leqq \log \left|Y_{1}-Y_{2}\right|(t) e^{-c T}
+%   \]
+%   which is enough to conclude that (45) holds
+%   To prove (46), we use the same decomposition of $\vE$ as, $\vE=E_{\varepsilon}+\vE_{1}+\vE_{2} = \int_{|\vx-\vy|\leqslant \varepsilon} +\int_{\varepsilon<|\vx-\vy|\leqslant 1}+\int_{1<|\vx-\vy|} 1/|\vx-\vy|^2  \rho(t, \vx) \mathrm{d} \vv$ 
+%   %  with 
+%   % \[
+%   % \begin{array}{l}
+%   % E_{s}=\frac{\alpha}{4 \pi}\left(\nabla \frac{1}{|\vx|} \chi_{|| \vx | \leq \epsilon)} | * \rho\right. \\
+%   % F_{\varepsilon}=\frac{\alpha}{4 \pi}\left(\nabla \frac{1}{|\vx|} \chi_{(\varepsilon \leq|\vx| \leq 1)}\right) * \rho \\
+%   % E_{2}=\frac{\alpha}{4 \pi}\left(\nabla \frac{\alpha}{4 \pi}\left(\nabla \frac{1}{|\vx|} \chi_{|| \vx | \geq 1}\right)\right) * \rho
+%   % \end{array}
+%   % \]
+%   % For $|\vx| \geqq 1, \quad D \frac{1}{|\vx|}$ is lipschitz continuous and thus
+%   % \[
+%   % \left|E_{2}(\vx, t)-E_{2}(y, t)\right| \leqq C|\vx-y| \int_{\mathbb{R}^{3}} \rho(\vx, t) d \vx \quad \forall t \leqq T
+%   % \]
+%   % We also have
+%   % \[
+%   % \begin{aligned}
+%   % \left|F_{\varepsilon}(\vx, t)-F_{\epsilon}(y, t)\right| & \leqq C|\vx-y|\left(\frac{1}{|z|^{3}} 1_{(t \leq|z| \leq 1)}\right) * \rho \\
+%   % & \leqq C|\log \varepsilon| \sup _{z} \rho(z, t)|\vx-y|
+%   % \end{aligned}
+%   % \]
+%   % because
+%   % \[
+%   % \int_{|\leq| z | \leq 1} \frac{1}{|z|^{3}} d z=2 \pi|\log \varepsilon|
+%   % \]
+%   % Finally
+%   % \[
+%   % \left|E_{\epsilon}(\vx, t)-E_{\epsilon}(y, t)\right| \leqq\left|E_{\varepsilon}(\vx, t)\right|+\left|E_{\varepsilon}(y, t)\right| \leqq C \varepsilon \sup \rho(z, t)
+%   % \]
+%   % Choosing $\varepsilon=|\log | z-y \|$ in these inequalities we find (46) and Lemma 4 is proved.
+%   \end{proof}
+
+% \begin{corollary}
+% With the assumption (42), any solution to Vlasov-Poisson Equation such that $\rho$ belongs to $L^{\infty}\left((0, T) ; L^{\infty}\left(\mathbb{R}_{\vx}^{3}\right) \cap L^{1}\left(\mathbb{R}_{\vx}^{3}\right)\right)$ satisfies $\rho \in L^{\infty}((0, T)$
+% $\left.C^{0,1}\left(\mathbb{R}_{\vx}^{3}\right)\right)$ and
+% (45)
+% $\vE \in L^{\infty}\left((0, T) ; C^{1, \beta}\left(\mathbb{R}_{\vx}^{3}\right)\right) \quad$ for all $\beta<1$
+% \end{corollary}
+
+\begin{theorem}
+We make the assumptions of Theorem $1,(10),(42),$ then the solution of Vlasov-Poisson Equation such that $\rho \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3}\right)$ is unique.
+\end{theorem}
+
+
+Remarks. 1. The boundedness of $\rho$ in $L^{\infty}$ implies, by Corollary 5 , that the solutions of Vlasov-Poisson Equation are smooth. Thus Theorem 6 applies to classical solutions.
+2. Notice that (42) and $\rho \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3}\right)$ implies (10) and the assumptions of Theorem 6 could be slightly improved.
+3. Of course the difficulty in Lemma 3 is that $\vE$ is not lipschitz continuous in $\vx$
+We now turn to the proof of these results.
+
+
+\begin{proof}
+  Proof of Corollary $5 .$ Thanks to the representation formula of $f$ with the characteristic curves we find, for $\left|\vx_{1}-\vx_{2}\right| \leqq 1 / 2$
+\[
+\left|\rho\left(\vx_{1}, t\right)-\rho\left(\vx_{2}, t\right)\right| \leqq \int_{\mathbb{R}_{2}}\left|f_{0}\left(X_{1}(0), V_{1}(0)\right)-f_{0}\left(X_{2}(0), V_{2}(0)\right)\right| d \vv
+\]
+where $\left(X_{i}, V_{i}\right)$ satisfies (43) with $v_{1}=v_{2}=\vv .$ since $\vE$ is bounded in $L^{\infty},$ we have, following (19)
+\[
+\left|X_{i}(0)-\vv t-\vx_{i}\right| \leqq R, \quad\left|V_{i}(0)-\vv\right| \leqq R
+\]
+and thus we may estimate the above terms by
+\[
+\begin{array}{l}
+\int_{\mathbf{R}_{\mathrm{p}}} \sup \left\{\left|\nabla f_{\mathrm{o}}\right|(y+\vv t, w) ;\left|y-\vx_{1}\right| \leqq R,|w-\vv| \leqq R\right\} d \vv \\
+\quad \cdot \sup _{\vv \in \mathbb{R}^{3}}\left\{\left|X_{1}(0)-X_{2}(0)\right|+\left|V_{1}(0)-V_{2}(0)\right|\right\} \leqq C(R, T)\left|\vx_{1}-\vx_{2}\right|^{2}
+\end{array}
+\]
+thanks to (42) and $(44) .$ This shows that $\rho(\cdot, t)$ is Hölder continuous and the $C^{1, \alpha}$ regularity of $\vE(\cdot, t)$ follows from Schauder estimates. Then, we obtain that the characteristic curves are Lipschitz continuous (we may take $\alpha=1 \text { in }(45))$ and thus $\vE(\cdot, t)$ belongs to $C^{1 . \beta}\left(\mathbb{R}^{3}\right)$ for all $\beta<1$
+We may now conclude the uniqueness proof.
+Proof of Theorem $6 .$ First, let us notice that an clementary modification of the proof of Corollary 5 gives, thanks to the $L^{2}$ bound in (42)
+(48)
+\[
+\nabla_{\vv} f(t, \vx, \vv) \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3} ; L^{2}\left(\mathbb{R}_{\vv}^{3}\right)\right)
+\]
+for any solution $f$. Secondly, we set
+\[
+D(t)=\sup _{0 \leq s \leq t}\left\|\left(f_{1}-f_{2}\right)\right\|_{L^{2}\left(\mathbf{R}^{\prime}\right)}
+\]
+for two possible solutions $f_{1}, f_{2}$ of $(1)-(3)$ and we claim that
+(49)
+\[
+\frac{d}{d t} D(t) \leqq C(T)\left\|\left(E_{1}-E_{2}\right)(t)\right\|_{L^{2}\left(R^{3}\right)}
+\]
+Indeed Vlasov equations give
+\[
+\frac{\partial}{\partial t}\left(f_{1}-f_{2}\right)^{2}+\vv \cdot \nabla_{\vx}\left(f_{1}-f_{2}\right)^{2}+E_{1} \cdot \nabla_{\vv}\left(f_{1}-f_{2}\right)^{2} \leqq 2\left|E_{2}-E_{1}\right| \cdot\left|f_{1}-f_{2}\right| \cdot\left|\nabla_{e} f_{2}\right|
+\]
+and thus, using (48)
+\[
+\begin{aligned}
+\frac{d}{d t} D(t)^{2} & \leqq 2 \int_{\mathbb{R}_{\vx} \atop 1}\left|\left(E_{2}-E_{1}\right)(t)\right| \mathbb{P}\left(f_{1}-f_{1}\right)(t, \vx, \vv)\left\|_{L^{2}\left(\mathbb{R}_{j}\right)}\right\| \nabla_{\vv} f_{2}(t, \vx, \vv) \|_{\left.L^{2}(\mathbf{R}\}\right)} d \vx \\
+& \leqq C(T)\left\|\left(E_{1}-E_{2}\right)(t)\right\|_{L^{2}\left(\mathbb{R}_{\vx}^{3}\right)} D(t)
+\end{aligned}
+\]
+\end{proof}
+
+
+which clearly proves (49). Finally, we use formula (28) which gives
+\[
+\begin{array}{l}
+\left\|\left(E_{1}-E_{2}\right)(t)\right\|_{L^{2}\left(\mathbf{R}_{\vx}^{3}\right)} \\
+\begin{aligned}
+\leqq & C\left\|\int_{0}^{t} \int_{\mathbb{R}^{3}}\left(E_{1}-E_{2}\right)(\vx-\vv s, t-s) f_{1}(t-s, \vx-\vv s, \vv) s d s d \vv\right\|_{L^{2}\left(\mathbf{R}_{\vx}^{3}\right)} \\
+&+C\left\|\int_{0}^{t} \int_{\mathbf{R}^{3}} E_{2}(\vx-\vv s, t-s)\left(f_{2}-f_{1}\right)(t-s, \vx-\vv s, \vv) s d s d \vv\right\|_{L^{2}\left(\mathbb{R}_{2}\right)}
+\end{aligned}
+\end{array}
+\]
+The first term in the r.h.s. of this inequality may be estimated by
+\[
+\begin{array}{l}
+\left\|\int_{0}^{t} \frac{s d s}{s^{3 / 2}} \mathbb{l}\left(E_{1}-E_{2}\right)(y, t-s)\right\|_{L^{2}(\mathbf{R}, y)}\left(\int_{\mathbb{R}\})} f_{1}^{2}(t-s, \vx-\vv s, \vv) d \vv\right)^{1 / 2} \|_{L^{2}\left(\mathbb{R}_{\vx}^{3}\right)} \\
+\quad \leqq \int_{0}^{t} \frac{d s}{s^{1 / 2}}\left\|\left.f_{1}(t-s)\right|_{L^{2}\left(\mathbf{R}^{6}\right)}\right\|\left(E_{1}-E_{2}\right)(t-s) \|_{L^{2}\left(\mathbb{R}^{3}\right)} \\
+\quad \leqq C t^{1 / 2} \sup _{s \leq t}\left[\left(E_{1}-E_{2}\right)(s) \|_{L^{2}\left(R^{3}\right)}\right.
+\end{array}
+\]
+Processing the other term in the same way yields
+\[
+\left\|\left(E_{2}-E_{1}\right)(t)\right\|_{L^{2}(\mathbf{R})} \leqq \frac{1}{2} \sup _{0 \leq s \leq t}\left|\left(E_{2}-E_{1}\right)(s)\right|_{L^{2}\left(\mathbf{R}^{3}\right)}+C(T) D(t)
+\]
+for $t \leqq t_{0}$ small enough. From this one easily deduces that
+\[
+\left\|\left(E_{2}-E_{1}\right)(t)\right\|_{L^{2}\left(\mathbb{R}^{3}\right)} \leqq C(T) D(t)
+\]
+and combining this inequality with (49) just shows that $D(t)=0$ by a Gronwall argument. Therefore $f_{1}=f_{2}$ for $t \leqq t_{0}$ and Theorem 6 is proved.

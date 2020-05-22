@@ -1,0 +1,447 @@
+\chapter{Global Solutions of relativistic Vlasov-Poisson System}
+\label{cha:global-RVP}
+
+In this chapter, we present some useful global existence resutls with spherical symmetric data for relativistic Vlasov-Poisson System.
+
+\section{Spherical Symmetry}
+The characteristics with \textit{spherical symmetric} initial data, \textit{i.e.}, that $f_0(U\vx,U\vv)=f_0(\vx,\vv)$ for any rotation matrix $U$ on $\bbRRR$, would be further specified. 
+Now that the distribution $f$ is radial, as a result, we know that the density function $\rho(t, x)$ is radial at least for $t=0$,
+\[
+\forall x \in \mathbb{R}^{3}, \quad \rho(t, U x)=\int_{\mathbb{R}^{3}} f(t, Ux, v) d v=\int_{\mathbb{R}^{3}} f(t, U x, U \omega)|\operatorname{det}(U)| d \omega=\int_{\mathbb{R}^{3}} f(t, x, \omega) d \omega=\rho(t, x)
+\]
+which indicates the $\vE$ is also radial.
+
+
+Let $\vect{X}_1, \vect{V}_1$ be the solution of characteristic system with initial data $\vect{X}_1 (0)= \vx, \vect{V}_1 (0)= \vv$ while $\vect{X}_2, \vect{V}_2$ with $(U\vx,U\vv)$ as initial data. 
+$$
+\begin{aligned}
+\vect{X}_1(t) = &\int_0^t  \int_0^s \vect{E}(\tau, \vect{X}_1(\tau))\mathrm{d} \tau +\vect{V}_1(0)\mathrm{d} s +\vect{X}_1(0)\\ =& U^{-1}\int_0^t  \int_0^s \vect{E}(\tau, \vect{X}_2(\tau)) \mathrm{d} \tau +\vect{V}_2(0) \mathrm{d} s +U^{-1}\vect{X}_2(0) = U^{-1}\vect{X}_2,
+\end{aligned}$$
+ then we deduce that $f(t,\vect{X}_1(t), \vect{V}_1(t)) = f(t,\vect{X}_2(t), \vect{V}_2(t)) =  f(t,U\vect{X}_1(t), U\vect{V}_1(t))$ for all $t$, \textit{i.e.} the radial property of intial data propagates. 
+
+Therefore, The initial data spherical symmetry would induce the spherically symmetric solution with simplified argument $r:=|\vx|,~ u:=|\vv|,\alpha:=\angle(\vx,\vv)$ and $t$. $f$, $\rho$ and other quantities could be redefined in a more essential way, thanks to the spherical geometry,  \textit{i.e.} $f(t,r,u,\alpha) := f(t, r\hat{\vect{x}} , \vv)$, where $\hat{\vx}$ denotes one of the standard unit vector coordinate basis, $|\vv| = u$ and $ \angle(\vv, \hat{\vect{x}})=\alpha$. The density $\rho$ depends then only on $r$ and $t$: 
+\begin{equation}
+    \rho( t,r)=2 \pi \int_{0}^{\infty} \int_{0}^{\pi} f(t, r, u, \alpha) u^{2} \sin \alpha d \alpha d u,
+\end{equation}
+
+ the same as the electrostatic potential $\phi(r,t)$: 
+\begin{equation}
+    \phi(t, r)=-\frac{1}{r} \int_{0}^{r} \lambda^{2} \rho(t, \lambda) d \lambda-\int_{r}^{\infty} \lambda \rho(t, \lambda) d \lambda
+\end{equation}
+ 
+The electric field $\vE$ as the negative of the gradient of the potential and new notation $M(t, r)$ introduced as below:
+
+\begin{equation}\vE( t,\vx)=\nabla_{x} \phi=\frac{\vx}{r^{3}} \int_{0}^{r} \lambda^{2} \rho(t, \lambda) d \lambda = \frac{\vx}{r^3} M(t, r)\end{equation}
+
+Notice that $M(t, r)$ is essentially the integral of $\rho$ on the volume the sphere with radius $r$ except a factor of $4\pi$, showing $\lim_{r\rightarrow \infty} M(t, r)= m/4\pi$. Moreover, $|\vE|=r^{-2}M(t,r)$.
+
+Spherical symmetry brings in the below simplification of the characteristics' ordinary differential equations and note that $dA/dt$ could be decided by the $d(\vect{X}\cdot \vect{V})/ds = d(RU\cos A)/ds$. Curly brackets $\{... ,...\}$ includes the terms for \eqvp~ in the left and for \eqrvp~ in the right. 
+\begin{equation}\left\{\begin{aligned}
+    &\frac{d R}{d s}=|\vect{a}(\vect{V})|\cos A =\left\{ U \cos A,  \frac{U \cos A}{\sqrt{1+U^{2}}} \right\}  \\
+    &\frac{d U}{d s}=\left| \frac{d\vect{V}}{ds} \right| \cos<\frac{d\vect{V}}{ds}, \vect{a}(\vect{V})>=\gamma \frac{\cos A}{R^{2}} M(s, R) \\
+    &\frac{d A}{d s}=-\left(\gamma \frac{M(s, R)}{R^{2} U}+ \left\{\frac{U}{R},   \frac{U}{R \sqrt{1+U^{2}}} \right\}  \right) \sin A
+\end{aligned}\right.\end{equation}
+
+The simplified results of \eqrvp will be helpful in the following proof.
+
+\section{Existence}
+Global existence results of \eqrvp in 3D has been studied by \cite{glassey_symmetric_1985} with compact distribution function support and by \cite{wang2003global}. \cite{glassey_symmetric_1985} restrict the $|\vE|$  to prove that supremum of the velocity can be controlled by a function $H_v \in C_{+}(R_0^+)$. While \cite{wang2003global} controlled the norm of electric field $\|\vE(t, \cdot)\|_{\infty}$ to achieve the global existence . Their approaches are concisely introduced as follow.
+
+
+To control the $L_{x}^{\infty}$ -norm of the acceleration term $\nabla_{x} \bar{\phi},$ now it's a standard argument to show that it is controlled by a high moment of the distribution function, see also Lemma 2.2
+2.3. Propagation of moments. We define
+\[
+M_{n}(t, x):=\int_{\mathbb{R}^{3}}(1+|v|)^{n} f(t, x, v) d v, \quad M_{n}(t):=\int_{\mathbb{R}^{3}} M_{n}(t, x) d x, \quad n:=\left\lceil N_{0} / 10\right\rceil
+\]
+
+
+
+Local theory and the reduction of the proof. Because our assumption on the initial data is stronger than the assumption imposed on the distribution function in $[7],$ by using the same argument used by Luk-Strain |기| for the relativistic Vlasov-Maxwell system, which is more difficult, we can reduce the proof of global existence to the $L_{x}^{\infty}$ -estimate of the scalar field $\nabla_{x} \phi,$ which corresponds to the acceleration of the speed of particles.
+
+
+\begin{lemma}
+    There exists a constant $C$ such that for $r \geq 0$ and $0 \leq t<T$
+    $$
+    |\vE(\vx, t)|=\frac{M(r, t)}{r^{2}} \leqq\left\{\begin{array}{ll}
+    {\min \left(M r^{-2}, 100 M^{1 / 3}\|\hat{f}\|_{\infty}^{2 / 3} P^{2}(t)\right)} & {\text { if } \gamma=-1} \\
+    {\min \left(M r^{-2}, C P^{5 / 3}(t)\right)} & {\text { if } \gamma=+1}
+    \end{array}\right.
+    $$
+    \end{lemma}
+    
+
+\begin{definition}
+The highest speed the solution $f$ has on the time interval $[0,t]$.
+$$
+P(t)=\sup \{U(s, 0, r, u, \alpha): 0 \leq s \leq t,(r, u, \alpha) \in \text { support } f\}
+$$
+\end{definition}
+    
+
+The paper mainly talks about spherically symmertric solutions, \textit{i.e.}, the radial ones. 
+
+
+
+% \begin{lemma}
+% For all $\vect{z} \geq 1$,
+% $$
+% \xi^{-1}(\vect{z}) \leq\left[\left(\vect{z}+A^{-1} \vB^{-1}\right)^{2}-1\right]^{1 / 2}
+% $$
+% \end{lemma}
+
+% \begin{lemma}
+% For all $t \in\left[0, T_{0}\right]$
+% $$
+% U(t) \leq U(0)+\xi^{-1}(\sqrt{\left.1+U^{2}(0)\right)}, \text { when } \gamma=-1
+% $$
+% \end{lemma}
+
+
+\begin{theorem}
+Let $f$ be a classical solution of (RVP) on some time interval $[0, T)$ with $\gamma=$
+$-1$ and smooth, nonnegative, spherically symmetric data fwhich has compact support
+and vanishes for $(r, u, \alpha) \notin(0, \infty) \times(0, \pi) .$ If $40 M^{2 / 3}\left\|f^{\circ}\right\|_{\infty}^{1 / 3}<1,$ then $P(t)$ is uniformly bounded on $[0, T)$, and hence (RVP) possesses a global classical solution.
+\end{theorem}
+
+
+
+% \begin{definition}
+%     To control the derivative of characteristic $R(s)$, here comes a function: 
+% \begin{equation}
+%     G(r, t)=-\int_{r}^{\infty} \min \left(M \lambda^{-2}, C_{1} P^{5 / 3}(t)\right) d \lambda, r\geq 0 \text{ and } t \geq 0
+% \end{equation}
+
+% \end{definition}
+
+% \begin{lemma}
+%     \label{sqrt(1plusU)diff_leq_Gdiff}
+%     Assume either $\dot{R} \geqq 0$ on $\left[t_{1}, t_{2}\right]$ or $\dot{R} \leqq 0$ on $\left[t_{1}, t_{2}\right] .$ Assume  $ \gamma=+1$. Then
+
+%     \begin{equation}
+% |\sqrt{1+U^{2}\left(t_{2}\right)}-\sqrt{1+U^{2}\left(t_{1}\right)}| \leq\left|G\left(R\left(t_{2}\right), t_{2}\right)-G\left(R\left(t_{1}\right), t_{2}\right)\right|
+%     \end{equation}
+
+% \end{lemma}
+% \begin{remark}
+%     There exists a positive constant $C_2$
+%     \begin{equation}
+%         \label{Gdiff_leq_P0833}
+%         \left|G\left(r_{1}, t\right)-G\left(r_{2}, t\right)\right| \leqq C_{2} P^{5 / 6}(t) \text { for all } r_{1} \geqq 0, r_{2} \geqq 0, \text { and } t \geqq 0
+%         \end{equation}
+% \end{remark}
+
+
+% \begin{lemma}
+% Assume $\gamma=+1 . \dot{R}$ can be zero for at most one value of s. If $\dot{R}\left(t_{1}\right)=0,$ then
+% $R$ has an absolute minimum at $t_{1}$.
+% \end{lemma}
+
+\begin{theorem}
+Let $f$ be a classical solution of (RVP) on some time interval $[0, T)$ with $\gamma=+1$ and smooth, nonnegative, spherically symmetric data $f_0$ which has compact support and vanishes for $(r, u, \alpha) \notin(0, \infty) \times(0, \infty) \times(0, \pi) $. Then $P(t)$ is uniformly bounded on $[0, T)$, and hence (RVP) possesses a global classical solution.
+\end{theorem}
+% \begin{proof}
+%     According to Lemma 1.6 and its following remark,
+%     \begin{equation}
+%         \label{sqrt(1plusU)diff_leq_Pdiff}
+%         \begin{aligned}
+%             \sqrt{1+U^{2}\left(t_{2}\right)} \leq& \sqrt{1+U^{2}\left(t_{1}\right)}+| G\left(R\left(t_{2}\right), t_{2}\right)-G\left(R\left(t_{1}\right), t_{2}\right)\\
+%             \leq& \sqrt{1+U^{2}\left(t_{1}\right)}+C_{2} P^{5 / 6}\left(t_{2}\right)
+%         \end{aligned}
+%     \end{equation}
+%     Either $\dot{R}$ never vanishes or vanishes at one value, 
+%     \begin{equation}
+% \sqrt{1+U^{2}(t)} \leq \sqrt{1+U^{2}(0)}+2 C_{2} P^{5 / 6}(t)
+% \end{equation}
+% holds for $t\in[0,T)$ as long as we apply Eq. \ref{sqrt(1plusU)diff_leq_Pdiff} at most twice. Naturally, 
+% \begin{equation} 
+% P(t) \leq \sqrt{1+P^{2}(t)} \leq \sqrt{1+P^{2}(0)}+2 C_{2} P^{5 / 6}(t)
+% \end{equation}
+% induces that $P(t)$ has upper bound.
+% \end{proof}
+
+% \subsection{Blow-up of Radial Solutions in the case of stellar dynamics system}
+
+% By utility of the negative $\mathcal{E}_0$,
+% \begin{theorem}
+% Let $f_0$ be smooth, nonnegative, radial and of compact support on $\bbR^{6}$. Let $\ftxv$ be a classical solution of \eqrvp on an interval $0<t<T$ for which $-\infty<\mathscr{E}_{0}<0$. Then $T<\infty$.
+% \end{theorem}
+
+% \begin{proof}
+%     The "dilation identity" is used below to show the contrdiction.
+    
+    % and here is its derivation.
+    % \begin{equation}
+    %     \begin{aligned}
+    %     \frac{d}{d t} \iint_{\mathbb{R}^{6}} \vect{\vx} \cdot \vect{\vv} f d \vect{\vv} d \vect{\vx}=& \iint_{\bbR^{6}} \vect{\vx} \cdot \vect{\vv}\left[-\hat{\vect{\vv}} \cdot \nabla_{\vx} f+\vE \cdot \nabla_{\vv} f\right] d \vect{\vv} d \vect{\vx} = \cdots \text{(a lot omitted)}\\
+    %     =& \iint_{R^{6}} \frac{|\vect{\vv}|^{2} f}{\sqrt{1+|\vect{\vv}|^{2}}} d \vect{\vv} d \vect{\vx}-\int_{R^{3}} \rho \vect{\vx} \cdot \vE d \vect{\vx} \\
+    %     =& \iint_{R^{6}} \frac{|\vect{\vv}|^{2} f}{\sqrt{1+|\vect{\vv}|^{2}}} d \vect{\vv} d \vect{\vx} - \frac{1}{2} \int_{\bbR^{3}}|\nabla u|^{2} d \vect{\vx}\\
+    %     =& \mathscr{E}_{0}-\iint_{\bbR^{6}} \frac{1}{\sqrt{1+|\vect{\vv}|^{2}}} f d \vect{\vv} d \vect{\vx}
+    %     \end{aligned}
+    %     \end{equation}
+
+% \begin{equation}
+%     \frac{d}{d t} \iint_{\mathbb{R}^{6}} \vect{\vx} \cdot \vect{\vv} f d \vect{\vv} d \vect{\vx}= \mathscr{E}_{0}-\iint_{\bbR^{6}} \frac{1}{\sqrt{1+|\vect{\vv}|^{2}}} f d \vect{\vv} d \vect{\vx}
+% \end{equation}
+    
+%     Clearly, we have a coarse upper bound estimation of $\iint_{\mathbb{R}^{6}} \vect{\vx} \cdot \vect{\vv} f d \vect{\vv} d \vect{\vx}$, which is a part of $\frac{d}{d t} \iint_{\mathbb{R}^{6}} r^{2} \sqrt{1+|\vect{\vv}|^{2}} f d \vect{\vv} d \vect{\vx} $.
+%     $$\iint_{\mathbb{R}^{6}} \vect{\vx} \cdot \vect{\vv} f d \vect{\vv} d \vect{\vx}\leq \iint_{\mathbb{R}^{6}} \vect{\vx} \cdot \vect{\vv} f_0 d \vect{\vv} d \vect{\vx}+\mathcal{E}_0 t$$
+
+%     \begin{equation}
+%         \begin{aligned}
+%         \frac{d}{d t} \iint_{\mathbb{R}^{6}} r^{2} \sqrt{1+|\vect{\vv}|^{2}} f d \vect{\vv} d \vect{\vx} &=2 \iint_{\bbR^{6}} \vect{\vx} \cdot \vect{\vv} f d \vect{\vv} d \vect{\vx}-\int_{\bbR^{3}} r^{2} \vE \cdot \vect{j} d \vect{\vx}\\
+%         (\text{by  } \vect{j}=\int_{\mathbb{R}^{3}} \hat{\vect{\vv}} f d \vect{\vv}& \text{  and  } \left|\int_{\mathbb{R}^{3}} r^{2} \vE \cdot \vect{j} d \vect{\vx}\right|   \leq M^{2})\\
+%         &\leq 2\left(\iint_{\mathbb{R}^{6}} \vect{\vx} \cdot \vect{\vv} f_0 d \vect{\vv} d \vect{\vx}+\mathscr{E}_{0} t\right)+M^{2}\\        
+%         &\leq \text{Constant} + 2\mathscr{E}_{0} t\\
+%         \Rightarrow 0\leq \iint_{\mathbb{R}^{6}} r^{2} \sqrt{1+|\vect{\vv}|^{2}} f d \vect{\vv} d \vect{\vx} &\leq C + Ct + \mathscr{E}_{0} t^2\\
+%     \end{aligned}
+%     \end{equation}
+
+%     However, since we assume $f_0$ is a "large" enough initial data, \textit{i.e.}, satisfying the hypothesis that $\mathscr{E}_0<0$. There must be some time the solution blows up.
+% \end{proof}
+
+
+
+
+% \begin{definition}
+%     To control the derivative of characteristic $R(s)$, here comes a function: 
+% \begin{equation}
+%     G(r, t)=-\int_{r}^{\infty} \min \left(M \lambda^{-2}, C_{1} P^{5 / 3}(t)\right) d \lambda, r\geq 0 \text{ and } t \geq 0
+% \end{equation}
+
+% \end{definition}
+% \begin{lemma}
+%     \label{sqrt(1plusU)diff_leq_Gdiff}
+%     Assume either $\dot{R} \geqq 0$ on $\left[t_{1}, t_{2}\right]$ or $\dot{R} \leqq 0$ on $\left[t_{1}, t_{2}\right] .$ Assume  $ \gamma=+1$. Then
+
+%     \begin{equation}
+% |\sqrt{1+U^{2}\left(t_{2}\right)}-\sqrt{1+U^{2}\left(t_{1}\right)}| \leq\left|G\left(R\left(t_{2}\right), t_{2}\right)-G\left(R\left(t_{1}\right), t_{2}\right)\right|
+%     \end{equation}
+
+% \end{lemma}
+% \begin{remark}
+%     There exists a positive constant $C_2$
+%     \begin{equation}
+%         \label{Gdiff_leq_P0833}
+%         \left|G\left(r_{1}, t\right)-G\left(r_{2}, t\right)\right| \leqq C_{2} P^{5 / 6}(t) \text { for all } r_{1} \geqq 0, r_{2} \geqq 0, \text { and } t \geqq 0
+%         \end{equation}
+% \end{remark}
+
+
+
+% For the relativistic Vlasov-Poisson system $(1.1),$ the following conservation laws hold,
+% \[
+% E(t):=\int_{\mathbb{R}^{n}}\left|\nabla_{x} \phi(t)\right|^{2}+\gamma \int_{\mathbb{R}^{3}} \int_{\mathbb{R}^{3}}|v| f(t, x, v) d x d v=E(0),\|f(t, x, v)\|_{L_{x, v}^{p}}=\|f(0, x, v)\|_{L_{x, v}^{p}}
+% \]
+% where $p \in[1, \infty] .$ If the initial data is smooth and its high moment is small, then the system (1.1) admits global solution regardless the sign of $\gamma,$ the regularity of initial data can be propagated, and the density and its derivatives decay sharply over time, see [10]
+
+% As pointed out by Glassey-Schaeffer in $[2], \mathrm{RVP}$ is worse behaved than the non relativistic case, in which there is a large literature and we do not try to elaborate it here but refer readers to Anderson [1] and Mouhot [8] and references therein for more detailed introduction. A remarkable result by Lions-Perthame [6] showed that the nonrelativistic Vlasov-Poisson system in repulsive case admits global classic solution for general initial data, see also [9]
+
+% To the best knowledge of the author, we don't have satisfactory picture of the system (1.1) for "general" initial data. There are some results if we assume that the initial data is radial in the following sense
+% \[
+% f_{0}(R x, R v)=f_{0}(x, v), \quad \forall R \in S O(3)
+% \]
+% A well-known result by Glassey-Schaeffer [2] says that the sign of $\gamma$ matters in the large data theory. Roughly speaking, there exists a class of compact support radial data for which the solution of the repulsive case blows up in finite time while the solution of the attractive case globally exists over time. More precisely, the system (1.1) for the attractive case $(\gamma=1)$ admits global classical solution if the initial data poses radial symmetry and has compact support in $v .$ The solution of the repulsive case $(\gamma=-1)$ blows up in finite time for radial initial data which has compact support in " $v^{\prime \prime}$ and negative energy. Kiessling-Tahvildar-Zadeh [5] established sharp constants $C_{\beta}$ for the $L^{\beta}$ -norm of initial data for the negative energy condition.
+
+
+
+
+
+
+
+From the conservation laws $(1.2),$ we know that $M_{1}(t)$ is always bounded from the above. Moreover we define
+\[
+\tilde{M}_{n}(t):=(1+t)^{2 n}+\sup M_{n}(s)
+\]
+We have two basic estimates for the $L_{x}^{\infty}$ -norm of the acceleration term $\nabla_{x} \phi,$ which will be elaborated in the next two Lemmas. The first estimate (2.3) is available mainly because of the radial symmetry and the conservation law. The second estimate (2.5) is standard 
+
+% Lemma 2.1. For any $t \in\left[0, T^{*}\right), x \in \mathbb{R}^{3},$ the following point-wise estimate holds
+% \[
+% \left|\nabla_{x} \phi(t, x)\right| \lesssim \frac{1}{|x|^{2}}
+% \]
+
+% Proof. 
+% Hence $\phi(t, x)$ is also radial. Define
+% \[
+% \tilde{\phi}(t, r):=\phi(t, r, 0,0), \quad \tilde{\rho}(t, r):=\rho(t, r, 0,0), \quad \Longrightarrow \phi(t, x)=\tilde{\phi}(t,|x|), \rho(t, x)=\tilde{\rho}(t,|x|)
+% \]
+
+% Hence, from the above equality and the conservation law in $(\mathbb{1} .2)$, the following estimate holds point-wisely,
+% \[
+% \Rightarrow \nabla_{x} \phi=\frac{x}{|x|} \partial_{r} \bar{\phi}(t,|x|)=\frac{x}{|x|^{3}} \int_{0}^{|x|} s^{2} \tilde{\rho}(t, s) d s, \quad \Rightarrow \nabla_{x} \phi=\frac{x}{|x|}\left|\nabla_{x} \phi\right|, \quad\left|\nabla_{x} \phi\right| \lesssim \frac{1}{|x|^{2}}
+% \]
+
+% Lemma 2.2. Let $\epsilon \in\left(0,10^{-10}\right)$ be some fixed sufficiently small constant, then the following estimate holds for any $t \in\left[0, T^{*}\right)$
+% \[
+% \left\|\nabla_{x} \phi(t, x)\right\|_{L_{r} \approx} \lesssim 1+\left(M_{n}(t)\right)^{(5+c) /((3-\epsilon)(n-1))}
+% \]
+% Proof. Note that
+% \[
+% \nabla_{x} \phi(x)=\int_{\mathbb{R}^{3}} \frac{\rho(t, y)(y-x)}{|x-y|^{3}} d y=\int_{|y-x| \leq \delta} \frac{\rho(t, y)(y-x)}{|x-y|^{3}} d y+\int_{|y-x| \geq \delta} \frac{\rho(t, y)(y-x)}{|x-y|^{3}} d y
+% \]
+% From the conservation law in $[1.2],$ the first part of the above equation is controlled as follows
+% \[
+% \left|\int_{|y-x| \geq \delta} \frac{\rho(t, y)(y-x)}{|x-y|^{3}} d y\right| \lesssim \frac{1}{\delta^{2}}
+% \]
+% For the second part, we use the Hölder inequality by choosing $p=(3-\epsilon) / 2$ and $q=(3-\epsilon) /(1-\epsilon)$ As a result, we have
+% \[
+% \left|\int_{|y-x| \leq \delta} \frac{\rho(t, y)(y-x)}{|x-y|^{3}} d y\right| \lesssim\left(\int_{|y-x| \leq \delta} \frac{1}{|y-x|^{2 p}} d y\right)^{1 / p}\left(\int_{\mathbb{R}^{n}}(\rho(t, y))^{q} d y\right)^{1 / q} \lesssim \delta^{2 c /(3-\varepsilon)}\|\rho(t, x)\|_{L^{q}}
+% \]
+% Sincel $\|f(t, x, v)\|_{L_{\sum_{i},}}$ and $M_{1}(t)$ is bounded all time from the conservation law in $[1.2],$ the following two estimates hold
+% \[
+% \rho(t, x)=\int_{\mathbb{R}^{3}} f(t, x, v) d v \lesssim R^{3}+R^{-6 /(1-\epsilon)} M_{6 /(1-\epsilon)}(t, x) \lesssim\left(M_{6 /(1-\epsilon)}(t, x)\right)^{(1-\epsilon) /(3-\epsilon)}
+% \]
+% Note that, for $m<n,$ we have
+% \[
+% \begin{array}{c}
+% M_{m}(t)=\int_{|v| \leq R}(1+|v|)^{m} f(t, x, v) d x d v+\int_{|\mathbf{v}| \geq R}(1+|v|)^{m} f(t, x, v) d x d v \\
+% \lesssim R^{m-1}+R^{m-n} M_{n}(t) \lesssim\left(M_{n}(t)\right)^{(m-1) /(n-1)}
+% \end{array}
+% \]
+
+% From the above two estimates, we have
+% \[
+% \|\rho(t, x)\|_{L^{q}} \lesssim\left(M_{n}(t)\right)^{(5+\epsilon) /((3-\epsilon)(n-1))}
+% \]
+% Hence, from the estimates $(2.6)[2.9],$ after letting $\delta=1$, we have
+% \[
+% \left\|\nabla_{x} \phi(x)\right\|_{L_{x}^{\infty}} \lesssim 1+\left(M_{n}(t)\right)^{(5+\epsilon) /((3-\epsilon)(n-1))}
+% \]
+% Hence finishing the proof of the desired estimate (2.5)
+% From the first estimate $(2.3),$ we know that the acceleration force of particles is weak if the particles are far away from the origin. Meanwhile, from the second estimate $(2.5),$ we know that the acceleration force of particles is not too strong even if the particles are very close to the origin We will show a key observation that the majority of localized particles will travel toward infinity after the speed of particles reaches a threshold. Hence, because of the first estimate $(2.3),$ we know that the majority of localized particles will not be accelerated very much in later time
+
+% The result of this observation is summarized in Lemma $[2.3 .$ Before proceeding to detailed analysis, we need some preparation. From (1.1) and $(2.4),$ the backward characteristics associated with the Vlasov-Poisson equation read as follow,
+% % \[
+% % \left\{\begin{array}{l}
+% % \frac{d}{d s} \vect{X}(s)=\hat{V}(s ; t, x, v) \\
+% % \frac{d}{d s} \vect{V}(s)=\nabla_{x} \phi(\vect{X}(s))=\frac{\vect{X}(s)}{|\vect{X}(s)|}\left|\nabla_{x} \phi(\vect{X}(s))\right| \\
+% % X(t ; t, x, v)=x, \quad V(t ; t, x, v)=v
+% % \end{array}\right.
+% % \]
+% Hence, the dynamics of the lengths of the characteristics read as follows,
+% \[
+% \begin{array}{c}
+% \frac{d}{d s}|\vect{X}(s)|=\frac{\vect{X}(s)}{|\vect{X}(s)|} \cdot \hat{\vect{V}}(s) \\
+% \frac{d}{d s}|\vect{V}(s)|=\frac{\vect{V}V(s ) \cdot \vect{X}(s)}{|\vect{V}(s)||\vect{X}(s)|}\left|\nabla_{x} \phi(\vect{X}(s))\right|
+% \end{array}
+% \]
+% From the above two equations, we can see that the quantity $V(t, s, x, v) \cdot X(t, s, x, v)$ plays an essential role. We analyze its dynamics over time as follows,
+% \[
+% \begin{array}{c}
+% \frac{d}{d s} \frac{\vect{V}(s) \cdot \vect{X}(s)}{|\vect{V}(s)|}=|\hat{V}(s ; t, x, v)|+\frac{\partial_{s} \vect{V}(s) \cdot \vect{X}(s)}{|\vect{V}(s)|} \\
+% -\frac{V(t, s, x, v) \cdot X(t, s, x, v)}{|V(t, s, x, v)|^{2}} \frac{V(t, s, x, v) \cdot \partial_{s} V(t, s, x, v)}{|V(t, s, x, v)|} \\
+% =|\hat{V}(s ; t, x, v)|+\frac{|\vect{X}(s)|}{|\vect{V}(s)|}\left(1-\frac{(\vect{V}(s) \cdot \vect{X}(s))^{2}}{|\vect{V}(s)|^{2}|\vect{X}(s)|^{2}}\right)\left|\nabla_{x} \phi(\vect{X}(s))\right| \geq 0
+% \end{array}
+% \]
+% From the above equation, we know that the quantity $\vect{V}(s) \cdot \vect{X}(s)$ is an increasing function with respect to time " $s "$
+
+% We define a set of majorities of particles, which initially localize around zero, at time $s$ as follows
+% \[
+% \left.R(t, s):=\{(\vect{X}(s), \vect{V}(s)):|X(0 ; t, x, v)|+| V(0 ; t, x, v)) | \leq\left(\tilde{M}_{n}(t)\right)^{1 /(2 n)}\right\}
+% \]
+% Lemma 2.3. For any $t \in\left[0, T^{*}\right),$ the following relation holds for some sufficiently large absolute constant $C$
+% \[
+% R(t, t) \subset B\left(0, C\left(\tilde{M}_{n}(t)\right)^{1 /(2 n)}\right) \times B\left(0, C\left(\tilde{M}_{n}(t)\right)^{(5+2 \epsilon) /((6-2 \epsilon)(n-1))}\right)
+% \]
+
+% Proof. Let $t \in\left[0, T^{*}\right)$ be fixed. Note that, from the equation $(2.12),$ the following rough estimate holds for the length of $\vect{X}(s)$
+% \[
+% |\vect{X}(s)| \leq|X(0 ; t, x, v)|+|s| \leq 2\left(\tilde{M}_{n}(t)\right)^{1 /(2 n)}, \quad s \in[0, t]
+% \]
+% We define the maximal time such that the velocity characteristic doesn't exceed the threshold as follows,
+% \[
+% \tau:=\sup \left\{s: \quad \forall \kappa \in[0, s],|V(\kappa ; t, x, v)| \leq\left(\tilde{M}_{n}(t)\right)^{(5+2 \epsilon) /((6-2 \epsilon)(n-1))}\right\}
+% \]
+% From the continuity of characteristics, we know that $\tau>0$. If $\tau=t$, then we are done. It remains to consider the case when $0<\tau<t$
+
+% Note that, from the equation $(2.13),$ we know that $|\vect{V}(s)|$ is decreasing if $\vect{V}(s)$ $\vect{X}(s)<0 .$ Hence, at the time $\tau,$ we have $V(\tau ; t, x, v) \cdot X(\tau ; t, x, v) \geq 0 .$ Otherwise, it contradicts the definition of the maximal time. From the monotonicity of $\vect{V}(s) \cdot \vect{X}(s)$ see the equation $(2.14),$ we know that $\vect{V}(s) \cdot \vect{X}(s) \geq 0$ for $s \in[\tau, t],$ which implies that $|V(t, s, x, v)| \geq|\vec{V}(t, \tau, x, v)|$ for all $s \in[\tau, t]$ from the equation $(2.13) .$ To sum $u p, \forall s \in[\tau, t],$ we have
+% \[
+% |\vect{V}(s)| \geq|V(\tau ; t, x, v)|=\left(\tilde{M}_{n}(t)\right)^{(5+2 t) /((6-2 t)(n-1))}, \quad \vect{V}(s) \cdot \vect{X}(s) \geq 0
+% \]
+% Starting from the time $\tau,$ from the above estimate and the equation $(2.14),$ we have the following estimate for any $s \in[\tau, t]$
+% \[
+% \frac{\vect{V}(s) \cdot \vect{X}(s)}{|\vect{V}(s)|}=\frac{V(\tau ; t, x, v) \cdot X(\tau ; t, x, v)}{|V(\tau ; t, x, v)|}+\int_{\tau}^{s} \frac{d}{d s} \frac{V(\kappa ; t, x, v) \cdot X(\kappa ; t, x, v)}{|V(\kappa ; t, x, v)|} d \kappa \gtrsim s-\tau
+% \]
+% From the equation (2.12) and the estimates (2.17) and $(2.18),$ we have
+% \[
+% |\vect{X}(s)|^{2}-|X(\tau ; t, x, v)|^{2}=\int_{\tau}^{s} \frac{d}{d s}|X(\kappa ; t, x, v)|^{2} d \kappa \gtrsim \int_{\tau}^{s}(\kappa-\tau) d \kappa \gtrsim(s-\tau)^{2}
+% \]
+% From the above estimate, the estimate $(2.10),$ and the equation in $(2.11),$ the following estimate holds for any $s \in[\tau, t]$
+% \[
+% \begin{array}{c}
+% |\vect{V}(s)| \leq|V(\tau ; t, x, v)|+\int_{\tau}^{s}\left|\frac{d}{d s} V(\kappa ; t, x, v)\right| d \kappa \\
+% \lesssim\left(\bar{M}_{n}(t)\right)^{(5+2 \epsilon) /((6-2 \epsilon)(n-1))}+\int_{\tau}^{s}\left|\nabla_{x} \phi(X(t, \kappa, x, v))\right| d \kappa \\
+% \lesssim\left(\tilde{M}_{n}(t)\right)^{(5+2 \epsilon) /((6-2 \varepsilon)(n-1))}+\int_{\tau}^{\tau+\delta}\left(\tilde{M}_{n}(t)\right)^{(5+\epsilon) /((3-\varepsilon)(n-1))} d \kappa+\int_{\tau+\delta}^{s} \frac{1}{(\kappa-\tau)^{2}} d \kappa \\
+% \leq\left(\tilde{M}_{n}(t)\right)^{(5+2 \epsilon) /((6-2 \epsilon)(n-1))}, \quad \text { by letting } \quad \delta=\left(\tilde{M}_{n}(t)\right)^{-(5+\epsilon) /((6-2 \epsilon)(n-1))}
+% \end{array}
+% \]
+% To sum up, our desired conclusion (2.15) holds from (2.16) and (2.19)
+% The particles that don't belong to the majority set $R(t, t)$ can be tracked roughly back to their positions at the initial time. It allows us to control their magnitude from the assumption of the initial data in (1.4) Lemma 2.4. For any $t \in\left[0, T^{*}\right), x, v \in \mathbb{R}^{3},$ s.t., $|v| \gtrsim\left(\tilde{M}_{n}(t)\right)^{(5+3 \varepsilon) /((6-2 \epsilon)(n-1))},$ we have
+% \[
+% |f(t, x, v)| \lesssim\left(\tilde{M}_{n}(t)\right)^{-4}(1+|x|)^{-4}
+% \]
+% Moreover, if $|v| \gtrsim\left(\tilde{M}_{n}(t)\right)^{5 /(2 n)}$, then we have
+% \[
+% |f(t, x, v)| \lesssim(1+|x|)^{-4}(1+|v|)^{-n-4}
+% \]
+
+% Proof. Note that, from the relation $(2.15),$ we have $|X(0 ; t, x, v)|+|V(0 ; t, x, v)| \geq\left(\tilde{M}_{n}(t)\right)^{1 /(2 n)}$ if $|x| \gtrsim\left(\tilde{M}_{n}(t)\right)^{(1+\epsilon) /(2 n)}$ or $|v| \gtrsim\left(\bar{M}_{n}(t)\right)^{(5+3 \epsilon) /((6-2 \varepsilon)(n-1))} .$ If $|x| \gtrsim\left(\widetilde{M}_{n}(t)\right)^{(1+\epsilon) /(2 n)},$ then we have
+% \[
+% |X(0 ; t, x, v)| \geq|x|-t \geq|x|-\left(\tilde{M}_{n}(t)\right)^{1 /(2 n)}|\gtrsim(1+|x|)
+% \]
+% Therefore, from the above estimate and the assumption on the initial data in $(1.4),$ the following estimate holds if $|v| \gtrsim\left(\tilde{M}_{n}(t)\right)^{(5+3 \epsilon) /((6-2 \epsilon)(n-1))}$ regardless the size of $|x|$
+% \[
+% |f(t, x, v)|=\left|f_{0}(X(0 ; t, x, v), V(0 ; t, x, v))\right| \leq\left(\tilde{M}_{n}(t)\right)^{-4}(1+|x|)^{-4}
+% \]
+% Moreover, if $|v| \gtrsim\left(\tilde{M}_{n}(t)\right)^{5 /(2 n)},$ then the following estimate holds from the equation (2.12) and the estimate (2.5)
+% \[
+% |V(0 ; t, x, v)| \geq|v|-\int_{0}^{t}\left(1+\left(M_{n}(s)\right)^{(5+\epsilon) /((3-\epsilon)(n-1))}\right) d s \gtrsim(1+|v|)
+% \]
+% From the above two estimates and the assumption on the initial data in $(1.4),$ the following estimate holds if $|v| \gtrsim\left(\bar{M}_{n}(t)\right)^{5 /(2 n)}$ regardless the size of $|x|$
+% \[
+% |f(t, x, v)|=\left|f_{0}(X(0 ; t, x, v), V(0 ; t, x, v))\right| \leq(1+|x|)^{-4}(1+|v|)^{-n-4}
+% \]
+% Hence finishing the desired estimates (2.20) and (2.21)
+% Proof of Theorem $\left[\begin{array}{ll}\text { 1. } 1 & \text { Based on the possible size of }^{*}|v|^{\prime \prime}, \text { we decompose } M_{n}(t) \text { into three parts }\end{array}\right.$ as follows,
+% \[
+% \int_{\mathbb{R}^{3}} \int_{\mathbb{R}^{3}}(1+|v|)^{n}|f(t, x, v)| d x d v=I+I I+I I I
+% \]
+% % where
+% % \[
+% % \begin{array}{c}
+% % I:=\int_{\mathbb{R}^{3}} \int_{|v| \geq\left(\tilde{M}_{n}(t)\right)^{3 / n}}(1+|v|)^{n}|f(t, x, v)| d x d v \\
+% % \begin{array}{c}
+% % I I:=\int_{\mathbb{R}^{3}} \int_{\left(\bar{M}_{n}(t)\right)}^{(5+4 c) /(6-2 c)(n-1)} \leq|v| \leq\left(\bar{M}_{n}(t)\right)^{3 / n}(1+|v|)^{n}|f(t, x, v)| d x d v \\
+% % I I I:=\int_{\mathbb{R}^{3}} \int_{|v| \leq\left(\tilde{M}_{n}(t)\right)}^{\left(5+t_{6}\right) /((6-2 z)(n-1))}(1+|v|)^{n}|f(t, x, v)| d x d v
+% % \end{array}
+% % \end{array}
+% % \]
+% % Therefore, from the estimates $(\sqrt{2.20})$ and [2.21] in Lemma [2.4] we have
+% % \[
+% % |I|+|I I| \lesssim 1
+% % \]
+% % From the conservation law $(1.2),$ we have
+% % \[
+% % |I I I| \lesssim\left(\tilde{M}_{n}(t)\right)^{(5+4 \epsilon) n /((6-2 \epsilon)(n-1))}
+% % \]
+% % To sum up, we have
+% % \[
+% % M_{n}(t) \lesssim\left(\bar{M}_{n}(t)\right)^{(5+4 \epsilon) n /((6-2 \epsilon)(n-1))}
+% % \]
+% % since the above estimate holds for any $t \in\left[0, T^{*}\right)$ and $\tilde{M}_{n}(t)$ is an increasing function with respect to $t,$ the following estimate holds for any $s \in[0, t]$
+% % \[
+% % M_{n}(s) \lesssim\left(\bar{M}_{n}(s)\right)^{(5+4 \epsilon) n /((6-2 \epsilon)(n-1))} \leq\left(\bar{M}_{n}(t)\right)^{(5+4 \epsilon) n /((6-2 \varepsilon)(n-1))}
+% % \]
+
+
+
+
+% Hence
+% \[
+% \bar{M}_{n}(t)=\sup _{s \in[0, t]} M_{n}(s)+(1+t)^{2 n} \lesssim\left(\tilde{M}_{n}(t)\right)^{(5+4 \epsilon) n /((6-2 \epsilon)(n-1))}+(1+t)^{2 n}, \quad \Rightarrow \bar{M}_{n}(t) \lesssim(1+t)^{2 n}
+% \]
+% Therefore, from the estimate (2.5) in Lemma 2.2 , we have
+% \[
+% \left\|\nabla_{x} \phi(t, x)\right\|_{\infty} \lesssim(1+t)^{2 n}
+% \]
+
+% We have shown the desired fact that $\nabla_{x} \phi \in L^{\infty}\left(\left[0, T^{*}\right) \times \mathbb{R}_{x}^{3}\right) .$ Hence finishing the proof of Theorem 

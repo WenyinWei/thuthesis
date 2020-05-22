@@ -1,0 +1,689 @@
+
+\newcommand{\rhoabs}{\hyperref[eq:rhoabs-control]{($\rho_{abs}$ control condition)~}}
+\newcommand{\supremumf}{\hyperref[eq:supremum-f0-control]{($\sup f_{0}$ control condition)~}}
+\newcommand{\lipxOfrho}{\hyperref[eq:lipx_rho_control]{($\operatorname{lip}_x(\rho)$ control condition)~}}
+\newcommand{\lipOffVsphere}{\hyperref[eq:lip_Of_f0_in_vsphere_control]{($\operatorname{lip}(f_0)$ in $v$ sphere control condition)~}}
+
+
+
+\chapter{Local Solutions of Vlasov-Poisson System}
+
+Here we present the standard approximation methods adopted by Horst to investigate the well-posedness of the generalized \eqvp system problem in $N$ dimenstion space. %TODO \cite{}
+\section{Definition Preparation}
+\begin{equation}
+    \label{eq:vp_ndim}
+    \text { (VP \& RVP) }\left\{\begin{array}{l}
+    \partial_{t} f+\vect{a}(\vv ) \cdot \nabla_{x} f+\vE \cdot \nabla_{v} f=0 \\
+    \vE(t, \vx)=\mu\int \frac{\vx - \vect{y}}{|\vx - \vect{y}|^N} \rho(t,\vx) \mathrm{d} \vx %\quad =-\nabla_{x} \phi(t, \vx)\\
+    %\phi= \mu \frac{1}{|\vx|^{N-1}} *\rho
+\end{array}\right.\end{equation}
+
+
+
+We always use $f_{0} \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$ to denote the initial data for the problem to be considered. Let $m:=\|f_{0}\|_{1}$ denote the initial mass, \textit{i.e.} $\mathrm{L}_1$ norm of initial phase function.
+The singularity of the field integral kernel is modified with a parameter $\varepsilon$ as follows.
+$$\vect{e}^{\varepsilon}(\vect{z})=\gamma \cdot \frac{\vect{z}}{\left(|\vect{z}|^{2}+\varepsilon\right)^{N / 2}},~ \quad ~ \vect{z} \in \bbR^{N}, \varepsilon \geqslant 0$$
+Since we have weakened the singularity by the $\varepsilon$, the solutions to the $\text{VP}^\varepsilon$ are redefined as follow.
+\begin{definition}\textit{(The solution of $\text{VP}^\varepsilon$)}
+
+   Assume that $I \subset[0, \infty)\text { is an interval with } 0 \in I .\text { We say that }$ $f^{\varepsilon}: I \times \bbR^{2 N} \rightarrow \bbR$ is a solution of problem $\text{VP}^{\varepsilon}(\varepsilon \geqslant 0 \text { fixed })$ on $I$, if
+
+    \begin{enumerate}[(1)] 
+        \item $f(0,\cdots) = f_0$
+        \item $\left((\vect{y},\vect{u}) \mapsto \vect{e}^{\varepsilon}\left(\vx-\vect{y}\right) \cdot f^{\varepsilon}(t, \vect{y},\vect{u})\right) \in \mathrm{L}_{1}\left(\bbR^{2 N}, \bbR^{N}\right)$ for all $t \in I, \vx \in \bbR^{N}$
+        \item $\vE^{\varepsilon}\left(t, \vx\right):=\iint_{\bbR^6}  \vect{e}^{\varepsilon}\left(\vx-\vect{y}\right) \cdot f^{\varepsilon}(t, \vect{y},\vect{u}) \mathrm{d} \vect{y} \mathrm{d}\vect{u}$ is defined to eliminate the orignal singularity of integral kernel. It is required that $\vE^{\varepsilon}$ is continuous
+        on $I \times \bbR^{N}, \vE^{\varepsilon}(t, \cdot) \in \mathrm{C}_{b}^{0}\left(\bbR^{N}, \bbR^{N}\right) \cap \operatorname{Lip}\left(\bbR^{N}, \bbR^{N}\right)$ for all $t \in I$ and there exist
+        $C_\rho^{\varepsilon}, C_{lip(E)}^{\varepsilon} \in C_{+}(I)$ such that for all $t \in I$
+        \[
+        \left\|\vE^{\varepsilon}(t, \cdot)\right\|_{\infty} \leqslant C_{ E}^{\varepsilon}(t), \quad 
+        \operatorname{lip}\left(\vE^{\varepsilon}(t, \cdot)\right) \leqslant C_{\operatorname{lip}(E)}^{\varepsilon}(t)
+        \]
+        \item 
+        The solution $f^{\varepsilon}$ is defined according to the characteristic trajectories of the $\text{VP}^\varepsilon$ problem, along which the value $f^\varepsilon$ should not change. The characteristic under the modified electrical field $\vE^\varepsilon$ is 
+        \begin{equation}
+            \dot{\vect{X}^\varepsilon}=\vect{V}^\varepsilon, \dot{\vect{V}^\varepsilon}=\vE^{\varepsilon}\left(t, \vect{X}^\varepsilon\right), \quad t \in I,
+        \end{equation}
+        
+
+        which has a unique solution on $I$ for any initial value thanks to the regularities given in (3). $f(t,\vx, \vv)$ is given by the characteristic with initial condition $\vect{X}^\varepsilon(t)= \vx, \vect{V}^\varepsilon(t)= \vv$, \textit{i.e.}
+        \[
+        f^{\varepsilon}(t, \vect{X}^\varepsilon(t), \vect{V}^\varepsilon(t))=f^{\varepsilon}(0, \vect{X}^\varepsilon(0), \vect{V}^\varepsilon(0))=f_{0}(\vect{X}^\varepsilon(0), \vect{V}^\varepsilon(0)), \quad t \in I
+        \]
+        if $I=[0, \infty)$, $f^{\varepsilon}$ is named a global solution, otherwise a local solution.
+    \end{enumerate}
+
+\end{definition}
+
+
+% $C_{b}^{k}\left(\bbR^{M}, \bbR^{L}\right):=\left\{f: \bbR^{M} \rightarrow \bbR^{L} | f \text { is } k$ times continuously differentiable \right.
+% and all these derivatives are bounded $\}, \quad 0 \leqslant k \leqslant \infty$
+
+
+
+
+
+\begin{theorem}\textit{(Well-posedness of $\text{VP}^\varepsilon$ when $\varepsilon>0$)}
+
+If $\varepsilon>0,$ there exists a unique global solution $f^\varepsilon$ of $P^{\varepsilon}$. If $I$ is a subinterval of $[0, \infty)$ with $0 \in I$ then $\left.f^{\varepsilon}\right|_{I \times \bbR^{2N}}$ is a solution on $I$ and this solution is unique.
+\end{theorem} 
+\begin{proof}
+    The result can be acquired with the methods of [11] TODO.
+\end{proof}
+
+\begin{definition}
+    Assume $f^{\varepsilon}$ is a solution of $\text{VP}^{\varepsilon}(\varepsilon \geqslant 0 \text { fixed) on } I$. For any $t_{0} \in I, (\vx,\vv) \in \bbR^{2 N}$, let $\vect{X}( s , t_0,\vx,\vv), \vect{V}( t , t_0,\vx,\vv) : I \times I \times \bbR^N \times \bbR^N \rightarrow \bbR^n$ denote the solution of the characteristic ordinary differential system that
+    satisfies the initial condition
+    $$\vect{X}^{\varepsilon}\left(t_{0}, t_{0}, \vx,\vv \right)=\vx, \quad \vect{V}^{\varepsilon}\left(t_{0}, t_{0}, \vx,\vv \right)=\vv$$
+\end{definition}
+
+\begin{lemma}\textit{(Features of characteristcs)}
+Then the following statements are valid
+\begin{enumerate}[(i)]
+    \item $\vect{X}^{\varepsilon},\vect{V}^{\varepsilon}$ are continuous on $I \times I \times \bbR^{2N}$
+    \item For any $t_{1}, t_{2} \in I$ the function $\vect{X}^{\varepsilon}\left(t_{1}, t_{2}, \cdot\right)$ is a (Lebesgue) measure preserving homeomorphism of $\bbR^{2N}$ onto $\bbR^{2N}$.
+    \item For any $t_{1}, t_{2}, t_{3} \in I$
+    $$(\vect{X}^{\varepsilon}, \vect{V}^\varepsilon) \left(t_{1}, t_{2}, \cdot\right) \circ  (\vect{X}^{\varepsilon}, \vect{V}^\varepsilon) \left(t_{2}, t_{3}, \cdot\right)  =(\vect{X}^{\varepsilon}, \vect{V}^\varepsilon)\left(t_{1}, t_{3}, \cdot\right)$$
+    
+    especially the $t_3 = t_1$ case tells that the inverse of $(\vect{X}^{\varepsilon}, \vect{V}^\varepsilon) \left(t_{1}, t_{2}, \cdot\right)$ is $(\vect{X}^{\varepsilon}, \vect{V}^\varepsilon) \left(t_{2}, t_{1}, \cdot\right)$.
+    \item If $\frac{\partial}{\partial x_{3}} E^{t}\left(t,\vx\right)$ exists and is continuous on $I \times \bbR^{N},$ then $\vect{X}^{e}$ is continuously differentiable with respect to all arguments and satisfies the system of first order partial differential equations
+    $$\frac{\partial}{\partial t_{1}} \vect{X}^{t}\left(t, t_{1}, x\right)+x_{v} \cdot \nabla_{x} \vect{X}^{t}\left(t, t_{1}, x\right)+E^{\varepsilon}\left(t_{1},\vx\right) \cdot \nabla_{v} X_{i}^{t}\left(t, t_{1}, x\right)=0$$
+    \item As $f^{\varepsilon}$ is an integral of $(1.2 .1),$ we have for all $t, t_{1} \in I, x \in \bbR^{2N}$
+    
+    $$f^{\varepsilon}\left(t, \vect{X}^{\varepsilon}\left(t, t_{1}, \vx, \vv\right), \vect{V}^{\varepsilon}\left(t, t_{1}, \vx, \vv\right)\right)=f_0\left(\vect{X}^{\varepsilon}(0, t, x)\right), \text { especially for } t=t_{1}$$
+
+    $ f^{\varepsilon}(t, \vx, \vv)=f_{0}\left(\vect{X}^{\varepsilon}(0, t, \vx, \vv), \vect{V}^{\varepsilon}(0, t, \vx, \vv)\right)$
+    Therefore $f^{\varepsilon}(t, \cdot)$ has the same range as $f_{0}$ for all $t \in I$, hence $f^{\varepsilon} \geqslant 0,$ if and only if $f_{0} \geqslant 0$ and $\sup \left|f^{\varepsilon}(t, x)\right|=\sup |f_{0}(x)| . f^{\varepsilon}$ is continuous on $I \times \bbR^{2N},$ if and only if $f_{0}$ is continuous on $\bbR^{2N}$. If $\nabla_{x} E^{\varepsilon}\left(t,\vx\right)$ exists and is continuous on $I \times \bbR^{N},$ then (iv) and $(1.4 .4)$ imply
+    that $\Phi^{c}$ is differentiable (continuously differentiable), if and only if $f_{0}$ is differentiable (continuously differentiable) and in this case $f^{\varepsilon}$ satisfies the partial differential equation
+
+    $$ \frac{\partial}{\partial t} f^{\varepsilon}(t, x)+\vv\cdot \nabla_{x} f^{\varepsilon}(t, \vx, \vv)+\vE^{\varepsilon}\left(t, \vx\right) \cdot \nabla_v f^{\varepsilon}(t, \vx, \vv)=0$$
+
+    \item  (ii) and $(1.4 .4)$ imply that for any $t, t_{1} \in I$ and any measurable function
+$\sigma: \bbR^{2N} \rightarrow \bbR^{M}$ we have $\sigma \in \mathrm{L}_{1}\left(\bbR^{2N}, \bbR^{M}\right),$ if and only if $\sigma \circ \vect{X}^{\varepsilon}\left(t_{1}, t, \cdot\right) \in$
+$\mathrm{L}_{1}\left(\bbR^{2N}, \bbR^{M}\right) .$ In this case
+$$(1.4 .6) \int \sigma(x) \mathrm{d} x^{2 N}=\int \sigma\left(\vect{X}^{\varepsilon}\left(t_{1}, t, x\right)\right) \mathrm{d} x^{2 N}$$
+Especially $\left(t_{1}=0, \sigma=|f_{0}|^{p}\right)$ we have for all $t \in I$ that $f^{\varepsilon}(t, \cdot) \in \mathrm{L}_{p}\left(\bbR^{2N}\right),$ if and
+only if $f_{0} \in \mathrm{L}_{p}\left(\bbR^{2N}\right)$ and in this case
+$\left.(1.4 .7)\left\|\left.f^{\varepsilon}(t, \cdot)\right|_{p}=\right\| f_{0}\right|_{p}, 1 \leqslant p<\infty$
+
+
+\item  We define $\rho^{\varepsilon}\left(t, \vx, \vv\right):=\int f^{\varepsilon}(t, \vx, \vv) \mathrm{d} \vv,\rho^{\varepsilon}_{abs}\left(t, \vx\right):=\int\left|f^{\varepsilon}(t, \vx, \vv)\right| \mathrm{d} \vv .$ For
+fixed $t \in I$ these functions are defined for almost all $x_{s} \in \bbR^{N}$ because of (vi) and
+(1.1). $B y$ Fubini's theorem $\rho^{\varepsilon}(t, \cdot),\rho_{abs}^{\varepsilon}(t, \cdot) \in \mathrm{L}_{1}\left(\bbR^{N}\right)$ for all $t \in I$ and 
+$\left\|\rho^{\varepsilon}(t, \cdot)\right\|_{1} \leqslant\left\|\left|\rho^{\varepsilon}_{abs}\right|_{e}(t, \cdot)\right\|_{1}=\|f_{0}\|_{1}=m$ and
+$$
+\v\vE^{\varepsilon}\left(t,\vx\right)=\int \vect{e}^{\varepsilon}\left(\vx - \vect{y}\right) \rho^{\epsilon}\left(t, \vect{y}\right) \mathrm{d} \vect{y}
+$$
+
+\end{enumerate}
+\begin{proof}
+    All this is standard theory of first order partial differential equations, cf. $[9],$ p. 131 ff. The proof that $\vect{X}^{e}\left(t, t_{1}, \cdot\right)$ is measure preserving (even if no differentiability of $\vE^{\varepsilon}$ is assumed can be found in $[3],$ p. $62 .$ The special case that $E^{c}$ is continuously differentiable with respect to $x_{s}$ is discussed in $[16],$ ch. III and $\mathrm{V}$
+\end{proof}
+
+
+% \begin{definition}
+%     $\operatorname{Let} u^{\varepsilon}(z):=\gamma \cdot(N-2)^{-1} \cdot\left(z^{2}+\varepsilon\right)^{(2-N) / 2}$ for all $N \geqslant 3$
+% $\varepsilon \geqslant 0, z \in \mathbf{R}^{N}$
+% \end{definition}
+
+
+
+\section{Bounds for \texorpdfstring{$\vE^\varepsilon$}{Lg} and \texorpdfstring{$\rho^\varepsilon$}{Lg} }
+Traditional analysis works well to solve the problem $\text{VP}^\varepsilon (\varepsilon >0)$ due to the removed singularity of integral kernel. However, we need to illustrate that $f^\varepsilon$ uniformly converges to $f^0$ as $\varepsilon\rightarrow 0 $ on $I\times \bbR^N \times \bbR^N $ and confirm the uniqueness. Therefore we need conditions on $f$ which assure that the characteristcs ordinary equations $\vect{X}(s,t_0, \vx,\vv),\vect{V}(s,t_0, \vx,\vv)$ have a unique solution for given parameter $t_0 \in I, \vx, \vv \in \bbR^N$. In this section we take the first steps into this direction. An obvious estimate yields that $\left|E^{\varepsilon}\left(t, x_{s}\right)\right| \leqslant \int\left|x_{s}-y_{s}\right|^{1-N} \cdot\left|f^{\varepsilon}\right|_{Q}\left(t, y_{s}\right) \mathrm{d} x_{s}^{N}$
+Here the time $t$ plays only the role of a parameter, whereas integration is with respect to $y_{s} .$ 
+
+Therefore we can use the following lemma to find a bound for $\left\|E^{\varepsilon}(t, \cdot)\right\|_{\infty}$
+\begin{lemma}
+
+    Assume $0<\alpha<N, p \in( 1, \infty], q \in[1, \infty)$ $p>N /(N-\alpha)>q .$ Assume further $\sigma \in \mathrm{L}_{p}\left(\bbR^{N}\right) \cap \mathrm{L}_{q}\left(\bbR^{N}\right) .$ Then for all $\vect{z} \in \bbR^{N}$
+
+    \begin{equation}
+        \label{eq:rho-E-bound}
+        \int|\vect{z}-\vect{w}|^{-\alpha} \cdot|\sigma(\vect{w})| \mathrm{d} \vect{w} \leqslant \bar{C}(N, \alpha, p, q) \cdot\|\sigma\|_{p}^{\lambda} \cdot \|\left.\sigma\right|_{q} ^{\mu}
+    \end{equation}
+    
+with constants $\tilde{C}(N, \alpha, p, q)$,   $\lambda:=(\alpha / N-1+1 / q) /(1 / q-1 / p)$ and $\mu:=1-\lambda $. 
+
+Let $\tilde{C}_{min}(N, \alpha, p, q)$ denote the smallest constant such that \eqref{eq:rho-E-bound} remains true for all $\sigma \in \mathrm{L}_{p}\left(\bbR^{N}\right) \cap \mathrm{L}_{q}\left(\bbR^{N}\right)$
+\end{lemma}
+
+\begin{proof}
+    Fix $R>0$ and divide the integral of \eqref{eq:rho-E-bound} into two parts, one for intergral $I_1$ inside a sphere (radius $R$) while the other $I_2$ outside.
+    
+By \Holder's inequality,
+$$
+I_{1} \leqslant \left( \int_{|\vect{z}-\vx|\leqslant R} |\vect{z}-\vx|^{-\alpha p^{\prime}}\mathrm{d}\vx \right)^{1/p^{\prime}} \|\sigma\|_{p}
+= \text{ const. } R^{(N / p^{\prime})-\alpha} \|\sigma\|_{p}
+$$
+$$
+I_{2} \leqslant \left( \int_{|\vect{z}-\vx|> R} |\vect{z}-\vx|^{-\alpha q^{\prime}}\mathrm{d}\vx \right)^{1/q^{\prime}} \|\sigma\|_{q}
+= \text{ const. } R^{(N / q^{\prime})-\alpha} \|\sigma\|_{q}
+$$
+
+$p^{\prime}$ and $q^{\prime}$ being the numbers with $p^{-1}+p^{\prime-1}=q^{-1}+q^{\prime-1}=1$.
+
+Thus $I_{1}+I_{2} \leqslant$ const. $\left(R^{\left(N / p^{\prime}\right)-\alpha} \cdot\|\sigma\|_{p}+R^{\left(N / q^{\prime}\right)-\alpha} \cdot\|\sigma\|_{q}\right)$
+The minimum of the right-hand side as a function of $R$ is equal to const. $\|\sigma\|_{p}^{\lambda} \cdot\|\sigma\|_{q}^{\mu} .$ , \textit{i.e.} $\tilde{C}(N,\alpha, p, q)\|\sigma\|_{p}^{\lambda} \cdot\|\sigma\|_{q}^{\mu}  $.
+\end{proof}
+
+This lemma shows us that it makes sense to investigate the properties of $\left\|f^{\varepsilon} \rho_{\theta}(t, \cdot)\right\|_{p} .$ We already know that always $\left\|\left.f^{\varepsilon}\right|_{\rho}(t, \cdot)\right\|_{1}=m .$ Now we consider the case $p=\infty, 1<p<\infty$ will become important in part II.
+
+
+\begin{assumption}
+
+    Assume that $f^{\varepsilon}$ is a solution of $\text{VP}^{\varepsilon}(\varepsilon \geqslant 0$ fixed) on I. 
+    
+    \begin{enumerate}
+        \item We say that $f^{\varepsilon}$ satisfies \underline{\rhoabs on $I$}, if there exists an $C_{\rho,abs}^{\varepsilon}(t) \in C_{+}(I)$ such that for all $t \in I$
+        \begin{equation}
+            \label{eq:rhoabs-control}
+            \|\rho^{\varepsilon}_{abs}(t, \cdot)\|_{\infty} \leqslant C_{\rho,abs}^{\varepsilon}(t)
+        \end{equation}
+        \item 
+        We say that $f_0:=f^\varepsilon(0,\cdot,\cdot)$ satisfies \underline{\supremumf}, if
+        \begin{equation}
+            \label{eq:supremum-f0-control}
+            \int^*  \underbrace{\sup \left\{|f_0(\vx,\vect{u})| |\vx,\vect{u} \in \bbR^{N}, | \vect{u} - \vv | \leqslant a\right\} }_{\hat{f}_v(\vv)} \mathrm{d} \vv \leqslant K_{1} \cdot\left(K_{2}+a\right)^{N}
+        \end{equation}
+        for suitable constants $K_{1}, K_{2}$ and all $a \geqslant 0$ ($\int^*  \ldots \mathrm{d} x_{0}^{N}$ denotes the upper Lebesgue integral)
+        
+    \end{enumerate} 
+    
+\end{assumption}
+
+
+\supremumf demonstrates that $f_0$ is bounded, \textit{i.e.} $f_0 \in \mathrm{L}_{\infty}\left(\mathrm{R}^{2 N}\right)$. As $f_0 \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$, 
+\supremumf indeed shows strong control on $f_0$ that $f_0 \in \mathrm{L}_{p}\left(\mathrm{R}^{2 N}\right)$ for all $1 \leqslant p \leqslant \infty$.
+
+
+
+
+\begin{lemma}
+     $f_0$ satisfies \supremumf, if there exists constants $\alpha>N$ and $K \geqslant 0$ such that $|f_0(\vx,\vv)| \leqslant K \cdot\left(1+\left|\vv\right|\right)^{-\alpha}$ for all $\vx,\vv \in \bbR^{ N}$
+\end{lemma}
+
+\begin{proof} This is easily verified when $N=1$ by showing that the $K\cdot (1+|\vv|)^{-\alpha}$ satisfies \supremumf. While for the $N>1$ cases, establish the relation between $|\vv|$ and its components first,
+$
+\left(1+\left| \vv \right|\right)^{-\alpha} \leqslant\left(1+\left|v_1\right|\right)^{-\alpha / N} \cdots \cdot\left(1+\left|v_{N}\right|\right)^{-\alpha / N}
+$
+and note that,
+\[
+\begin{array}{l}
+\sup \left\{|f_0(\vx, \vect{u})|\left| \vx, \vect{u} \in \bbR^{2 N},\right| \vect{u}-\vv | \leqslant a\right\} \\
+\leqslant K \cdot \sup \left\{\left(1+\left|u_{1}\right|\right)^{-\alpha / N}\bigg| | u_{1}-v_{1} | \leqslant a\right\} 
+\cdot\cdots\cdot \sup \left\{\left(1+\left|u_{N}\right|\right)^{-\alpha / N}\bigg| | u_{N}-v_{N} | \leqslant a \right\}
+\end{array}
+\]
+
+Do upper Lebesgue integral in $v$ on both sides and note the right-hand side is measurable and its integral could be acquired using Fubini's theorem. 
+
+\end{proof}
+
+\begin{lemma}
+    Assume that $f^{\varepsilon}$ is a solution of $\text{VP}^{\varepsilon}(\varepsilon \geqslant 0$ fixed) on
+I.
+ Assume further that $f$ satisfies \supremumf (with constants $K_{1}$ and $K_{2}$ ). Then
+ \begin{enumerate}[(i)]
+     \item $f^{\varepsilon}$ satisfies \rhoabs on $I$.
+     \item For each fixed $t_{0} \in I$ the function $f^{\varepsilon}\left(t_{0}, \cdot\right)$ also satisfies \supremumf with the same constants $K_{1}$ and $K_{2}+f_{v}^{e}\left(t_{0}\right)$
+ \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \item  For all $t \in I$, let 
+        \[
+        \begin{array}{l}
+        \begin{aligned}
+        h_{v}^{\varepsilon}(t): &=\sup \left\{\left|\vect{V}^{\varepsilon}(0, \tau, \vx, \vv)-\vv\right| | \vx,\vv \in \mathrm{R}^{N}, 0 \leqslant \tau \leqslant t\right\} \\
+        &=\sup \left\{\left|\vect{V}^{\varepsilon}(\tau, 0, \vx, \vv)-\vv\right| | \vx,\vv \in \mathbb{R}^{N}, 0 \leqslant \tau \leqslant t\right\} \\
+        &\text{\small The maximum possible velocity change should be controlled by the supreme field intensity.}\\
+        & \leqslant \int_{0}^{t} \sup \left\{\| \vE^{\varepsilon}(\tau, \cdot) \|_\infty 0 \leqslant \tau \leqslant r\right\} \mathrm{d} r \leqslant \int_{0}^{t} h_{E}^{\varepsilon}(r) \mathrm{d} r<\infty 
+        \end{aligned}
+        \end{array}
+        \]
+        
+        It follows that only the particles with a 'neighboring' velocity can arrive at $(\vx, \vv)$ at time $t$, because the maximal change of velocity is  controlled by the $C_v^\varepsilon(t)$, for all $x \in \mathrm{R}^{2 N}$
+        \[
+        \begin{aligned}
+        \left|f^{\varepsilon}(t, \vx, \vv)\right| &=\left|f_0\left(\vect{X}^{\varepsilon}(0, t, \vx, \vv), \vect{V}^{\varepsilon}(0, t, \vx, \vv)\right)\right| \\
+        & \leqslant \sup \left\{|f_0(\vect{y}, \vect{u})|\left|\vect{y},\vect{u} \in \mathrm{R}^{N},\right| \vect{u}-\vect{v} | \leqslant C_{v}^{\varepsilon}(t)\right\}
+        \end{aligned}
+        \]
+        Taking $\int \ldots d \vv$ of the left-hand side and $\int_{\cdots}^{*} \ldots d \vv$ of the right-hand side proves $\rho^{\varepsilon}_{abs}\left(t, \vx\right) \leqslant K_{1} \cdot\left(K_{2}+C_{v}^{\varepsilon}(t)\right)^{N}$.
+        \item Fix $t_0\in I$,
+        $$\begin{aligned}
+            &\sup \left\{\left|f^{\varepsilon}\left(t_{0}, \vy, \vect{u}\right)\right|\left|\vy, \vect{u} \in \mathbb{R}^{2 N},\right| \vect{u}-\vv | \leqslant a\right\}\\
+        =&\sup \left\{\left|f_0\left(  \vect{X}^{\varepsilon}\left(0, t_{0}, \vy, \vect{u}\right), \vect{V}^{\varepsilon}\left(0, t_{0}, \vy, \vect{u}\right) \right) \right|  \bigg| \vy,\vect{u} \in \mathbb{R}^{ N},\left|\vect{u}-\vv\right| \leqslant a\right\}\\
+        \leqslant &\sup \left\{|f_0(\vy, \vect{u})|\left|\vy,\vect{u} \in \mathrm{R}^{N},\right| \vect{u}-\vv | \leqslant a+C_{v}^{\varepsilon}\left(t_{0}\right)\right\}
+        \end{aligned}$$
+        It follows that an integral would suffice to show that $f(t_0, \cdot, \cdot)$ satisfy the \supremumf.
+    \end{enumerate}
+\end{proof}
+Remark. Condition $(f 1)$ is much weaker than the conditions used by other authors in the same context, cf. [5], [2], [19], [21], [15].
+(2.6) Lemma Assume that $f^{\varepsilon}$ is a solution of $\text{VP}^{\varepsilon}(\varepsilon \geqslant 0 \text { fixed) on } I$. Assume further that $f$ is continuous on $\bbR^{2 N}$ and satisfies $(f 1) .$ Then $f^{\varepsilon}$ is continuous on $I \times \bbR^{N}$
+
+
+
+
+\begin{theorem}\textit{(Boundness Conditions Equivalence)}
+
+    Assume  $I \subset[0, \infty)$ is an interval with $0 \in I $. Assume  further that $f_{0}$ satisfies $(f_{0} 1)$
+    Then the following statements are equivalent:
+
+    \begin{enumerate}[(i)]
+        \item There exists an $H_{\rho}(t) \in C_{+}(I),$ such that 
+         $$\left|\rho^{\varepsilon}\left(t, \vx\right)\right| \leqslant H_{\rho}(t) \text{ for all } \varepsilon>0, t \in I, \vx \in \bbR^{\mathrm{N}}$$
+        \item There exists an $H_{E}(t) \in C_{+}(I),$ such that 
+        $$\left|\vE^{\varepsilon}\left(t, \vx\right)\right| \leqslant H_{E}(t) \text{ for all } \varepsilon>0, t \in I, \vx \in \bbR^{\mathrm{N}}$$
+        \item There exists an $H_{v}(t) \in C_{+}(I),$ such that 
+        $$ | \vect{V}^{\varepsilon}(t, 0, \vx, \vv)-\vv | \leqslant C_{v}^{\varepsilon}(t) \leqslant h_{v}(t) \text{ for all } \varepsilon>0, t \in I, \vx,\vv \in \bbR^{N}$$
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}\textit{(Boundness Condition)}
+
+    If the above conditions are satisfied, we say that "$I$ satisfies the boundedness condition"
+    If $N=1,2,$ then $[0, \infty) $ satisfies the boundedness condition.
+    $\text {If }N \geqslant 3$, there exists a $T \in( 0, \infty],$ which depends only on $N, \mathcal{M}=\|f_{0}\|_{1}$ and $K_{1}, K_{2}$ (the constants from definition (2.3)), such that $[0, T)$ satisfies the  boundedness condition.
+    
+\end{definition}
+
+
+
+
+\section{Lipschitz Continuity of \texorpdfstring{$\vE^{\varepsilon}$ and $\rho^{\varepsilon}$}{Lg}}
+
+In this section we show that $\vE^{\varepsilon}(t, \cdot)$ and $\rho^{\varepsilon}(t, \cdot)$ are Lipschitz continuous, if $f_{0}$ is sufficiently nice. If $I$ satisfies the boundedness condition, the Lipschitz constants do not depend on $\varepsilon$
+
+\begin{lemma}
+    Let $\varepsilon \geqslant 0, \gamma=\pm 1$. Assume that $\sigma: I \times \bbR^{N} \rightarrow \bbR$ satisfies $\sigma(t, \cdot) \in \mathrm{L}_{1}\left(\bbR^{N}\right) \cap \mathrm{L}_{\infty}\left(\bbR^{N}\right) \cap \operatorname{Lip}\left(\bbR^{N}\right)$ for all $t \in I$. Let  $\vE^\varepsilon\left(t, \vx\right):=\int \vect{e}^{\varepsilon}\left(\vx-\vect{y}\right) \cdot \sigma\left(t, \vect{y}\right) \mathrm{d} \vect{y}, t \in I, \vx,\vect{y} \in \bbR^{N} .$ Then
+\begin{enumerate}[(i)]
+    \item $\vE^\varepsilon(t, \cdot) \in C_{b}^{1}\left(\bbR^{N}, \bbR^{N}\right)$ for all $t \in I$ and
+
+    \[
+    \begin{aligned}
+        \left|\frac{\partial E_{i}}{\partial x_{j}}\left(t, \vx\right)\right| \leqslant &\omega_{N} ( \delta_{i j}/N+N) + N \omega_N \ln (1+\operatorname{lip}(\sigma(t, \cdot))) \|\sigma(t, \cdot)\|_{\infty} \\
+          &+ N\|\sigma(t, \cdot)\|_{1} 
+    \quad \text { for all } 1 \leqslant i, j \leqslant N, t \in I, \vx=\left(x_{1}, \ldots, x_{N}\right) \in \bbR^{N}
+    \end{aligned}
+    \]
+    and therefore $\vE^\varepsilon(t, \cdot) \in \operatorname{Lip}\left(\bbR^{N}, \bbR^{N}\right)$ and
+    \[
+    \begin{aligned}
+    \operatorname{lip}(\vE(t, \cdot)) \leqslant & \omega_{N}\left(N^{-1}+N^{2} \cdot \log (1+\operatorname{lip}(\sigma(t, \cdot)))\right) \cdot\|\sigma(t, \cdot)\|_{\infty} \\
+    &+N^{2}\left(\omega_{N}+\|\sigma(t, \cdot)\|_{1}\right)
+    \end{aligned}
+    \]
+    \item If $\sigma$ is continuous on $I \times \bbR^{N}$ and if $\operatorname{lip}(\sigma(t, \cdot))$ and $\|\sigma(t, \cdot)\|_{1}$ are bounded uniformly in t on every compact subinterval of $I,$ then the partial derivatives
+    $\partial E_{i} / \partial x_{j}$ are continuous on $I \times \bbR^{N}$
+    
+\end{enumerate}
+
+\end{lemma}
+
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \item The calculation of $\vE_i^\varepsilon(t,\vx)$ derivative component can be divided into three parts, for which a spherical region decomposition is necessary. Let $\vx$ be in $B(\vect{z},d_1)$, an open sphere with center $\vect{z}$ and radius $d_1$. 
+        \begin{equation}
+            \frac{\partial}{\partial x_j} E_i^\varepsilon(\vx)= \int_{d_1<|\vx-\vy|\leqslant d_2}+\int_{d_2<|\vx-\vy|}+\int_{|\vx-\vy|\leqslant d_1} \frac{\partial}{\partial x_j} e_i^\varepsilon (\vx - \vy) \sigma(t,\vy)\mathrm{d} \vy  =: I_{1,1} + I_{1,2} +I_{2}
+        \end{equation}
+    
+        Definition of $\vect{e}^\varepsilon$ gives $\Biggl|\frac{\partial}{\partial x_j} e_i^\varepsilon(\vx-\vy) \Biggr|\leqslant N\bigg|\vx-\vy\bigg|^{-N}$ to control the estimate, and \textit{cf.} [10], section 4.4.1, theorem 3 helps settle the singularity calculation problem of $I_2$. 
+         TODO!
+        The details would not be present here because the result in fact is not optimal due to the casual value of $d_1, d_2$. 
+        % choose $d_1= 1/(1+\operatorname{lip}(\sigma(t,\cdot)))$ and $d_2=1$ then we can deduce that $I_{1,1}+I_{1,2}\leqslant N\omega_N \log{d_2/d_1}\|\sigma(t,\cdot)\|_\infty+ N d_2^{-N}\|\sigma(t,\cdot)\|_1$.
+        \item TODO 
+    \end{enumerate}
+
+    
+\end{proof}
+
+
+
+\begin{assumption}
+
+    Assume that $f^{\varepsilon}$ is a solution of $\text{VP}^{\varepsilon}(\varepsilon \geqslant 0$ fixed) on I.
+    \begin{enumerate}
+        \item  We say that $f^{\varepsilon}$ satisfies \underline{\textit{$\operatorname{lip}_x(\rho)$ Control Condition} on $I$} if there exists a $C_{lip_x(\rho)}^{\varepsilon}(t) \in C_{+}(I)$ such that for $t \in I$
+        \begin{equation}
+            \label{eq:lipx_rho_control}
+            \operatorname{lip}\left(\rho^{\varepsilon}(t, \cdot)\right) \leqslant C_{lip_x(\rho)}^{\varepsilon}(t)
+        \end{equation}
+        \item We say that $f_{0}$ satisfies \underline{\textit{$\operatorname{lip}(f_0)$ in $v$ Sphere Control Condition}} if there exists an $h \in C_{+}([0, \infty))$ such that for all $a \geqslant 0$
+
+        \begin{equation}
+            \begin{aligned}
+                \label{eq:lip_Of_f0_in_vsphere_control}
+                \int^* \sup \{
+                    \frac{|f_{0}(\vect{y}, \vect{u})-f_{0}(\vect{z}, \vect{w})|}{| (\vect{y}, \vect{u})-(\vect{z}, \vect{w})|}  \bigg| (\vect{y},\vect{u}), (\vect{z},\vect{w}) \in \bbR^{N}\times \bbR^{N},\\ (\vect{y},\vect{u}) \neq (\vect{z},\vect{w}),             \left|\vect{u}-\vv\right|,\left|\vect{w}-\vv\right| \leqslant a\} \mathrm{d} \vv \leqslant h(a)
+            \end{aligned}
+        \end{equation}
+        
+    \end{enumerate}
+\end{assumption}
+
+Remark. It is easily shown that \lipOffVsphere implies $f_{0} \in \operatorname{Lip}\left(\bbR^{2 N}\right)$
+
+
+\begin{lemma}
+    Assume $f_{0}$ satisfies \lipOffVsphere, if $f_{0}$ is differentiable and there exists constants $\alpha > N$ and $K \geqslant 0$ such that $\left|\nabla_{x,v}f_{0}(\vx,\vv)\right| \leqslant K \cdot\left(1+\left|\vv\right|\right)^{-\alpha}$ for all $\vx,\vv \in \bbR^{N}$
+\end{lemma}
+
+\begin{proof}
+    By the mean value theorem the integrand of $(3.3 .1)$ is bounded by $K \cdot\left(\max \left\{1,1+\left|\vv\right|-a\right\}\right)^{-\alpha} . \operatorname{Let} h(a):=K \cdot \omega_{N} \cdot \int_{0}^{\infty} r^{N-1} \cdot(\max \{1,1+r-a\})^{-\alpha} \mathrm{d} r$
+\end{proof}
+
+
+\begin{lemma}
+    Assume that $f_{0}$ satisfies $(f_0 1)$ and \textit{$\operatorname{lip}(f_0)$ in $v$ Sphere Control Condition},
+
+    \begin{enumerate}
+        \item If $f^{\varepsilon}$ is a solution of $\text{VP}^{\varepsilon}$ on $I(\varepsilon \geqslant 0 \text { fixed}),$ then $f^{\varepsilon}$ satisfies $(f 2)$
+        \item If $I$ satisfies the boundedness condition, there exist functions $C_{\rho}, C_{E} \in C_{+}(I)$ such that for all $\varepsilon>0, t \in I$
+        \[
+        \operatorname{lip}\left(\vE^{\varepsilon}(t, \cdot)\right) \leqslant H_{E}(t), \quad \operatorname{lip}\left(\rho^{\varepsilon}(t, \cdot)\right) \leqslant C_{\rho}(t)
+        \]
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    We have shown in lemma (2.5) that sup $\left\{\left|\vv^{\varepsilon}(0, \tau, x)-\vv\right| \cdot |\vx, \vv\in \bbR^{2 N}\right.$ $0 \leqslant \tau \leqslant t\}=f_{v}^{\varepsilon}(t)<\infty$ for all $t \in I .$ Let $g^{\varepsilon}(t):=\sup \left\{\operatorname{lip}\left(\vE^{\varepsilon}(r, \cdot)\right) | 0 \leqslant r \leqslant t\right\}$
+\end{proof}
+
+
+\section{\texorpdfstring{$\varepsilon \rightarrow 0$}{Lg} Approximation}
+
+In this section we prove that a solution of $P^{0}$ exists on $I$, if and only if $I$ satisfies the boundedness condition. We start with three technical lemmas.
+
+\begin{lemma}
+    For all $\vect{z} \in \bbR^{N}, \varepsilon, \eta \geqslant 0$ we have that
+\[
+\left|\vect{e}^{\varepsilon}(\vect{z})-\vect{e}^{\eta}(\vect{z})\right| \leqslant 2 \cdot N \cdot|\vect{z}|^{-N+1 / 2} \cdot\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right|
+\]
+\end{lemma}
+
+\begin{proof}
+    \begin{equation}
+        \begin{aligned}
+            \left|\vect{e}^{\varepsilon}(\vect{z})-\vect{e}^{\eta}(\vect{z})\right|=&\left|\int_{\eta}^{\varepsilon} \frac{\partial}{\partial \lambda} \vect{e}^{\lambda}(\vect{z}) \mathrm{d} \lambda\right|=\left|-(N / 2) \cdot \int_{\eta}^{\varepsilon}\left(\vect{z}^{2}+\lambda\right)^{-N / 2-1} \vect{z} \mathrm{d} \lambda\right|\\
+            \leqslant &(N / 2) \cdot\left|\int_{\eta}^{\varepsilon}\left(\vect{z}^{2}+\lambda\right)^{-(N+1) / 2} \mathrm{d} \lambda\right| \leqslant(N / 2) \cdot|\vect{z}|^{-N+1 / 2} \cdot\left|\int_{\eta}^{\varepsilon} \lambda^{-3 / 4} \mathrm{d} \lambda\right|\\
+            = & 2N \cdot|\vect{z}|^{-N+1 / 2} \cdot\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right|
+        \end{aligned}
+    \end{equation}
+\end{proof}
+
+To accurately depict the singularity of $ \vect{e}^{0}$, $\vect{e}^{\varepsilon}$ is divided into two parts to investigate.
+\begin{definition}
+    For all $\varepsilon \geqslant 0$ and $\vect{z} \in \bbR^{N}$ let $\vect{e}^{\varepsilon}=:\vect{e}^{\varepsilon, 1}+\vect{e}^{\varepsilon, 2}$ in which 
+    \begin{enumerate}[(i)]
+        \item $\vect{e}^{\varepsilon, 1}(\vect{z}):=\mu \cdot\left(\varepsilon+\max \left\{1, \vect{z}^{2}\right\}\right)^{-N / 2} \cdot \vect{z}$,
+        \item $\vect{e}^{\varepsilon, 2}(\vect{z}):=\vect{e}^{\varepsilon}(\vect{z})-\vect{e}^{\varepsilon, 1}(\vect{z})$. 
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+      Then
+     \begin{enumerate}[(i)]
+         \item $\vect{e}^{\varepsilon, 1} \in \mathrm{L}_{\infty}\left(\bbR^{N}, \bbR^{N}\right) \cap \operatorname{Lip}\left(\bbR^{N}, \bbR^{N}\right),\left\|\vect{e}^{\varepsilon, 1}\right\|_{\infty} \leqslant 1$, $\operatorname{lip}\left(\vect{e}^{\varepsilon, 1}\right) \leqslant N^{2}$
+         \item $\vect{e}^{\varepsilon, 2} \in \mathrm{L}_{1}(\bbR^{N}, \bbR^{N})$, $\left\|\vect{e}^{\varepsilon, 2}\right\|_{1} \leqslant \omega_{n} \cdot N /(N+1)$, 
+         $\operatorname{supp}\left(\vect{e}^{\varepsilon, 2}\right)=\left\{\vect{z} \in \bbR^{N}|\bigg| \vect{z} | \leqslant 1\right\}$
+     \end{enumerate}
+     
+\end{lemma}
+
+\begin{proof}
+    $\operatorname{lip}\left(\vect{e}^{\varepsilon, 1}\right) \leqslant \max \left\{(1+\varepsilon)^{-N / 2}, \sup _{|z| \geqslant 1} \max _{1 \leqslant i \leqslant N j=1} \sum_{0=1}^{N}\left|\frac{\partial}{\partial z_{j}} e_{i}^{\varepsilon}(z)\right|\right\}$
+$\leqslant \max \left\{1, \sup _{|z| \geqslant 1} N^{2} \cdot|z|^{-N}\right\}=N^{2}$
+$| \vect{e}^{\varepsilon, 2} \|_{1}=\omega_{N} \cdot \int_{0}^{1} r^{N}\left(\left(r^{2}+\varepsilon\right)^{-N / 2}-(1+\varepsilon)^{-N / 2}\right) \mathrm{d} r \leqslant \omega_{N} \cdot \int_{0}^{1} r^{N}\left(r^{-N}-1\right) \mathrm{d} r=$
+$\omega_{N} \cdot N /(N+1),$ as the integrand is for $0 \leqslant r \leqslant 1$ non-increasing in $\varepsilon$ (its derivative with respect to $\varepsilon$ is non-positive).
+\end{proof}
+
+
+In the proof of the next theorem we need the Bivariant Gronwall lemma.
+
+
+
+
+\begin{theorem}
+    Assume that $f_{0} \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$ satisfies \supremumf and \lipOffVsphere. Assume that $I \subset [0, \infty)$  is an interval with $ 0 \in I $. Then a solution $ f^{0}$ of $\text{VP}^{0}$ exists on $I$, if and only if I satisfies the boundedness condition. In this case $f^{0}$ is unique and $f^{0}=\lim_{\varepsilon\rightarrow 0} f^{\varepsilon},$ uniformly on $I_{1} \times \bbR^{2 N}$ for all compact subsets $I_{1}$ of $I$ $\varepsilon \rightarrow 0$
+If $f_{0}$ is continuously differentiable on $\bbR^{2 N}$, then $f^{0}$ is continuously differentiable
+on $I \times \bbR^{2 N}$ and satisfies Vlasov's equation.
+Remark. In view of theorem (2.8) this proves global existence of a solution of $P^{0}$ for $N=1,2$ and at least local existence for $N \geqslant 3$
+\end{theorem}
+
+Proof of $(4.4) .$ It is sufficient to prove the theorem for compact $I$. (The theorem is true, if and only if it is true for all compact subintervals of $I$.) Thus assume $I=[0, T], T>0$
+
+"$\Rightarrow$" of the well-posedness theorem: If $I$ satisfies the boundedness condition, then a unique solution of $P^{0}$ exists. We have shown in $\$ 2$ and $\$ 3$ that there exist constants $\rho$ $G_{E}, F_{v}, \rho, G_{Q}$ such that for all $\varepsilon>0, t \in I$
+
+
+\[
+\begin{array}{l}
+\left|\vE^{\varepsilon}(t, \cdot)\right|_{\infty} \leqslant \rho, \quad \operatorname{lip}\left(\vE^{\varepsilon}(t, \cdot)\right) \leqslant G_{E} \\
+\sup \left\{\left|\vv^{\varepsilon}(0, t, x)-\vv\right| |\vx, \vv\in \bbR^{2 N}\right\} \leqslant F_{v} \\
+\left\|\rho^{\epsilon}(t, \cdot)\right\|_{\infty} \leqslant\left.\left.|| f^{\varepsilon}\right|_{e}(t, \cdot)\right|_{\infty} \leqslant \rho, \quad \operatorname{lip}\left(\rho^{\varepsilon}(t, \cdot)\right) \leqslant G_{e}
+\end{array}
+\]
+
+\begin{definition}
+Now let $\varepsilon>0$ and $\eta>0$ for the time being be fixed. Define for $t, \tau \in I$
+\[
+f^{\varepsilon, \eta}(t, \tau):=\sup \left\{\left|(\vect{X}^{\varepsilon},\vect{V}^{\varepsilon})(t, \tau, \vx, \vv)-(\vect{X}^{\eta},\vect{V}^{\eta})(t, \tau, \vx, \vv)\right| \bigg|\vx, \vv\in \bbR^{2 N}\right\},
+\]
+\textit{i.e.} the supremum of the norms of the final state change $|(\vect{X}^\varepsilon - \vect{X}^\eta, \vect{V}^\varepsilon-\vect{V}^\eta)|$, caused by the variantional parameter $\varepsilon$ modifying the field singularity, among all the particles moving from time $\tau$ to $t$.
+\end{definition} 
+
+To prove that we could acquire $\vect{X}^0$ by the limit of $\vect{X}^\varepsilon ~(\varepsilon>0)$, we need to prove that $\vect{X}$ uniformly converge as $\varepsilon\rightarrow 0$ on $I\times I \times \bbR^N \times \bbR^N$, \textit{i.e.} $\lim_{\varepsilon\rightarrow 0} \vect{X}^\varepsilon$ exists and the convergence rate does not rely on $(s,t,\vx,\vv)$ but the field modification parameter $\varepsilon$. We will prove that by the Cauchy method, that is, proving $f^{\varepsilon, \eta}(t, \tau)$ smaller than $K |\varepsilon^{k} -\eta^k|$ for a certain $k>0$, where $K$ are constants independent on $f_0$.
+
+
+Because of (1.2) and (1.3)$f$ is bounded on $I \times I .$ As $(\vect{X}^{\varepsilon}, \vect{V}^{\varepsilon})$ are known as continuous functions at least when $\varepsilon>0$, $f(t, \tau)=\sup \left\{\left|\vect{X}^{\varepsilon}\left(t, \tau, x_{n}\right)-\vect{X}^{\eta}\left(t, \tau, x_{n}\right)\right| | n \in \mathrm{N}\right\}$ for any sequence
+$\left(x_{n}\right)_{\text {neN }}$ dense in $\bbR^{2 N}$. This shows that for each $t \in I f(t, \cdot)$ and $f(\cdot, t)$ are measurable. 
+
+
+
+\begin{lemma}
+    \begin{equation}
+        f^{\varepsilon, \eta}(t, \tau) \leqslant K |\varepsilon^{1/4} -\eta^{1/4}| \text{ for all } t,\tau \in I, \varepsilon, \eta >0
+    \end{equation}
+     where $K$ is a constant independent on $f_0$. If the lemma holds, it shows that $(\vect{X}^\varepsilon)$ is uniformly convergent on $I\times I \times \bbR^n \times \bbR^n$.
+\end{lemma}
+
+\begin{proof}
+    To control $f^{\varepsilon, \eta}$, some estimates concerning $\|\vE^\varepsilon(t, \cdot) - \vE^\eta(t,\cdot)\|_\infty$, $\|\rho^\varepsilon-\rho^\eta\|_\infty$ will be introduced and used sequently. 
+\begin{equation}
+    \label{eq:fepseta-control}
+    \begin{aligned}
+        & \left|(\vect{X}^{\varepsilon}, \vect{V}^\varepsilon)(t, \tau, \vx,\vv)- (\vect{X}^{\eta}, \vect{V}^\eta)(t, \tau, \vx, \vv) \right| \\
+        =&\left|\int_{\tau}^{t}\left(\vect{V}^{\varepsilon}(r, \tau, \vx, \vv)-\vect{V}^{\eta}(r, \tau, \vx, \vv), \vE^{\varepsilon}\left(r, \vect{X}^{\varepsilon}(r, \tau, \vx, \vv)\right)-\vE^{\eta}\left(r, \vect{X}^{\eta}(r, \tau, \vx, \vv)\right)\right) \mathrm{d} r\right| \\
+        \leqslant &\left|\int_{\tau}^{t} f(r, \tau) \mathrm{d} r\right|+ 
+        \int_{\tau}^{t} \left| \vE^{\varepsilon}(r, \vect{X}^{\varepsilon}(r)\right)-\vE^{\varepsilon}\left(r, \vect{X}^{\eta}(r)\right| \mathrm{d} r  
+        +\int_{\tau}^{t} \left| \vE^{\varepsilon}(r, \vect{X}^{\eta}(r)\right)-\vE^{\eta}\left(r, \vect{X}^{\eta}(r)\right| \mathrm{d} r  \\
+    \end{aligned} 
+\end{equation}
+
+To control the $\vE^\varepsilon(t, \vx) -\vE^\eta(t, \vx)$ integral, we need to estimate  $\|\vE^\varepsilon(t, \cdot) - \vE^\eta(t,\cdot)\|_\infty$.
+
+$$\begin{aligned}
+    \vE^{\varepsilon}\left(t, \vx\right)-\vE^{\eta}\left(t, \vx\right)=:&I_{1}+I_{2}+I_{3} \text { in which } \\
+    I_{1}=&\int\left(\vect{e}^{\varepsilon}\left(\vx-\vect{y}\right)-\vect{e}^{\eta}\left(\vx-\vect{y}\right)\right) \cdot \rho^{\varepsilon}\left(t, \vect{y}\right) \mathrm{d} \vect{y} \\
+    I_{2}=&\int \vect{e}^{\eta,1}\left(\vx-\vect{y}\right) \cdot\left(\rho^{\varepsilon}\left(t, \vect{y}\right)-\rho^{\eta}\left(t, \vect{y}\right)\right) \mathrm{d} \vect{y} \\
+    I_{3}=&\int \vect{e}^{\eta,2}\left(\vx-\vect{y}\right) \cdot\left(\rho^{\varepsilon}\left(t, \vect{y}\right)-\rho^{\eta}\left(t, \vect{y}\right)\right) \mathrm{d} \vect{y}
+    \end{aligned}$$
+    
+Because of lemma (2.1) and (4.2) TODO
+\[
+\begin{aligned}
+\left|I_{1}\right| & \leqslant \int 2 N \cdot\left|\vx-\vect{y}\right|^{-N+1 / 2} \cdot\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right| \cdot\left|\rho^{\varepsilon}\left(t, \vect{y}\right)\right| \mathrm{d} \vect{y} \\
+& \leqslant 2 N \mathcal{M}^{1 / 2 N} C(N, N-1 / 2, \infty, 1) \cdot C_{\rho}^{(N-1 / 2) / N}\cdot\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right| \\
+&=: K_{5} \cdot\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right| \\
+\left|I_{2}\right| &=\left|\int\left(\vect{e}^{\eta, 1}\left(\vx-\vect{X}^{\varepsilon}(t, 0, \vy, \vect{u})\right)-\vect{e}^{\eta,1}\left(\vx-\vect{X}^{\eta}(t, 0, \vy, \vect{u})\right)\right) \cdot f_{0}(\vy,\vect{u}) \mathrm{d} \vect{y}\mathrm{d} \vect{u}\right| \\
+& \leqslant \mathcal{M} \cdot \operatorname{lip}\left(\vect{e}^{\eta , 1}\right) \cdot f(t, 0) \leqslant \mathcal{M} \cdot N^{2} \cdot f(t, 0)=: K_{4} \cdot f(t, 0) 
+\end{aligned}
+\]
+
+\begin{proposition}
+    To control $|I_3|$, we need to estimate $\|\rho^\varepsilon-\rho^\eta\|_\infty$ in advance,
+    \begin{equation}
+        \begin{aligned}
+    & \left|\rho^{\varepsilon}\left(t, \vx\right)-\rho^{\eta}\left(t, \vx\right)\right|=\left|\int f_{0}\left( (\vect{X}^{\varepsilon},\vect{V}^{\varepsilon})(0, t, \vx, \vv)\right)-f_{0}\left( (\vect{X}^{\eta}, \vect{V}^{\eta})(0, t, \vx, \vv)\right) \mathrm{d} \vv \right| \text{ for all } \vx \in \bbR^N\\
+    & \quad \leqslant \int^{*} \sup \left\{ \frac{|f_{0}(\vect{y},\vect{u})-f_{0}(\vect{z},\vect{w})|}{|(\vect{y},\vect{u})-(\vect{z}, \vect{w})|}  \bigg|y \neq w,| \vect{u}-\vv|,| \vect{w}-\vv | \leqslant F_{0}\right\} \\ 
+    &\qquad \cdot\left|\vect{X}^{\varepsilon}(0, t, \vx, \vv)-\vect{X}^{\eta}(0, t, \vx, \vv)\right| \mathrm{d} \vv  \leqslant  h\left(F_{v}\right) \cdot f(0, t)  \\
+        \end{aligned}
+    \end{equation}
+    where the function $h$ was introduced in definition (3.3) TODO 
+\end{proposition}
+
+
+\[
+\left|I_{3}\right|  \leqslant\left\|\vect{e}^{\eta, 2} \right\|_1 \cdot \left\| \rho^{\varepsilon}(t, \cdot)-\rho^{\eta}(t, \cdot)\right\|_{\infty} \\
+  \leqslant \omega_{N}(N /(N+1)) \cdot h\left(F_{v}\right) \cdot f(0, t)=: K_{3} \cdot f(0, t)
+\]
+Hence we conclude that there exist constants $K_{3}, K_{4}$ and $K_{5}$, depending on $f_{0}$, but not on $\varepsilon$ and $\eta$, such that for all $t \in I$, 
+\begin{equation}
+    \|\vE^{\varepsilon}(t, \cdot)-\vE^{\eta}(t, \cdot)\|_{\infty} \leqslant K_{3} \cdot f(0, t)+K_{4} \cdot f(t, 0) +K_{5}\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right|,
+\end{equation}
+
+We can now turn back to the \eqref{eq:fepseta-control} to push the inequality forward
+
+\begin{equation}
+    \begin{aligned}
+        & \left|(\vect{X}^{\varepsilon}, \vect{V}^\varepsilon)(t, \tau, \vx,\vv)- (\vect{X}^{\eta}, \vect{V}^\eta)(t, \tau, \vx, \vv) \right| \\
+        \leqslant &\left| \int_{\tau}^{t}\left(1+G_{E}\right) \cdot f(r, \tau)+K_{3} \cdot f(0, r)+K_{4} \cdot f(r, 0)+K_{5} \cdot\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right| \mathrm{d} r \right|\\
+        \Rightarrow f(t, \tau) \leqslant \Bigg| & \int_{\tau}^{t}\left(\left(1+G_{E}\right) \cdot f(r, \tau)+\max \left\{K_{3}, K_{4}\right\} \cdot(f(0, r)+f(r, 0))\right.\\
+        &\left.+K_{5} \cdot\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right|\right) \mathrm{d} r \Bigg| \text{ for any } t, \tau \in I
+        \end{aligned} 
+\end{equation}
+
+The equations looks complicated but we can utilize the bivariant Gronwall lemma in appdenx \ref{sec:Gronwall} to make it clear. We deduce that there exists a constant $K$, which does not depend on $\varepsilon$ and $\eta,$ such that for all $t, \tau \in I$,
+\begin{equation}
+     f(t, \tau)=\sup \left\{\left|\vect{X}^{\varepsilon}(t, \tau, \vx, \vv)-\vect{X}^{\eta}(t, \tau, \vx, \vv)\right| |\vx, \vv\in \bbR^{2 N}\right\} \leqslant K \cdot\left|\varepsilon^{1 / 4}-\eta^{1 / 4}\right|
+\end{equation}
+
+\end{proof}
+
+
+
+
+
+This shows that $\left(X^{\varepsilon}\right)_{\varepsilon>0}$ is uniformly convergent as $\varepsilon \rightarrow 0$ on $I \times I \times \bbR^{2 N}$ We interrupt the argument to note the following: If a solution $f^{0}$ of $P^{0}$ exists on $I$ and $I$ satisfies the boundedness condition, then we can prove (4.4.1) for $\eta=0$ (maybe with different constants $\rho, G_{E}, F_{v}, \rho, G_{e} .$ As a matter of fact the same constants will work, but we do not know this beforehand.) It follows that $\vect{X}^{0}(t, \tau, \vx, \vv)=\lim _{\epsilon \rightarrow 0} \vect{X}^{\varepsilon}(t, \tau, \vx, \vv) .$ Therefore $\vect{X}^{0}$ and also $f^{0}(t, \vx, \vv)=$
+$f_{0}\left(\vect{X}^{0}(0, t, x)\right)$ are uniquely determined. This proves the uniqueness part of the theorem.
+
+We continue the main argument: Define for $t, \tau \in I,\vx, \vv\in \bbR^{2 N} \quad \vect{X}^{0}(t, \tau, \vx, \vv):=$ $\lim _{\varepsilon \rightarrow 0} \vect{X}^{\varepsilon}(t, \tau, \vx, \vv), f^{0}(t, x):=f_{0}\left(\vect{X}^{0}(0, t, x)\right) .$ Then
+(i) $\vect{X}^{0}$ is continuous on $I \times \bbR^{N}$
+(ii) $\sup \left\{\left|\vv^{0}(0, t, x)-x_{0}\right| |\vx, \vv\in \bbR^{2 N}, t \in I\right\} \leqslant F_{v}$
+Because of inequality $2^{\circ} \vE^{\varepsilon}$ converges uniformly. Define for $t \in I, \vx \in \bbR^{N}$ $E^{0}\left(t, \vx\right):=\lim _{\epsilon \rightarrow 0} \vE^{\varepsilon}\left(t, \vx\right) .$ Then
+(iii) $E^{0}$ is continuous on $I \times \bbR^{N}$
+(iv) $E^{0}(t, \cdot) \in \mathrm{C}_{b}^{0}\left(\bbR^{N}, \bbR^{N}\right) \cap \operatorname{Lip}\left(\bbR^{N}, \bbR^{N}\right)$ for all $t \in I$ and $\left|E^{0}(t, \cdot)\right|_{\infty} \leqslant \rho$
+$\operatorname{lip}\left(E^{0}(t, \cdot)\right) \leqslant G_{E}$
+For all $\varepsilon>0$ we have
+\[
+\vect{X}^{\varepsilon}(t, \tau, \vx, \vv)=x+\int_{\tau}^{t}\left(\vx^{\epsilon}(r, \tau, x), \vE^{\varepsilon}\left(r, \vx^{\epsilon}(r, \tau, x)\right) \mathrm{d} r\right.
+\]
+The uniform convergence of $\vect{X}^{\epsilon}$ and $\vE^{\varepsilon}$ implies that this equation remains true for $\varepsilon=0 .$ This proves
+
+
+(v) $\vect{X}^{0}$ satisfies the differential equation $(1.2 .1)$ with initial condition $(1.4 .1)$ $\vect{X}^{0}(t, \tau, \cdot)$ is therefore a measure preserving homeomorphism for all $t, \tau \in I .$ Hence
+(vi) $f^{0}(t, \cdot) \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$ for all $t \in I$ and $\left|f^{0}(t, \cdot)\right|_{1}=m$
+This shows that $f_{\rho}^{0}(t, \cdot)$ is well-defined and $\left\|f_{\rho}^{0}(t, \cdot)\right\|_{1} \leqslant m$ for all $t \in I$ Inequality $1^{\circ}$ can now be proved analogously for $\eta=0 .$ This implies that $f_{\rho}^{\epsilon}$ converges uniformly on $I \times \bbR^{N}$ to $\rho^{0} .$ Thus
+(vii) $f_{\rho}^{0}(t, \cdot) \in \mathrm{L}_{\infty}\left(\bbR^{N}\right) \cap \operatorname{Lip}\left(\bbR^{N}\right)$ for all $t \in I$ and $\left|\rho^{0}(t, \cdot)\right|_{\infty} \leqslant \rho, \operatorname{lip}\left(\rho^{0}(t, \cdot)\right)$
+$\leqslant G_{e}$
+Inequality $2^{\circ}$ can now be proved analogously for $\eta=0 .$ This implies that $\vE^{\varepsilon}\left(t, \vx\right)$ converges uniformly on $I \times \bbR^{N}$ to $\int \vect{e}^{0}\left(\vx-\vect{y}\right) \cdot f^{0}(t, y) \mathrm{d} y^{2 N} .$ This
+expression must therefore be equal to $E^{0}\left(t, \vx\right)$ All in all we have shown that $f^{0}$ is the unique solution of $P^{0}$ on $I$. As $(f_{0} 2)$ implies $f_{0} \in \operatorname{Lip}\left(\bbR^{2 N}\right),$ we have that
+\[
+\begin{array}{l}
+\left|f^{\epsilon}(t, x)-f^{0}(t, x)\right|=\left|f_{0}\left(\vect{X}^{\epsilon}(0, t, x)\right)-f_{0}\left(\vect{X}^{0}(0, t, x)\right)\right| \\
+\leqslant \operatorname{lip}(f_{0}) \cdot \sup \left\{\left|\vect{X}^{\varepsilon}(0, t, x)-\vect{X}^{0}(0, t, x)\right| |\vx, \vv\in \bbR^{2 N}, t \in I\right\} \rightarrow 0, \text { if } \varepsilon \rightarrow 0
+\end{array}
+\]
+Therefore $f^{e}$ converges uniformly on $I \times \bbR^{2 N}$ to $f^{0}$ Lemma (2.6) and lemma (3.1) imply (viii) $E^{0}\left(t, \vx\right)$ is continuously differentiable with respect to $\vx$ If $f_{0}$ is continuously differentiable, then $f^{0}$ is continuously differentiable on $I \times \bbR^{2 N}$ and satisfies Vlasov's equation (cf. lemma (1.4)). 
+
+
+"$\Leftarrow$" of the well-posedness theorem: If a solution $f^{0}$ of $P^{0}$ exists on $I$, then I satisfies the boundedness condition. 
+
+If $N=1,2,$ there is nothing to be proved (cf. theorem (2.8) ). Now let $N \geqslant 3$ and assume that a solution $f^{0}$ of $P^{0}$ exists on $I=[0, T]$ $\left.\text { By theorem }\left.(2.8) \text { there exists a } T_{1} \in\right] 0, T\right],$ such that $\left[0, T_{1}[ \text { satisfies the }\right.$ boundedness condition. Therefore there exists a largest interval $I_{2} \subset I$ with left endpoint 0 that satisfies the boundedness condition. We have either $I_{2}=\left[0, T_{2}\right]$ or $I_{2}=\left[0, T_{2}\left[\text { for some } T_{2} \in\right] 0, T\right] .$ If $I_{2}=I,$ the proof is finished. Thus assume $I_{2}$ 옾 $I$
+As $I$ is compact, it follows with lemma (2.5) that
+\[
+\sup \left\{\left|\vv^{0}(0, t, x)-\vv\right| |\vx, \vv\in \bbR^{2 N}, t \in I\right\}=: F_{0}^{0}<\infty
+\]
+$f_{0}$ satisfies $(f_{0} 1)$ with constants $K_{1}$ and $K_{2},$ as defined in definition $(2.3) .$ Now let $K_{1}^{*}:=K_{1}, K_{2}^{*}:=K_{2}+F_{v}^{0}+1$
+In the proof of theorem (2.8) we have shown the following: Assume that $\psi \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$ satisfies $(f_{0} 1)$ with constants $K_{1}^{*}$ and $K_{2}^{*}$ and that $\|\psi\|_{1} \leqslant m$. Then there exists a $\vartheta>0$ and a $B \geqslant 0,$ both numbers depending only on $K_{1}^{*}, K_{2}^{*}$ and $m,$ such that for all $\varepsilon>0$ the solution $\Psi^{\varepsilon}$ of $P^{\varepsilon}$ on $[0, \infty)\text { with initial datum } \psi$ satisfies $\left\|\Psi_{f_{0}}^{\varepsilon}(t, \cdot)\right\|_{\infty} \leqslant B$ for all $t \in[0, \vartheta]$
+Let $T_{0}:=\max \left\{0, T_{2}-\vartheta / 2\right\} .$ As $T_{0}<T_{2}$ we know that $I_{0}:=\left[0, T_{0}\right]$
+satisfies the boundedness condition. We have shown in the first part of this proof that $\vect{X}^{\varepsilon}$ converges uniformly on $I_{0} \times I_{0} \times \bbR^{2 N}$ to $\vect{X}^{0}$. Hence there exists an $\varepsilon_{0}>0,$ such that sup $\left\{\left|\vv^{\epsilon}(0, t, x)-x_{0}\right| |\vx, \vv\in \bbR^{2 N}, t \in I_{0}\right\} \leqslant F_{v}^{0}+1$ for all
+$\left.\varepsilon \in] 0, \varepsilon_{0}\right] .$ Lemma (2.5) implies that $f^{\varepsilon}\left(T_{0}, \cdot\right)$ satisfies ( $f_{0} 1$ ) with constants $K_{1}^{*}$ and $\left.K_{2}^{*} \text { for all } \varepsilon \in\right] 0, \varepsilon_{0}$ ].
+
+We now claim that $\left[0, T_{0}+\theta\right]$ of satisfies the boundedness condition: 
+\[
+\begin{array}{ll}
+\sup \left\{\left|\rho^{\varepsilon}(t, \cdot)\right|_{\infty} | \varepsilon>0, t \in\left[0, T_{0}+\vartheta\right]\right\}=\max \left\{B_{1}, B_{2}, B_{3}\right\} \\
+\text { with } B_{1}=\sup \left\{\left|\rho^{\varepsilon}(t, \cdot)\right|_{\infty} | \varepsilon>0, t \in I_{0}\right\} \\
+B_{2}=\sup \left\{\left|\rho^{\epsilon}(t, \cdot)\right|_{\infty} | \varepsilon>\varepsilon_{0}, t \in\left[0, T_{0}+\vartheta\right]\right\} \\
+B_{3}=\sup \left\{\left|\rho^{\varepsilon}(t, \cdot)\right|_{\infty} | 0<\varepsilon \leqslant \varepsilon_{0}, t \in\left[T_{0}, T_{0}+\vartheta \mathbb{f}\right\}\right.
+\end{array}
+\]
+We know that $B_{1}<\infty,$ as $I_{0}$ satisfies the boundedness condition. Furthermore $B_{2}<\infty$ because of lemma (2.5) and the remark after theorem (1.3) $\left.\text { We now show that }\left.B_{3} \leqslant B<\infty: \text { Take any } \varepsilon \in\right] 0, \varepsilon_{0}\right]$ and let $\psi=f^{\varepsilon}\left(T_{0}, \cdot\right) . \psi$
+satisfies $(f_{0} 1)$ with constants $K_{1}^{*}$ and $K_{2}^{*}$ and $\|\psi\|_{1}=m .$ For all $t \in\left[T_{0}, T_{0}+\vartheta\right]$ we have $f^{\epsilon}(t, \cdot)=\Psi^{\epsilon}\left(t-T_{0}, \cdot\right)$ and therefore $\left|\rho^{e}(t, \cdot)\right|_{0 \infty}=| \Psi_{e}^{e}\left(t-T_{0}, \cdot\right) \|_{\infty}$
+$\leqslant B$
+Thus we have proved that $\left[0, T_{0}+\theta\right]$ of satisfies the boundedness condition.  This is a contradiction as $\left[0, T_{0}+\theta\right] \cap I \geqslant I_{2} \text { and } I_{2}$ was the largest subinterval of .$I$ with left endpoint 0 that satisfies the boundedness condition.
+
+In short, we finished the well-posedness theorem of local solutions for Vlasove equations in this chapter.
+
+Assume that $f_{0} \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$ and is continuously differentiable and that there
+exist an $\alpha>N$ and $a K \geqslant 0$ such that
+\[
+|f_{0}(x)| \leqslant K \cdot\left(1+\left|\vv\right|\right)^{-a},\left|\frac{\mathrm{d}}{\mathrm{d} x} f_{0}(\dot{x})\right| \leqslant K \cdot\left(1+\left|\vv\right|\right)^{-\alpha} \text { for all }\vx, \vv\in \bbR^{2 N}
+\]
+Assume I $\subset[0, \infty)\text { is an interval with } 0 \in I$
+Then a solution $f^{0}$ of the initial value problem $P^{0}$ on $I$ exists, if and only if I satisfies the boundedness condition. In this case the solution is unique and it satisfies Vlasov's equation. Moreover
+$f^{0}=\lim _{\varepsilon \rightarrow 0} f^{\varepsilon},$ uniformly on $[0, T] \times \bbR^{2 N}$ for all $T \in I$
+If $N=1,2,$ then $[0, \infty)\text { satisfies the boundedness condition. If } N \geqslant 3$ there exists a $T \in] 0, \infty$ ] (which may depend on $f_{0}$ ) such that $[0, T[ \text { satisfies the }$ boundedness condition.
+
+
+
+\end{lemma}
+
+
+% Theorem Assume that $\Phi^{\varepsilon}\left(\varepsilon \geqslant 0 \text { fixed) is a solution of } P^{\varepsilon} \text { on } I \text { . If } \varepsilon=0\right.$ assume further that $f_0$ satisfies $(f_0 1)$ and $(f_0 2)$
+
+% \begin{enumerate}[(i)]
+%   \item If $ \int\left|x_{v_{i}} \cdot f_0(x)\right| \mathrm{d} x^{2 N}<\infty,$ then $\left[\mathrm{mo}_{i}^{\varepsilon}\right](t)$ exists for all $t \in I$ and
+%   $\left[\mathrm{mo}_{i}^{\varepsilon}\right](t)=\left[\mathrm{mo}_{i}^{\varepsilon}\right](0)$
+%   \item If $ \int\left(\left|x_{v_{i}}\right|+\left|x_{s_{i}}\right|\right) \cdot|f_0(x)| \mathrm{d} x^{2 N}<\infty,$ then $\left[\mathrm{cm}_{i}^{\varepsilon}\right](t)$ exists for all $t \in I$ and
+%   $\left[\mathrm{cm}_{i}^{\varepsilon}\right](t)=\left[\mathrm{cm}_{i}^{\varepsilon}\right](0)+t \cdot\left[\mathrm{mo}_{i}^{\varepsilon}\right](0)$
+%   \item If $ \int\left(\left|x_{s_{i}} \cdot x_{v_{j}}-x_{s_{j}} \cdot x_{v_{i}}\right|+\left|x_{s_{i}}\right|+\left|x_{s_{j}}\right|+\left|x_{v_{i}}\right|+\left|x_{v_{j}}\right|\right) \cdot|f_0(x)| \mathrm{d} x^{2 N}<\infty,$ then
+%   $\left[\operatorname{am}_{i j}^{\varepsilon}\right](t)$ exists for all $t \in \operatorname{Iand}\left[\operatorname{am}_{i j}^{\varepsilon}\right](t)=\left[\operatorname{am}_{i j}^{e}\right](0)$
+%   Now assume $N \geqslant 3$
+%   \item $\left[\mathrm{pe}^{\varepsilon}\right](t)$ exists for all $t \in I .$ If $\int x_{v}^{2} \cdot|f_0(x)| \mathrm{d} x^{2 N}<\infty,$ then $\left[\mathrm{ke}^{\varepsilon}\right](t)$ exists for all
+%   $t \in I$ and $\left[\operatorname{en}^{\varepsilon}\right](t)=\left[\operatorname{en}^{\varepsilon}\right](0)$
+%   (v) If  $ \int x^{2} \cdot|f_0(x)| \mathrm{d} x^{2 N}<\infty,$ then $\left[\mathrm{mi}^{\varepsilon}\right](t)$ exists for all $t \in I$ and $\left[\mathrm{mi}^{\varepsilon}\right]$ is twice
+%   continuously differentiable on $I$ If $\varepsilon=0,$ then $\frac{\mathrm{d}^{2}\left[\mathrm{mi}^{0}\right]}{\mathrm{d} t^{2}}=2 \cdot\left[\mathrm{ke}^{0}\right]+(N-2) \cdot\left[\mathrm{pe}^{0}\right]$ on $I$   
+% \end{enumerate}
+
+% \subsection{Conservatives}
+
+% Definition
+% \begin{enumerate}[(i)]
+
+%   \item Assume that $\Phi^{\varepsilon}(\varepsilon \geqslant 0 \text { fixed})$ is a solution of $P^{\varepsilon}$ on I. For all $t \in I, 1 \leqslant i, j \leqslant$
+%   $N, x_{s} \in \mathbf{R}^{N}$ for which the integrals exist (i.e. for which the integrand is in $\mathrm{L}_{1}$ ) let
+%   \[
+%   U^{\varepsilon}\left(t, x_{s}\right):=\int u^{\varepsilon}\left(x_{s}-y_{s}\right) \cdot \Phi^{\varepsilon}(t, y) \mathrm{d} y^{2 N}, \text { if } N \geqslant 3 \quad(\text {potential})
+%   \]
+%   $\left[\mathrm{mo}_{i}^{c}\right](t):=\int x_{v_{l}} \cdot \Phi^{\varepsilon}(t, x) \mathrm{d} x^{2 N} \quad\left(i^{\text {th }} \text { component of } \text {momentum}\right)$
+%   $\left[\mathrm{cm}_{i}^{\varepsilon}\right](t):=\int x_{s_{i}} \cdot \Phi^{\varepsilon}(t, x) \mathrm{d} x^{2 N} \quad\left(i^{\text {th }} \text { component of centre of } \underline{\text { mass }}\right)$
+%   \[
+%   \left[\operatorname{am}_{i j}^{\varepsilon}\right](t):=\int\left(x_{s_{i}} \cdot x_{v_{j}}-x_{s_{j}} \cdot x_{v_{i}}\right) \cdot \Phi^{\varepsilon}(t, x) \mathrm{d} x^{2 N} \quad((i, j)\text { th component }
+%   \]
+%   of angular momentum)
+% \end{enumerate}
+
+% \begin{equation}\begin{aligned}
+%   &\begin{array}{l}
+%   {\left[\mathrm{ke}^{\varepsilon}\right](t):=\int x_{v}^{2} \cdot \Phi^{\varepsilon}(t, x) \mathrm{d} x^{2 N} \quad(\text {kinetic energy})} \\
+%   {\left[\mathrm{mi}^{\varepsilon}\right](t):=\int x_{s}^{2} \cdot \Phi^{\varepsilon}(t, x) \mathrm{d} x^{2 N} \quad(\text {moment of inertia})}
+%   \end{array}\\
+%   &\text {and for all } N \geqslant 3\\
+%   &\left[\mathrm{pe}^{\varepsilon}\right](t):=\int U^{\varepsilon}\left(t, x_{s}\right) \cdot \Phi^{\varepsilon}(t, x) \mathrm{d} x^{2 N} \quad(\text {potential energy})\\
+%   &\left[\mathrm{en}^{\varepsilon}\right](t):=\left[\mathrm{ke}^{\varepsilon}\right](t)+\left[\mathrm{pe}^{\varepsilon}\right](t) \quad(\text {energy})
+% \end{aligned}\end{equation}
+
+
+% Remark. The functions $f_{E}^{\epsilon}$ and $g_{E}^{E}$ obtained in these proofs are multiples of negative powers of $\varepsilon .$ The methods do not work for $\varepsilon=0,$ we will even show in part II that the theorem is not always true for $\varepsilon=0$

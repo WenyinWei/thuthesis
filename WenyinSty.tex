@@ -4,11 +4,7 @@
 \usepackage{siunitx} % \SI{1.234}{\m\per\square\s} \SI{1e-4}{\metre}
 \DeclareSIUnit{\rad}{rad} % \rad is removed frmo siunitx 2 since it is not a SI unit. 
 
-% \usepackage{amsmath}
-\newcommand\vect{\mathbf}
-% \newcommand\matr{\mathbf} % \matrix is defined in LaTeX2e kernel
-% \newcommand\tens{\mathcal}
-
+\usepackage{amsmath}
 \usepackage{romannum}  % \Romannum{3} \romannum{3}
 
 
@@ -21,6 +17,8 @@
 
 % Conflict with thuthesis
 % \usepackage[math-style=ISO]{unicode-math} % XeTeX driver only supports unicode.  (hyperref)  Enabling option `unicode'. 
+
+
 % Sometimes pasted texts may contain unicode math symbols which may cause compiling errors, the package is capable to help you skip those trivial errors caused by compiling those symbols which used to be uncompilable properly.
 
 \usepackage{etoolbox}
@@ -36,6 +34,7 @@
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \makeatother
 \usepackage{hyperref}
+\usepackage{cleveref}
 
 
 % \usepackage[T1]{fontenc} //This may cause some alignment problem in cover
@@ -51,11 +50,22 @@
 \makeatletter
 \newcommand{\etale}{\'etal\@ifstar{\'e}{e\xspace}}
 \makeatother
+\newcommand{\Holder}{H\"older\xspace}
 
 
+\usepackage{unicode-math}
+\setmainfont{XITS}
+\setmathfont{XITS Math}
+\newcommand\vect{\symbfup}
+% \newcommand\matr{\mathbf} % \matrix is defined in LaTeX2e kernel
+% \newcommand\tens{\mathcal}
 \newcommand{\vE}{\vect{E}}
+\newcommand{\vB}{\vect{B}}
 \newcommand{\vx}{\vect{x}}
+\newcommand{\ve}{\vect{e}}
+\newcommand{\vy}{\vect{y}}
 \newcommand{\vv}{\vect{v}}
+\newcommand{\vj}{\vect{j}}
 \newcommand{\ftxv}{f(t, \vect{x}, \vect{v})}
 \newcommand{\bbRRR}{\bbR^{3}}
 \newcommand{\bbRx}{\bbR_{x}^{3}}

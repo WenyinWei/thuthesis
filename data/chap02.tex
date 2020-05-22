@@ -1,0 +1,40 @@
+\chapter{Stability}
+\label{cha:stability}
+Large amount of attention has been put on the problem of stability of stationary solutions of the Vlasov-Poisson system, both in the stellar dynamics and the plasma physics cases. The energy-Casimir 
+method has been used to prove non-linear stability for various conservative systems, and \cite{rein_non-linear_1994} employed the method to prove non-linear stability of the Vlasov-Poisson system in three grometrically different setting. The three settings are the situations where the ion density is replaced by a given fixed ion background, the plasma can be spatially periodic, or can be restricted to a bounded domain. 
+
+
+With the exception of the first case, stationary solutions exist in these settings and also in the stellar dynamic case. 
+In the physics literature there are numerous investigations of the problem of stability of these stationary solutions, both linear and non-linear, and we refer to [1,2]\footnote{Not yet found} and the monographs [4,5]\footnote{Not yet found} for references. In contrast, very little rigorous mathematics exists on this problem. In [2,9]\footnote{Not yet found} non-linear stability of stationary solutions in a spatially periodic, plasma physics setting is established for the Vlasov-Poisson system and the 
+relativistic Vlasov-Maxwell system, respectively, see also [lo, 111\footnote{Not yet found}. The problem of linear stability is investigated in [l]\footnote{Not yet found}, both for the plasma physics and the stellar dynamics cases. The phenomenon of Landau damping is established mathematically 
+in [ 6 ]\footnote{Not yet found} for the one-dimensional, linearized Vlasov-Poisson system. 
+The starting point of the present investigation is a general method to assert 
+non-linear stability of stationary solutions for (infinite-dimensional, degenerate) 
+Hamiltonian systems, which is presented in [S]\footnote{Not yet found}. We briefly review this method. Let the 
+system under consideration be described by the equation of motion 
+
+$$\dot{u} = A(u)$$
+
+on some state space $X , A : D(A) \rightarrow X $ a (non-linear) operator, and let $u_0$ be the 
+stationary solution whose stability we want to investigate. The following steps lead to 
+a stability result for $u_0$:
+
+\begin{enumerate}
+  \item Find the energy (Hamiltonian) $H :X + \bbR$ of the system; $d H ( u ( t ) )/dt = 0$ along 
+  solutions. 
+  \item Relate $u_0$ to another conserved quantity Casimir functional $C : X + \bbR$ such that $u_0$ is a critical point of $H_C := H + C$, i.e. $DH_C(u_0) = 0$. 
+  \item Show that the quadratic part in the expansion of $H_c$ at $u_0$ 
+  $$H_C(u) = H_C(u_00) + DH_C(u_0)(u - u_0) + D^2H_C(u_0)(u - u_0, u - u_0) + ... $$
+  is positive definite, more precisely, find a norm $|| \cdot ||_a $ on X such that 
+  $$H_C(u) - H_C(u_0) - DH_C(u_0)(U - u_0) \geq  C||u-u_0||^2_a \in X,$$ 
+  for some $C > 0$. 
+  \item Find a norm $||\cdot ||_b$ on $X$ with respect to which $H_c$ is continuous at $u_0$. 
+\end{enumerate}
+
+
+If Steps (1)-(3) can be carried through, then for any solution 
+
+and with Step (4) we conclude that for any $\varepsilon > 0$ there exists $\delta > 0$ such that $||u(0)-u_0||_b < \delta$ implies  $$\left\|u(t)-u_{0}\right\|^{2}_a \leqslant \frac{1}{C}\left|H_{C}(u(0))-H_{C}\left(u_{0}\right)\right| ,$$ \textit{i.e}. $u_0$ is non-linearly stable. 
+
+Though the energy-Casimir method is elegant and appealing, in [S] 
+it is pointed out that the appearance of large velocities could cause the method to run into trouble.

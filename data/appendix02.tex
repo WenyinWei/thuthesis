@@ -1,0 +1,113 @@
+\chapter{non-relativisitic VP Boundness}
+\label{cha:boundness}
+
+
+\begin{theorem}
+    There exists a $K_{6}>0,$ so that for all $t \in[0, T[ \text { we have }$
+\[
+\int_{\mathbf{R}^{6}} \vv^{2} f(t, \vx, \vv) d(\vx, \vv) \leqslant K_{6}
+\]
+\end{theorem}
+
+Proof. $[10, \text { Theorem } 5.8]$ TODO
+\begin{lemma}
+    Let $0 \leqslant a<b .$ Then for all $\sigma \in L_{\infty}\left(\bbR^{3}\right), \sigma \geqslant 0$ with $|\vect{z}|^{b} \sigma(\vect{z}) \in L_{1}\left(\bbR^{3}\right)$ we have $|\vect{z}|^{a} \sigma(\vect{z}) \in L_{1}\left(\bbR^{3}\right) $, such that for all measurable set $\Omega \subset \bbR^{3}$
+\[
+\int_{\Omega}|\vect{z}|^{a} \sigma(\vect{z}) d \vect{z} \leqslant (\frac{4\pi}{3+a}+1) \|\sigma\|_{\infty}^{(b-a) /(3+b)}\left(\int_{\Omega}|\vect{z}|^{b} \sigma(\vect{z}) d \vect{z}\right)^{(3+a) /(3+b)},
+\]
+Denote $
+J_k:=\int_{\bbR^{3}}|\vect{z}|^{k} \sigma(\vect{z}) d \vect{z} 
+$ for $k\geqslant 0$, the inequality can be simplified as follows:
+\[
+J_a \lesssim \|\sigma\|_{\infty}^{(b-a) /(3+b)} J_b^{(3+a) /(3+b)},
+\]
+\end{lemma}
+
+\begin{proof}
+   let $\sigma \neq 0$ and $\Omega=\bbR^{3}$ (otherwise take $1_{\Omega} \cdot \sigma$ instead of $\sigma$ ), then, we adopt the old trick that divide the integral region into two parts, 
+
+we have
+\[
+\begin{aligned}
+J_a:=\int_{\bbR^{3}}|\vect{z}|^{a} \sigma(\vect{z}) d \vect{z} &=\int_{|\vect{z}|<R} \cdots d \vect{z}+\int_{|\vect{z}|>R} \cdots d \vect{z} \\
+& \leqslant\|\sigma\|_{\infty} \int_{|\vect{z}|<R}|\vect{z}|^{a} d \vect{z}+\int_{|\vect{z}|>R}|\vect{z}|^{a-b}|\vect{z}|^{b} \sigma(\vect{z}) d \vect{z} \\
+& \leqslant \|\sigma\|_{\infty} \frac{4 \pi}{3+a} R^{3+a}+R^{a-b} J_b  \\
+&\text{ let } R=\left(\frac{J}{\|\sigma\|_{\infty}}\right)^{1 /(3+b)}  \\
+J_a & \leqslant\left(\frac{4 \pi}{3+a}+1\right)\|\sigma\|_{\infty}^{(b-a) /(3+b)} J_b^{(3+a) /(3+b)}
+\end{aligned}
+\]
+\end{proof}
+
+LEMMA $8 . \quad$ 
+Proof. 
+
+
+
+\begin{proposition}
+    If $\gamma=+1$, then there exists a constant $C$ (depending on $\|f_0\|_{\infty}$ and $\mathscr{E}_0$) such that $||\rho(t)||_{4/3}\leq C$ for $0 \leq t < T$.
+\end{proposition}
+\begin{proof}
+    inequality we have
+    \[
+    \begin{aligned}
+    \int_{|\vv|<R} f d \vv & \leqq\left(\int f^{2} d \vv\right)^{1 / 2}\left(\frac{4 \pi}{3} R^{3}\right)^{1 / 2} \leqq\left(\|f(t)\|_{\infty} \int f d \vv\right)^{1 / 2}\left(\frac{4 \pi}{3} R^{3}\right)^{1 / 2} \\
+    &=\left(\frac{1}{2} \rho(t, \vx)\right)^{1 / 2}\left(\frac{8 \pi}{3}\|f_0\|_{\infty} R^{3}\right)^{1 / 2} \leqq \frac{1}{2} \left(\frac{1}{2} \rho(t, \vx)+\frac{8 \pi}{3}\|f_0\|_{\infty} R^{3} \right)
+    \end{aligned}
+    \]
+    by Young's inequality. Hence
+    \[
+      \begin{aligned}
+        \frac{3}{4} \rho(t, \vx) \leqq \frac{4\pi}{3}\|f_0\|_{\infty} R^{3}+\int_{|\vv|>R} f d \vv \leqq \frac{4 \pi}{3}\|f_0\|_{\infty} R^{3}+R^{-1} \int \sqrt{1+|\vv|^{2}} f d \vv \\
+        \leqq \frac{4}{3} (4\pi)^{1/4} \|f_0\|^{1/4}_{\infty} (\int \sqrt{1+|\vv|^2} f \mathrm{d} \vv)^{3/4}
+      \end{aligned}
+    \]
+    $$ \rho(t, \vx) 
+    \leqq \frac{16}{9} \sqrt{2} (\pi)^{1/4} \|f_0\|^{1/4}_{\infty} (\int \sqrt{1+|\vv|^2} f \mathrm{d} \vv)^{3/4}$$
+    from which (D) follows.
+\end{proof}
+
+
+\begin{lemma}
+    \begin{enumerate}[(i)]
+        \item There exists $K_{8}>0,$ so that $\|\rho(t)\|_{5 / 3} \lesssim K_{8}$ for all $t \in[0, T[$
+        \item There exist $c_{9,1}, c_{9,2}, K_{9}>0,$ so that for all $r, R>0$ $t \in\left[0, T\left[. \vx \in \bbR^{3}\text { we have }\right.\right.$
+        \[
+        |\vE(t, \vx)| \leqslant 4 \pi\|\rho(t)\|_{\infty} r+(4 \pi)^{2 / 3}\|\rho(t)\|_{3, B_{R}(\vx)} \ln_{+}^{2 / 3}\left(\frac{R}{r}\right) +(2 \pi)^{2 / 5}\|\rho(t)\|_{5 / 3} R^{-4 / 5}
+        \]
+        where $\ln _{+}:=\max \{\ln , 0\}$
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \item By Lemma 7 with $a=0, b=2,$ together with (2.4) and Theorem 6 we have for $t \in[0, T[$
+        \[
+        \begin{aligned}
+        \int_{\bbR^{3}}|\rho(t, \vx)|^{5 / 3} d \vx &=\int_{\bbR^{3}}\left|\int_{\bbR^{3}} f(t, \vx, \vv) d \vv\right|^{5 / 3} d \vx \\
+        & \lesssim \int_{\bbR^{3}}\left|\|f(t)\|_{\infty}^{2 / 5}\left(\int_{\bbR^{3}} \vv^{2} f(t, \vx, \vv) d \vv\right)^{3 / 5}\right|^{5 / 3} d \vx \\
+        & \lesssim \|\varphi\|_{\infty}^{2 / 3} \int_{\bbR^{3}} \int_{\bbR^{3}} \vv^{2} f(t, \vx, \vv) d \vv d \vx \\
+        & \lesssim \|\varphi\|_{\infty}^{2 / 3} K_{6}\\
+        \left(\int_{\bbR^{3}}|\rho(t, \vx)|^{5 / 3} d \vx\right) \lesssim K_{8}^{5 / 3}
+        \end{aligned}
+        \]
+        \item Setting $\hat{r}:=\min \{r, R\},$ we have
+        \[
+        \begin{aligned}
+        |\vE(t, \vx)| & \leqslant \int_{\bbR^{3}} \frac{1}{|\vx-\vy|^{2}} \rho(t, \vy) d \vy  \leqslant \int_{|\vx-\vy| \leqslant \hat{r}} \cdots d \vy+\int_{\hat{r}\leqslant|\vx-\vy| \leqslant R} \cdots d \vy+\int_{R \leqslant|\vx-\vy|} \cdots d \vy
+        \end{aligned}
+        \]
+        
+        By application of Hoelder's inequality we obtain
+        \[
+        \begin{aligned}
+        |\vE(t, \vx)| \leqslant & \|\rho(t)\|_{\infty} \int_{|\vx-\vy| \leqslant^{\prime}|\vx-\vy|^{2}} d \vy \left.\frac{1}{r}\left(\frac{1}{|\vx-\vy|^{2}}\right)^{3 / 2} d \vy\right)^{2 / 3} \\
+        &+\|\rho(t)\|_{3, B_{R}(\vx)}\left(\int_{i \leqslant|\vx-\vy| \leqslant R}^{5 / 2} d \vy\right)^{2 / 5} \\
+        &+\|\rho(t)\|_{s / 3}\left(\int_{R \leqslant|\vx-\vy|}\left(\frac{1}{|\vx-\vy|^{2}}\right)^{2 / 3}\right.\\
+        \leqslant & 4 \pi\|\rho(t)\|_{\infty} r+(4 \pi)^{2 / 3}\|\rho(t)\|_{3, B_{R}(\vx)} \ln_{+}^{2 / 3}\left(\frac{R}{r}\right) \\
+        &+(2 \pi)^{2 / 5}\|\rho(t)\|_{5 / 3} R^{-4 / 5}
+        \end{aligned}
+        \]
+        The assertion follows by Lemma 8
+    \end{enumerate}
+    
+\end{proof}

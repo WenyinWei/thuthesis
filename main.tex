@@ -1,4 +1,4 @@
-\documentclass[degree=bachelor,language=english,tocarialchapter]{thuthesis}
+\documentclass[degree=bachelor,language=chinese,tocarialchapter]{thuthesis}
 % 选项
 %   degree=[bachelor|master|doctor|postdoctor], % 必选，学位类型
 %   language=[chinese|english], % 可选（默认：chinese），论文的主要语言
@@ -24,20 +24,26 @@
 \frontmatter
 \input{data/cover}
 % 如果使用授权说明扫描页，将可选参数中指定为扫描得到的 PDF 文件名，例如：
-% \makecover[scan-auth.pdf]
-% \makecover
+\makecover[scan-auth.pdf]
 
-%% 目录
-% \tableofcontents
 
-%% 符号对照表
+% 目录
+\tableofcontents
+
+% 符号对照表
 % \input{data/denotation}
 
 
 %%% 正文部分
 \mainmatter
 % \input{data/chap01}
-\input{data/note.tex}
+\input{data/intro.tex}
+% \input{data/chap01.tex}
+% \input{data/chap02.tex}
+% \input{data/chap03.tex}
+\input{data/local_in_time.tex}
+\input{data/global_VP.tex}
+\input{data/global_RVP.tex}
 
 %%% 其它部分
 \backmatter
@@ -60,12 +66,14 @@
 
 
 %% 致谢
-% \input{data/ack}
+\input{data/ack}
 
 %% 附录
-% \begin{appendix}
-% \input{data/appendix01}
-% \end{appendix}
+\begin{appendix}
+\input{data/appendix01}
+% \input{data/appendix02}
+\input{data/appendix03}
+\end{appendix}
 
 %% 个人简历
 % \input{data/resume}

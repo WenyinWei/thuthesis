@@ -1,0 +1,82 @@
+\chapter{Conservation Laws}
+\label{cha:conservatives}
+
+\begin{proposition}
+    If $f_0$ vanished for $|x|>k$, then $\ftxv$ vanished for $|\vx|>t+k$ (casuality).
+\end{proposition}
+
+\begin{lemma}\textit{(Conservation Laws)}
+    Let $f$ be a classical solution of (RVP) on some time interval $[0,T)$ with nonnegative initial data $f_0\in C^1(\bbR^6)$. Then the following properties hold:
+    \begin{enumerate}[(a)]
+        \item The total mass is conserved, \textit{i.e.}, $\iint_{\bbR^6}fd\vect{v} d\vect{x} = \text { constant } = m$.
+        \item The total energy is conserved, \textit{i.e.},
+        \begin{equation}
+            \text{(RVP) } \int_{\bbRx}\left\langle\int_{\bbRv} \sqrt{1+|\vect{v}|^{2}} f d \vv+\frac{1}{2} \gamma|\vE|^{2}\right\rangle d \vect{x}=\text { constant }=:\mathscr{E}_{0}
+        \end{equation}
+        \begin{equation}
+            \text{(VP) } \int_{\bbRx}\left\langle\int_{\bbRv} \frac{|\vect{v}|^{2}}{2}  f d \vv+\frac{1}{2} \gamma|\vE|^{2}\right\rangle d \vect{x}=\text { constant }=:\mathscr{E}_{0}
+        \end{equation}
+
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \eqrvp to be reorganized from \cite{glassey_symmetric_1985}.
+
+    \begin{enumerate}[(a)]
+      \item We apply Eq. (2) to note that $|\vect{X}(s, t, \vx, \vv)-\vx|=$ $\left|\int_{t}^{s} \hat{\vect{V}}(\xi, t, \vx, \vv) d \xi\right| \leqq|t-s| .$ In particular, $|X(0, t, \vx, \vv)-\vx| \leqq t .$ Thus whenever $|\vx|>k+t,$ we have $|\vect{X}(0, t, \vx, \vv)| \geqq|\vx|-|\vect{X}(0, t, \vx, \vv)-\vx|>k$, and so by hypothesis and
+      $(3), f(t, \vx, \vv)=f_0(\vect{X}(0, t, \vx, \vv), \vect{V}(0, t, \vx, \vv))=0$
+      \item follows by simply integrating $(\mathrm{RVP})$ in $v$ and $x$.
+      \item
+      
+      Multiplying \eqrvp by $\sqrt{1+|\vv|^{2}}$ and integrating in $v,$ we obtain
+      \begin{equation}
+        \label{eq:rvp_second_moment}
+        \frac{\partial}{\partial t} \int \sqrt{1+|\vv|^{2}} f d \vv+\int \vv \cdot \nabla_{x} f d \vv-\gamma \vj \cdot \vE=0, \quad \vect{j}=\int \hat{\vv}f d \vv
+      \end{equation}
+
+      For non-relativistic \eqvp, multiply it by $|\vv|^2$ and we acquire similarly
+      \begin{equation}
+        \label{eq:vp_second_moment}
+        \frac{\partial}{\partial t} \int |\vv|^{2} f d \vv+\int \vv \cdot \nabla_{x} |\vv|^2 f d \vv-2\gamma \vj \cdot \vE=0, \quad \vect{j}=\int \vv f d \vv
+      \end{equation}
+       We have defined $\vE= - \nabla \phi$, where $\Delta \phi=\rho$. Multiplying by $\phi,$ we have
+      \[
+      \int_{\Omega^{3}}|\vE|^{2} d x=-\int_{R^{3}} \rho \phi d \vx
+      \]
+      and hence
+      \[
+      \begin{aligned}
+      \frac{d}{d t} \int_{R^{3}}|\vE|^{2} d x &=-\int_{R^{3}} \rho_{t} \phi d x-\int \rho u_{t} d x=-\int \rho_{t} \phi d x-\int_{R^{3}} u_{t} \Delta \phi d x \\
+      &=-\int_{\mathbb{R}^{3}} \rho_{t} \phi d x+\frac{1}{2} \frac{d}{d t} \int_{R^{3}}|E|^{2} d \vx \text{ (integrate by parts)}\\
+      \Rightarrow \frac{1}{2} \frac{d}{d t} \int_{\mathrm{R}^{3}}|\vE|^{2} d \vx=&-\int_{\mathrm{R}^{3}} \rho_{t} \phi d \vx
+      \end{aligned}
+      \]
+      Therefore
+      
+      Next, integrating \eqvp and \eqrvp in $\vv$, we get the conservation law for both cases
+      \[
+      \rho_{t}+\nabla_{x} \cdot \vj=0, \quad \vect{j}=\left\{\int \vv f d \vv, \int \hat{\vv} f d \vv\right\}
+      \]
+      It follows that
+      \[
+      \frac{1}{2} \frac{d}{d t} \int_{\Omega^{3}}|\vE|^{2} d \vx=-\int_{R^{3}} \rho_{t} \phi d \vx=\int_{\Omega^{3}} \phi \nabla_{x} \cdot j d \vx=-\int_{\mathbb{R}^{3}} \vj \cdot \nabla_{x} \phi d \vx=-\int_{n^{3}} \vj \cdot \vE d \vx
+      \]
+      Now using this and \eqref{eq:rvp_second_moment}, \eqref{eq:vp_second_moment} we have
+      \[
+      \begin{aligned}
+      \text{(VP) }&\frac{d}{d t} \int_{\mathbb{R}^{3}}\int_{\mathbb{R}^{3}} \frac{|\vv|^{2}}{2} f d \vv+\frac{1}{2} \gamma|\vE|^{2} d \vx\\ =&-\frac{1}{2} \int_{\mathbb{R}^{3}}\left(\int_{\mathbb{R}^{3}} \vv \cdot \nabla_{x}   f  |\vv|^2 d \vv-2\gamma \vj \cdot \vE\right) d \vx-\gamma \int_{R^{3}} \vj \cdot \vE d \vx \\
+      =&-\iint_{\mathbb{R}^{3}\times \bbR^{3}} \nabla_{x} \cdot(f \vv^3) d \vv d \vx=0
+      \end{aligned}
+      \]
+      \[
+      \begin{aligned}
+        \text{(RVP) }&\frac{d}{d t} \int_{\mathbb{R}^{3}}\int_{\mathbb{R}^{3}} \sqrt{1+|v|^{2}} f d \vv+\frac{1}{2} \gamma|\vE|^{2} d \vx\\ =&-\int_{\mathbb{R}^{3}}\left(\int_{\mathbb{R}^{3}} v \cdot \nabla_{x} f d \vv-\gamma j \cdot \vE\right) d \vx-\gamma \int_{R^{3}} \vj \cdot \vE d \vx \\
+        =&-\int_{\mathbb{R}^{3} R^{3}} \nabla_{x} \cdot(f \vv) d \vv d \vx=0
+        \end{aligned}
+      \]
+      which proves the total energy $\mathcal{E}_0$ does not change with respect to time in both non-relativistic adn relativistic cases.
+
+    \end{enumerate}
+
+\end{proof}
