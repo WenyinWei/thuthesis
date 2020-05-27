@@ -1,61 +1,80 @@
-\chapter{Useful Inequalities}
+\chapter{不等式}
 \label{cha:inequalities}
 
-\section{Gronwall Inequalities}
+\section{Gronwall 不等式}
+% \section{Gronwall Inequalities}
 \label{sec:Gronwall}
-\begin{lemma}\textit{(Nonlinear Gronwall Lemma)}
 
-  Assume that $t_{0}, t_{1} \in \bbR$,$ t_{0}<t_{1}$, that $F:\left[t_{0}, t_{1} \right) \times[0, \infty)\rightarrow[0, \infty)$ is continuous and that $F(t, r) \geqslant F\left(t, r^{\prime}\right)$ for all $r \geqslant r^{\prime}$(\textit{i.e.} non-decreasing in $r$). Assume further that $f_{0} \in [0, \infty), T \in (t_{0}, t_{1}]$ and that $g: I \rightarrow [0, \infty)$, in the interval $I:=[t_{0}, T) $, is the maximal upper solution of the initial value problem $g^{\prime}=F(t, g), g\left(t_{0}\right)=f_{0}$. If $f: I \rightarrow[0, \infty)$ is measurable and locally bounded and for all $t \in I$
+
+\begin{lemma}\textit{(Nonlinear Gronwall Lemma)}
+  \label{lem:nonlinear-Gronwall}
+  假设 $t_{0}, t_{1} \in \bbR$,$ t_{0}<t_{1}$, $F:\left[t_{0}, t_{1} \right) \times[0, \infty)\rightarrow[0, \infty)$ 函数连续且 $F(t, r) \geqslant F\left(t, r^{\prime}\right)$ 对任意的 $r \geqslant r^{\prime}$(即在 $r$ 上单调增). 还假设 $f_{0} \in [0, \infty), T \in (t_{0}, t_{1}]$ 且 $g: I \rightarrow [0, \infty)$，在区间 $I:=[t_{0}, T) $ 上定义，是微分方程的解 $g^{\prime}=F(t, g), g\left(t_{0}\right)=f_{0}$。如果 $f: I \rightarrow[0, \infty)$ 可测并且局部有界，对任意的 $t \in I$ 有
+  % Assume that $t_{0}, t_{1} \in \bbR$,$ t_{0}<t_{1}$, that $F:\left[t_{0}, t_{1} \right) \times[0, \infty)\rightarrow[0, \infty)$ is continuous and that $F(t, r) \geqslant F\left(t, r^{\prime}\right)$ for all $r \geqslant r^{\prime}$(\textit{i.e.} non-decreasing in $r$). Assume further that $f_{0} \in [0, \infty), T \in (t_{0}, t_{1}]$ and that $g: I \rightarrow [0, \infty)$, in the interval $I:=[t_{0}, T) $, is the maximal upper solution of the initial value problem $g^{\prime}=F(t, g), g\left(t_{0}\right)=f_{0}$. If $f: I \rightarrow[0, \infty)$ is measurable and locally bounded and for all $t \in I$
 \[
 f(t) \leqslant f_{0}+\int_{t_{0}}^{t} F(r, f(r)) \mathrm{d} r
 \]
-then it follows that $f(t) \leqslant g(t)$ for all $t \in I$
+那么便可推导出对任意的 $t \in I$ 有 $f(t) \leqslant g(t)$ 
+% then it follows that $f(t) \leqslant g(t)$ for all $t \in I$
 \end{lemma}
 
 \begin{proof}
-  Please \textit{cf.} $[7],$ theorem $4.1$ to handle continuous $f$, otherwise let $h(t):=f_{0}+\int_{t_{0}}^{t} F(r, f(r)) \mathrm{d} r $. $h$ is continuous and still satisfy $h(t) \leqslant f_{0}+\int_{t_{0}}^{t} F(r, h(r)) \mathrm{d} r$, $f(t) \leqslant h(t) \leqslant g(t)$.
+  参阅 \cite[theorem 4.1]{Beesack1975Gronwall} 来处理连续的 $f$, 不连续就令 $h(t):=f_{0}+\int_{t_{0}}^{t} F(r, f(r)) \mathrm{d} r $. $h$ 是连续的且也满足 $h(t) \leqslant f_{0}+\int_{t_{0}}^{t} F(r, h(r)) \mathrm{d} r$, $f(t) \leqslant h(t) \leqslant g(t)$.
 \end{proof}
 
 
-\begin{lemma}\textit{(Bivariant Gronwall Lemma)}
+\begin{lemma}\textit{(双变量 Gronwall 引理)}
+% \begin{lemma}\textit{(Bivariant Gronwall Lemma)}
 \label{lem:bivariant-Gronwall}
 
-  Let $T>0, I:=[0, T]$. Assume that $g: I \times I \rightarrow[0, \infty) \text { is bounded }$ and that for each $t \in I$ the functions $g(t, \cdot)$ and $g(\cdot, t)$ are measurable. Assume
-further that there exist constants $D_{1}, D_{2}, D_{3}$ such that for all $t, \tau \in I$
-(4.3.1) $g(t, \tau) \leqslant\left|\int_{\tau}^{t}\left(D_{1} \cdot g(r, \tau)+D_{2} \cdot(g(0, r)+g(r, 0))+D_{3}\right) \mathrm{d} r\right|$.
-Then there exists a constant $D,$ which depends only on $D_{1}, D_{2}$ and $T,$ such that
-for all $t, \tau \in I$ we have $g(t, \tau) \leqslant D \cdot D_{3}$
+
+ $T>0, I:=[0, T]$. 假设 $g: I \times I \rightarrow[0, \infty) \text { is bounded }$ 且对任意的 $t \in I$ 函数 $g(t, \cdot)$ 和 $g(\cdot, t)$ 均可测. 还假设存在常数 $D_{1}, D_{2}, D_{3}$ 使得对所有的 $t, \tau \in I$， 有下式成立，
+$$g(t, \tau) \leqslant\left|\int_{\tau}^{t}\left(D_{1} \cdot g(r, \tau)+D_{2} \cdot(g(0, r)+g(r, 0))+D_{3}\right) \mathrm{d} r\right|$$。
+则存在常数 $D$ 仅依赖于  $D_{1}, D_{2}$ 和 $T,$ 使得对所有的 $t, \tau \in I$ 均有 $g(t, \tau) \leqslant D \cdot D_{3}$。
+
+%   Let $T>0, I:=[0, T]$. Assume that $g: I \times I \rightarrow[0, \infty) \text { is bounded }$ and that for each $t \in I$ the functions $g(t, \cdot)$ and $g(\cdot, t)$ are measurable. Assume
+% further that there exist constants $D_{1}, D_{2}, D_{3}$ such that for all $t, \tau \in I$
+% (4.3.1) $g(t, \tau) \leqslant\left|\int_{\tau}^{t}\left(D_{1} \cdot g(r, \tau)+D_{2} \cdot(g(0, r)+g(r, 0))+D_{3}\right) \mathrm{d} r\right|$.
+% Then there exists a constant $D,$ which depends only on $D_{1}, D_{2}$ and $T,$ such that
+% for all $t, \tau \in I$ we have $g(t, \tau) \leqslant D \cdot D_{3}$
 \end{lemma}
 
-Proof. Take any $g^{*} \in C_{+}(I)$ such that $g^{*}(t) \geqslant \sup \{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant t\}$
-for all $t \in I .$ Let $\tau \in I$ be fixed. Then for all $t \in[\tau, T]$ we have
+\begin{proof}
+  取任意的 $g^{*} \in C_{+}(I)$ 使得对所有的 $t \in I $， $g^{*}(t) \geqslant \sup \{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant t\}$
+ 固定 $\tau \in I$。则对所有的 $t \in[\tau, T]$ 有
 \[
 g(t, \tau) \leqslant \int_{\tau}^{t}\left(D_{1} \cdot g(r, \tau)+D_{2} \cdot g(r)+D_{3}\right) \mathrm{d} r
 \]
-We conclude with lemma (2.7) that
+
+由非线性 Gronwall 引理 \ref{lem:nonlinear-Gronwall}，
+% We conclude with lemma (2.7) that
 \[
 \begin{aligned}
 g(t, \tau) \leqslant & \int_{\tau}^{t} \exp \left(D_{1} \cdot(t-r)\right) \cdot\left(D_{2} \cdot g^{*}(r)+D_{3}\right) \mathrm{d} r \leqslant \exp \left(D_{1} \cdot T\right) \\
 & \cdot\left|\int_{\tau}^{t}\left(D_{2} \cdot g^{*}(r)+D_{3}\right) \mathrm{d} r\right|
 \end{aligned}
 \]
-and this can analogously be shown for all $t \in[0, \tau] .$ Thus for all $t \in I$
+类似的，对所有的 $t \in[0, \tau] $ 也是一样， 于是对所有的 $t \in I$
+% and this can analogously be shown for all $t \in[0, \tau] .$ Thus for all $t \in I$
 \[
 g(0, t)+g(t, 0) \leqslant 2 \cdot \exp \left(D_{1} \cdot T\right) \cdot \int_{0}^{t}\left(D_{2} \cdot g^{*}(r)+D_{3}\right) \mathrm{d} r
 \]
 
-As the right-hand side is non-decreasing on $I$, this implies
+右侧在 $I$ 上是单调增的，可以
+% As the right-hand side is non-decreasing on $I$, this implies
 \[
 \sup \{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant t\} \leqslant 2 \cdot \exp \left(D_{1} \cdot T\right) \cdot \int_{0}^{t}\left(D_{2} \cdot g^{*}(r)+D_{3}\right) \mathrm{d} r
 \]
-There exists a non-increasing sequence in $C_{+}(I),$ which converges almost everywhere to sup $\{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant t\} .$ Thus we have shown
+$C_{+}(I)$ 中存在一个单调减的函数序列，其几乎处处收敛到  $\sup \{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant t\}$ 于是我们有
+% There exists a non-increasing sequence in $C_{+}(I),$ which converges almost everywhere to sup $\{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant t\} .$ Thus we have shown
 \[
 \begin{array}{l}
 \sup \{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant t\} \\
 \leqslant 2 \cdot \exp \left(D_{1} \cdot T\right) \cdot \int_{0}^{t}\left(D_{2} \cdot \sup \{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant r\}+D_{3}\right) \mathrm{d} r
 \end{array}
 \]
-Another application of (2.7) yields
+
+再一次使用非线性 Gronwall 引理 \ref{lem:nonlinear-Gronwall}，
+% Another application of (2.7) yields
 \[
 \sup \{g(0, u)+g(u, 0) | 0 \leqslant u \leqslant t\}
 \]
@@ -65,17 +84,20 @@ Another application of (2.7) yields
 \leqslant T \cdot \exp \left(2 \cdot \exp \left(T \cdot D_{1}\right) \cdot D_{2} \cdot T\right) \cdot 2 \cdot \exp \left(D_{1} \cdot T\right) \cdot D_{3}=: D_{4} \cdot D_{3}
 \end{array}
 \]
-We insert this into $(4.3 .1)$ and get
+将其插入回该引理中给定的不等式，
+% We insert this into $(4.3 .1)$ and get
 \[
 g(t, \tau) \leqslant\left|\int_{\tau}^{t}\left(D_{1} \cdot g(r, \tau)+\left(1+D_{4}\right) \cdot D_{3}\right) \mathrm{d} r\right|
 \]
-Lemma $(2.7),$ applied for the third time, now yields
+第三次使用非线性 Gronwall 引理 \ref{lem:nonlinear-Gronwall}，现在有 
+% Lemma $(2.7),$ applied for the third time, now yields
 \[
 \begin{aligned}
 g(t, \tau) & \leqslant\left|\int_{\tau}^{t} \exp \left(D_{1} \cdot|t-r|\right)\left(1+D_{4}\right) \cdot D_{3} \mathrm{d} r\right| \\
 & \leqslant T \cdot \exp \left(D_{1} \cdot T\right) \cdot\left(1+D_{4}\right) \cdot D_{3}=: D \cdot D_{3}
 \end{aligned}
 \]
+\end{proof}
 
 
 

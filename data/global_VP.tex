@@ -1,24 +1,37 @@
-\chapter{Global Solutions of non-relativistic Vlasov-Poisson System}
+% \chapter{Global Solutions of non-relativistic Vlasov-Poisson System}
+\chapter{Vlasov-Poisson 系统的全局解}
+
+
+
+
+
+本章中我们分别讨论 Vlasov-Poisson 问题在 3D 非相对论情形和相对论情形的全局存在性和唯一性，大略梗概 \cite*{pfaffelmoser_global_1992} 对非相对论情形全局存在性的证明和 \cite*{1991InMat.105..415L} 对高阶矩有限的初值的解的唯一性问题的探讨。
+% We restrict the Vlasov-Poisson problem in the 3D (non-relativistic) case in this chapter, and revisited the proof of to confirm the existence and uniqueness of classical solutions, by \cite*{pfaffelmoser_global_1992} and \cite*{1991InMat.105..415L} respectively, for the initial data without the compact assumption in "$\vv$".
+
+
+\section{非相对论情形}
 \label{cha:global-VP}
 
 
-We restrict the Vlasov-Poisson problem in the 3D (non-relativistic) case in this chapter, and revisited the proof of to confirm the existence and uniqueness of classical solutions, by \cite{pfaffelmoser_global_1992} and \cite*{1991InMat.105..415L} respectively, for the initial data without the compact assumption in "$\vv$".
+\section{全局存在性}
+% \section{Global Existence}
 
-\section{Global Existence}
-\cite{pfaffelmoser_global_1992} proved the global existence of $ \gamma=\pm 1$ cases, with almost the same assumptions given in last chapter. The existence result is shown by indicating that the supremum of velocity change of a local solution can not be controlled by a function $H_{v} \in C_{+}\left(\mathbf{R}_{0}^{+}\right)$, however, it did. The control aim is reached by pointing out how much acceleration of a particle can be given by the "neighboring" particles near its characteristic trajectory.
-
-In this section we consider the trajectories passing through a point $\vx$ of the configuration-space at a time $t$ and subsets of the velocity-space at $\vx$ and at time $t,$ that are defined by certain properties of the trajectories. We study, how the "largeness" of the subsets depends on these properties.
+\cite*{pfaffelmoser_global_1992} 用几乎和上一章节中一样的 \supremumf 和 \lipOffVsphere 假设，加上二阶矩有限的条件，证明了对 $ \mu=\pm 1$ 均有全局存在性。其论证思路是若它是一个局部解，该解的速度改变量范数上界 $h_v$ （见下文有定义）不能被 $H_{v} \in C_{+}\left(\mathbf{R}_{0}^{+}\right)$ 中的函数控制住，一定会 blow up。其文章通过对特征线“附近”密度的估计从而给出对速度上界的估计，即粒子分布引起的场的加速度不足以使其速度 blow up。
+% \cite*{pfaffelmoser_global_1992} proved the global existence of $ \gamma=\pm 1$ cases, with almost the same assumptions given in last chapter. The existence result is shown by indicating that the supremum of velocity change of a local solution can not be controlled by a function $H_{v} \in C_{+}\left(\mathbf{R}_{0}^{+}\right)$, however, it did. The control aim is reached by pointing out how much acceleration of a particle can be given by the "neighboring" particles near its characteristic trajectory.
 
 
 \begin{assumption}
     
   \begin{enumerate}[(i)]
-    \item $f_0 \in L_{1}\left(\bbR^{n} \times \bbR^{n}\right), f_0 \geqslant 0$ satisfying $f_0$ satisfies \supremumf with constants $K_1, K_2$ and \lipOffVsphere with $H\in C_+([0,\infty))$
+    \item $f_0 \in L_{1}\left(\bbR^{n} \times \bbR^{n}\right), f_0 \geqslant 0$
+    \item  $f_0$ 以常数  $K_1, K_2$  满足 \supremumf
+    \item  $f_0$ 以控制函数 $h\in C_+([0,\infty))$ 满足 \lipOffVsphere。 
     \item $\int_{\bbR^{n}} \vv^{2} f_0(\vx, \vv) d \vx, \vv<\infty$
   \end{enumerate}
 \end{assumption}
 
-Let $f$ be the corresponding maximal solution of \eqvp on $[0, T)$. 
+令 $f$ 为 \eqvp 最大可能的解，时域为 $[0, T)$。 
+% Let $f$ be the corresponding maximal solution of \eqvp on $[0, T)$. 
 
 % In this section we will prove some estimations which we need later and give a sufficient condition for the existence of global classical solutions of $(\mathrm{VP})$
 
@@ -26,7 +39,8 @@ Let $f$ be the corresponding maximal solution of \eqvp on $[0, T)$.
 
 
 \begin{definition}
-    We define $h_{\vv}, h_{E}, h_{\rho}:[0, T)\rightarrow [0,+\infty)$ by 
+  我们可以回顾一下上一章中常用的技巧，对特定量在时间上取上确界得到 $h_{v}, h_{E}, h_{\rho}:[0, T)\rightarrow [0,+\infty)$ 
+  % We define $h_{\vv}, h_{E}, h_{\rho}:[0, T)\rightarrow [0,+\infty)$ by 
 \[
 \begin{aligned}
 h_{v}(t) &:=\sup \left\{|\vect{V}(0, \tau, \vx, \vv)-\vv| | \vx, \vv \in \bbR^{n}, 0 \leqslant \tau \leqslant t\right\} \\
@@ -34,22 +48,24 @@ h_{E}(t) &:=\sup \left\{|\vE(\tau, \vx)| | \vx \in \bbR^{3}, 0 \leqslant \tau \l
 h_{\rho}(t) &:=\sup \left\{|\rho(\tau, \vx)| | \vx \in \bbR^{3}, 0 \leqslant \tau \leqslant t\right\}
 \end{aligned}
 \]
-These functions are nondecreasing due to the supremum range. Their inter-control relation is presented in the following lemma. 
+这些函数由于取上确界的操作都是单增的，他们之间的相互关系可以通过下面的引理来描述。 
+% These functions are nondecreasing due to the supremum range. Their inter-control relation is presented in the following lemma. 
 \end{definition}
 
 \begin{lemma}
-    There exist $K_{10, E}, K_{10, \rho}>0,$ so that for all $t \in[0, T) \text { we have }$
+  存在 $K_{E}, K_{\rho}>0,$ 使得对任意的 $t \in[0, T)$ 有
+    % There exist $K_{10, E}, K_{10, \rho}>0,$ so that for all $t \in[0, T) \text { we have }$
 \[
 \begin{aligned}
-h_{E}(t) & \leqslant K_{10, E} h_{\rho}^{4 / 9}(t) \\
+h_{E}(t) & \leqslant K_{ E} h_{\rho}^{4 / 9}(t) \\
 h_{v}(t) & \leqslant \int_{0}^{t} h_{E}(s) d s \\
-h_{\rho}(t) & \leqslant K_{10, \rho}\left(1+h_{\vv}(t)\right)^{3}
+h_{\rho}(t) & \leqslant K_{ \rho}\left(1+h_{v}(t)\right)^{3}
 \end{aligned}
 \]
 \end{lemma}
 
 \begin{proof}
-  See \cite{pfaffelmoser_global_1992}, lemma 10.
+   \cite*{pfaffelmoser_global_1992} 中引理 10 对 $n=3$ 三维情况的具体不等式。也可参见上一章引理 \ref{eq:bound-equivalent}。
 \end{proof}
 
 % DEFINITION AND LEMMA 10. 
@@ -71,18 +87,25 @@ h_{\rho}(t) & \leqslant K_{10, \rho}\left(1+h_{\vv}(t)\right)^{3}
 % \]
 % With $K_{10, \rho}:=K_{1,1} \max \left\{1, K_{1,2}^{3}\right\}$ the assertion follows by taking the supremum.
 
+在上面的各种上界互相控制的条件之上，我们可以说明如果得到全局解的话，上面的这些函数是不能 blow up 的；而如果我们能说明上面的函数被控制住了，那么便有了全局解。于是有了下面为 Vlasov-Poisson 研究者熟知的命题。
 
 \begin{proposition}
-  If there exists a $H_{v} \in C_{+}\left(\mathbf{R}_{0}^{+}\right),$ so that for all $t \in[0, T[$ we have
+  \label{prop:vp-existence-criterion}
+  如果存在 $H_{v} \in C_{+}\left(\mathbf{R}_{0}^{+}\right),$ 使得对任意的 $t \in[0, T)$ 有
 \[
 h_{v}(t) \leqslant H_{v}(t)
 \]
-then $T=\infty,$ i.e., (VP) has a global solution.
+则 $T=\infty,$ 即 \eqvp 有全局解。
+%   If there exists a $H_{v} \in C_{+}\left(\mathbf{R}_{0}^{+}\right),$ so that for all $t \in[0, T[$ we have
+% \[
+% h_{v}(t) \leqslant H_{v}(t)
+% \]
+% then $T=\infty,$ i.e., (VP) has a global solution.
 \end{proposition}
 
 
 \begin{proof}
-    The proposition is a clear result with means of \cite{HorstClasssicalI}. For solutions $f$ on an bounded interval $[0, t)$,  they can be continued onto an interval $[0, t+\varepsilon)$,  where $\varepsilon=\varepsilon(h_{v}(t))$ depends monotonically decreasing on $h_{\vv}(t)$. For bounded $T<\infty$ we can take $t>T-\varepsilon\left(H_{v}(T)\right),$ which is sufficient to continue $f$ onto $[0, t+\varepsilon)\subsetneq[0, T),$ which is a contradiction to the maximality of $[0, T)$.  The exact argument can be found in [12]
+  该命题实际上和我们在上一章证明中用到的类似  \cite*{HorstClasssicalI}. 对于在有界区间 $[0, t)$ 上的解 $f$ , 他们可以被延拓到区间 $[0, t+\vartheta)$ 上去,  而 $\vartheta=\vartheta(h_{v}(t))$ 随 $h_{v}(t)$ 的增加而减小。 对于有界的 $T<\infty$ 可以取 $t>T-\vartheta\left(H_{v}(T)\right),$ 那么解就可以延拓到 $[0, t+\vartheta)\subsetneq[0, T),$ 上，这与 $[0, T)$ 是最大的相矛盾的。 具体的论证可以查阅 \cite{Pfaffelmoser1989} 博士论文。
 
 \end{proof}
 
@@ -115,14 +138,15 @@ then $T=\infty,$ i.e., (VP) has a global solution.
 % so that setting $\vx:=\vect{X}(s) /(s \quad t), \quad \vy:=\vect{V}(s), \quad \vect{z}:=\vect{V}(t),$ we obtain $(\vect{X}(s))$ $(s-t)) \vect{V}(s) \geqslant 0$ on $\left[t, t\left[. \text { Therefore, }(d / d s) \vect{X}^{2}(s)=2 \vect{X}(s) \vect{V}(s) \leqslant 0,\text { and the }\right.\right.$
 % assertion is proved.
 
+\cite*{pfaffelmoser_global_1992} 用到的方法研究了时空某个定点处的满足某些要求的速度空间分布，从而有下面两个集合函数进行更细致的刻画。
 \begin{definition}
 % There exist $K_{13,1}, K_{13,2}, K_{13,3},$ so that for $t \in[0, T[$ $\vx \in \bbR^{3}, 0<\Delta_{1} \leqslant t$ and $d>0$ the following assertion is true. If we define
 
 \begin{enumerate}[(i)]
 
-  \item For $t \in[0, T)$ $\vx \in \bbR^{3}, 0<\Delta_{1} \leqslant t$ and $d>0$， define
+  \item 给定 $t \in[0, T)$, $\vx \in \bbR^{3}, 0<\Delta_{1} \leqslant t$ 和 $d>0$， 定义集合函数
   \[
-  \Psi_{1}(t, \vx):=\left\{\vv \in \bbR^{3}\left|\exists s \in\left[t-\Delta_{1}, t\right]:\right| \vect{V}(s, t, \vx, \vv)-\vv |>d\right\}
+  \Psi_{1}(t, \vx):=\left\{\vv \in \bbR^{3}\left|\exists s \in\left[t-\Delta_{1}, t\right] \textit{ s.t. } \right| \vect{V}(s, t, \vx, \vv)-\vv |>d\right\}
   \]
 
 % then, setting $l_{d}(t):=\ln ^{2 / 3}+\left(K_{13,2} d^{18 / 5} h_{\rho}^{1 / 5}(t)\right),$ we have
@@ -141,10 +165,10 @@ then $T=\infty,$ i.e., (VP) has a global solution.
 
 
 \item 
- Let $\Omega \subset \bbR^{3}, t \in\left[0, T\left[, 0<\Delta_{2} \leqslant \Delta_{1} \leqslant t, R>0 \text { and } \vx \in \bbR^{3}. \right.\right.$
-Further let $(\vect{X}^*, \vect{V}^*)$ be a solution of the characteristic system and define
+ 令 $\Omega \subset \bbR^{3}, t \in\left[0, T\right), 0<\Delta_{2} \leqslant \Delta_{1} \leqslant t, R>0 \text { 且 } \vx \in \bbR^{3}.$
+且令 $(\vect{X}^*, \vect{V}^*)$ 为一条特征线系统的解并定义
 \[
-\Psi_{2}(t, \vx):=\left\{\vv \in \Omega\left|\exists s \in\left[t-\Delta_{1}, t-\Delta_{2}\right]:\right| \vect{X}(s, t, \vx, \vv)-\vect{X}^*(s) | \leqslant R\right\}
+\Psi_{2}(t, \vx):=\left\{\vv \in \Omega\left|\exists s \in\left[t-\Delta_{1}, t-\Delta_{2}\right] \textit{ s.t. } \right| \vect{X}(s, t, \vx, \vv)-\vect{X}^*(s) | \leqslant R\right\}
 \]
 
 % Then there exists $\bar{\vv} \in \bbR^{3},$ so that $\Psi_{2}(t, \vx) \subset B_{D}(\bar{\vv}),$ %where
@@ -158,6 +182,9 @@ Further let $(\vect{X}^*, \vect{V}^*)$ be a solution of the characteristic syste
 % \]
 
 \end{definition}
+
+其中 $\Psi_1$ 集合函数说明的是以 $(t,\vx, \vv)$ 为起点的特征线是否在给定的时间段 $[t-\Delta_1, t]$ 内的速度相较于 $\vv$ 超过阈值 $d$，如果是的话，记录 $\vv$ 为该集合函数中的一元素。而 $\Psi_2$ 作为集合函数还考虑到给定的一条特征线和以 $(t,\vx, \vv)$ 为起点的特征线之间有多“近”，如果在 $[t-\Delta_1, t-\Delta_2]$ 存在一个时刻两者足够近的话，则 $\vv$ 被纳入该集合函数的集合。通过研究具体这些集合函数能有多大，可以给出更精细的控制。
+% In this section we consider the trajectories passing through a point $\vx$ of the configuration-space at a time $t$ and subsets of the velocity-space at $\vx$ and at time $t,$ that are defined by certain properties of the trajectories. We study, how the "largeness" of the subsets depends on these properties.
 
 % Proof. Let $\hat{t}:=t-\left(1 / 2 K_{\text {to. } E}\right) d h_{\rho}^{-4 / 9}(t) .$ Then, according to Lemma 10 we have for all $s \in[\hat{t}, t] \cap \mathbf{R}_{0}^{+}, \vv \in \bbR^{3}$
 
@@ -306,13 +333,11 @@ Further let $(\vect{X}^*, \vect{V}^*)$ be a solution of the characteristic syste
 
 
 
-by which in section 6 we will estimate the influence of "high" densities near a given trajectory on its acceleration. This will turn out to be the crucial part of the proof.
-
-\begin{assumption}
-  \[
-  \lim _{t \rightarrow T} h_{v}(t)=\lim _{t \rightarrow T} h_{\rho}(t)=\infty
-  \]
-\end{assumption}
+% \begin{assumption}
+%   \[
+%   \lim _{t \rightarrow T} h_{v}(t)=\lim _{t \rightarrow T} h_{\rho}(t)=\infty
+%   \]
+% \end{assumption}
 
 % Remark. Because of General Assumption 15 there exists a $T_{0} \in[0, T[$ so that $h_{v}\left(T_{0}\right)>0 .$ According to (3.8) there exists a $K_{15, \rho}>0,$ so that for all $t \in\left[T_{0}, T[\right.$
 % \[
@@ -392,13 +417,15 @@ by which in section 6 we will estimate the influence of "high" densities near a 
 % \]
 % and the assertion is proved.
 
+% by which in section 6 we will estimate the influence of "high" densities near a given trajectory on its acceleration. This will turn out to be the crucial part of the proof.
 
+以此为工具，我们可以更细致地刻画这条特定的特征线。下一步便接着找出对给定的特征线其周围那些密度在某区间段内的空间点集合 $G_{\alpha}^{\beta}$，及只考虑这些集合时的 $\rho$ 的范数。
 \begin{definition}
-  Define for $0 \leqslant \alpha \leqslant \beta, R>0$ and $s \in[0, T)$, $(\vect{X}^*, \vect{V}^*)$ of the characteristic system the following 
+  给定 $0 \leqslant \alpha \leqslant \beta, R>0$ 和 $s \in[0, T)$, $(\vect{X}^*, \vect{V}^*)$ 是给定的一条特征线，定义集合函数 $G_{\alpha}^{\beta}(s)$ 和该集合上密度的范数，
 \[
 \begin{array}{l}
-G_{\alpha}^{\beta}(s):=\left\{\vx \in B_{R}(\hat{X}(s)) | \alpha \leqslant \rho(s, \vx) \leqslant \beta\right\} \\
-N_{\alpha}^{\beta}(s):=\|\rho(s) \cdot 1_{G_{1}^{(s)}}\|_{3}
+G_{\alpha}^{\beta}(s):=\left\{\vx \in B_{R}(\vect{X}^*(s)) | \alpha \leqslant \rho(s, \vx) \leqslant \beta\right\} \\
+N_{\alpha}^{\beta}(s):=\|\rho(s, \vx) \cdot 1_{G_{\alpha}^{\beta}(s)}\|_{\mathrm{L}^3}
 \end{array}
 \]
 \end{definition}
@@ -553,13 +580,21 @@ N_{\alpha}^{\beta}(s):=\|\rho(s) \cdot 1_{G_{1}^{(s)}}\|_{3}
 % \]
 % The assertion then follows by (5.2)
 
+有了上述的工具准备后，对上述涉及到的各种函数和集合大小进行估计，便可以对 $h_{v}(t)$ 做出限制，确定其在局域上不会发生爆破，有函数束缚住。
 \begin{theorem}
-Let $f_0$ satisfy the assumption made in this chapter. Then (VP) has a global solution, and for all $\varepsilon>0$ there exists a $K_{19,8}>0,$ so that for all $t \geqslant 0$
-we have
-\[
-h_{v}(t) \leqslant K_{19,6}(1+t)^{51 / 11+\varepsilon}
-\]
+  若 $f_0$ 为满足本节假设的初值，则并且对任意的 $\varepsilon>0$ 都存在常数 $K>0$ 使得对任意的 $t \geqslant 0$ 有
+  \[
+  h_{v}(t) \leqslant K (1+t)^{51 / 11+\varepsilon}
+  \]
+  通过命题 \ref{prop:vp-existence-criterion} 可知 \eqvp 有全局解。
 \end{theorem}
+% \begin{theorem}
+% Let $f_0$ satisfy the assumption made in this chapter. Then (VP) has a global solution, and for all $\varepsilon>0$ there exists a $K_{19,8}>0,$ so that for all $t \geqslant 0$
+% we have
+% \[
+% h_{v}(t) \leqslant K_{19,6}(1+t)^{51 / 11+\varepsilon}
+% \]
+% \end{theorem}
 
 % Proof. In the case $\lim _{t \uparrow T} h_{\vv}(t)<\infty$ or $\lim _{t \uparrow T} h_{\rho}(t)<\infty$ we have (6.7)
 % for all $t \in[0, T[\text { even for smaller exponents (use Lemma } 10),$ so that by Proposition 11 the Theorem is proved. Thus let $\lim _{t \uparrow T} h_{\vv}(t)=$ $\lim _{t \uparrow T} h_{\rho}(t)=\infty,$ i.e., General Assumption 15 is satisfied.
@@ -639,16 +674,18 @@ h_{v}(t) \leqslant K_{19,6}(1+t)^{51 / 11+\varepsilon}
 
 
 
-\section{Uniqueness}
+\section{唯一性}
+% \section{Uniqueness}
 
 
-The uniqueness proof is based on the Lions-Perthame theorem and require the moment of $m\leqslant 6$ exist.
+对于唯一性的证明，此处呈现了 Lions-Perthame 使用的一种手段并要求 $|\vv|$ 的高阶矩存在，下面是其具体定义。
+% The uniqueness proof is based on the Lions-Perthame theorem and require the moment of $m\leqslant 6$ exist.
 \begin{theorem}\textit{(Lions-Perthame)}
-    Let $f_0\geq 0$,$f_0\in L^1\bigcap L^\infty (\bbRRR\times \bbRRR)$. We assume that  
+    令 $f_0\geq 0$,$f_0\in L^1\bigcap L^\infty (\bbRRR\times \bbRRR)$. 我们假设  
     \begin{equation}
         \int_{\bbRRR \times \bbRRR}|\vv|^{m} f_{0}(\vx, \vv) d \vx d \vv<+\infty \quad \text { if } m<m_{0},
     \end{equation}
-    where $3<m_0$. Then, there exists a solution $f\in C(\bbR^+; L^p(\bbRRR\times\bbRRR))\bigcap L^\infty (\bbR^+;L^\infty(\bbRRR\times \bbRRR))$ (for all $1\leq p < +\infty$) of Vlasov-Poisson system satisfying 
+    其中 $3<m_0$. 则存在 Vlasov-Poisson 系统的全局解 $f\in C(\bbR^+; L^p(\bbRRR\times\bbRRR))\bigcap L^\infty (\bbR^+;L^\infty(\bbRRR\times \bbRRR))$ (对于任意的 $1\leq p < +\infty$) of m satisfying 
     \begin{equation}
     \sup _{t \in[0, T]} \iint_{ \mathbb{R}^{3} \times \mathbb{R}^{3}}|\vv|^{m} \ftxv d \vx d \vv<+\infty
     \end{equation}
@@ -864,63 +901,74 @@ The uniqueness proof is based on the Lions-Perthame theorem and require the mome
 % \end{corollary}
 
 \begin{theorem}
-We make the assumptions of Theorem $1,(10),(42),$ then the solution of Vlasov-Poisson Equation such that $\rho \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3}\right)$ is unique.
+\citet*{1991InMat.105..415L} 若满足上述定理 
+We make the assumptions of Theorem $1,(10),(42),$ 则满足 $\rho \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3}\right)$的 Vlasov-Poisson 方程解是唯一的。
 \end{theorem}
 
 
-Remarks. 1. The boundedness of $\rho$ in $L^{\infty}$ implies, by Corollary 5 , that the solutions of Vlasov-Poisson Equation are smooth. Thus Theorem 6 applies to classical solutions.
-2. Notice that (42) and $\rho \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3}\right)$ implies (10) and the assumptions of Theorem 6 could be slightly improved.
-3. Of course the difficulty in Lemma 3 is that $\vE$ is not lipschitz continuous in $\vx$
-We now turn to the proof of these results.
+% Remarks. 1. The boundedness of $\rho$ in $L^{\infty}$ implies, by Corollary 5 , that the solutions of Vlasov-Poisson Equation are smooth. Thus Theorem 6 applies to classical solutions.
+% 2. Notice that (42) and $\rho \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3}\right)$ implies (10) and the assumptions of Theorem 6 could be slightly improved.
+% 3. Of course the difficulty in Lemma 3 is that $\vE$ is not lipschitz continuous in $\vx$
+% We now turn to the proof of these results.
 
 
 \begin{proof}
-  Proof of Corollary $5 .$ Thanks to the representation formula of $f$ with the characteristic curves we find, for $\left|\vx_{1}-\vx_{2}\right| \leqq 1 / 2$
-\[
-\left|\rho\left(\vx_{1}, t\right)-\rho\left(\vx_{2}, t\right)\right| \leqq \int_{\mathbb{R}_{2}}\left|f_{0}\left(X_{1}(0), V_{1}(0)\right)-f_{0}\left(X_{2}(0), V_{2}(0)\right)\right| d \vv
-\]
-where $\left(X_{i}, V_{i}\right)$ satisfies (43) with $v_{1}=v_{2}=\vv .$ since $\vE$ is bounded in $L^{\infty},$ we have, following (19)
-\[
-\left|X_{i}(0)-\vv t-\vx_{i}\right| \leqq R, \quad\left|V_{i}(0)-\vv\right| \leqq R
-\]
-and thus we may estimate the above terms by
-\[
-\begin{array}{l}
-\int_{\mathbf{R}_{\mathrm{p}}} \sup \left\{\left|\nabla f_{\mathrm{o}}\right|(y+\vv t, w) ;\left|y-\vx_{1}\right| \leqq R,|w-\vv| \leqq R\right\} d \vv \\
-\quad \cdot \sup _{\vv \in \mathbb{R}^{3}}\left\{\left|X_{1}(0)-X_{2}(0)\right|+\left|V_{1}(0)-V_{2}(0)\right|\right\} \leqq C(R, T)\left|\vx_{1}-\vx_{2}\right|^{2}
-\end{array}
-\]
-thanks to (42) and $(44) .$ This shows that $\rho(\cdot, t)$ is Hölder continuous and the $C^{1, \alpha}$ regularity of $\vE(\cdot, t)$ follows from Schauder estimates. Then, we obtain that the characteristic curves are Lipschitz continuous (we may take $\alpha=1 \text { in }(45))$ and thus $\vE(\cdot, t)$ belongs to $C^{1 . \beta}\left(\mathbb{R}^{3}\right)$ for all $\beta<1$
-We may now conclude the uniqueness proof.
-Proof of Theorem $6 .$ First, let us notice that an clementary modification of the proof of Corollary 5 gives, thanks to the $L^{2}$ bound in (42)
-(48)
-\[
-\nabla_{\vv} f(t, \vx, \vv) \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3} ; L^{2}\left(\mathbb{R}_{\vv}^{3}\right)\right)
-\]
-for any solution $f$. Secondly, we set
+%   Proof of Corollary $5 .$ Thanks to the representation formula of $f$ with the characteristic curves we find, for $\left|\vx_{1}-\vx_{2}\right| \leqq 1 / 2$
+% \[
+% \left|\rho\left(\vx_{1}, t\right)-\rho\left(\vx_{2}, t\right)\right| \leqq \int_{\mathbb{R}_{2}}\left|f_{0}\left(X_{1}(0), V_{1}(0)\right)-f_{0}\left(X_{2}(0), V_{2}(0)\right)\right| d \vv
+% \]
+% where $\left(X_{i}, V_{i}\right)$ satisfies (43) with $v_{1}=v_{2}=\vv .$ since $\vE$ is bounded in $L^{\infty},$ we have, following (19)
+% \[
+% \left|X_{i}(0)-\vv t-\vx_{i}\right| \leqq R, \quad\left|V_{i}(0)-\vv\right| \leqq R
+% \]
+% and thus we may estimate the above terms by
+% \[
+% \begin{array}{l}
+% \int_{\mathbf{R}_{\mathrm{p}}} \sup \left\{\left|\nabla f_{\mathrm{o}}\right|(y+\vv t, w) ;\left|y-\vx_{1}\right| \leqq R,|w-\vv| \leqq R\right\} d \vv \\
+% \quad \cdot \sup _{\vv \in \mathbb{R}^{3}}\left\{\left|X_{1}(0)-X_{2}(0)\right|+\left|V_{1}(0)-V_{2}(0)\right|\right\} \leqq C(R, T)\left|\vx_{1}-\vx_{2}\right|^{2}
+% \end{array}
+% \]
+% thanks to (42) and $(44) .$ This shows that $\rho(\cdot, t)$ is Hölder continuous and the $C^{1, \alpha}$ regularity of $\vE(\cdot, t)$ follows from Schauder estimates. Then, we obtain that the characteristic curves are Lipschitz continuous (we may take $\alpha=1 \text { in }(45))$ and thus $\vE(\cdot, t)$ belongs to $C^{1 . \beta}\left(\mathbb{R}^{3}\right)$ for all $\beta<1$
+% We may now conclude the uniqueness proof.
+
+对两个解 $f_{1}, f_{2}$，要说明他们实质是一个解，容许只差一个零测度集上的差异，我们可以通过证明下面定义的 $D(t)=0$ 来揭示，
 \[
 D(t)=\sup _{0 \leq s \leq t}\left\|\left(f_{1}-f_{2}\right)\right\|_{L^{2}\left(\mathbf{R}^{\prime}\right)}
 \]
-for two possible solutions $f_{1}, f_{2}$ of $(1)-(3)$ and we claim that
-(49)
-\[
-\frac{d}{d t} D(t) \leqq C(T)\left\|\left(E_{1}-E_{2}\right)(t)\right\|_{L^{2}\left(R^{3}\right)}
-\]
-Indeed Vlasov equations give
-\[
-\frac{\partial}{\partial t}\left(f_{1}-f_{2}\right)^{2}+\vv \cdot \nabla_{\vx}\left(f_{1}-f_{2}\right)^{2}+E_{1} \cdot \nabla_{\vv}\left(f_{1}-f_{2}\right)^{2} \leqq 2\left|E_{2}-E_{1}\right| \cdot\left|f_{1}-f_{2}\right| \cdot\left|\nabla_{e} f_{2}\right|
-\]
-and thus, using (48)
+
+
+
+通过 Vlasov 方程本身我们可以得到，
+% Indeed Vlasov equations give
 \[
 \begin{aligned}
-\frac{d}{d t} D(t)^{2} & \leqq 2 \int_{\mathbb{R}_{\vx} \atop 1}\left|\left(E_{2}-E_{1}\right)(t)\right| \mathbb{P}\left(f_{1}-f_{1}\right)(t, \vx, \vv)\left\|_{L^{2}\left(\mathbb{R}_{j}\right)}\right\| \nabla_{\vv} f_{2}(t, \vx, \vv) \|_{\left.L^{2}(\mathbf{R}\}\right)} d \vx \\
-& \leqq C(T)\left\|\left(E_{1}-E_{2}\right)(t)\right\|_{L^{2}\left(\mathbb{R}_{\vx}^{3}\right)} D(t)
+&\frac{\partial}{\partial t}\left(f_{1}-f_{2}\right)^{2}+\vv \cdot \nabla_{\vx}\left(f_{1}-f_{2}\right)^{2}+\vE_{1} \cdot \nabla_{\vv}\left(f_{1}-f_{2}\right)^{2} \\ 
+= & -2(f_1-f_2)\partial_t f_2 +2\vect{v}\cdot (f_1-f_2) (-\nabla_x f_2)+2 \vect{E}_1\cdot \left((f_1-f_2) (-\nabla_v f_2)\right) \\
+\leqslant & 2\left|\vE_{2}-\vE_{1}\right| \cdot\left|f_{1}-f_{2}\right| \cdot\left|\nabla_{v} f_{2}\right|
 \end{aligned}
 \]
+
+\begin{equation}
+  \label{eq:E-control-D}
+\begin{aligned}
+  \frac{\mathrm{d}}{\mathrm{d} t} D(t)^{2} & \leqq 2 \int_{\mathbb{R}_{\vx}^3 }\left|  \left(\vE_{2}-\vE_{1}\right) (t)\right|     \| \left(f_{1}-f_{2}\right)(t, \vx, \vv)\|_{\mathrm{L}^{2}(\mathbb{R}^3_{v})}   \| \nabla_{\vv} f_{2}(t, \vx, \vv) \|_{\mathrm{L}^{2}(\mathbf{R}^3_v)} \mathrm{d} \vx \\
+  & \leqq C(T)\left\|\left(\vE_{1}-\vE_{2}\right)(t)\right\|_{L^{2}\left(\mathbb{R}_{\vx}^{3}\right)} D(t) \\
+  \Rightarrow & \frac{\mathrm{d}}{\mathrm{d} t} D(t) \leqq C(T)\left\|\left(\vE_{1}-\vE_{2}\right)(t)\right\|_{L^{2}\left(\bbR^{3}\right)}
+  \end{aligned}
+\end{equation}
+
+
+上面的证明过程中，一些量的可积性是由其论证中其他部分给出的（如 $\nabla_{\vv} f(t, \vx, \vv) \in L^{\infty}\left((0, T) \times \mathbb{R}_{\vx}^{3} ; L^{2}\left(\mathbb{R}_{\vv}^{3}\right)\right)$ ），为简洁起见我们只介绍最核心的部分。
+
+
+
+
 \end{proof}
 
+另一方面通过矩延续性中用到的公式可以控制 $\left\|\left(E_{1}-E_{2}\right)(t)\right\|_{L^{2}\left(\mathbf{R}_{\vx}^{3}\right)}$, 
+$$\begin{equation}\|E(t)\|_{m+3} \leqq C+C\left\|\int_{0}^{t} s \int_{\mathbb{R}^{3}} E f(t-s, x-v s, v) d v d s\right\|_{m+3}\end{equation}$$
 
-which clearly proves (49). Finally, we use formula (28) which gives
+Finally, we use formula (28) which gives
 \[
 \begin{array}{l}
 \left\|\left(E_{1}-E_{2}\right)(t)\right\|_{L^{2}\left(\mathbf{R}_{\vx}^{3}\right)} \\
@@ -943,7 +991,9 @@ Processing the other term in the same way yields
 \left\|\left(E_{2}-E_{1}\right)(t)\right\|_{L^{2}(\mathbf{R})} \leqq \frac{1}{2} \sup _{0 \leq s \leq t}\left|\left(E_{2}-E_{1}\right)(s)\right|_{L^{2}\left(\mathbf{R}^{3}\right)}+C(T) D(t)
 \]
 for $t \leqq t_{0}$ small enough. From this one easily deduces that
-\[
+\begin{equation}
+\label{eq:D-control-E}
 \left\|\left(E_{2}-E_{1}\right)(t)\right\|_{L^{2}\left(\mathbb{R}^{3}\right)} \leqq C(T) D(t)
-\]
-and combining this inequality with (49) just shows that $D(t)=0$ by a Gronwall argument. Therefore $f_{1}=f_{2}$ for $t \leqq t_{0}$ and Theorem 6 is proved.
+\end{equation}
+
+通过 Gronwall 引理可知两不等式联立 \ref{eq:E-control-D} 和 \ref{eq:D-control-E} 有 $D(t)=0$。 从而有 $f_{1}=f_{2}$ for $t \leqq t_{0}$.

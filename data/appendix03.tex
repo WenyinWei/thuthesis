@@ -1,15 +1,28 @@
-\chapter{Conservation Laws}
+\chapter{守恒律}
+% \chapter{Conservation Laws}
 \label{cha:conservatives}
 
-\begin{proposition}
-    If $f_0$ vanished for $|x|>k$, then $\ftxv$ vanished for $|\vx|>t+k$ (casuality).
-\end{proposition}
+% \begin{proposition}\textit{(因果律)}
+  
+%   如果 \eqrvp 问题的初值 $f_0$ 在 $|x|>k$ 处便为零, 则 $\ftxv$ 在 $|\vx|>t+k$ 处亦为零 (casuality).
+%     % If $f_0$ vanished for $|x|>k$, then $\ftxv$ vanished for $|\vx|>t+k$ (casuality).
+% \end{proposition}
 
-\begin{lemma}\textit{(Conservation Laws)}
-    Let $f$ be a classical solution of (RVP) on some time interval $[0,T)$ with nonnegative initial data $f_0\in C^1(\bbR^6)$. Then the following properties hold:
+% \begin{proof}
+  
+%   We apply Eq. (2) to note that $|\vect{X}(s, t, \vx, \vv)-\vx|=$ $\left|\int_{t}^{s} \hat{\vect{V}}(\xi, t, \vx, \vv) d \xi\right| \leqq|t-s| .$ In particular, $|X(0, t, \vx, \vv)-\vx| \leqq t .$ Thus whenever $|\vx|>k+t,$ we have $|\vect{X}(0, t, \vx, \vv)| \geqq|\vx|-|\vect{X}(0, t, \vx, \vv)-\vx|>k$, and so by hypothesis and
+%   $(3), f(t, \vx, \vv)=f_0(\vect{X}(0, t, \vx, \vv), \vect{V}(0, t, \vx, \vv))=0$
+% \end{proof}
+
+\begin{lemma}\textit{(守恒律)}
+% \begin{lemma}\textit{(Conservation Laws)}
+  令 $f$ 为 \eqvp 或 \eqrvp 在时间段 $[0,T)$ 上的经典解，$f_0\in C^1(\bbR^6)$ 且非负，那么有下面的守恒性质：
+  % Let $f$ be a classical solution of (RVP) on some time interval $[0,T)$ with nonnegative initial data $f_0\in C^1(\bbR^6)$. Then the following properties hold:
     \begin{enumerate}[(a)]
-        \item The total mass is conserved, \textit{i.e.}, $\iint_{\bbR^6}fd\vect{v} d\vect{x} = \text { constant } = m$.
-        \item The total energy is conserved, \textit{i.e.},
+      \item 总质量守恒, 即 $\iint_{\bbR^6}fd\vect{v} d\vect{x} = \text { constant } = m$.
+        % \item The total mass is conserved, \textit{i.e.}, $\iint_{\bbR^6}fd\vect{v} d\vect{x} = \text { constant } = m$.
+      \item 总能量守恒, 即
+      % \item The total energy is conserved, \textit{i.e.},
         \begin{equation}
             \text{(RVP) } \int_{\bbRx}\left\langle\int_{\bbRv} \sqrt{1+|\vect{v}|^{2}} f d \vv+\frac{1}{2} \gamma|\vE|^{2}\right\rangle d \vect{x}=\text { constant }=:\mathscr{E}_{0}
         \end{equation}
@@ -21,12 +34,12 @@
 \end{lemma}
 
 \begin{proof}
-    \eqrvp to be reorganized from \cite{glassey_symmetric_1985}.
+  
+    对 \eqrvp 系统部分的证明从 \cite{glassey_symmetric_1985} 中整理而 \eqvp 情况是类似的。
+    % \eqrvp part is reorganized from \cite{glassey_symmetric_1985} while \eqvp has been simulated.
 
     \begin{enumerate}[(a)]
-      \item We apply Eq. (2) to note that $|\vect{X}(s, t, \vx, \vv)-\vx|=$ $\left|\int_{t}^{s} \hat{\vect{V}}(\xi, t, \vx, \vv) d \xi\right| \leqq|t-s| .$ In particular, $|X(0, t, \vx, \vv)-\vx| \leqq t .$ Thus whenever $|\vx|>k+t,$ we have $|\vect{X}(0, t, \vx, \vv)| \geqq|\vx|-|\vect{X}(0, t, \vx, \vv)-\vx|>k$, and so by hypothesis and
-      $(3), f(t, \vx, \vv)=f_0(\vect{X}(0, t, \vx, \vv), \vect{V}(0, t, \vx, \vv))=0$
-      \item follows by simply integrating $(\mathrm{RVP})$ in $v$ and $x$.
+      \item 这个只要把偏微分方程在 $v$ 和 $x$ 上都积分一遍即可。
       \item
       
       Multiplying \eqrvp by $\sqrt{1+|\vv|^{2}}$ and integrating in $v,$ we obtain
@@ -42,14 +55,14 @@
       \end{equation}
        We have defined $\vE= - \nabla \phi$, where $\Delta \phi=\rho$. Multiplying by $\phi,$ we have
       \[
-      \int_{\Omega^{3}}|\vE|^{2} d x=-\int_{R^{3}} \rho \phi d \vx
+      \int_{\bbR^{3}}|\vE|^{2} d x=-\int_{R^{3}} \rho \phi d \vx
       \]
       and hence
       \[
       \begin{aligned}
-      \frac{d}{d t} \int_{R^{3}}|\vE|^{2} d x &=-\int_{R^{3}} \rho_{t} \phi d x-\int \rho u_{t} d x=-\int \rho_{t} \phi d x-\int_{R^{3}} u_{t} \Delta \phi d x \\
+      \frac{d}{d t} \int_{R^{3}}|\vE|^{2} d x &=-\int_{\bbR^{3}} \rho_{t} \phi d x-\int \rho u_{t} d x=-\int \rho_{t} \phi d x-\int_{R^{3}} u_{t} \Delta \phi d x \\
       &=-\int_{\mathbb{R}^{3}} \rho_{t} \phi d x+\frac{1}{2} \frac{d}{d t} \int_{R^{3}}|E|^{2} d \vx \text{ (integrate by parts)}\\
-      \Rightarrow \frac{1}{2} \frac{d}{d t} \int_{\mathrm{R}^{3}}|\vE|^{2} d \vx=&-\int_{\mathrm{R}^{3}} \rho_{t} \phi d \vx
+      \Rightarrow \frac{1}{2} \frac{d}{d t} \int_{\mathbb{R}^{3}}|\vE|^{2} d \vx=&-\int_{\mathrm{R}^{3}} \rho_{t} \phi d \vx
       \end{aligned}
       \]
       Therefore
@@ -60,7 +73,7 @@
       \]
       It follows that
       \[
-      \frac{1}{2} \frac{d}{d t} \int_{\Omega^{3}}|\vE|^{2} d \vx=-\int_{R^{3}} \rho_{t} \phi d \vx=\int_{\Omega^{3}} \phi \nabla_{x} \cdot j d \vx=-\int_{\mathbb{R}^{3}} \vj \cdot \nabla_{x} \phi d \vx=-\int_{n^{3}} \vj \cdot \vE d \vx
+      \frac{1}{2} \frac{d}{d t} \int_{\bbR^{3}}|\vE|^{2} d \vx=-\int_{R^{3}} \rho_{t} \phi d \vx=\int_{\bbR^{3}} \phi \nabla_{x} \cdot j d \vx=-\int_{\mathbb{R}^{3}} \vj \cdot \nabla_{x} \phi d \vx=-\int_{\bbR^{3}} \vj \cdot \vE d \vx
       \]
       Now using this and \eqref{eq:rvp_second_moment}, \eqref{eq:vp_second_moment} we have
       \[
@@ -72,7 +85,7 @@
       \[
       \begin{aligned}
         \text{(RVP) }&\frac{d}{d t} \int_{\mathbb{R}^{3}}\int_{\mathbb{R}^{3}} \sqrt{1+|v|^{2}} f d \vv+\frac{1}{2} \gamma|\vE|^{2} d \vx\\ =&-\int_{\mathbb{R}^{3}}\left(\int_{\mathbb{R}^{3}} v \cdot \nabla_{x} f d \vv-\gamma j \cdot \vE\right) d \vx-\gamma \int_{R^{3}} \vj \cdot \vE d \vx \\
-        =&-\int_{\mathbb{R}^{3} R^{3}} \nabla_{x} \cdot(f \vv) d \vv d \vx=0
+        =&-\int_{\mathbb{R}^{3}\times \bbR^{3}} \nabla_{x} \cdot(f \vv) d \vv d \vx=0
         \end{aligned}
       \]
       which proves the total energy $\mathcal{E}_0$ does not change with respect to time in both non-relativistic adn relativistic cases.

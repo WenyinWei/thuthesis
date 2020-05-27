@@ -63,15 +63,18 @@
   % edate={December, 2005},
   %
   % 关键词用“英文逗号”分割
-  ckeywords={Vlasov-Poisson, 全局存在性, 唯一性, 适定性},
-  ekeywords={Vlasov-Poisson, global existence, uniqueness, well-posedness}
+  ckeywords={Vlasov-Poisson, 适定性，爆破性},
+  ekeywords={Vlasov-Poisson, well-posedness, blow up}
 }
 
 % 定义中英文摘要和关键字
 \begin{cabstract}
-  本文作为文献综述，总结了对 Vlasov-Poisson 系统所做的相关研究。Vlasov-Poisson 问题的适定性问题，即其解存在性与唯一性的证明，及解在时间上至多局部存在还是可以全局存在的问题。该综述的主体部分讲述了局部解的适定性问题，即通过光滑化原 Vlasov-Poisson 问题场函数的奇异性，得到逼近解在该修正逐渐弱化的极限下是一致收敛的结果，从而证明原 Vlasov-Poisson 问题的局部的适定性问题，从而证明局部解的存在性和唯一性。而等离子体物理领域著名的朗道阻尼现象，在本文介绍中也略有提及其相关的数学工作成果。
+  本文作为文献综述，总结了对 Vlasov-Poisson 系统所做的相关研究，回顾 Vlasov-Poisson 问题的适定性问题，即满足什么条件时解有存在性与唯一性，及解在时间上至多局部存在还是可以全局存在的问题。该综述的主体部分按 \cite{HorstClasssicalI} 的思路讲述了局部解的适定性问题，即通过光滑化原 Vlasov-Poisson 问题场函数的奇异性，得到逼近解的特征线在该修正逐渐弱化的极限下一致收敛的结果，从而证明原 Vlasov-Poisson 问题的局部的适定性问题，从而证明局部解的存在性和唯一性。
+  % 而等离子体物理领域著名的朗道阻尼现象，在本文介绍中也略有提及其相关的数学工作成果。
 
-  本文主要围绕着 Vlasov-Poisson 系统的适定性问题，讨论了系统的存在性和唯一性问题。在第二章中我们采用了局部良态问题的求解方法之后，第三章和第四章分别给出了非相对论情形和相对论情形的全局解的存在性问题相关结果的整理。对于相对论的 Vlasov-Poisson 问题，在紧凑的veclocity支持下，证明了 $\mu=1$ 的情况具有全局存在性，而 $\mu=-1$  足够小的初始数据的情况具有全局存在性，而在较大的情况下则不然，解不能全局延拓。
+  在第二章中我们先是给出了对 Vlasov-Poisson 问题非常重要的区间有界条件，满足该条件的区间能够一致控制 $\|\vE^\varepsilon(t)\|_\infty$, $\|\rho^\varepsilon(t)\|_\infty$ 和 $\sup \{|\vect{V}^\varepsilon(r,0,\vx,\vv)-\vv| \bigg|\vx,\vv \in \bbR^N, 0\leqslant r \leqslant t \}$。之后通过 $\rho^\varepsilon$ 的 $\mathrm{L}^1$ 和 $\mathrm{L}^\infty$ 范数对 $\vE^\varepsilon$ Lipschitz 连续性的一致控制。以 $\|\rho^\varepsilon\|_\infty$, $h_v^\varepsilon(t)$ 及 $\operatorname{lip}_x (\vE^\varepsilon(t))$ 三者的一致控制为基础，我们得以证明区间有界条件与局部解存在互为充要条件，从而刻画 Vlasov-Poisson 方程的适定性。
+  
+  % 第三章给出了非相对论情形和相对论情形的全局解的存在性问题相关结果的整理。对于相对论的 Vlasov-Poisson 问题，在初值紧支集的假设下，证明了 $\mu=1$ 的情况解具有全局存在性，而 $\mu=-1$  足够小的初值时解具有全局存在性，而在较大的情况下则不然，解不能全局延拓。
   
   
 \end{cabstract}
@@ -80,9 +83,13 @@
 % \ckeywords{\TeX, \LaTeX, CJK, 模板, 论文}
 
 \begin{eabstract}
-Recent researches on the Vlasov-Poisson system have been concluded in this literature review. The well-posedness problem, when the Vlasov-Poisson system has a global and unique solution has been studied for a long time. The main part of the literature review contains the approximation method used to converge to a local-in-time solution, proving the local well-posedness.  The well-known Landau damping, a varitey of long-term time asymptotic behaviour of Vlasov-Poisson system, is introduced concisely before the main body.
+Recent researches on the Vlasov-Poisson system have been concluded in this literature review. The well-posedness problem, when the Vlasov-Poisson system has a global and unique solution has been studied for a long time, is reviewed. The main part of the literature review contains the approximation method used to converge to a local-in-time solution, proving the local well-posedness. 
 
-The literature mainly centres on the topic of well-posedness in the Vlasov-Poisson system, discussing about the existence and uniqueness problem. After the method we used in Chap 2 to solve the local well-posedness problem, global solutions existence problem are presented in Chap 3 and Chap 4 respectively for non-relativistic and relativistic cases. For the relativistic Vlasov-Poisson problem, it is shown with compact veclocity support, that $\mu=1$ situations have global existence, while for $\mu=-1$ "small" enough cases are known to have global existence and a case of blow up with "large" enough spherically symmetric initial data. 
+% The well-known Landau damping, a varitey of long-term time asymptotic behaviour of Vlasov-Poisson system, is introduced concisely before the main body.
+
+The literature mainly centres on the topic of well-posedness in the Vlasov-Poisson system, discussing about the existence and uniqueness problem. After the method we used in Chapter 2 to solve the local well-posedness problem. 
+In chapter two, the boundedness condition of interval for Vlasov-Poisson system is given first and illustrate how we can control uniformly $\|\vE^\varepsilon(t)\|_\infty$, $\|\rho^\varepsilon(t)\|_\infty$ 和 $\sup \{|\vect{V}^\varepsilon(r,0,\vx,\vv)-\vv| \bigg|\vx,\vv \in \bbR^N, 0\leqslant r \leqslant t \}$. Then by $\mathrm{L}^1$ and $\mathrm{L}^\infty$ norm of  $\rho^\varepsilon$ we can estimate whether $\vE^\varepsilon$ is  Lipschitz continuous uniformly for all $\varepsilon >0$. With all the uniform control conditions we have acquired, it suffices to prove that the suffient and necessary condition of local well-posedness.
+% global solutions existence problem are presented in Chapter 3 and Chapter 4 respectively for non-relativistic and relativistic cases. For the relativistic Vlasov-Poisson problem, it is shown with compact veclocity support, that $\mu=1$ situations have global existence, while for $\mu=-1$ "small" enough cases are known to have global existence and a case of blow up with "large" enough spherically symmetric initial data. 
 
 % Non-linear stability proof for the stable solutions in Vlasov-Poisson system are introduced in Sect. \ref{cha:stability}, mainly based on the energy-Casimir methoud which is an elegant method to settle stability issue in conservative systems. As the byproducts in the above proof, regularites about some concrete quantities, \textit{e.g.} $\vE$ and $\rho$, would be exhibited in Sect. \ref{cha:regularities}.
 

@@ -1,73 +1,75 @@
-\chapter{Global Solutions of relativistic Vlasov-Poisson System}
+% \chapter{Global Solutions of relativistic Vlasov-Poisson System}
+
+\section{相对论情形}
 \label{cha:global-RVP}
+这一节中，我们提及一些关于球对称状态下 \eqrvp 方程的结果全局存在性的结果。
+% In this chapter, we present some useful global existence resutls with spherical symmetric data for relativistic Vlasov-Poisson System.
 
-In this chapter, we present some useful global existence resutls with spherical symmetric data for relativistic Vlasov-Poisson System.
+\section{球对称性的特性}
+% \section{Spherical Symmetry}
+球对称初值的数据带来的解会有一定的特征，这里我们说的球对称，指的是 $f_0(U\vx,U\vv)=f_0(\vx,\vv)$ 对任何的旋转矩阵 $U\in SO(3)$。
 
-\section{Spherical Symmetry}
-The characteristics with \textit{spherical symmetric} initial data, \textit{i.e.}, that $f_0(U\vx,U\vv)=f_0(\vx,\vv)$ for any rotation matrix $U$ on $\bbRRR$, would be further specified. 
-Now that the distribution $f$ is radial, as a result, we know that the density function $\rho(t, x)$ is radial at least for $t=0$,
+当我们想知道 Vlasov-Poisson 方程解的初值的球对称性质是否会随时间延拓下去时，我们可以将初值进行旋转 $f_0(U\vx,U\vv), U\in SO(3)$ 做它的 Vlasov-Poisson 方程的解，即 $f_U(0,\cdot,\cdot):=f_0(U\vx,U\vv)$。由解的唯一性和初值的对称性可知，它和原来的解相等 $f_U(t,\vx,\vv) = f(t,\vx,\vv), \forall \vx,\vv \in \bbR^3$。从而得到球对称性延续的结果。
+
+从而球对称解的密度、场强等量都具有球对称性，
+% Now that the distribution $f$ is radial, as a result, we know that the density function $\rho(t, x)$ is radial at least for $t=0$,
+% The characteristics with \textit{spherical symmetric} initial data, \textit{i.e.}, that $f_0(U\vx,U\vv)=f_0(\vx,\vv)$ for any rotation matrix $U$ on $\bbRRR$, would be further specified. 
+% Now that the distribution $f$ is radial, as a result, we know that the density function $\rho(t, x)$ is radial at least for $t=0$,
 \[
-\forall x \in \mathbb{R}^{3}, \quad \rho(t, U x)=\int_{\mathbb{R}^{3}} f(t, Ux, v) d v=\int_{\mathbb{R}^{3}} f(t, U x, U \omega)|\operatorname{det}(U)| d \omega=\int_{\mathbb{R}^{3}} f(t, x, \omega) d \omega=\rho(t, x)
+\forall x \in \mathbb{R}^{3}, \quad \rho(t, U \vx)=\int_{\mathbb{R}^{3}} f(t, U\vx, \vv) \mathrm{d} \vv=\int_{\mathbb{R}^{3}} f(t, U \vx, U \vect{\omega})|\operatorname{det}(U)| \mathrm{d} \vect{\omega}=\int_{\mathbb{R}^{3}} f(t, \vx, \vect{\omega}) \mathrm{d} \vect{\omega}=\rho(t, \vx)
 \]
-which indicates the $\vE$ is also radial.
+这表明 $\rho$ 和 $\vE$ 也是径向的。
+% which indicates the $\vE$ is also radial.
 
 
-Let $\vect{X}_1, \vect{V}_1$ be the solution of characteristic system with initial data $\vect{X}_1 (0)= \vx, \vect{V}_1 (0)= \vv$ while $\vect{X}_2, \vect{V}_2$ with $(U\vx,U\vv)$ as initial data. 
-$$
-\begin{aligned}
-\vect{X}_1(t) = &\int_0^t  \int_0^s \vect{E}(\tau, \vect{X}_1(\tau))\mathrm{d} \tau +\vect{V}_1(0)\mathrm{d} s +\vect{X}_1(0)\\ =& U^{-1}\int_0^t  \int_0^s \vect{E}(\tau, \vect{X}_2(\tau)) \mathrm{d} \tau +\vect{V}_2(0) \mathrm{d} s +U^{-1}\vect{X}_2(0) = U^{-1}\vect{X}_2,
-\end{aligned}$$
- then we deduce that $f(t,\vect{X}_1(t), \vect{V}_1(t)) = f(t,\vect{X}_2(t), \vect{V}_2(t)) =  f(t,U\vect{X}_1(t), U\vect{V}_1(t))$ for all $t$, \textit{i.e.} the radial property of intial data propagates. 
+% Let $\vect{X}_1, \vect{V}_1$ be the solution of characteristic system with initial data $\vect{X}_1 (0)= \vx, \vect{V}_1 (0)= \vv$ while $\vect{X}_2, \vect{V}_2$ with $(U\vx,U\vv)$ as initial data. 
+% $$
+% \begin{aligned}
+% \vect{X}_1(t) = &\int_0^t  \int_0^s \vect{E}(\tau, \vect{X}_1(\tau))\mathrm{d} \tau +\vect{V}_1(0)\mathrm{d} s +\vect{X}_1(0)\\ =& U^{-1}\int_0^t  \int_0^s \vect{E}(\tau, \vect{X}_2(\tau)) \mathrm{d} \tau +\vect{V}_2(0) \mathrm{d} s +U^{-1}\vect{X}_2(0) = U^{-1}\vect{X}_2,
+% \end{aligned}$$
+%  then we deduce that $f(t,\vect{X}_1(t), \vect{V}_1(t)) = f(t,\vect{X}_2(t), \vect{V}_2(t)) =  f(t,U\vect{X}_1(t), U\vect{V}_1(t))$ for all $t$, \textit{i.e.} the radial property of intial data propagates. 
 
-Therefore, The initial data spherical symmetry would induce the spherically symmetric solution with simplified argument $r:=|\vx|,~ u:=|\vv|,\alpha:=\angle(\vx,\vv)$ and $t$. $f$, $\rho$ and other quantities could be redefined in a more essential way, thanks to the spherical geometry,  \textit{i.e.} $f(t,r,u,\alpha) := f(t, r\hat{\vect{x}} , \vv)$, where $\hat{\vx}$ denotes one of the standard unit vector coordinate basis, $|\vv| = u$ and $ \angle(\vv, \hat{\vect{x}})=\alpha$. The density $\rho$ depends then only on $r$ and $t$: 
-\begin{equation}
-    \rho( t,r)=2 \pi \int_{0}^{\infty} \int_{0}^{\pi} f(t, r, u, \alpha) u^{2} \sin \alpha d \alpha d u,
-\end{equation}
+于是，我们可以有了更简洁的函数变量表示 $r:=|\vx|,~ u:=|\vv|,\alpha:=\angle(\vx,\vv)$ 和 $t$。 $f$, $\rho$ 和其他的量可以重新用更精炼的定义，即 $f(t,r,u,\alpha) := f(t, r\hat{\vect{x}} , \vv)$, 其中 $\hat{\vx}$ 表示一个正交单位坐标系中任意一个单位基, $|\vv| = u$ and $ \angle(\vv, \hat{\vect{x}})=\alpha$. 密度 $\rho$ 仅依赖于 $r$ 和 $t$: 
+% Therefore, The initial data spherical symmetry would induce the spherically symmetric solution with simplified argument $r:=|\vx|,~ u:=|\vv|,\alpha:=\angle(\vx,\vv)$ and $t$. $f$, $\rho$ and other quantities could be redefined in a more essential way, thanks to the spherical geometry,  \textit{i.e.} $f(t,r,u,\alpha) := f(t, r\hat{\vect{x}} , \vv)$, where $\hat{\vx}$ denotes one of the standard unit vector coordinate basis, $|\vv| = u$ and $ \angle(\vv, \hat{\vect{x}})=\alpha$. The density $\rho$ depends then only on $r$ and $t$: 
 
- the same as the electrostatic potential $\phi(r,t)$: 
-\begin{equation}
-    \phi(t, r)=-\frac{1}{r} \int_{0}^{r} \lambda^{2} \rho(t, \lambda) d \lambda-\int_{r}^{\infty} \lambda \rho(t, \lambda) d \lambda
-\end{equation}
+% \begin{equation}
+$
+\rho( t,r)=2 \pi \int_{0}^{\infty} \int_{0}^{\pi} f(t, r, u, \alpha) u^{2} \sin \alpha \mathrm{d} \alpha  \mathrm{d} u,$
+% \end{equation}
+
+电势 $\phi(r,t)$ 可以写为: 
+% \begin{equation}
+    $
+    \phi(t, r)=-\frac{1}{r} \int_{0}^{r} \lambda^{2} \rho(t, \lambda)  \mathrm{d} \lambda-\int_{r}^{\infty} \lambda \rho(t, \lambda)  \mathrm{d} \lambda
+    $
+% \end{equation}
  
-The electric field $\vE$ as the negative of the gradient of the potential and new notation $M(t, r)$ introduced as below:
+电场 $\vE$ 是势的负梯度并且我们引入 $M(t, r)$ %introduced as below:
+% The electric field $\vE$ as the negative of the gradient of the potential and new notation $M(t, r)$ introduced as below:
 
-\begin{equation}\vE( t,\vx)=\nabla_{x} \phi=\frac{\vx}{r^{3}} \int_{0}^{r} \lambda^{2} \rho(t, \lambda) d \lambda = \frac{\vx}{r^3} M(t, r)\end{equation}
+% \begin{equation}
+$\vE( t,\vx)=\nabla_{x} \phi=\frac{\vx}{r^{3}} \int_{0}^{r} \lambda^{2} \rho(t, \lambda)  \mathrm{d} \lambda = \frac{\vx}{r^3} M(t, r)$
+% \end{equation}
 
 Notice that $M(t, r)$ is essentially the integral of $\rho$ on the volume the sphere with radius $r$ except a factor of $4\pi$, showing $\lim_{r\rightarrow \infty} M(t, r)= m/4\pi$. Moreover, $|\vE|=r^{-2}M(t,r)$.
 
-Spherical symmetry brings in the below simplification of the characteristics' ordinary differential equations and note that $dA/dt$ could be decided by the $d(\vect{X}\cdot \vect{V})/ds = d(RU\cos A)/ds$. Curly brackets $\{... ,...\}$ includes the terms for \eqvp~ in the left and for \eqrvp~ in the right. 
+球对称性引起的特征线方程的简化成为了一个很有用的工具，其中 $\mathrm{d}A/\mathrm{d}t$ 可以通过 $\mathrm{d}(\vect{X}\cdot \vect{V})/\mathrm{d} s = \mathrm{d}(RU\cos A)/\mathrm{d}s$ 得到，其他的较为简单。花括号表示 $\{... ,...\}$ 包含了 \eqvp 和 \eqrvp 两种情况，分别在左右两侧。 
+% Spherical symmetry brings in the below simplification of the characteristics' ordinary differential equations and note that $dA/dt$ could be decided by the $d(\vect{X}\cdot \vect{V})/ds = d(RU\cos A)/ds$. Curly brackets $\{... ,...\}$ includes the terms for \eqvp~ in the left and for \eqrvp~ in the right. 
 \begin{equation}\left\{\begin{aligned}
-    &\frac{d R}{d s}=|\vect{a}(\vect{V})|\cos A =\left\{ U \cos A,  \frac{U \cos A}{\sqrt{1+U^{2}}} \right\}  \\
-    &\frac{d U}{d s}=\left| \frac{d\vect{V}}{ds} \right| \cos<\frac{d\vect{V}}{ds}, \vect{a}(\vect{V})>=\gamma \frac{\cos A}{R^{2}} M(s, R) \\
-    &\frac{d A}{d s}=-\left(\gamma \frac{M(s, R)}{R^{2} U}+ \left\{\frac{U}{R},   \frac{U}{R \sqrt{1+U^{2}}} \right\}  \right) \sin A
+    &\frac{\mathrm{d} R}{\mathrm{d} s}=|\vect{a}(\vect{V})|\cos A =\left\{ U \cos A,  \frac{U \cos A}{\sqrt{1+U^{2}}} \right\}  \\
+    &\frac{\mathrm{d} U}{\mathrm{d} s}=\left| \frac{\mathrm{d}\vect{V}}{\mathrm{d}s} \right| \cos<\frac{\mathrm{d}\vect{V}}{\mathrm{d}s}, \vect{a}(\vect{V})>=\gamma \frac{\cos A}{R^{2}} M(s, R) \\
+    &\frac{\mathrm{d} A}{\mathrm{d} s}=-\left(\gamma \frac{M(s, R)}{R^{2} U}+ \left\{\frac{U}{R},   \frac{U}{R \sqrt{1+U^{2}}} \right\}  \right) \sin A
 \end{aligned}\right.\end{equation}
 
-The simplified results of \eqrvp will be helpful in the following proof.
+这些简化的特征线迹线方程给出了相对于任意初值更多的信息，其中对 \eqrvp 的描述对读者阅读下面涉及到的文献会有所帮助。一个以上述方程推出的相当有用的论据是 $\mu=+1$ 时，$\mathrm{d}R/\mathrm{d}s$ 最多在一点 $t_0$ 为 0，在此点后 $t>t_0$ 必然 $\mathrm{d}R/\mathrm{d}s>0$；或者一直为正。 
+% The simplified results of \eqrvp will be helpful in the following proof.
 
-\section{Existence}
-Global existence results of \eqrvp in 3D has been studied by \cite{glassey_symmetric_1985} with compact distribution function support and by \cite{wang2003global}. \cite{glassey_symmetric_1985} restrict the $|\vE|$  to prove that supremum of the velocity can be controlled by a function $H_v \in C_{+}(R_0^+)$. While \cite{wang2003global} controlled the norm of electric field $\|\vE(t, \cdot)\|_{\infty}$ to achieve the global existence . Their approaches are concisely introduced as follow.
-
-
-To control the $L_{x}^{\infty}$ -norm of the acceleration term $\nabla_{x} \bar{\phi},$ now it's a standard argument to show that it is controlled by a high moment of the distribution function, see also Lemma 2.2
-2.3. Propagation of moments. We define
-\[
-M_{n}(t, x):=\int_{\mathbb{R}^{3}}(1+|v|)^{n} f(t, x, v) d v, \quad M_{n}(t):=\int_{\mathbb{R}^{3}} M_{n}(t, x) d x, \quad n:=\left\lceil N_{0} / 10\right\rceil
-\]
+\section{全局存在性}
+% \section{Existence}
+本节简单阐释 \cite*{glassey_symmetric_1985} 做的 \eqrvp 3D 情况下的全局存在性  ，但它需要初值紧支集的假设。\cite*{wang2003global} 后证明了它的. \cite*{glassey_symmetric_1985} restrict the $|\vE|$  to prove that supremum of the velocity can be controlled by a function $H_v \in C_{+}(R_0^+)$. While \cite*{wang2003global} controlled the norm of electric field $\|\vE(t, \cdot)\|_{\infty}$ to achieve the global existence . Their approaches are concisely introduced as follow.
+% Global existence results of \eqrvp in 3D has been studied by \cite*{glassey_symmetric_1985} with compact distribution function support and by \cite*{wang2003global}. \cite*{glassey_symmetric_1985} restrict the $|\vE|$  to prove that supremum of the velocity can be controlled by a function $H_v \in C_{+}(R_0^+)$. While \cite*{wang2003global} controlled the norm of electric field $\|\vE(t, \cdot)\|_{\infty}$ to achieve the global existence . Their approaches are concisely introduced as follow.
 
 
-
-Local theory and the reduction of the proof. Because our assumption on the initial data is stronger than the assumption imposed on the distribution function in $[7],$ by using the same argument used by Luk-Strain |기| for the relativistic Vlasov-Maxwell system, which is more difficult, we can reduce the proof of global existence to the $L_{x}^{\infty}$ -estimate of the scalar field $\nabla_{x} \phi,$ which corresponds to the acceleration of the speed of particles.
-
-
-\begin{lemma}
-    There exists a constant $C$ such that for $r \geq 0$ and $0 \leq t<T$
-    $$
-    |\vE(\vx, t)|=\frac{M(r, t)}{r^{2}} \leqq\left\{\begin{array}{ll}
-    {\min \left(M r^{-2}, 100 M^{1 / 3}\|\hat{f}\|_{\infty}^{2 / 3} P^{2}(t)\right)} & {\text { if } \gamma=-1} \\
-    {\min \left(M r^{-2}, C P^{5 / 3}(t)\right)} & {\text { if } \gamma=+1}
-    \end{array}\right.
-    $$
-    \end{lemma}
     
 
 \begin{definition}
@@ -98,9 +100,7 @@ The paper mainly talks about spherically symmertric solutions, \textit{i.e.}, th
 
 
 \begin{theorem}
-Let $f$ be a classical solution of (RVP) on some time interval $[0, T)$ with $\gamma=$
-$-1$ and smooth, nonnegative, spherically symmetric data fwhich has compact support
-and vanishes for $(r, u, \alpha) \notin(0, \infty) \times(0, \pi) .$ If $40 M^{2 / 3}\left\|f^{\circ}\right\|_{\infty}^{1 / 3}<1,$ then $P(t)$ is uniformly bounded on $[0, T)$, and hence (RVP) possesses a global classical solution.
+令 $f$ 为\eqrvp 在一段时间上的 $[0, T)$ 经典解, $\mu=-1$，初值光滑非负、球对称且有紧支集，$(r, u, \alpha) \notin(0, \infty) \times(0, \pi) $ 处函数值为零。如果 $40 \mathcal{M}^{2 / 3}\left\|f^{\circ}\right\|_{\infty}^{1 / 3}<1,$ 则 $P(t)$ 在 $[0, T)$ 上一致有界，因而 \eqrvp 有全局经典解。
 \end{theorem}
 
 
@@ -137,8 +137,13 @@ and vanishes for $(r, u, \alpha) \notin(0, \infty) \times(0, \pi) .$ If $40 M^{2
 % \end{lemma}
 
 \begin{theorem}
-Let $f$ be a classical solution of (RVP) on some time interval $[0, T)$ with $\gamma=+1$ and smooth, nonnegative, spherically symmetric data $f_0$ which has compact support and vanishes for $(r, u, \alpha) \notin(0, \infty) \times(0, \infty) \times(0, \pi) $. Then $P(t)$ is uniformly bounded on $[0, T)$, and hence (RVP) possesses a global classical solution.
+    令 $f$ 为\eqrvp 在一段时间上的 $[0, T)$ 经典解, $\mu=+1$，初值光滑非负、球对称且有紧支集，$(r, u, \alpha) \notin(0, \infty) \times(0, \pi) $ 处函数值为零。则 $P(t)$ 在 $[0, T)$ 上一致有界，因而 \eqrvp 有全局经典解。
 \end{theorem}
+    
+% \begin{theorem}
+% Let $f$ be a classical solution of (RVP) on some time interval $[0, T)$ with $\gamma=+1$ and smooth, nonnegative, spherically symmetric data $f_0$ which has compact support and vanishes for $(r, u, \alpha) \notin(0, \infty) \times(0, \infty) \times(0, \pi) $. Then $P(t)$ is uniformly bounded on $[0, T)$, and hence (RVP) possesses a global classical solution.
+% \end{theorem}
+
 % \begin{proof}
 %     According to Lemma 1.6 and its following remark,
 %     \begin{equation}
@@ -245,8 +250,27 @@ Let $f$ be a classical solution of (RVP) on some time interval $[0, T)$ with $\g
 
 
 
+为了控制场强 $\vE$ 引起的加速度，对其 $L_{x}^{\infty}$ 范数进行控制，  now it's a standard argument to show that it is controlled by a high moment of the distribution function, see also Lemma 2.2
+2.3. Propagation of moments. We define
+\[
+M_{n}(t, x):=\int_{\mathbb{R}^{3}}(1+|v|)^{n} f(t, x, v) d v, \quad M_{n}(t):=\int_{\mathbb{R}^{3}} M_{n}(t, x) d x, \quad n:=\left\lceil N_{0} / 10\right\rceil
+\]
 
 
+
+施加了一个强局域的假设，通过采用和 Luk-Strain |기| 对相对论 Vlasov-Maxwell 系统处理类似的方法，证明被简化为了只需证明标量场 $\nabla_{x} \phi$ 的范数 $L_{x}^{\infty}$ 有界，便可证得全局存在性。
+
+
+\begin{lemma}
+    存在常数 $C$ 使得对所有的 $r \geq 0$ 和 $0 \leq t<T$ 有
+    % There exists a constant $C$ such that for $r \geq 0$ and $0 \leq t<T$
+    $$
+    |\vE(\vx, t)|=\frac{M(r, t)}{r^{2}} \leqq\left\{\begin{array}{ll}
+    {\min \left(M r^{-2}, 100 M^{1 / 3}\|\hat{f}\|_{\infty}^{2 / 3} P^{2}(t)\right)} & {\text { if } \gamma=-1} \\
+    {\min \left(M r^{-2}, C P^{5 / 3}(t)\right)} & {\text { if } \gamma=+1}
+    \end{array}\right.
+    $$
+    \end{lemma}
 
 From the conservation laws $(1.2),$ we know that $M_{1}(t)$ is always bounded from the above. Moreover we define
 \[

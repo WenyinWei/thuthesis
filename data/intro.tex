@@ -3,14 +3,25 @@
 \newcommand{\eqrvp}{\hyperref[eq:vp]{(RVP)}~}                      
 \newcommand{\eqrvm}{\hyperref[eq:vm]{(RVM)}~}
 
-\chapter{Introduction}
+\chapter{介绍}
+% \chapter{Introduction}
 
 
-\section{Background}
-The Vlasov type equation is studied as a governing equation describing the multi-body motion of the particle swarm, 
-in which the anistropic velocity distribution contributes a significant influence to the dynamics of the system. 
-Phase space distribution $\ftxv\geq 0 ~ (x\in \bbRx,~v\in\bbRv,~t\geq 0) $ with initial data $f_{0}(\vx, \vv)=f(0, \vx, \vv)$ determines the particle density at $(t, \vx,\vv)$, \textit{i.e.}, the number of particles per unit volume in phase space. When coupled with Maxwell equations as the electromagnetic field governing rule, Vlasov equation is capable to decide the dynamic 
-scenario for particle-field interaction, named Vlasov-Maxwell system \eqvm.
+
+\section{研究背景}
+% \section{Background}
+
+Vlasov 类型的偏微分方程系统是描述粒子群多体运动问题的 Boltzmann 方程在无碰撞条件下的简化。粒子群在给定的 $(t,\vx)$ 处的各向异性的速度分布对系统变化产生了很大的影响，使得对粒子速度空间分布的刻画十分必要。通过将速度空间分布考虑到系统中，即分布函数从时空分布的变为更细致的相空间分布，Vlasov 类型的偏微分方程系统从而能够精确地描述动理学意义上的运动演化规律。准确来说，相空间的分布函数 $\ftxv ~ (x\in \bbRx,~v\in\bbRv,~t\geq 0) $。当电磁力作为主要考虑对象时，即与 Maxwell 方程组耦合的时候 \eqvm，Vlasov 方程描述的便是带电粒子与电磁场相互作用的关系，从而描绘物质电磁相互作用的图象。
+% The Vlasov type equation is studied as a governing equation describing the multi-body motion of the particle swarm, 
+% in which the anistropic velocity distribution contributes a significant influence to the dynamics of the system. 
+% Phase space distribution $\ftxv\geq 0 ~ (x\in \bbRx,~v\in\bbRv,~t\geq 0) $ with initial data $f_{0}(\vx, \vv)=f(0, \vx, \vv)$ determines the particle density at $(t, \vx,\vv)$, \textit{i.e.}, the number of particles per unit volume in phase space. When coupled with Maxwell equations as the electromagnetic field governing rule, Vlasov equation is capable to decide the dynamic 
+% scenario for particle-field interaction, named Vlasov-Maxwell system \eqvm.
+
+
+% The Vlasov type equation is studied as a governing equation describing the multi-body motion of the particle swarm, 
+% in which the anistropic velocity distribution contributes a significant influence to the dynamics of the system. 
+% Phase space distribution $\ftxv\geq 0 ~ (x\in \bbRx,~v\in\bbRv,~t\geq 0) $ with initial data $f_{0}(\vx, \vv)=f(0, \vx, \vv)$ determines the particle density at $(t, \vx,\vv)$, \textit{i.e.}, the number of particles per unit volume in phase space. When coupled with Maxwell equations as the electromagnetic field governing rule, Vlasov equation is capable to decide the dynamic 
+% scenario for particle-field interaction, named Vlasov-Maxwell system \eqvm.
 
 
 \begin{equation}\label{eq:vm}\text { (VM \& RVM) }\left\{\begin{array}{l}
@@ -19,16 +30,18 @@ scenario for particle-field interaction, named Vlasov-Maxwell system \eqvm.
     \vB_{t}=-\nabla \times \vE \\
     \nabla \cdot \vE=\rho, \quad \nabla \cdot \vB=0
     \end{array}\right.\end{equation}
-in which $\vect{a}(\vv) \in\{\vv, \hat{\vv}\},~ \hat{\vv}:=\vv / \sqrt{1+|\vv|^{2}}$ and 
+其中 $\vect{a}(\vv) \in\{\vv, \hat{\vv}\},~ \hat{\vv}:=\vv / \sqrt{1+|\vv|^{2}}$ 且 
 \begin{equation}
-\rho(t, \vx)=\int_{\bbRv} \ftxv d \vect{v}, \quad \vect{j}(t, \vx)=\int_{\bbRv} \vect{a}(\vv)\ftxv d \vect{v}.
+\rho(t, \vx):=\int_{\bbRv} \ftxv d \vect{v}, \quad \vect{j}(t, \vx):=\int_{\bbRv} \vect{a}(\vv)\ftxv d \vect{v}.
 \end{equation}
-Here $\vE, \vB, \rho$ and $\vect{j}$ expressed electric field, magnetic field, spatial density and current density respectively. The more dedicated Einstein theory considers relativistic effect when $\vect{a}(\vv)=\hat{\vv}$ and limit the maximum velocity the particles can reach, transforming the Vlasov-Poisson to relativistic Vlasov-Poisson \eqrvp ~and the Vlasov-Maxwell to relativistic Vlasov-Maxwell \eqrvm.
+此处 $\vE, \vB, \rho$ 和 $\vect{j}$ 各表示电场、磁场、空间密度分布和电流密度分布。相对论提出的时空理论，认为光速是有限的，且所有物质的速度都慢于光速 $\vect{a}(\vv)=\hat{\vv}\leqslant 1$，从而在非相对论型的 Vlasov-Maxwell 系统 \eqvm 上又有了非相对论型的 Vlasov-Maxwell 系统 \eqrvm。
+% Here $\vE, \vB, \rho$ and $\vect{j}$ expressed electric field, magnetic field, spatial density and current density respectively. The more dedicated Einstein theory considers relativistic effect when $\vect{a}(\vv)=\hat{\vv}$ and limit the maximum velocity the particles can reach, transforming the Vlasov-Poisson to relativistic Vlasov-Poisson \eqrvp ~and the Vlasov-Maxwell to relativistic Vlasov-Maxwell \eqrvm.
 
-One could easily capture the physical essential of the Vlasov type equaiton by observing the $\mu(\vE+\vect{a}(\vv) \times \vB)$ term which is indeed the acceleration of particles located at $(\vx,\vv)$ in the phase space.
+% One could easily capture the physical essential of the Vlasov type equaiton by observing the $\mu(\vE+\vect{a}(\vv) \times \vB)$ term which is indeed the acceleration of particles located at $(\vx,\vv)$ in the phase space.
 
 
-Furthermore, under the assumption that the electrostatic force dominates the interaction, \textit{i.e.} the Lorentz force could be treated as zero, magnetic force is omitted and then comes the Vlasov-Poisson system \eqvp. $\vE$ could be expressed as the gradient of the electrostatic potential under the assumption.
+进一步简化，当电磁相互作用中静电相互作用力占主导时，洛伦兹力、磁场等的要素可以被简化掉，从而我们可以得到 Vlasov-Poisson 系统，
+% Furthermore, under the assumption that the electrostatic force dominates the interaction, \textit{i.e.} the Lorentz force could be treated as zero, magnetic force is omitted and then comes the Vlasov-Poisson system \eqvp. $\vE$ could be expressed as the gradient of the electrostatic potential under the assumption.
 \begin{equation}
     \vE(t, \vx)=-\nabla_{x} \phi(t, \vx), \quad \phi= \frac{1}{|\vx|} *\rho 
 \end{equation}
@@ -38,10 +51,15 @@ Furthermore, under the assumption that the electrostatic force dominates the int
     \partial_{t} f+\vect{a}(\vv ) \cdot \nabla_{x} f+\mu \nabla_{x} \phi \cdot \nabla_{v} f=0 \\
     \Delta \phi=\rho(f):=\int_{\bbRv} \ftxv d \vv
 \end{array}\right.\end{equation}
-where, $\mu \in\{+,-\}, \vect{a}(\vv) \in\{\vv, \hat{\vv}\},$ and $\hat{\vv}:=\vv / \sqrt{1+|\vv|^{2}}$. The sign of $\mu$ indicates different physical scenario, while "+" for the plasma physics case and "-" for the stellar dynamics case. \eqvp~ in fact indicates the rules of swarn motion governed by the scalar potential field-particle interaction, in which that the scalar potential field is generated by the particles themselves and that the stellar dynamics (plasma physics) case shows the absorbing gravitation (the repulsive Coulomb force) respectively. 
+其中 $\mu \in\{+,-\}, \vect{a}(\vv) \in\{\vv, \hat{\vv}\},$ 且 $\hat{\vv}:=\vv / \sqrt{1+|\vv|^{2}}$. 
+% where, $\mu \in\{+,-\}, \vect{a}(\vv) \in\{\vv, \hat{\vv}\},$ and $\hat{\vv}:=\vv / \sqrt{1+|\vv|^{2}}$. 
+$\mu$ 的符号正负表示不同的物理图象，其为 "+" 表示等离子体物理中同种电荷的相互排斥的库伦作用，而 "-" 表示星体动力学在万有引力主导下的作用规律。\eqvp 实际上表明了粒子群在一种势场作用下的运动规律，这种势场由粒子本身产生，在 $N$ 维空间中场强与 $1/r^{N-1}$ （$r$ 为粒子之间的距离） 成正比，这使得 Vlasov-Poisson 问题中的场可能 $\vE \notin \mathrm{L}^{\frac{N}{N-1}}$。当三维情况时，这意味着 $\vE \notin \mathrm{L}^{\frac{3}{2}}$。当 Vlasov-Poisson 系统用来讨论近似静电学问题时它表明的是排斥的库伦相互作用 $(\mu=+1)$，而在星体动力学中则是万有引力的相互作用($\mu = -1$)。
+% in fact indicates the rules of swarn motion governed by the scalar potential field-particle interaction, in which that the scalar potential field is generated by the particles themselves and that the stellar dynamics (plasma physics) case shows the absorbing gravitation (the repulsive Coulomb force) respectively. 
+% The sign of $\mu$ indicates different physical scenario, while "+" for the plasma physics case and "-" for the stellar dynamics case. \eqvp in fact indicates the rules of swarn motion governed by the scalar potential field-particle interaction, in which that the scalar potential field is generated by the particles themselves and that the stellar dynamics (plasma physics) case shows the absorbing gravitation (the repulsive Coulomb force) respectively. 
 
+当考虑多粒子 (Multi-species) 相互作用问题时，和单粒子情况在数学上没有本质的区别，通过对不同种粒子给定其质量 $q_i$ 和电荷量 $m_i$ 即可求解，其方程不在此赘述。但注意在引力作用 $\mu=-1$ 时，没有多粒子的物理图像。 
+% Multi-species extended equation of \eqvp and \eqrvp could be easily established by adding $q_i$ and $m_i$ in the original ones. Note that $\mu$ must be "+" at the present because the stellar dynamics case only allow single species situation. 
 
-Multi-species extended equation of \eqvp~ and \eqrvp~ could be easily established by adding $q_i$ and $m_i$ in the original ones. Note that $\mu$ must be "+" at the present because the stellar dynamics case only allow single species situation. 
 % \begin{equation}
 %     \label{eq:mvp}
 %     \text { (Multi-species VP \& RVP) }\left\{\begin{array}{l}
@@ -49,112 +67,112 @@ Multi-species extended equation of \eqvp~ and \eqrvp~ could be easily establishe
 %     \Delta \phi=\rho(f):=\int_{\bbRv} \sum_i q_i f_i d \vv
 % \end{array}\right.\end{equation}
 
-% Though \eqvm~ results give many heuristic clues in the research of \eqvp~ and much more is known about \eqvp. In this paper we mainly investigate the characteristics of \eqvp~ and \eqrvp.
+% Though \eqvm~ results give many heuristic clues in the research of \eqvp and much more is known about \eqvp. In this paper we mainly investigate the characteristics of \eqvp and \eqrvp.
 
 
 
-\section{Characteristics}
-在vlasov问题研究中经常使用的特性是:$s \mapsto {X}(s, t， \vx， \vv)，~ s \mapsto {V}(s, t， \vx， \vv)$定义为以下相应的常微分方程组的解:
+\section{特征线}
+% \section{Characteristics}
+在 Vlasov 型问题的研究中经常使用的是偏微分返程中的常用技巧，特征线:$s \mapsto {X}(s, t， \vx， \vv)，~ s \mapsto {V}(s, t， \vx， \vv)$，它定义为以下相应的常微分方程组的解:
 
-Frequently used in the context of Vlasov-problem research are the characteristics: $s \mapsto \vect{X}(s, t, \vx, \vv),~ s \mapsto  \vect{V}(s, t, \vx, \vv)$ defined as the solutions of the following corresponding system of ordinary differential equations:
+% Frequently used in the context of Vlasov-problem research are the characteristics: $s \mapsto \vect{X}(s, t, \vx, \vv),~ s \mapsto  \vect{V}(s, t, \vx, \vv)$ defined as the solutions of the following corresponding system of ordinary differential equations:
 
 \begin{equation}\begin{aligned}
     &\frac{d \vect{X}}{d s}=a(\vect{V})=\{\vect{V}, 
         \vect{V} / \sqrt{1+|\vect{V}|^{2}}\}\\
     &\frac{d \vect{V}}{d s}=\gamma \vE(\vect{X}, s)
 \end{aligned}\end{equation}
-表示粒子到达$(\vx，\vv)$时的轨迹，此时$s=t$，即 $ \ vect {X} (t, t \ vx \ vv) = \ vx ~ \ vect {V} (t, t \ vx \ vv) = \ vv$美元。因此，根据初始数据有界假设，$||f(t，\cdot，\cdot)||_\infty=||f_0||_\infty<\infty$。有时，当$(t，\vx，\vv)$已知时，我们直接使用$\vect{X}(s)$来简化符号，特别是当我们研究特征的踪迹时。
+具体来说，在 Vlasov 型问题中，它表示在 $t$ 时刻过 $(\vx,\vv)$ 点的特征线的轨迹，即 $ \vect {X} (t, t, \vx, \vv) = \vx, ~ \vect{V} (t, t, \vx, \vv) = \vv$。有时，当 $(t,\vx,\vv)$ 明确时，我们直接使用$\vect{X}(s)$来简化符号，特别是当我们研究单条特征线时。
 
-indicating the trace of a particle who arrives at $(\vx,\vv)$ at the time of $s=t$, \textit{i.e.}, $\vect{X}(t,t,\vx,\vv)=\vx, ~\vect{V}(t,t,\vx,\vv)=\vv$. Hence $||f(t,\cdot,\cdot)||_\infty=||f_0||_\infty<\infty$ by initial data boundedness assumption. Sometimes we use $\vect{X}(s)$ directly, when $(t,\vx,\vv)$ are known, to simplify the notation, especially when we are studying the traces of characteristics.
+沿特征线偏微分方程求解的函数值不变，因此，若初始数据有界，自然地有 $||f(t，\cdot，\cdot)||_\infty=||f_0||_\infty<\infty$。在下一章对 \text{VP} 奇性弱化后解的扩展中我们将讨论更多的特征线的性质。
+% indicating the trace of a particle who arrives at $(\vx,\vv)$ at the time of $s=t$, \textit{i.e.}, $\vect{X}(t,t,\vx,\vv)=\vx, ~\vect{V}(t,t,\vx,\vv)=\vv$. Hence $||f(t,\cdot,\cdot)||_\infty=||f_0||_\infty<\infty$ by initial data boundedness assumption. Sometimes we use $\vect{X}(s)$ directly, when $(t,\vx,\vv)$ are known, to simplify the notation, especially when we are studying the traces of characteristics.
 
 
-\section{Well-posedness Results}
+\section{适定性的相关结果}
+% \section{Well-posedness Results}
 
-我们将只研究(VP)的经典解，即。
-的特征系统具有唯一经典解的解。
-在这种情况下，
+
+我们将只研究 Vlasov-Poisson 问题的经典解，即在这些解上对应的特征线的常微分方程有着唯一经典解。这种情况下解的局部存在性对于给定的 $N$ 维空间已经由 \cite*{HorstClasssicalI} 证明，我们将在第二章做重点梳理。已知全局存在的情况如下:
 % 本地解决方案的存在对于cite{HorstClasssicalI}中的mathbf{n}$中的每一个$n$ 都是已知的。
-已知全球存在的情况如下:
-
-
-
 
 
 % 此外，我们知道对于$\left。
 % n \geqslant 4 \text{有}f_0 \text{(甚至在}C_{0}^{infty}\left(\mathbf{R}^{n} \times \mathbf{R}^{n}\right)，$，这样相应的解决方案只存在于有限的时间间隔[9]。
 
-We will study only classical solutions of (VP), i.e., solutions for which the characteristic system of (1.1) has unique classical solutions. In this case the existence of local solutions is known for every $n \in \mathbf{N}$ by \cite{HorstClasssicalI}.  Global existence is known in the following cases:
+% We will study only classical solutions of (VP), i.e., solutions for which the characteristic system of (1.1) has unique classical solutions. In this case the existence of local solutions is known for every $n \in \mathbf{N}$ by \cite*{HorstClasssicalI}.  Global existence is known in the following cases:
 
 非相对论情况:
-
-Non-relativistic Situation:
 \begin{enumerate}[(i)]
-    \item $n=2$ , \cite{Illner1979}
-    \item $n=3$ and $f_0$ spherically symmetric, \cite{HorstClasssicalII}
-    \item $n=3$ and $f_0$ cylindrically symmetric \cite{hellwig1964partial}
-    \item $n=3$ , \cite{1991InMat.105..415L}
-    \item $n=4$ and $f_0$ spherically symmetric and small, \cite{hellwig1964partial}
+    \item $n=2$ ， \cite*{Illner1979}
+    \item $n=3$ 时 $f_0$ 球对称，\cite*{HorstClasssicalII}
+    \item $n=3$ 时 $f_0$ 柱对称， \cite*{hellwig1964partial}
+    \item $n=3$ ，\cite*{1991InMat.105..415L}
+    \item $n=4$ 时 $f_0$ 球对称且足够小， \cite*{hellwig1964partial}
 \end{enumerate}
+% Non-relativistic Situation:
+% \begin{enumerate}[(i)]
+%     \item $n=2$ , \cite*{Illner1979}
+%     \item $n=3$ and $f_0$ spherically symmetric, \cite*{HorstClasssicalII}
+%     \item $n=3$ and $f_0$ cylindrically symmetric \cite*{hellwig1964partial}
+%     \item $n=3$ , \cite*{1991InMat.105..415L}
+%     \item $n=4$ and $f_0$ spherically symmetric and small, \cite*{hellwig1964partial}
+% \end{enumerate}
 
 
 
 相对论情况:
-
-Relativistic Situation:
 \begin{enumerate}[(i)]
-    \item $n=3$, $\mu=1$ and $f_0$ spherically symmetric; $\mu=-1$, $f_0$ spherically symmetric and small \cite{glassey_symmetric_1985}. Both with compact support assumption.
-    \item $n=3$, $\mu=1$, localized sphercial symmetric data, \cite{wang2003global}. 
+    \item $n=3$, $\mu=1$ 且 $f_0$ 球对称; $\mu=-1$, 初值足够小且球对称， \cite*{glassey_symmetric_1985}。 两者初值都需要紧支集条件。
+    \item $n=3$, $\mu=1$, 初值球对称且有局域约束条件， \cite*{wang2003global}. 
 \end{enumerate}
 
-
-Further, it is known that for $\left.n \geqslant 4 \text { there are } f_0 \text { (even in } C_{0}^{\infty}\left(\mathbf{R}^{n} \times \mathbf{R}^{n}\right)\right),$ so that the corresponding solutions exist only on a finite time interval [9].
-
-\subsection{With Compact Support in "$v$"}
-
-对于经典解，其存在性和
-Vlasov-Poisson系统解决方案的唯一性结果由Iordanskii脚注{the paper [16] list in the reference of  失踪，称为Iordanskii, S.V.
-:等离子体动力学方程的柯西问题。
-在一篇论文中处理了对称数据的相对论情况。
-
-特别是在三维空间中
-维度、全局弱解存在和全局经典
-如果Cauchy数据足够小(引用
-)，就会有解决方案。
-
-
-当我们转到相对论情况时，乍一看，\eqrvp 似乎比它的经典版本“更好”，因为$|\hat{\vv}|<1$。
-因此“高难度瞬间”在经典案例中广为人知，不会发生。
-此外，由于同样的原因，由于有限的速度，我们有沿特性的随意性。
-这些有利的情况在对总能量积分的研究中有所减少
-我不知道为什么它变小了。
-人们可能希望 \eqrvm 比 \eqvm 表现得更好，但只是在$\gamma=+1$的情况下。
-
-
-For classical solutions, it is well known that the existence and
-uniqueness result of the Vlasov-Poisson system solution have been presented by Iordanskii \footnote{The paper [16] listed in the reference of \cite{1991InMat.105..415L} is missing, refered as Iordanskii, S.V.: The Cauehy problem for the kinetic equation of plasma. Transl., II. Ser.,
-Am. Math. Soc. 35, 351-363 (1964)} in dimension
-1, \cite{ukai1978classical} in dimension 2, \cite{bardos1985global} in dimensions
-3 for small data. 
-The case of (nearly) classical symmetric data has been treated by \cite{batt1977global}, \cite{wollman-1980-symmetric}, \cite{horst1981classical}, \cite{schaeffer1987global}, among whom \cite{schaeffer1987global} treated the relativistic case of symmetric data in one paper.
-
-In particular, in three space 
-dimensions, global weak solutions exist ( \cite{arsenev_global_1975, abdallah_weak_1994} ), and global classical 
-solutions exist if the Cauchy data are small enough given by \cite{bardos1985global}.
-
-
-When we turn to the relativistic case, at first sight, \eqrvp~ seems "better" than its classical version, since $|\hat{\vv}|<1$. Thus 
-"higher moment difficulties" well-known in the classical case, will not occur. 
-Moreover, for the same reason we have the casuality along characteristics due to the limited velocity. These favorable circumstances are diminished somewhat by examination of the total energy integral.\footnote{Why? I don't knwo why it is diminished.} One may hope then that \eqrvm~ is better behaved than \eqvm, but only when $\gamma=+1$. 
+% Relativistic Situation:
+% \begin{enumerate}[(i)]
+%     \item $n=3$, $\mu=1$ and $f_0$ spherically symmetric; $\mu=-1$, $f_0$ spherically symmetric and small \cite*{glassey_symmetric_1985}. Both with compact support assumption.
+%     \item $n=3$, $\mu=1$, localized sphercial symmetric data, \cite*{wang2003global}. 
+% \end{enumerate}
 
 
 
-In the plasma physics case, $\rho\in L^{4/3}(\bbRx)$ is worse than the result for (VP) itself, where 
-$\rho\in L^{5/3}(\bbRx)$. However, Batt's and Wollman's methods [\textit{cf.} \cite{batt1977global}, \cite{wollman-1980-symmetric}] 
-can still be adapted and used to show the existence of global spherically symmetric solutions when $\gamma=+1$. In contrast to the plasma case, \cite{glassey_symmetric_1985} stated the existence of solution of stellar dynamics is weakened in the sense that a restrction on the size of initial data is necessary. Only "small" radial solutions with $40M^{2/3}\|f_0\|_\infty^{1/3}$ are confirmed to exist in the large for (RVP) with $\gamma=-1$. Indeed, if $\gamma =-1$ and the initial energy $\mathcal{E}_0$ is negative, it is shown that the life-span of such a radial, classical solution is 
-finite. 
+另外，$n \geqslant 4 $ 时，即使 $f_0 \in C_{c}^{\infty} \left(\mathbf{R}^{n} \times \mathbf{R}^{n}\right)$ 性质相当好，也不一定有全局解, \cite*{HorstClasssicalII}.
+% Further, it is known that for $\left.n \geqslant 4 \text { there are } f_0 \text { (even in } C_{0}^{\infty}\left(\mathbf{R}^{n} \times \mathbf{R}^{n}\right)\right),$ so that the corresponding solutions exist only on a finite time interval [9].
+
+% \footnote{The paper [16] listed in the reference of \cite*{1991InMat.105..415L} is missing, refered as Iordanskii, S.V.: The Cauehy problem for the kinetic equation of plasma. Transl., II. Ser.,
+% Am. Math. Soc. 35, 351-363 (1964)}
+
+
+对于经典解来说，其存在性和唯一性结果已经由 Iordanskii， \cite*{ukai1978classical} 和 \cite*{bardos1985global} 分别在一维、二维和三维下对小初值给出了。经典解的具有对称性的初值问题也有 \cite*{batt1977global}, \cite*{wollman-1980-symmetric}, \cite*{HorstClasssicalI}, \cite*{schaeffer1987global} 等讨论过，其中 \cite*{schaeffer1987global} 还在同一片文章中处理了相对论情况的对称初值问题.
+
+% For classical solutions, it is well known that the existence and
+% uniqueness result of the Vlasov-Poisson system solution have been presented by Iordanskii 
+%  in dimension
+% 1, \cite*{ukai1978classical} in dimension 2, \cite*{bardos1985global} in dimensions
+% 3 for small data. 
+% The case of (nearly) classical symmetric data has been treated by \cite*{batt1977global}, \cite*{wollman-1980-symmetric}, \cite*{HorstClasssicalI}, \cite*{schaeffer1987global}, among whom \cite*{schaeffer1987global} treated the relativistic case of symmetric data in one paper.
+
+\textbf{特别的在三维空间的话}，综述第二章讨论的局部适定性对 $N=3$ 没有给出全局的结果，弱解在相当弱的意义下全局存在 ( \cite*{arsenev_global_1975, abdallah_weak_1994} ), 如果 Cauchy 问题初值足够小全局经典解也可以存在， \citet*{bardos1985global}。
+% In particular, in three space 
+% dimensions, global weak solutions exist ( \cite*{arsenev_global_1975, abdallah_weak_1994} ), and global classical 
+% solutions exist if the Cauchy data are small enough given by \cite*{bardos1985global}.
+
+
+
+当我们考虑相对论情形时，\eqrvp 似乎看上去比经典的更好了，因为 $|\hat{\vv}| \leqslant 1$. 于是经典问题中高阶矩的发散困难便迎刃而解了。 
+基于同样的原因，存在上限的速度导出了确定的因果关系（casuality），这些是好的方面。
+
+% When we turn to the relativistic case, at first sight, \eqrvp seems "better" than its classical version, since $|\hat{\vv}|<1$. Thus 
+% "higher moment difficulties" well-known in the classical case, will not occur. 
+% Moreover, for the same reason we have the casuality along characteristics due to the limited velocity. These favorable circumstances are diminished somewhat by examination of the total energy integral. One may hope then that \eqrvm is better behaved than \eqvm, but only when $\gamma=+1$. 
+
+但如果讨论到某些量的范数，\eqrvp 可能确实不如 \eqvp。比如 $\mu=+1$ 时，$\rho\in L^{4/3}(\bbRx)$ 是比非相对论的情形（$\rho\in L^{5/3}(\bbRx)$）要更差的。 不过通过 \cite*{batt1977global} 和 \cite*{wollman-1980-symmetric} 
+仍然可以证明当 $\mu=+1$ 时全局球对称解的存在性。而对于引力情况 $\mu=-1$，\cite*{glassey_symmetric_1985} 证明了其解的存在性被弱化了，只有在初值满足条件，足够小时 $40\mathcal{M}^{2/3}\|f_0\|_\infty^{1/3}<1$ 才能确保 \eqrvp 存在全局解。 同时其还举了不存在全局解的反例，此时若初始能量 $\mathcal{E}_0:=\int_{\bbRx}\left\langle\int_{\bbRv} \sqrt{1+|\vect{v}|^{2}} f d \vv+\frac{1}{2} \gamma|\vE|^{2}\right\rangle d \vect{x}$，那么这样一个球对称的经典解的不存在全局解，其延续时间必然有限。 
+% In the plasma physics case, $\rho\in L^{4/3}(\bbRx)$ is worse than the result for (VP) itself, where 
+% $\rho\in L^{5/3}(\bbRx)$. However, Batt's and Wollman's methods [\textit{cf.} \cite*{batt1977global}, \cite*{wollman-1980-symmetric}] 
+% can still be adapted and used to show the existence of global spherically symmetric solutions when $\gamma=+1$. In contrast to the plasma case, \cite*{glassey_symmetric_1985} stated the existence of solution of stellar dynamics is weakened in the sense that a restrction on the size of initial data is necessary. Only "small" radial solutions with $40M^{2/3}\|f_0\|_\infty^{1/3}$ are confirmed to exist in the large for (RVP) with $\gamma=-1$. Indeed, if $\gamma =-1$ and the initial energy $\mathcal{E}_0$ is negative, it is shown that the life-span of such a radial, classical solution is 
+% finite. 
 
 % The outstanding result for the
-% full 3D Maxwell-Vlasov system remains that of \cite{glassey1986singularity}, who were able
+% full 3D Maxwell-Vlasov system remains that of \cite*{glassey1986singularity}, who were able
 % to prove a global existence result under the hypothesis of compactly supported
 % (for all time !) particle density. 
 % \begin{theorem}\textit{(Glassey-Strauss)}
@@ -197,7 +215,7 @@ finite.
   
 %   The above two inequalities combined with the Gronwall's inequality gives a bound for all the quantities involved. Continue the proof by a recursive method and then the proof finished.
   
-%   \cite{staffilani2001fourier} reorganized the \eqrvm~ to fit their method based on Fourier Transform and proved the essentially same theorem with \cite{glassey_symmetric_1985} .
+%   \cite*{staffilani2001fourier} reorganized the \eqrvm~ to fit their method based on Fourier Transform and proved the essentially same theorem with \cite*{glassey_symmetric_1985} .
 %   \begin{equation}
 %     \label{eq:rvmEBmerge}
 %     \left\{\begin{array}{l}
@@ -225,51 +243,70 @@ finite.
 
   
 
-\subsection{Without Compact Support in "$v$"}
+% \subsection{Without Compact Support in "$v$"}
+
+\textbf{在没有初值紧支集的假设下}，对 \eqvp 系统的全局适定性问题也有众多的研究者论述。 \eqvp 系统已经成功地解决了对大初值的适定性的问题，
+\cite*{pfaffelmoser_global_1992}, \cite*{1991InMat.105..415L} 和 \cite*{schaeffer_global_1991}.
+% The question of global well-posedness for \eqvp system without the compact assumpyion in "$v$" has been considered by many authors. The Vlasov-Poisson system has been tackled successfully, for large data, by
+% \cite*{pfaffelmoser_global_1992}, \cite*{1991InMat.105..415L}, \cite*{schaeffer_global_1991}.
 
 
-The question of global well-posedness for \eqvp system without the compact assumpyion in "$v$" has been considered by many authors. The Vlasov-Poisson system has been tackled successfully, for large data, by
-\cite{pfaffelmoser_global_1992}, \cite{1991InMat.105..415L}, \cite{schaeffer_global_1991}.
+
+\cite*{1991InMat.105..415L}, 将\eqvp 将左侧的部分 $\nabla_v f$ 置于右侧视为源项，从而通过特征线的方法导出控制不等式，证明了 $v$ 高阶矩的延续性质。更准确点说便是，如果 $|\vv|^m f_0\in L^1(\bbR^6)\text{ 对任意的 }m<m_0,\text{其中 } m_0> 3$, 则我们有 Vlasov-Poisson 方程的解也满足  $|\vv|^m \ftxv\in L^1(\bbR^6)\text{ 对任意的 }m<m_0,\text{其中 } m_0> 3$ 对任意的 $t>0$。 以矩的延续性为判据也可以说明全局解存在.
 
 
+% \cite*{1991InMat.105..415L}, based on the representation formula built by the characteristic method considering the source term, proves the propagation of moments in $v$ higher than 3.
+% More precisely, if $|\vv|^m f_0\in L^1(\bbR^6)\text{ for all }m<m_0,\text{with } m_0> 3$, then we build a solution
+% of Vlasov-Poisson equations satisfying $|\vv|^m \ftxv\in L^1(\bbR^6)\text{ for all }m<m_0,\text{with } m_0> 3$ for any $t>0$. Moreover, for $m_0>6$, Sobolev injections  deduces that $\vE\in L^\infty( [0, T]\times \bbRRR )$ for any $t>0$, and,
+% following Horst \footnote{The paper [14] listed in the reference of \cite*{1991InMat.105..415L} is missing, refered as Horst, E.: Global strong solutions of Vlasov's Equation. Necessary and sufficient conditions
+% for their existence. Partial differential equations. Banach Cent. Publ. 19, 143 153 (1987)}, $f$ is a smooth function if $f_0(x, v)$ is smooth. 
 
-\cite{1991InMat.105..415L}, based on the representation formula built by the characteristic method considering the source term, proves the propagation of moments in $v$ higher than 3.
-More precisely, if $|\vv|^m f_0\in L^1(\bbR^6)\text{ for all }m<m_0,\text{with } m_0> 3$, then we build a solution
-of Vlasov-Poisson equations satisfying $|\vv|^m \ftxv\in L^1(\bbR^6)\text{ for all }m<m_0,\text{with } m_0> 3$ for any $t>0$. Moreover, for $m_0>6$, Sobolev injections  deduces that $\vE\in L^\infty( [0, T]\times \bbRRR )$ for any $t>0$, and,
-following Horst \footnote{The paper [14] listed in the reference of \cite{1991InMat.105..415L} is missing, refered as Horst, E.: Global strong solutions of Vlasov's Equation. Necessary and sufficient conditions
-for their existence. Partial differential equations. Banach Cent. Publ. 19, 143 153 (1987)}, $f$ is a smooth function if $f_0(x, v)$ is smooth. 
-
-% For the Vlasov-Maxwell system, \cite{glassey1986singularity} deduced the result that the classical solution can be globally
-% extended with the strong assumption that $f$ has compact support in $\vv$ for all the time. Later ~\cite{1990MMAS...13..169G} were able to remove the additional support hypothesis for the $2+1/2$ dimensional system whose $\vx \in \bbR^2, \vv \in \bbR^3$. 
+% For the Vlasov-Maxwell system, \cite*{glassey1986singularity} deduced the result that the classical solution can be globally
+% extended with the strong assumption that $f$ has compact support in $\vv$ for all the time. Later ~\cite*{1990MMAS...13..169G} were able to remove the additional support hypothesis for the $2+1/2$ dimensional system whose $\vx \in \bbR^2, \vv \in \bbR^3$. 
 
 
 % Continuation criterion for the global existence of the Vlasov-Maxwell system
-% may be a more relaxed condition than assuming the compact support in "$\vv$". \cite{robert1989largevelocity} proved that, if the initial data decay at rate $|\vv|^{−7}$ as $|\vv| \to\infty$ and
+% may be a more relaxed condition than assuming the compact support in "$\vv$". \cite*{robert1989largevelocity} proved that, if the initial data decay at rate $|\vv|^{−7}$ as $|\vv| \to\infty$ and
 % the imposed assumption that bound “$\iint_{\bbRRR} |\vv|f(t, \vx, \vv)d\vv ≤ \text{Constant}$” holds, then the solution extends globall.
-% Recently, an interesting new continuation criterion was given by \cite{2016ArRMA.219..445L}, which says that a regular solution can be
+% Recently, an interesting new continuation criterion was given by \cite*{2016ArRMA.219..445L}, which says that a regular solution can be
 % extended as long as k(1+|v|2)θ/2f(t, x, v)kLq xL1 v remains bounded for θ > 2/q, 2 < q ≤ +∞. 
-\cite{2016ArRMA.219..445L}, \cite{KUNZE20154413}, \cite{pallard2015criterion}
-and \cite{PATEL20181841} have developed recent improvements on the continuation criterion. To release the limitation of the compact support and get rid of the assumptions on the solution itself, \cite{wang_propagation_2018} studied the propagation of regularity and the long time behavior of the 3D RVM system for suitably small initial data.
+
+% \cite*{2016ArRMA.219..445L}, \cite*{KUNZE20154413}, \cite*{pallard2015criterion}
+% 和 \cite*{PATEL20181841} 近期进一步发展了连续判据。而为了去除对初值紧支集的限制， \cite*{wang_propagation_2018} 研究了 3D \eqrvm 系统关于正则性能否延拓和小初值时系统的长时表现。
+
+% \cite*{2016ArRMA.219..445L}, \cite*{KUNZE20154413}, \cite*{pallard2015criterion}
+% and \cite*{PATEL20181841} have developed recent improvements on the continuation criterion. To release the limitation of the compact support and get rid of the assumptions on the solution itself, \cite*{wang_propagation_2018} studied the propagation of regularity and the long time behavior of the 3D RVM system for suitably small initial data.
+
 % Although our main interest is in 3D, we also refer
 % readers to [13, 25, 26] for the corresponding results in other dimensions
 
 
-\section{Landau Damping}
+\section{朗道阻尼}
+% \section{Landau Damping}
 % \newcommand{\eqlvp}{\hyperref[eq:linearvp]{(lineaized VP)}}
-\label{subsec:asymptotic}
+\label{sec:asymptotic}
 
-The electrostatic Vlasov-Poisson equation \eqvp demonstrates the well-known long-time asymptotic phenomenon, named Landau damping in plasma physics. Linearized Vlasov-Poisson equation, the div operator working on $f_0$ rather than $f$, is capable to depict the asymptotic behaviour of the distribution function and linear Landau Damping theory firstly developed.
+表示静电相互作用的 Vlasov-Poisson 系统能够刻画等离子体物理领域著名的朗道现象，它是等离子体在大时间尺度时的渐进行为。将 Vlasov-Poisson 方程中的 $\nabla_{v} f$ 替换为 $\nabla_{v}f_0$ 得到的线性化 Vlasov-Poisson 系统 (Linearized Vlasov- Poisson System），便能够一定程度上刻画朗道阻尼的表现；线性朗道阻尼理论便在其之上首先发展起来。
+
+% The electrostatic Vlasov-Poisson equation \eqvp demonstrates the well-known long-time asymptotic phenomenon, named Landau damping in plasma physics. Linearized Vlasov-Poisson equation, the div operator working on $f_0$ rather than $f$, is capable to depict the asymptotic behaviour of the distribution function and linear Landau Damping theory firstly developed.
 
 % in a plasma : given a uniform steady distribution $f_0(\vv)$ and an initial perturbation 
 % $f_0(\vx, \vv)$, the equation describes the evolution of this perturbation $f(t, \vx, \vv)$ under the action of the electrostatic potential $\phi(t, \vx)$. 
 
-Physicists solved the lineaized \eqvp by means of a Fourier-Laplace transform (cf. \cite{krall_principles_plasma_1973}) and wondered whether the $\phi(t,\vx)$ behaved like plane waves after $t$ being large enough. They found that there is no way to exhibit damped plane waves except by providing an analytical extension of the Laplace transform of $f$, which is only possible with strong analytic assumptions on involved functions. However, these hypotheses are verified in numerous physical situations with these assumptions.
+物理学家首先通过 Fourier-Laplace 变换求解线性化 \eqvp 问题，并且希望确定电势 $\phi(t,\vx)$ 是否在大时间尺度时表示为平面波的形式。他们发现除非存在 $f$ 的 Laplace 变化的解析延拓，除非在涉及到的函数的解析性质足够好的情况下可以做出。然而，这些假设都在许多物理图象中得到了验证。
 
-Beside this approach, another successful theory which has been developed long time ago is established by \cite{kampen_theory_1955} and \cite{case_plasma_1959}, using a 
-"normal mode expansion".  
-\cite{degond_spectral_1986} studied the spectral theory of the linearized \eqvp in order to prove that its solution behaves, for large times, like a sum of plane waves. It is shown that to obtain the distribution function expansion expressed by damped waves, an analytical extension of the resolvent of the \eqvp  is necessary. 
+% Physicists solved the lineaized \eqvp by means of a Fourier-Laplace transform (cf. \cite*{krall_principles_plasma_1973}) and wondered whether the $\phi(t,\vx)$ behaved like plane waves after $t$ being large enough. They found that there is no way to exhibit damped plane waves except by providing an analytical extension of the Laplace transform of $f$, which is only possible with strong analytic assumptions on involved functions. However, these hypotheses are verified in numerous physical situations with these assumptions.
 
-Beyond the linearized study, which has been studied for a long period in the theory of Landau damping. \cite{mouhot2011} established the theory of exponential Landau damping in analytic regularity where the damping phenomenon is reinterpreted in terms of transfer of regularity between kinetic and spatial variables, rather than exchanges of energy. The study revealed that the phase mixing is the driving mechanism of damping.
+% Physicists solved the lineaized \eqvp by means of a Fourier-Laplace transform (cf. \cite*{krall_principles_plasma_1973}) and wondered whether the $\phi(t,\vx)$ behaved like plane waves after $t$ being large enough. They found that there is no way to exhibit damped plane waves except by providing an analytical extension of the Laplace transform of $f$, which is only possible with strong analytic assumptions on involved functions. However, these hypotheses are verified in numerous physical situations with these assumptions.
+
+除了这种方法之外，相当早期的研究（\cite*{kampen_theory_1955} 和 \cite*{case_plasma_1959}）用到了正交模式展开的方法。\cite*{degond_spectral_1986} 研究了线性化 \eqvp 的谱理论来证明它的行为在大时间尺度下表现得如平面波的和。其研究表明要想得到阻尼波展开的分布函数，需要对\eqvp 预解式的解析延拓。
+
+% Beside this approach, another successful theory which has been developed long time ago is established by \cite*{kampen_theory_1955} and \cite*{case_plasma_1959}, using a 
+% "normal mode expansion".  
+% \cite*{degond_spectral_1986} studied the spectral theory of the linearized \eqvp in order to prove that its solution behaves, for large times, like a sum of plane waves. It is shown that to obtain the distribution function expansion expressed by damped waves, an analytical extension of the resolvent of the \eqvp  is necessary. 
+
+线性的研究理论是朗道阻尼研究中很长一段时间的焦点，而在此之上的非线性朗道阻尼理论，则由 \cite*{mouhot2011} 在近期给出。其阻尼线性被重新诠释为一种正则性在动力学量和空间相关变量之间的转移，而不是能量的交换。这项研究还揭示了阻尼的驱动机制确实是相混合（phase mixing）。
+% Beyond the linearized study, which has been studied for a long period in the theory of Landau damping. \cite*{mouhot2011} established the theory of exponential Landau damping in analytic regularity where the damping phenomenon is reinterpreted in terms of transfer of regularity between kinetic and spatial variables, rather than exchanges of energy. The study revealed that the phase mixing is the driving mechanism of damping.
 
 % Wenyin is unfamiliar with the topic of operator theory employed in the relevant papers, so he might just give a short introduction about this topic. However, this topic is tightly related to the Landau damping, Wenyin would try to figure it out though he has little idea about \emph{the resolvent, Dunfold formula and the spectrum of an operator.}
 
@@ -297,7 +334,7 @@ Beyond the linearized study, which has been studied for a long period in the the
   % \section{Stability}
   % \label{sec:stability}
   % Large amount of attention has been put on the problem of stability of stationary solutions of the Vlasov-Poisson system, both in the stellar dynamics and the plasma physics cases. The energy-Casimir 
-  % method has been used to prove non-linear stability for various conservative systems, and \cite{rein_non-linear_1994} employed the method to prove non-linear stability of the Vlasov-Poisson system in three grometrically different setting. The three settings are the situations where the ion density is replaced by a given fixed ion background, the plasma can be spatially periodic, or can be restricted to a bounded domain. 
+  % method has been used to prove non-linear stability for various conservative systems, and \cite*{rein_non-linear_1994} employed the method to prove non-linear stability of the Vlasov-Poisson system in three grometrically different setting. The three settings are the situations where the ion density is replaced by a given fixed ion background, the plasma can be spatially periodic, or can be restricted to a bounded domain. 
   
   
   % With the exception of the first case, stationary solutions exist in these settings and also in the stellar dynamic case. 
@@ -335,29 +372,35 @@ Beyond the linearized study, which has been studied for a long period in the the
   % Though the energy-Casimir method is elegant and appealing, in [S] 
   % it is pointed out that the appearance of large velocities could cause the method to run into trouble.
   
-  \section{Denotation}
-  
-Reference \cite{HorstClasssicalI} contains a sufficient condition for global existence with quite general assumptions. Because we use this condition (somewhat modified $),$ most of the following notation and definitions are taken from there. We also use constants $C$ which do not depend on $f_0$ and $K$ which do. The first index $i$ always denotes the number of the lemma or theorem, where it is defined.
+\section{符号标记}
 
-For any two numbers $A$ and $B$, we use $A \lesssim B$ and $B \gtrsim A$ to denote $A \lesssim C B$, where $C$ is an absolute constant.
+文献综述时描述局部解的适定性问题主要参考 \cite*{HorstClasssicalI}，大部分标记和定义沿用了其原文，一定程度上做了修改。
 
+文章中的 $C$ 通常表示不依赖于初始条件的常数，而 $K$ 则是依赖于初始条件的常数，它们在我们研究给定 Cauchy 初值条件的时候都可视为常数。函数符号方面则用 $C_+(I):=\{f:I\rightarrow [0,\infty)\bigg| f \text{ 连续且单调增}\}$ 表示我们用来控制的函数空间，其中 $I$ 是一个区间，$H$ 常常表示一个 $C_{+}(I)$ 或 $C_{+}([0,\infty))$ 集合中的函数，而用 $h$ 表示通过在一段时间对某个量，如电场 $\vE$ 的大小，取上确界 $\sup$ 得到的单调增函数。通常当需要对某个量进行控制的时候，我们会取该量在一段时间上的上确界作为新的函数，并通过 $C_+(I)$ 中的函数对它进行控制。
 
+函数积分的时候进行积分域的分割常将不同的积分项命名为 $I_1$, $I_2$ 等，由于只是局部的使用，为简介起见，在不同的积分式分割中积分项均以下标 $1$ 开始，应不会产生混淆。
 
+% We also use constants $C$ which do not depend on $f_0$ and $K$ which do. The first index $i$ always denotes the number of the lemma or theorem, where it is defined.
 
-$\omega_{N}:=2 \cdot \pi^{N / 2} / \Gamma(N / 2)$ is the surface area of the $(N-1)$ -dimensional sphere. If $I \subset\left[0, \infty\right)\text { we let } C_{+}(I):=\{f: I \rightarrow[0, \infty)| f\text { is continuous and non-decreasing } $ on $I\}$
-
-Integration and measurability are always meant with respect to the Lebesgue measure. $\mathrm{L}_{\infty}\left(\bbR^{M}, \bbR^{L}\right)$ and $\|\cdot\|_{\infty}$ are also defined as usual. $\mathrm{L}_{p}\left(\bbR^{M}\right):=L_{p}\left(\bbR^{M}, \bbR\right)$
-
-For all $f: \bbR^{M} \rightarrow \bbR^{L}$ we let $\operatorname{lip}(f):=\sup _{z \neq w}|z-w|^{-1}|f(z)-f(w)|$
-\[
-\operatorname{Lip}\left(\bbR^{M}, \bbR^{L}\right):=\left\{f: \bbR^{M} \rightarrow \bbR^{L} | \operatorname{lip}(f)<\infty\right\}, \quad \operatorname{Lip}\left(\bbR^{M}\right):=\operatorname{Lip}\left(\bbR^{M}, \bbR\right)
-\]
+% For any two numbers $A$ and $B$, we use $A \lesssim B$ and $B \gtrsim A$ to denote $A \lesssim C B$, where $C$ is an absolute constant.
 
 
 
+$\omega_{N}:=2 \cdot \pi^{N / 2} / \Gamma(N / 2)$ 是 $N$ 维空间中 $(N-1)$ 维的单位球面的表面积。
+
+
+% $\omega_{N}:=2 \cdot \pi^{N / 2} / \Gamma(N / 2)$ is the surface area of the $(N-1)$ -dimensional sphere. If $I \subset\left[0, \infty\right)\text { we let } C_{+}(I):=\{f: I \rightarrow[0, \infty)| f\text { is continuous and non-decreasing } $ on $I\}$
+
+本文中谈到的积分和测度总是基于 Lebesgue 意义下的，$\mathrm{L}_{\infty}\left(\bbR^{M}, \bbR^{L}\right)$ 和 $\|\cdot\|_{\infty}$ 遵循实分析的通常定义。 $\mathrm{L}_{p}\left(\bbR^{M}\right):=L_{p}\left(\bbR^{M}, \bbR\right)$
+% Integration and measurability are always meant with respect to the Lebesgue measure. $\mathrm{L}_{\infty}\left(\bbR^{M}, \bbR^{L}\right)$ and $\|\cdot\|_{\infty}$ are also defined as usual. $\mathrm{L}_{p}\left(\bbR^{M}\right):=L_{p}\left(\bbR^{M}, \bbR\right)$
+
+对所有的函数 $f: \bbR^{M} \rightarrow \bbR^{L}$, Lipschitz 常数按惯例为 $\operatorname{lip}(f):=\sup _{z \neq w}|z-w|^{-1}|f(z)-f(w)|$。
+$\operatorname{Lip}\left(\bbR^{M}, \bbR^{L}\right):=\left\{f: \bbR^{M} \rightarrow \bbR^{L} | \operatorname{lip}(f)<\infty\right\}$,  $\operatorname{Lip}\left(\bbR^{M}\right):=\operatorname{Lip}\left(\bbR^{M}, \bbR\right)$
+% For all $f: \bbR^{M} \rightarrow \bbR^{L}$ we let $\operatorname{lip}(f):=\sup _{z \neq w}|z-w|^{-1}|f(z)-f(w)|$
 
 
 
+% 在偏微分方程中各种量互相控制时，有时常数在不等式中并不特别重要，因此我们还用 $A \lesssim B$ 和 $B \gtrsim A$ 这样的符号来表示  $A \lesssim C B$，其中 $C$ 可以是依赖于初值条件的常数。
 
 
 
@@ -535,14 +578,14 @@ For all $f: \bbR^{M} \rightarrow \bbR^{L}$ we let $\operatorname{lip}(f):=\sup _
 
 % 本模板推荐使用 BIB\TeX，分别提供数字引用（\texttt{thuthesis-numeric.bst}）和作
 % 者年份引用（\texttt{thuthesis-author-year.bst}）样式，基本符合学校的参考文献格式
-% （如专利等引用未加详细测试）。看看这个例子，关于书的~\cite{tex, companion,
-%   ColdSources}，还有这些~\cite{Krasnogor2004e, clzs, zjsw}，关于杂志
-% 的~\cite{ELIDRISSI94, MELLINGER96, SHELL02}，硕士论文~\cite{zhubajie,
-%   metamori2004}，博士论文~\cite{shaheshang, FistSystem01}，标准文
-% 件~\cite{IEEE-1363}，会议论文~\cite{DPMG,kocher99}，技术报告~\cite{NPB2}，电子文
-% 献~\cite{chuban2001,oclc2000}。
-% 若使用著者-出版年制，中文参考文献~\cite{cnarticle}应增加
-% \texttt{key=\{pinyin\}} 字段，以便正确进行排序~\cite{cnproceed}。
+% （如专利等引用未加详细测试）。看看这个例子，关于书的~\cite*{tex, companion,
+%   ColdSources}，还有这些~\cite*{Krasnogor2004e, clzs, zjsw}，关于杂志
+% 的~\cite*{ELIDRISSI94, MELLINGER96, SHELL02}，硕士论文~\cite*{zhubajie,
+%   metamori2004}，博士论文~\cite*{shaheshang, FistSystem01}，标准文
+% 件~\cite*{IEEE-1363}，会议论文~\cite*{DPMG,kocher99}，技术报告~\cite*{NPB2}，电子文
+% 献~\cite*{chuban2001,oclc2000}。
+% 若使用著者-出版年制，中文参考文献~\cite*{cnarticle}应增加
+% \texttt{key=\{pinyin\}} 字段，以便正确进行排序~\cite*{cnproceed}。
 % 另外，如果对参考文献有不如意的地方，请手动修改 \texttt{bbl} 文件。
 
 % 有时候不想要上标，那么可以这样~\inlinecite{shaheshang}，这个非常重要。
