@@ -1,13 +1,13 @@
 
-\newcommand{\rhoabs}{\hyperref[eq:rhoabs-control]{$\rho_{abs}$ 控制条件}}
+% \newcommand{\rhoabs}{\hyperref[eq:rhoabs-control]{$\rho_{abs}$ 控制条件}}
 \newcommand{\supremumf}{\hyperref[eq:supremum-f0-control]{$\sup f_{0}$ 控制条件}}
-\newcommand{\lipxOfrho}{\hyperref[eq:lipx_rho_control]{$\operatorname{lip}_x(\rho)$ 控制条件}}
+% \newcommand{\lipxOfrho}{\hyperref[eq:lipx_rho_control]{$\operatorname{lip}_x(\rho)$ 控制条件}}
 \newcommand{\lipOffVsphere}{\hyperref[eq:lip_Of_f0_in_vsphere_control]{$v$ 球内 $\operatorname{lip}(f_0)$ 控制条件}}
 % \newcommand{\rhoabs}{\hyperref[eq:rhoabs-control]{($\rho_{abs}$ control condition)~}}
 % \newcommand{\supremumf}{\hyperref[eq:supremum-f0-control]{($\sup f_{0}$ control condition)~}}
 % \newcommand{\lipxOfrho}{\hyperref[eq:lipx_rho_control]{($\operatorname{lip}_x(\rho)$ control condition)~}}
 % \newcommand{\lipOffVsphere}{\hyperref[eq:lip_Of_f0_in_vsphere_control]{($\operatorname{lip}(f_0)$ in $v$ sphere control condition)~}}
-\newcommand{\boundcondition}{\hyperref[de:boundness]{有界条件}}
+% \newcommand{\boundcondition}{\hyperref[de:boundness]{有界条件}}
 
 
 
@@ -21,7 +21,7 @@
 
 \begin{theorem}\textit{($\text{VP}$ 问题的适定性)}
     \label{thm:local-wellposedness}
-    假设 $f_{0} \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$ 满足 \supremumf 和 \lipOffVsphere。那么存在最大的 $0<T^*\leqslant\infty$ 使得 $\text{VP}$ 的解 $ f^{0}$ 在 $[0,T)$ 上存在且唯一。
+    假设 $f_{0} \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$ 满足 \supremumf 和 \lipOffVsphere。那么存在最大的 $0<T^{\ast}\leqslant\infty$ 使得 $\text{VP}$ 的解 $ f^{0}$ 在 $[0,T^{\ast})$ 上存在且唯一。
     
     具体证明见本章最后一节。
     % 且 $f^{0}=\lim_{\varepsilon\rightarrow 0} f^{\varepsilon},$ 在 $I_{1} \times \bbR^{2 N}$ 上一致收敛，其中 $I_{1}$ 是 $I$ 任意的紧子集。
@@ -40,7 +40,7 @@
 % 该方法适用于 $N\in \bbZ, N \geqslant 1$ 维空间，证明前还需要对我们在介绍中引入的定义进行扩展，即定义 Vlasov-Poisson 系统在 $N$ 维空间中的形式及解在何种意义下成立，并且说明积分核奇异性被削弱之后的解如何定义。对 Vlasov 类型的问题，我们通常说的经典（Classical）解的意义即为对特征线常微分方程，任意给定初值均有唯一解，特征线在 Vlasov 类型问题中的重要性，我们将会在对解的定义中感受到。
 
 
-因为积分核有奇异性，常用的分析方法无法直接给出适定性的结果，所以 \cite{HorstClasssicalI} 的想法是 (i) 先构造逼近解，也就是解决 $\text{VP}^\varepsilon$ 问题，由于 $\text{VP}^\varepsilon (\varepsilon >0)$ 问题中核函数的奇异性被移除了，经典的分析手段告诉我们逼近解的存在性 $\text{VP}^\varepsilon (\varepsilon >0)$ ； (ii) 逼近解的一些重要估计，例如 $\operatorname{lip}_x (\vE(t))$ 等；(iii) 估计逼近解之间的误差，得出逼近解的一致收敛性。
+因为积分核有奇异性，常用的分析方法无法直接给出适定性的结果，所以 \cite{HorstClasssicalI} 的想法是 (i) 先构造逼近解，也就是解决 $\text{VP}^\varepsilon  (\varepsilon >0)$ 问题，由于 $\text{VP}^\varepsilon$ 问题中核函数的奇异性被移除了，经典的分析手段告诉我们逼近解的存在性 $\text{VP}^\varepsilon (\varepsilon >0)$ ； (ii) 逼近解的一些重要估计，例如 $\operatorname{lip}_x (\vE(t))$ 等；(iii) 估计逼近解之间的误差，得出逼近解的一致收敛性。
 
 在此之前我们需要做一些定义上的扩展，第一节先给出了 $\text{VP}^\varepsilon$ 问题给出的逼近解的定义。第二节给出在\supremumf 下，逼近解的一些估计，主要是对 $\|\vE^\varepsilon(t)\|_\infty$, $\|\rho^\varepsilon(t)\|_\infty$ 和 $\sup \{|\vect{V}^\varepsilon(r,0,\vx,\vv)-\vv| \bigg|\vx,\vv \in \bbR^N, 0\leqslant r \leqslant t \}$ 的一致控制。第三节给出对 $\vE^\varepsilon$ Lipschitz 常数的一致控制。第四节说明 $f^\varepsilon$ 确实在 $I\times \bbR^N \times \bbR^N $ 上当取极限 $\varepsilon\rightarrow 0 $ 时一致收敛到 $f^0$，主要依据是特征线确实随着 $\varepsilon\rightarrow 0$ 一致收敛，这是在本章最后的第四节完成的。
 
@@ -53,7 +53,7 @@
 \begin{figure}[h]
     \centering
     \includegraphics[width=1.0\textwidth]{diagram.png}
-    \caption{图中所示为证明适定性过程中各个命题证明的前后序列，其中箭头表示我们证明命题的前后关系，而不是逻辑上的充分关系;出现在图中的变量表示存在 $H\in C_+(I)$ 中函数对其控制，$\forall \varepsilon>0$ 表示对 $\varepsilon$ 一致控制。}
+    \caption{图中所示为证明适定性过程中各个命题证明的前后序列，其中箭头表示我们证明命题的前后关系，而不是逻辑上的充分条件;出现在图中的变量表示存在 $H\in C_+(I)$ 中函数对其控制，$\forall \varepsilon>0$ 表示对 $\varepsilon$ 一致控制。}
     \label{fig:diagram}
 \end{figure}
 
@@ -74,7 +74,7 @@
 % We always use $f_{0} \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$ to denote the initial data for the problem to be considered. Let $m:=\|f_{0}\|_{1}$ denote the initial mass, \textit{i.e.} $\mathrm{L}_1$ norm of initial phase function.
 场函数积分核的奇性我们用参数 $\varepsilon$ 进行了削弱，新的积分核为
 % The singularity of the field integral kernel is modified with a parameter $\varepsilon$ as follows.
-$$\vect{e}^{\varepsilon}(\vect{z})=\gamma \cdot \frac{\vect{z}}{\left(|\vect{z}|^{2}+\varepsilon\right)^{N / 2}},~ \quad ~ \vect{z} \in \bbR^{N}, \varepsilon \geqslant 0$$
+$$\vect{e}^{\varepsilon}(\vect{z})=\mu \cdot \frac{\vect{z}}{\left(|\vect{z}|^{2}+\varepsilon\right)^{N / 2}},~ \quad ~ \vect{z} \in \bbR^{N}, \varepsilon \geqslant 0$$
 参数 $\varepsilon$ 弱化了场函数的奇性，相当于重新定义了新的偏微分方程 $\text{VP}^\varepsilon$ 问题，下面拓宽对它的定义。
 % Since we have weakened the singularity by the $\varepsilon$, the solutions to the $\text{VP}^\varepsilon$ are redefined as follow.
 
@@ -85,22 +85,22 @@ $$\vect{e}^{\varepsilon}(\vect{z})=\gamma \cdot \frac{\vect{z}}{\left(|\vect{z}|
 
     \begin{enumerate}[(1)] 
         \item $f(0,\cdots) = f_0$
-        \item 对任意的 $t \in I, \vx \in \bbR^{N}$ 有下列映射的可积性， $\left((\vect{y},\vect{u}) \mapsto \vect{e}^{\varepsilon}\left(\vx-\vect{y}\right) \cdot f^{\varepsilon}(t, \vect{y},\vect{u})\right) \in \mathrm{L}_{1}\left(\bbR^{2 N}, \bbR^{N}\right)$ 
+        \item 对任意的 $t \in I, \vx \in \bbR^{N}$ 有下列映射的可积性， \\ $\left((\vect{y},\vect{u}) \mapsto \vect{e}^{\varepsilon}\left(\vx-\vect{y}\right) \cdot f^{\varepsilon}(t, \vect{y},\vect{u})\right) \in \mathrm{L}_{1}\left(\bbR^{2 N}, \bbR^{N}\right)$ 
         % \item $\left((\vect{y},\vect{u}) \mapsto \vect{e}^{\varepsilon}\left(\vx-\vect{y}\right) \cdot f^{\varepsilon}(t, \vect{y},\vect{u})\right) \in \mathrm{L}_{1}\left(\bbR^{2 N}, \bbR^{N}\right)$ for all $t \in I, \vx \in \bbR^{N}$
         \item $\vE^{\varepsilon}\left(t, \vx\right):=\iint_{\bbR^6}  \vect{e}^{\varepsilon}\left(\vx-\vect{y}\right) \cdot f^{\varepsilon}(t, \vect{y},\vect{u}) \mathrm{d} \vect{y} \mathrm{d}\vect{u}$ 用来替换原来的有奇异性的场函数积分核。要求 $\text{VP}^\varepsilon$ 问题解的分布函数产生的 $\vE^{\varepsilon}$ 在 $I \times \bbR^{N}$ 上连续，且对任意的 $t \in I$ 有 $\vE^{\varepsilon}(t, \cdot) \in \mathrm{C}_{b}^{0}\left(\bbR^{N}, \bbR^{N}\right) \cap \operatorname{Lip}\left(\bbR^{N}, \bbR^{N}\right)$ 并存在
-        $C_\rho^{\varepsilon}, C_{lip(E)}^{\varepsilon} \in C_{+}(I)$ 使得对任意的 $t \in I$
+        $H_\rho^{\varepsilon}, H_{lip(E)}^{\varepsilon} \in C_{+}(I)$ 使得对任意的 $t \in I$
         \[
-        \left\|\vE^{\varepsilon}(t, \cdot)\right\|_{\infty} \leqslant C_{ E}^{\varepsilon}(t), \quad 
-        \operatorname{lip}\left(\vE^{\varepsilon}(t, \cdot)\right) \leqslant C_{\operatorname{lip}(E)}^{\varepsilon}(t)
+        \left\|\vE^{\varepsilon}(t, \cdot)\right\|_{\infty} \leqslant H_{ E}^{\varepsilon}(t), \quad 
+        \operatorname{lip}\left(\vE^{\varepsilon}(t, \cdot)\right) \leqslant H_{\operatorname{lip}(E)}^{\varepsilon}(t)
         \]
         \item 
-        解 $f^{\varepsilon}$ 通过 $\text{VP}^\varepsilon$ 特征线的常微分问题来定义，这是因为沿特征线有 $f^\varepsilon$ 不变的特性. 具体而言场修正后的特征线方程如下， 
+        解 $f^{\varepsilon}$ 直接通过 $\text{VP}^\varepsilon$ 特征线的常微分问题来定义，这是因为沿特征线有 $f^\varepsilon$ 不变的特性. 具体而言场修正后的特征线方程如下， 
         % The solution $f^{\varepsilon}$ is defined according to the characteristic trajectories of the $\text{VP}^\varepsilon$ problem, along which the value $f^\varepsilon$ should not change. The characteristic under the modified electrical field $\vE^\varepsilon$ is 
         \begin{equation}
             \dot{\vect{X}}^\varepsilon=\vect{V}^\varepsilon, \dot{\vect{V}}^\varepsilon=\vE^{\varepsilon}\left(t, \vect{X}^\varepsilon\right), \quad t \in I,
         \end{equation}
         
-        它对任一初值 $\vx,\vv\in\bbR^N$ 在 $I$ 上均有唯一解，这由 (3) 中的有界条件保证。 $f(t,\vx, \vv)$ 通过沿特征线给定常微分方程的初值状态（实际是末值）来追溯到特征线 $t=0$ 时刻的 $f_0$ 值, $\vect{X}^\varepsilon(t)= \vx, \vect{V}^\varepsilon(t)= \vv$, 即
+        它对任一初值 $\vx,\vv\in\bbR^N$ 在 $I$ 上均有唯一解，这由 (3) 中的对场强的控制条件来保证。 $f(t,\vx, \vv)$ 通过沿特征线给定常微分方程的初值状态（实际是末值）来追溯到特征线 $t=0$ 时刻的 $f_0$ 值, $\vect{X}^\varepsilon(t)= \vx, \vect{V}^\varepsilon(t)= \vv$, 即
         % which has a unique solution on $I$ for any initial value thanks to the regularities given in (3). $f(t,\vx, \vv)$ is given by the characteristic with initial condition $\vect{X}^\varepsilon(t)= \vx, \vect{V}^\varepsilon(t)= \vv$, \textit{i.e.}
         \[
         f^{\varepsilon}(t, \vect{X}^\varepsilon(t), \vect{V}^\varepsilon(t))=f^{\varepsilon}(0, \vect{X}^\varepsilon(0), \vect{V}^\varepsilon(0))=f_{0}(\vect{X}^\varepsilon(0), \vect{V}^\varepsilon(0)), \quad t \in I
@@ -163,7 +163,6 @@ $$\vect{e}^{\varepsilon}(\vect{z})=\gamma \cdot \frac{\vect{z}}{\left(|\vect{z}|
     % As $f^{\varepsilon}$ is an integral of $(1.2 .1),$ we have for all $t, t_{1} \in I, x \in \bbR^{2N}$
     
     $$f^{\varepsilon}\left(t, \vect{X}^{\varepsilon}\left(t, t_{1}, \vx, \vv\right), \vect{V}^{\varepsilon}\left(t, t_{1}, \vx, \vv\right)\right)=f_0\left(\vect{X}^{\varepsilon}(0, t_1, \vx, \vv)\right)$$
-
     \begin{equation}
         \label{eq:characteristic-traceback}
     f^{\varepsilon}(t, \vx, \vv)=f_{0}\left(\vect{X}^{\varepsilon}(0, t, \vx, \vv), \vect{V}^{\varepsilon}(0, t, \vx, \vv)\right)
@@ -177,7 +176,7 @@ $$\vect{e}^{\varepsilon}(\vect{z})=\gamma \cdot \frac{\vect{z}}{\left(|\vect{z}|
 
     \item  %(ii) 和方程 \ref{eq:characteristic-traceback} 表明
     对任意的 $t, t_{1} \in I$ 和任何可测函数$\sigma: \bbR^{2N} \rightarrow \bbR^{M}$，我们有 $\sigma \in \mathrm{L}_{1}\left(\bbR^{2N}, \bbR^{M}\right)$ 的充要条件是 $\sigma \circ (\vect{X}^{\varepsilon},\vect{V}^{\varepsilon})\left(t_{1}, t, \cdot\right) \in \mathrm{L}_{1}\left(\bbR^{2N}, \bbR^{M}\right) .$ 此时
-$$\int \sigma(\vx, \vv) \mathrm{d} \vx \mathrm{d} \vv=\int \sigma\left(\vect{X}^{\varepsilon}\left(t_{1}, t, \vx, \vv\right)\right) \mathrm{d} \vx \mathrm{d} \vv$$
+$$\int \sigma(\vx, \vv) \mathrm{d} \vx \mathrm{d} \vv=\int \sigma\left(\vect{X}^{\varepsilon}\left(t_{1}, t, \vx, \vv\right), \vect{V}^{\varepsilon}\left(t_{1}, t, \vx, \vv\right)\right) \mathrm{d} \vx \mathrm{d} \vv$$
 特别地 $\left(t_{1}=0, \sigma=|f_{0}|^{p}\right)$ 时，对任意的 $t \in I$ 有 $f^{\varepsilon}(t, \cdot) \in \mathrm{L}_{p}\left(\bbR^{2N}\right),$ 当且仅当 $f_{0} \in \mathrm{L}_{p}\left(\bbR^{2N}\right)$ 且此时 
 $\left.\left\|\left.f^{\varepsilon}(t, \cdot)\right\|_{p}=\right\| f_{0}\right\|_{p}, 1 \leqslant p<\infty$
 %     \item  (ii) and $(1.4 .4)$ imply that for any $t, t_{1} \in I$ and any measurable function
@@ -250,13 +249,15 @@ $\left\|\rho^{\varepsilon}(t, \cdot)\right\|_{1} \leqslant\left\|\rho^{\varepsil
 
 注意本来这里 $h\in C_+([0,\infty))$ 应该用简介中介绍的符号 $H$，但为与原文吻合用了 $h$。
 
-\textit{注意 } \supremumf 可推导出 $f_0$ 是有界的, 即 $f_0 \in \mathrm{L}_{\infty}\left(\mathrm{R}^{2 N}\right)$。若以 $K_1, K_2$ 满足 \supremumf 的 $f_0$，设 $\hat{f}_0 (\vv)=\sup \left\{|f_0(\vx,\vect{v})| |\vx \in \bbR^{N}\right\}$，若其在 $B_R(\vy)\subset \bbR_{v}^3 $（$B_R(\vy)$ 半径为 $R$, 中心为 $\vy\in \bbR^3$ 的开球）中无界，则对于任意的 $C_0>0$ 均可找到 $\hat{f}_0(\vv)>C_0, \vv \in B_R(\vy)$，设 $a=2R$，则\supremumf 判别式左侧积分大于 $CR^N C_0$，而右侧的是固定的 $K_{1} \cdot\left(K_{2}+a\right)^{N}$， 取足够大的 $C_0$ 使不等式不成立引出矛盾。又因为 $f_0 \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$, 故\supremumf 实际上给出了 $f_0$ 很好的可积性，对任意的 $1 \leqslant p \leqslant \infty$ 有 $f_0 \in \mathrm{L}_{p}\left(\mathrm{R}^{2 N}\right)$。
+\textit{注意 } \supremumf 可推导出 $f_0$ 是有界的, 即 $f_0 \in \mathrm{L}_{\infty}\left(\mathbb{R}^{2 N}\right)$。若以 $K_1, K_2$ 满足 \supremumf 的 $f_0$，设 $\hat{f}_0 (\vv)=\sup \left\{|f_0(\vx,\vect{v})| |\vx \in \bbR^{N}\right\}$，若其在 $B_R(\vy)\subset \bbR_{v}^3 $（$B_R(\vy)$ 半径为 $R$, 中心为 $\vy\in \bbR^3$ 的开球）中无界，则对于任意的 $C_0>0$ 均可找到 $\hat{f}_0(\vv)>C_0, \vv \in B_R(\vy)$，设 $a=2R$，则\supremumf 判别式左侧积分大于 $CR^N C_0$，而右侧的是固定的 $K_{1} \cdot\left(K_{2}+a\right)^{N}$， 取足够大的 $C_0$ 使不等式不成立引出矛盾。又因为 $f_0 \in \mathrm{L}_{1}\left(\bbR^{2 N}\right)$, 故\supremumf 实际上给出了 $f_0$ 很好的可积性，对任意的 $1 \leqslant p \leqslant \infty$ 有 $f_0 \in \mathrm{L}_{p}\left(\mathbb{R}^{2 N}\right)$。
 另外观察 \lipOffVsphere 类似的可导出 $f_{0} \in \operatorname{Lip}\left(\bbR^{2 N}\right)$。
+
+本节主要依赖 \supremumf 在控制 $\left|\rho^{\varepsilon}\left(r, \vx\right)\right| , \left|\vE^{\varepsilon}\left(r, \vx\right)\right|, | \vect{V}^{\varepsilon}(r, 0, \vx, \vv)-\vv | $； 下一节还将依赖于 \lipOffVsphere 控制 $\operatorname{lip}\left(\vE^{\varepsilon}(t, \cdot)\right) \leqslant H_{lip(E)}(t)$。
 % Remark. It is easily shown that \lipOffVsphere implies $f_{0} \in \operatorname{Lip}\left(\bbR^{2 N}\right)$
 
 % 首先要控制 $\vE^\varepsilon$ 和 $\rho^\varepsilon$；以此为基础，我们还将引出区间满足\boundcondition 的重要概念和等价条件，它是我们得以实现控制的关键。
 
-对 $\vE$ 的积分式粗糙地取积分内各项绝对值则有不等式，即 $\left|E^{\varepsilon}\left(t, \vx \right)\right| \leqslant \int\left|\vx-\vy\right|^{1-N} \cdot\left|\rho^{\varepsilon}_{abs}\right|\left(t, \vy\right) \mathrm{d} \vy$。借助于这个不等式，通过下面的引理及之后的推论可以证明 $\left\|E^{\varepsilon}(t, \cdot)\right\|_{\infty}$ 有界。
+对 $\vE$ 的定义积分式粗糙地取积分内各项绝对值则有不等式 $\left|E^{\varepsilon}\left(t, \vx \right)\right| \leqslant \int\left|\vx-\vy\right|^{1-N} \cdot\left|\rho^{\varepsilon}_{abs}\right|\left(t, \vy\right) \mathrm{d} \vy$。借助于这个不等式，通过下面的引理及之后的推论可以证明 $\left\|E^{\varepsilon}(t, \cdot)\right\|_{\infty}$ 有界。
 % \section{Bounds for \texorpdfstring{$\vE^\varepsilon$}{Lg} and \texorpdfstring{$\rho^\varepsilon$}{Lg} }
 % Traditional analysis works well to solve the problem $\text{VP}^\varepsilon (\varepsilon >0)$ due to the removed singularity of integral kernel. However, we need to illustrate that $f^\varepsilon$ uniformly converges to $f^0$ as $\varepsilon\rightarrow 0 $ on $I\times \bbR^N \times \bbR^N $ and confirm the uniqueness. Therefore we need conditions on $f$ which assure that the characteristcs ordinary equations $\vect{X}(s,t_0, \vx,\vv),\vect{V}(s,t_0, \vx,\vv)$ have a unique solution for given parameter $t_0 \in I, \vx, \vv \in \bbR^N$. In this section we take the first steps into this direction. An obvious estimate yields that $\left|E^{\varepsilon}\left(t, \vx\right)\right| \leqslant \int\left|\vx-\vy\right|^{1-N} \cdot\left|f^{\varepsilon}\right|_{Q}\left(t, \vy\right) \mathrm{d} \vx^{N}$
 % Here the time $t$ plays only the role of a parameter, whereas integration is with respect to $\vy .$ 
@@ -300,8 +301,7 @@ $p^{\prime}$ 和 $q^{\prime}$ 大小为 $p^{-1}+p^{\prime-1}=q^{-1}+q^{\prime-1}
 % The minimum of the right-hand side as a function of $R$ is equal to const. $\|\sigma\|_{p}^{\lambda} \cdot\|\sigma\|_{q}^{\mu} .$ , \textit{i.e.} $\tilde{C}(N,\alpha, p, q)\|\sigma\|_{p}^{\lambda} \cdot\|\sigma\|_{q}^{\mu}  $.
 \end{proof}
 
-这条引理启发我们研究 $\left\| \rho^{\varepsilon}(t, \cdot)\right\|_{p}$，   $\left\|f^{\varepsilon}(t, \cdot)\right\|_{1}=\mathcal{M}.$ 下面我们还将讨论其 $\mathrm{L}^{\infty}$ 范数，
-
+以上引理将在下面被我们用来以 $\left\| \rho^{\varepsilon}(t, \cdot)\right\|_{p}$ 范数控制 $\left|\vE^{\varepsilon}\left(r, \vx\right)\right|$。
 
 % This lemma shows us that it makes sense to investigate the properties of $\left\|f^{\varepsilon} \rho_{\theta}(t, \cdot)\right\|_{p} .$ We already know that always $\left\|f^{\varepsilon}(t, \cdot)\right\|_{1}=m .$ Now we consider the case $p=\infty, 1<p<\infty$ will become important in part II.
 
@@ -358,19 +358,19 @@ $p^{\prime}$ 和 $q^{\prime}$ 大小为 $p^{-1}+p^{\prime-1}=q^{-1}+q^{\prime-1}
 %  \end{enumerate}
 % \end{lemma}
 
-\begin{proof}
-    \begin{enumerate}[(i)]
-        \item 对给定的 $t_0\in I$,
-        $$\begin{aligned}
-            &\sup \left\{\left|f^{\varepsilon}\left(t_{0}, \vy, \vect{u}\right)\right|\left|\vy, \vect{u} \in \mathbb{R}^{2 N},\right| \vect{u}-\vv | \leqslant a\right\}\\
-        =&\sup \left\{\left|f_0\left(  \vect{X}^{\varepsilon}\left(0, t_{0}, \vy, \vect{u}\right), \vect{V}^{\varepsilon}\left(0, t_{0}, \vy, \vect{u}\right) \right) \right|  \bigg| \vy,\vect{u} \in \mathbb{R}^{ N},\left|\vect{u}-\vv\right| \leqslant a\right\}\\
-        \leqslant &\sup \left\{|f_0(\vy, \vect{u})|\left|\vy,\vect{u} \in \mathrm{R}^{N},\right| \vect{u}-\vv | \leqslant a+h_{v}^{\varepsilon}\left(t_{0}\right)\right\}
-        \end{aligned}$$
+% \begin{proof}
+%     \begin{enumerate}[(i)]
+%         \item 对给定的 $t_0\in I$,
+%         $$\begin{aligned}
+%             &\sup \left\{\left|f^{\varepsilon}\left(t_{0}, \vy, \vect{u}\right)\right|\left|\vy, \vect{u} \in \mathbb{R}^{2 N},\right| \vect{u}-\vv | \leqslant a\right\}\\
+%         =&\sup \left\{\left|f_0\left(  \vect{X}^{\varepsilon}\left(0, t_{0}, \vy, \vect{u}\right), \vect{V}^{\varepsilon}\left(0, t_{0}, \vy, \vect{u}\right) \right) \right|  \bigg| \vy,\vect{u} \in \mathbb{R}^{ N},\left|\vect{u}-\vv\right| \leqslant a\right\}\\
+%         \leqslant &\sup \left\{|f_0(\vy, \vect{u})|\left|\vy,\vect{u} \in \mathrm{R}^{N},\right| \vect{u}-\vv | \leqslant a+h_{v}^{\varepsilon}\left(t_{0}\right)\right\}
+%         \end{aligned}$$
         
-        于是对其积分中可知 $f(t_0, \cdot, \cdot)$ 也满足 \supremumf，只是常数的大小发生了改变。
-        % It follows that an integral would suffice to show that $f(t_0, \cdot, \cdot)$ satisfy the \supremumf.
-    \end{enumerate}
-\end{proof}
+%         于是对其积分中可知 $f(t_0, \cdot, \cdot)$ 也满足 \supremumf，只是常数的大小发生了改变。
+%         % It follows that an integral would suffice to show that $f(t_0, \cdot, \cdot)$ satisfy the \supremumf.
+%     \end{enumerate}
+% \end{proof}
 
 % \begin{lemma}
     
@@ -408,7 +408,7 @@ $p^{\prime}$ 和 $q^{\prime}$ 大小为 $p^{-1}+p^{\prime-1}=q^{-1}+q^{\prime-1}
 
 \begin{proof}
     
-    首先我们证明下述三个控制条件是等价的，特别的在本文中，我们称满足下述条件的左端点为零的区间 $I$ 为满足“有界条件”\label{de:boundness}，其中 $I$ 可以是半开半闭或两端闭的。%互相充要的工具其实我们已经准备好了。下面三个条件是等价的：
+    首先我们证明下述三个控制条件是等价的，即如果我们可以一致控制其中任意一项，则我们也可以一致控制其他项，%特别的在本文中，我们称满足下述条件的左端点为零的区间 $I$ 为满足“有界条件”\label{de:boundness}，其中 $I$ 可以是半开半闭或两端闭的。%互相充要的工具其实我们已经准备好了。下面三个条件是等价的：
     \begin{enumerate}[(i)]
         \item 存在函数 $H_{\rho}(t) \in C_{+}(I)$， 使得
          $$\left|\rho^{\varepsilon}\left(t, \vx\right)\right| \leqslant H_{\rho}(t) \text{ 对任意的 } \varepsilon>0, t \in I, \vx \in \bbR^{\mathrm{N}}$$
@@ -447,12 +447,12 @@ $p^{\prime}$ 和 $q^{\prime}$ 大小为 $p^{-1}+p^{\prime-1}=q^{-1}+q^{\prime-1}
         & \leqslant \sup \left\{|f_0(\vect{y}, \vect{u})|\bigg|\vect{y},\vect{u} \in \mathbb{R}^{N},\left| \vect{u}-\vect{v} \right| \leqslant h_{v}^{\varepsilon}(t)\right\}
         \end{aligned}
         \]
-        左侧 $\int \ldots d \vv$ 积分，右侧 $\int_{\cdots}^{*} \ldots d \vv$ 上 Lebesgue 积分可得 $$\rho^{\varepsilon}_{abs}\left(t, \vx\right) \leqslant K_{1} \cdot\left(K_{2}+h_{v}^{\varepsilon}(t)\right)^{N}$$.
+        左侧 $\int \ldots d \vv$ 积分，右侧 $\int^{*} \ldots d \vv$ 上 Lebesgue 积分可得 $$\rho^{\varepsilon}_{abs}\left(t, \vx\right) \leqslant K_{1} \cdot\left(K_{2}+h_{v}^{\varepsilon}(t)\right)^{N}$$
+        $$\left| \rho^{\varepsilon} \left(t, \vx \right)\right| \leqslant K_{1} \cdot\left(K_{2}+h_{v}^{\varepsilon}(t)\right)^{N}\leqslant K_{1} \cdot\left(K_{2}+h_{v}(t)\right)^{N}$$
         % Taking $\int \ldots d \vv$ of the left-hand side and $\int_{\cdots}^{*} \ldots d \vv$ of the right-hand side proves $\rho^{\varepsilon}_{abs}\left(t, \vx\right) \leqslant K_{1} \cdot\left(K_{2}+h_{v}^{\varepsilon}(t)\right)^{N}$.
-        
-        $\left| \rho^{\varepsilon} \left(t, \vx \right)\right| \leqslant K_{1} \cdot\left(K_{2}+h_{v}^{\varepsilon}(t)\right)^{N}\leqslant K_{1} \cdot\left(K_{2}+h_{v}(t)\right)^{N}$
 
 现相互等价关系得证，下面我们确实地找一个函数 $H_v(t)\in C_+\left([0,\infty)\right)$ 来控制住 $h_v^\varepsilon$。
+对于一个固定的 $\varepsilon$，令 $h_{v+}^\varepsilon:=K_2+h_v^\varepsilon(t)$，上面等价的三式联立可得下式对任意的 $\varepsilon$ 均成立，
 
 % \begin{theorem}\textit{(Boundness Conditions Equivalence)}
 
@@ -471,14 +471,13 @@ $p^{\prime}$ 和 $q^{\prime}$ 大小为 $p^{-1}+p^{\prime-1}=q^{-1}+q^{\prime-1}
 
 
 % 现我们仅依靠定理 \ref{thm:epsilon-greater-0} 的解的存在性，希望给出一个上面条件需要的控制函数。
-对于一个固定的 $\varepsilon$，令 $h_{v+}^\varepsilon:=K_2+h_v^\varepsilon(t)$，上面等价的三式联立可得下式成立，
 
 \begin{equation}
 h_{v+}^\varepsilon(t) \leqslant K_{2}+\int_{0}^{t} K_{3} \cdot(h_{v+}^\varepsilon(r))^{N-1} \mathrm{d} r \\
 \end{equation}
 其中，$K_{3}:=\tilde{C}_{min}(N, N-1, \infty, 1) \cdot \mathcal{M}^{1 / N} \cdot\left(K_{1}\right)^{(N-1) / N}$。用非线性 Gronwall 引理 \ref{lem:nonlinear-Gronwall} ，从而我们可以控制住 $h_{v+}^\varepsilon(t) $ 的大小，用该不等式容许的最大的解 $g$，即常微分方程 $g^{\prime}=K_{3} \cdot(g)^{N-1}, g(0)=K_{2}$ 的解所控制。当 $N\neq 2$ 时，$g(t) = [(-N+2)K_3 t+K_2^{-N+2}]^{\frac{1}{-N+2}}$。它能够在一段区间 $[0, K_2^{-(N-2)}/(N-2)K_3)$ 内控制住 $h_{v}^\varepsilon(t) \leqslant h_{v+}^\varepsilon(t) \leqslant g(t)$。  
 
-$N=1,2$ 时易见可以全局控制，则满足有界条件的 $I=[0, \infty)$。
+$N=1,2$ 时易见可以全局控制，则 $I=[0, \infty)$ 得证。
 
 $N \geqslant 3$ 时令 $T=K_2^{-(N-2)}/(2(N-2)K_3)$，可以推出 $g(t)$ 在 $[0, T]$ 上是符合控制条件的，则得证。
 % 存在一个 $g(t)$ 的情况只能根据 $K_1,K_2,\mathcal{M}$ 及空间维度 $N$ 给出一个满足有界条件的非空区间， $I=[0, T), T \in( 0, \infty]$.
@@ -500,7 +499,7 @@ $N \geqslant 3$ 时令 $T=K_2^{-(N-2)}/(2(N-2)K_3)$，可以推出 $g(t)$ 在 $[
 % \section{\texorpdfstring{$\vE^{\varepsilon}$ 和 $\rho^{\varepsilon}$}{Lg} 的 Lipschitz 连续性}
 % \section{Lipschitz Continuity of \texorpdfstring{$\vE^{\varepsilon}$ and $\rho^{\varepsilon}$}{Lg}}
 
-本节将证明在两个假设的铺垫下， $\vE^{\varepsilon}(t, \cdot)$ 和 $\rho^{\varepsilon}(t, \cdot)$ 是 Lipschitz 连续的。且当 $I$ 满足有界条件时,不依赖于 $\varepsilon$ 地控制其 Lipschitz 常数。首先引入了下面的引理，通过用 $\rho^\varepsilon$ 的 $\mathrm{L}^1,\mathrm{L}^\infty$ 范数及 Lipschitz 常数来控制 $\operatorname{lip}_x (\vE^\varepsilon)$。%我们先给定 $\sigma$ 一个较大的函数空间，然后说明能通过它来控制住它产生的场 $lip(\vE^\varepsilon)$ 的 Lipschitz 常数，进而由于 $\rho^\varepsilon$ 确实在该空间中，$\text{VP}^\varepsilon$ 问题的解对应产生的场的强度 $\vE$ 应该对任意的 $t\in I$ 都是 Lipschitz 连续的。
+本节将证明在两个假设的铺垫下， $\vE^{\varepsilon}(t, \cdot)$ 和 $\rho^{\varepsilon}(t, \cdot)$ 是 Lipschitz 连续的。且当 $I$ 上满足定理 \ref{thm:some-bound} 给出的控制条件时，可不依赖于 $\varepsilon$ 地控制其 Lipschitz 常数。首先引入了下面的引理，通过用 $\rho^\varepsilon$ 的 $\mathrm{L}^1,\mathrm{L}^\infty$ 范数及 Lipschitz 常数来控制 $\operatorname{lip}_x (\vE^\varepsilon)$。%我们先给定 $\sigma$ 一个较大的函数空间，然后说明能通过它来控制住它产生的场 $lip(\vE^\varepsilon)$ 的 Lipschitz 常数，进而由于 $\rho^\varepsilon$ 确实在该空间中，$\text{VP}^\varepsilon$ 问题的解对应产生的场的强度 $\vE$ 应该对任意的 $t\in I$ 都是 Lipschitz 连续的。
 % In this section we show that $\vE^{\varepsilon}(t, \cdot)$ and $\rho^{\varepsilon}(t, \cdot)$ are Lipschitz continuous, if $f_{0}$ is sufficiently nice. If $I$ satisfies the boundedness condition, the Lipschitz constants do not depend on $\varepsilon$
 
 \begin{lemma}
@@ -579,7 +578,7 @@ $N \geqslant 3$ 时令 $T=K_2^{-(N-2)}/(2(N-2)K_3)$，可以推出 $g(t)$ 在 $[
 
 以上面的引理为基础，我们要证明 $\vE^\varepsilon$ 和 $\rho^\varepsilon$ 对 $\varepsilon>0$ 一致的 Lipschitz 连续性。
 \begin{lemma}
-    假设 $f_{0}$ 满足 \supremumf 和 \lipOffVsphere 两个条件且 $I$ 为满足 \boundcondition 的区间，则存在函数 $H_{lip(\rho)}, H_{lip(E)} \in C_{+}(I)$ 使得对任意的 $\varepsilon>0, t \in I$ 有
+    假设 $f_{0}$ 满足 \supremumf 和 \lipOffVsphere 两个条件且 $I$ 为满足定理 \ref{thm:some-bound} 的区间，则存在函数 $H_{lip(\rho)}, H_{lip(E)} \in C_{+}(I)$ 使得对任意的 $\varepsilon>0, t \in I$ 有
     % Assume that $f_{0}$ satisfies $(f_0 1)$ and \textit{$\operatorname{lip}(f_0)$ in $v$ Sphere Control Condition},
 
     % 如果 $f^{\varepsilon}$ 是 $\text{VP}^{\varepsilon}$ 在 $I(\varepsilon \geqslant 0 \text { fixed})$ 上的解， 则 $f^{\varepsilon}$ 满足 \lipxOfrho。
@@ -654,7 +653,7 @@ $h$ 是\lipOffVsphere 中给定的控制函数，于是
 \]
 
 
-如果 $I$ 满足\boundcondition , 定理 \ref{thm:some-bound} 揭示了存在 $H_N \in C_{+}(I)$ 使得对任意的 $\varepsilon>0, t \in I$ 有 $h_{v}^{\varepsilon}(t) \leqslant H_{N}(t) $ 说明对 $\varepsilon$ 是一致有界的，于是
+定理 \ref{thm:some-bound} 揭示了 $I$ 上存在 $H_N \in C_{+}(I)$ 使得对任意的 $\varepsilon>0, t \in I$ 有 $h_{v}^{\varepsilon}(t) \leqslant H_{N}(t) $ 说明对 $\varepsilon$ 是一致有界的，于是
 
 \begin{equation}
     \label{eq:lip-rho-control}
@@ -693,7 +692,7 @@ $h$ 是\lipOffVsphere 中给定的控制函数，于是
 \section{\texorpdfstring{$\varepsilon \rightarrow 0$}{Lg} 时解的一致收敛性}
 % \section{\texorpdfstring{$\varepsilon \rightarrow 0$}{Lg} Approximation}
 
-本章中我们将证明 $\text{VP}^{0}$ 的解的适定性的结果，即我们在本章开头引入的定理 \ref{thm:local-wellposedness}。当 $I$ 满足\boundcondition 时，\eqvp 的解必存在并唯一，而我们总是可以对满足\supremumf 的初值找到一个满足\boundcondition 的区间 $I$，再结合上节中\lipOffVsphere 推导出来的 $\vE$ 的 Lipschitz 连续性，可控制不同修正参数 $\varepsilon$ 时特征线的误差，用 Cauchy 判据证明 $\varepsilon\rightarrow 0$ 时特征线收敛，并对于任意的 $(t,\tau,\vx,\vv)$ 一致，从而证得解存在且唯一。
+本章中我们将证明 $\text{VP}^{0}$ 的解的适定性的结果，即我们在本章开头引入的定理 \ref{thm:local-wellposedness}。当 $I$ 上有定理 \ref{thm:some-bound} 需要的控制条件时，\eqvp 的解必存在并唯一，而我们总是可以对满足\supremumf 的初值找到一个满足控制条件的区间 $I$，再结合上节中\lipOffVsphere 推导出来的 $\vE$ 的 Lipschitz 连续性，可控制不同修正参数 $\varepsilon$ 时特征线的误差，用 Cauchy 判据证明 $\varepsilon\rightarrow 0$ 时特征线收敛，并对于任意的 $(t,\tau,\vx,\vv)$ 一致，从而证得解存在且唯一。
 
 % 我们先刻画 $|\vect{e}^{\varepsilon}-\vect{e}^\eta|$ 的大小并将 $\vect{e}^\varepsilon$ 分为两部分 $\vect{e}^{\varepsilon,1}, \vect{e}^{\varepsilon,2}$ 进行更细致的控制。
 % In this section we prove that a solution of $\text{VP}^{0}$ exists on $I$, if and only if $I$ satisfies the boundedness condition. We start with three technical lemmas.
@@ -949,27 +948,27 @@ $\vect{X}^{0}(t, \tau, \vx, \vv):= lim _{\varepsilon \rightarrow 0}$ $\vect{X}^{
 % Inequality $2^{\circ}$ can now be proved analogously for $\eta=0 .$ This implies that $\vE^{\varepsilon}\left(t, \vx\right)$ converges uniformly on $I \times \bbR^{N}$ to $\int \vect{e}^{0}\left(\vx-\vect{y}\right) \cdot f^{0}(t, y) \mathrm{d} y^{2 N} .$ This
 % expression must therefore be equal to $E^{0}\left(t, \vx\right)$ All in all we have shown that $f^{0}$ is the unique solution of $P^{0}$ on $I$. As $(f_{0} 2)$ implies $f_{0} \in \operatorname{Lip}\left(\bbR^{2 N}\right),$ we have that
 \[
-\begin{array}{l}
-\left|f^{\varepsilon}(t, x)-f^{0}(t, x)\right|=\left|f_{0}\left(\vect{X}^{\varepsilon}(0, t, \vx, \vv)\right)-f_{0}\left(\vect{X}^{0}(0, t, \vx, \vv)\right)\right| \\
-\leqslant \operatorname{lip}(f_{0}) \cdot \sup \left\{\left|\vect{X}^{\varepsilon}(0, t, \vx, \vv)-\vect{X}^{0}(0, t, \vx, \vv)\right| \vx, \vv\in \bbR^{2 N}, t \in I\right\} \rightarrow 0, \text { 当 } \varepsilon \rightarrow 0
-\end{array}
-\]
+    \begin{array}{l}
+    \left|f^{\varepsilon}(t, \vx, \vv)-f^{0}(t, \vx, \vv)\right|=\left|f_{0}\left((\vect{X}^{\varepsilon},\vect{V}^{\varepsilon})(0, t, \vx, \vv)\right)-f_{0}\left((\vect{X}^{0},\vect{V}^{0})(0, t, \vx, \vv)\right)\right| \\
+    \leqslant \operatorname{lip}(f_{0}) \cdot \sup \left\{\left|(\vect{X}^{\varepsilon},\vect{V}^{\varepsilon})(0, t, \vx, \vv)-(\vect{X}^{0},\vect{V}^{0})(0, t, \vx, \vv)\right| \vx, \vv\in \bbR^{N}, t \in I\right\} \rightarrow 0, \varepsilon \rightarrow 0
+    \end{array}
+    \]
 % 到此我们得出了 $f^{\varepsilon}$ 在 $I \times \bbR^{2 N}$ 上一致收敛到 $f^{0}$。Lemma (2.6) and lemma (3.1) imply (viii) $E^{0}\left(t, \vx\right)$ is continuously differentiable with respect to $\vx$ If $f_{0}$ is continuously differentiable, 那么便有 $f^{0}$ 在 $I \times \bbR^{2 N}$ 上是连续可导的并满足 \eqvp 方程 (cf. lemma (1.4)). 
 
 这表明 $\left(f^{\varepsilon}\right)_{\varepsilon>0}$ 在 $I \times I \times \bbR^{2 N}$ 上，$\varepsilon \rightarrow 0$ 时是一致收敛的，从而找到了满足\eqvp 的解，证明 $I$ 上解的存在性。
 
-至于其唯一性，则相对简单：如果 $\text{VP}^{0}$ 的一个解 $f^{0}$ 在 $I$ 上存在并且 $I$ 满足有界条件, 那么引理 \ref{lem:f-epsilon-eta-control} 中，$\eta=0$ 的情况该不等式也成立了，也就是 $\vect{X}^{0}(t, \tau, \vx, \vv)=\lim _{\varepsilon \rightarrow 0} \vect{X}^{\varepsilon}(t, \tau, \vx, \vv) $, $\vect{X}^{0}$ 、$f^{0}(t, \vx, \vv)=f_{0}\left(\vect{X}^{0}(0, t, \vx,\vv), \vect{V}^{0}(0, t, \vx,\vv)\right)$ 被该极限唯一地确定了，从而证明了唯一性。
+至于其唯一性，则相对简单：如果 $\text{VP}^{0}$ 的一个解 $f^{0}$ 在 $I$ 上存在并且定理 \ref{thm:some-bound} 的控制条件, 那么引理 \ref{lem:f-epsilon-eta-control} 中，$\eta=0$ 的情况该不等式也成立了，也就是 $\vect{X}^{0}(t, \tau, \vx, \vv)=\lim _{\varepsilon \rightarrow 0} \vect{X}^{\varepsilon}(t, \tau, \vx, \vv) $, $\vect{X}^{0}$ 、$f^{0}(t, \vx, \vv)=f_{0}\left(\vect{X}^{0}(0, t, \vx,\vv), \vect{V}^{0}(0, t, \vx,\vv)\right)$ 被该极限唯一地确定了，从而证明了唯一性。
 
 以上我们确定了在 $I$ 上的局部适定性，对于 $N=1,2$ 得到了全局适定性。进一步，$N\geqslant 3$ 时，进一步我们证明闭区间 $I$ 是可以延续的，$f^{\varepsilon}\left(T, \cdot\right)$ 以常数 $K_{1}$ 和 $K_{2}+C_{v}$ 满足\supremumf 
 
 $$
 \begin{aligned}
     &\sup \left\{|f^\varepsilon(T,\vect{y}, \vect{u})| \bigg| \vect{y},\vect{u}\in \bbR^{N}, |\vect{u}-\vect{v}|\leqslant a  \right\} \\
-\leqslant &\sup \left\{|f^\varepsilon_0(\vect{X}^\varepsilon(0, T,\vect{y}, \vect{u}), \vect{V}^\varepsilon(0, T,\vect{y}, \vect{u}))| \bigg| \vect{y},\vect{u}\in \bbR^{N}, |\vect{u}-\vect{v}|\leqslant a  \right\} \\
-\leqslant &\sup \left\{|f^\varepsilon_0(\vect{y}, \vect{u})| \bigg| \vect{y},\vect{u}\in \bbR^{N}, |\vect{u}-\vect{v}|\leqslant a +C_v \right\} 
+\leqslant &\sup \left\{|f_0(\vect{X}^\varepsilon(0, T,\vect{y}, \vect{u}), \vect{V}^\varepsilon(0, T,\vect{y}, \vect{u}))| \bigg| \vect{y},\vect{u}\in \bbR^{N}, |\vect{u}-\vect{v}|\leqslant a  \right\} \\
+\leqslant &\sup \left\{|f_0(\vect{y}, \vect{u})| \bigg| \vect{y},\vect{u}\in \bbR^{N}, |\vect{u}-\vect{v}|\leqslant a +C_v \right\} 
 \end{aligned}
 $$
-即 $f^0(T,\cdots)$ 满足\supremumf 条件，类似的可以证明 $f^{\varepsilon}\left(T, \cdot\right)$ 还以函数 $h^\prime(t):= h(t+C_v) $ 满足\lipOffVsphere 。进而 $f^{0}\left(T, \cdot\right)$ 可以作为初值再次给出局部解的适定性，通过不断延拓，我们得到序列 $\{T_n\}$, $n\in \bbN$，这是一个单调递增序列，则要不它有上确界，解在全局存在且唯一，$T^*=\infty$；要不它有上确界 $T_n<T^*<\infty$，从而定理得证。
+即 $f^0(T,\cdots)$ 满足\supremumf 条件，类似的可以证明 $f^{\varepsilon}\left(T, \cdot\right)$ 还以函数 $h^\prime(t):= h(t+C_v) $ 满足\lipOffVsphere 。进而 $f^{0}\left(T, \cdot\right)$ 可以作为初值再次给出局部解的适定性，通过不断延拓，我们得到序列 $\{T_n\}$, $n\in \bbN$，这是一个单调递增序列，则要不它有上确界，解在全局存在且唯一，$T^{\ast}=\infty$；要不它有上确界 $T_n<T^{\ast}<\infty$，从而定理得证。
 
 
 % "$\Leftarrow$" 适定性定理的第二部分：如果 $\text{VP}^{0}$ 问题的解在 $I$ 上存在，则 $I$ 满足\boundcondition。 
