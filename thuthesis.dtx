@@ -1638,7 +1638,7 @@
     bibname        = 参考文献,
     indexname      = 索引,
   }
-  \newcommand\thu@denotation@name{主要符号对照表}
+  \newcommand\thu@denotation@name{主要符号表}
   \newcommand\listequationname{公式索引}
   \newcommand\equationname{公式}
   \newcommand\thu@assumption@name{假设}
@@ -3005,7 +3005,7 @@
 % \subsubsection{主要符号表}
 % \label{sec:denotationfmt}
 % \begin{environment}{denotation}
-% 主要符号对照表。
+% 主要符号表。
 % \changes{v2.0e}{2005/12/18}{主要符号表定义为一个 list，用起来方便。}
 % \changes{v2.4}{2006/04/14}{为主要符号表环境增加一个可选参数，调节符号列的宽度。}
 % \changes{v5.2.1}{2016/01/11}{利用 \pkg{enumitem} 改造环境定义，更直观。}
@@ -3073,7 +3073,7 @@
     \ifthu@postdoctor\relax\else%
       \IfNoValueTF{#1}{%
         \thu@chapter*{\thu@declarename}
-        \par{\xiaosi\parindent2em\thu@declaretext}\vskip2cm
+        \par{\xiaosi\parindent2em\thu@declaretext}\vskip20pt
         {\xiaosi\hfill\thu@signature\thu@underline[2.5cm]\relax%
          \thu@backdate\thu@underline[2.5cm]\relax}%
       }{%

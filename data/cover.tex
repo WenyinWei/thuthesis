@@ -14,7 +14,7 @@
   %=========
   % 中文信息
   %=========
-  ctitle={EAST 托卡马克上多种三维扰动磁场对等离子体边界磁拓扑影响的协同优化模拟研究},
+  ctitle={三维扰动场对等离子体边界磁拓扑影响的协同优化模拟},
   cdegree={工学本科},
   cdepartment={工程物理系},
   cmajor={工程物理},
@@ -63,18 +63,18 @@
   % edate={December, 2005},
   %
   % 关键词用“英文逗号”分割
-  ckeywords={扰动场, 边界局域模, 共振磁扰动, 高 m 线圈, 低杂波, 螺旋电流丝, 螺旋辐射带},
-  ekeywords={magnetic perturbation field, edge localized mode (ELM), resonant magnetic perturbation (RMP)，high m coil, lower-hybrid (LH), helical current filament (HCL), helical radiation belt (HRB)}
+  ckeywords={扰动场, 边界局域模, 共振磁扰动, 高 m 线圈, 低杂波, 螺旋电流丝},
+  ekeywords={magnetic perturbation field, edge localized mode (ELM), resonant magnetic perturbation (RMP)，high m coil, lower-hybrid (LH), helical current filament (HCL)}
 }
 
 % 定义中英文摘要和关键字
 \begin{cabstract}
-  本课题来自目前的先进托卡马克位型所面临的现实问题，尽管参数优良的 \Hmode 等离子体使得聚变达到所需参数目标变得更加现实，但同时也带来了新的问题。\Hmode 下等离子体边界高压力梯度和强电流密度蕴含的自由能，引起了边界局域模不稳定性。边界局域模会引起热负荷和粒子流强出现近似周期性的脉冲峰值，而这在 DEMO 堆中是不被允许的。
+  本课题来自目前的先进托卡马克位型所面临的现实问题，尽管参数优良的 \Hmode 等离子体使得聚变达到所需参数目标有了更大的可能性，但同时也带来了新的问题。\Hmode 下等离子体边界高压力梯度和强电流密度蕴含的自由能，引起了边界局域模不稳定性。边界局域模会引起热负荷和粒子流强出现近似周期性的脉冲峰值，而这在 DEMO 堆中是不被允许的。
 
-  为了抑制边界局域模， EAST 上先后测试了共振磁扰动线圈 RMP、高 m 线圈和低杂波驱动的螺旋电流丝，这三种扰动场产生机制有所差异，适用的范围也不尽相同。为了使扰动场相互配合达到最优的弱化乃至抑制边界局域模的效果，对它们在等离子体边界造成的扰动场协同作用的研究是很有必要的。 \textit{\textbf{(1)}} \textbf{低场侧低 n 线圈}，该线圈布置在腔内，由它激发起环向模数为 $n=1,2$ 的扰动场后在 \east， \ddd 等托卡马克装置上验证了其抑制边界局域模的效应。 \textit{\textbf{(2)}} \textbf{高 m 线圈}，是 EAST 团队近两年实验中的线圈，在等离子体环外加上一组四个的线圈，它的特征是扰动场环向模数 $n$ 分布较宽，极向模数 $m$ 较高，由于一套高 $m$ 线圈只分布在一个环向截面处，扰动场的局域性很强。 \textit{\textbf{(3)}} 由低杂波驱动的\textbf{螺旋电流丝}，低杂波原本用于以朗道阻尼驱动芯部等离子体的电流，但实验还发现它在等离子体边界会激发出螺旋电流丝，电流丝产生的具体物理机制还不甚明晰，但其亦具备调节边界磁拓扑的能力。由于低杂波天线不像共振磁扰动线圈在腔内易受到损坏且激发出的螺旋电流丝紧靠边界，它具有应用在 DEMO 堆及日后商业堆灵活地调节磁拓扑的潜力。
-
-  本文将会对边界磁拓扑在扰动场作用下的变化做出（磁流体）电磁分析，绘制近边界磁面的傅里叶谱和 \Poincare 图，这构成了第二章的主要内容。在此之后，第三章将基于磁场弥散来进行粒子扩散的模拟，对粒子在边界上的运动建立直观的认识，通过修改 GENRAY-CQL3D 磁力线定迹程序可以较原来的模型更为精确。通过前面提到的多种扰动场对等离子体边界拓扑进行调节，从而对热负荷和粒子流在偏滤器上分布的优化，以避免脉冲式的 ELM 崩溃对壁材料造成显著的影响。最后，（如果还有时间的话Optional），通过在模拟工具中引入等离子体反馈后的随机场的计算，从而在湍流输运的角度解释磁场边界拓扑对粒子输运和热流的影响。
+  为了抑制边界局域模， EAST 上先后测试了共振磁扰动线圈 RMP、高 m 线圈和低杂波驱动的螺旋电流丝，这三种扰动场产生机制有所差异，产生的效果也不尽相同。为了使扰动场相互配合达到最优的弱化乃至抑制边界局域模的效果，对它们在等离子体边界造成的扰动场协同作用的研究是很有必要的。 (1) 低 n 线圈，一般称为 RMP 线圈，布置在腔内，它激发起环向模数为 $n=1,2$ 的扰动场在 \east， \ddd 等托卡马克装置上验证了其抑制边界局域模的效应。 (2) 高 m 线圈，是 EAST 团队近两年实验中的线圈，在等离子体环外加上一组四个的线圈，它的特征是扰动场环向模数 $n$ 分布较宽，极向模数 $m$ 较高，由于一组高 $m$ 线圈只分布在一个极向截面处，扰动场的局域性很强。(3) 低杂波驱动的螺旋电流丝，电流丝的具体物理机制还不甚明晰，但其亦能调节边界磁拓扑。由于低杂波天线不像共振磁扰动线圈在腔内易受到损坏且激发出的螺旋电流丝紧靠边界，它有望在 DEMO 堆及日后商业堆中灵活地调节磁拓扑结构。
   
+  第二章便进入本文主体，线圈之间如何配合以能够对等离子体施加合适的磁扰动场，为此对磁扰动场径向分量在边界附近的磁面 Fourier 分析得到的磁谱 $\tilde{b}^1_{mn}$ 和 \Poincare 图是必要的。这一章的主体是通过扰动场之间的配合达到较好的抑制 ELM 及保持芯部等离子体较好约束的效果。进一步在第三章中将讨论不同扰动场的配置下第一壁材料上的热负荷和粒子流分布。尽管主要依赖于对 ELM 的抑制效果来选择磁扰动场，但基于扰动场的热负荷优化分布或时间调制能够给出了一种新的调节视角。%对下一代托卡马克而言，%\Hmode 等离子体会造成难以承受的热流和粒子流，
+  % 扰动场可以此提供一种调节手段，避免脉冲式的 ELM 破裂造成的材料损害。
 
 \end{cabstract}
 
@@ -82,23 +82,11 @@
 % \ckeywords{\TeX, \LaTeX, CJK, 模板, 论文}
 
 \begin{eabstract}
-  %  An abstract of a dissertation is a summary and extraction of research work
-  %  and contributions. Included in an abstract should be description of research
-  %  topic and research objective, brief introduction to methodology and research
-  %  process, and summarization of conclusion and contributions of the
-  %  research. An abstract should be characterized by independence and clarity and
-  %  carry identical information with the dissertation. It should be such that the
-  %  general idea and major contributions of the dissertation are conveyed without
-  %  reading the dissertation.
+  The thesis discusses the realistic problem confronted by advanced tokamaks research. Though better confinement is obtained with \Hmode plasma than \Lmode, which makes it possible to achieve the threshold acquired by the fusion energy, new problems are also coming. The free energy stored in the high pressure gradient and strong current density in the edge of confined plasma induces edge localized mode (ELM) instability. ELM may cause too intense transient pulses of heat load and particle flux to sustain, which is not allowable in future tokamaks.
 
-  %  An abstract should be concise and to the point. It is a misunderstanding to
-  %  make an abstract an outline of the dissertation and words ``the first
-  %  chapter'', ``the second chapter'' and the like should be avoided in the
-  %  abstract.
+  In order to realize ELM suppression, multiple varieties of perturbation fields have been tested in EAST, \textit{i.e.} resonant magnetic perturbation coils, high $m$ coils and helical current filaments induced by lower hybrid wave. Each of these approaches has advantages and disadvantages. It is necessary to research on the collaborative effect if an optimal ELM suppression effect is anticipated. (1) Low n coils，also known as RMP coils, are distributed inside the vessel to stimulate the perturbant field with dominant toroidal mode number $n=1,2$. Its effect to mitigate or suppress ELM is verified in \east, \ddd tokamaks \textit{etc.}. (2) High m coils are under design by \east team in these two years. Normally four coils are imposed in one poloidal crosssection $\phi=\text{const.}$ with various theta. High $m$ coils have the characteristics that perturbant spectrum distribute widely in toroidal mode number $n$ while relatively high in poloidal mode number $m$. (3)Helical current filanments(HCFs) induced by lower hybrid waves(LHW). LHW is originally designed to drive core plasma current by Landau damping, but experimental evidence shows that there exists helical current filaments in the scrape-off layer (SOF) while LHW system switches on. Because of the fact that LHW antennas are shielded by limiters, therefore not easy to be damaged, and HCFs are close to the plasma edge, it has the potential to modify the magnetic topology near the edge of plasma flexibly in DEMO and next-generation tokamaks.
 
-  %  Key words are terms used in a dissertation for indexing, reflecting core
-  %  information of the dissertation. An abstract may contain a maximum of 5 key
-  %  words, with semi-colons used in between to separate one another.
+  Appropriate collaborative coils setup are discussed in chapter two to exert the suitable perturbation field on the plasma, in which the Fourier spectrum $\tilde{b}^1_{mn}$ of the radial component of perturbation field near the edge of plasma and \Poincare plots are necessary to analyze the topology. How to acquire a satisfactory perturbant result, \textit{i.e.} suppress ELM and sustain well confinement of plasma, constitutes the main content of chapter two. Furthermore, the heat load distribution patterns of various perturbant field combinations are analyzed in chapter three. Though we mainly rely on the ELM suppression effect to alter perturbant recipes, the possibility of adjustment of heat load distribution is considered to provide another perspective on the perturbant field. For next generation tokamaks, \Hmode plasma causes unafforable heat flux and particle flux pulses to the plasms-facing components, for which schemes to adjust the heat pattern are required.
 \end{eabstract}
 
 % \ekeywords{\TeX, \LaTeX, CJK, template, thesis}

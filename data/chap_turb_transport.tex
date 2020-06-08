@@ -1,3 +1,88 @@
 \chapter{随机场的湍流输运研究}
 
+\subsection{有限体积法}
+在有限体积法进行计算的过程中，我们所储存的变量值是偏微分返程中守恒量在网格中的平均值。与之类似但有些不同的是，在有限元法中，我们用试函数使得所计算得到的函数是函数空间中最优的函数。
+
+\subsection{本征方程}
+
+
+
+\textit{(Optional 完成真空模拟后，完成后面 chap 做完了还有时间，再回来这里考虑磁流体模型)}
+
+
+\subsubsection{双流体模型}
+将等离子体视为离子和电子相互渗透的双流体来看待，分别视为服从麦克斯韦分布的等离子体，相比于单流体的模型更能反映出电子和离子的不同响应特性和各自的流体特征。
+
 各种扰动场对 ELM 的发生起到了显著的控制作用，而在扰动场施加时等离子体边界浮现的随机场则对粒子和热输运均影响深远。这一部分的研究设计将模拟中加入**。从湍流输运的角度解释磁场边界拓扑对输运的影响可能有较好的效果。（可能没有时间完成这一部分，全力以赴）
+
+
+
+以下为 \mdddc 中的双流体模型方程。
+\begin{equation}\begin{aligned}
+    \frac{\partial n}{\partial t}+\nabla \cdot(n \vect{u})=& 0 \\
+    n m_{i}\left(\frac{\partial \vect{u}}{\partial t}+\vect{u} \cdot \nabla \vect{u}\right)=& \vect{J} \times \vect{B}-\nabla p-\nabla \cdot\tens{\Pi}+\vect{F} \\
+    \frac{\partial p}{\partial t}+\vect{u} \cdot \nabla p+\Gamma p \nabla \cdot \vect{u}=&(\Gamma-1)\left[Q-\nabla \cdot \vect{q}+\eta J^{2}-\vect{u} \cdot \vect{F}-\tens{\Pi}: \nabla u\right] \\
+    &+\frac{1}{n e} \vect{J} \cdot\left(\frac{\nabla n}{n} p_{e}-\nabla p_{e}\right)+(\Gamma-1) \tens{\Pi}_{e}: \nabla\left(\frac{1}{n e} \vect{J}\right) \\
+    \frac{\partial p_{e}}{\partial t}+\vect{u} \cdot \nabla p_{e}+\Gamma p_{e} \nabla \cdot \vect{u}=&(\Gamma-1)\left[Q_{e}-\vect{q}_{e}+\eta J^{2}-\vect{u} \cdot \vect{F}_{e}-\tens{\Pi}_{e}: \nabla u\right] \\
+    &+\frac{1}{n e} \vect{J} \cdot\left(\frac{\nabla n}{n} p_{e}-\nabla p_{e}\right)+(\Gamma-1)\left[\tens{\Pi}_{e}: \nabla\left(\frac{1}{n e} \vect{J}\right)+\frac{1}{n e} \vect{J} \cdot \vect{F}_{e}\right]
+\end{aligned}\end{equation}
+
+
+\begin{table}[htb]
+    \centering
+    % \caption[模板文件]{模板文件。如果表格的标题很长，那么在表格索引中就会很不美
+    %   观，所以要像 chapter 那样在前面用中括号写一个简短的标题。这个标题会出现在索
+    %   引中。}
+    \label{tab:formula_double-fluid}
+    \begin{tabularx}{\linewidth}{lXlXlX}
+        % \toprule[1.5pt]
+        $p,p_e$ &  总/电子压强 & $\vect{q}$ & 热流密度 & $\vect{J}$ & 电流密度\\
+        $\tens{\Pi},\tens{\Pi}_e$ & 总/电子粘性系数 &$u$ & 流体速度 & $n$ & 粒子数密度 \\
+        $\vect{F},\vect{F}_e$ & &$\tens{\Pi}$ & & $Q,Q_e$ & 
+        % \midrule[1pt]
+        % \bottomrule[1.5pt]
+    \end{tabularx}
+\end{table}
+
+\begin{equation}
+\vect{E}=\eta \vect{J}-\vect{u} \times \vect{B}+\frac{1}{n e}\left(\vect{J} \times \vect{B}-\nabla p_{e}-\nabla \cdot \tens{\Pi}_{e}+\vect{F}_{e}\right)\end{equation}
+
+\begin{equation}\begin{aligned}
+    \vect{J} &=\frac{1}{\mu_{0}} \nabla \times \vect{B} \\
+    \frac{\partial \vect{B}}{\partial t} &=-\nabla \times \vect{E}
+\end{aligned}\end{equation}
+
+\mdddc 中还有单流体模型， \cite{canal_m3d-c1_2017} 对 NSTX-U 中等离子体对扰动场的响应做了稳态单/双流体模拟的对比。
+
+\begin{equation}\begin{aligned}
+    \nabla \cdot\left(n \vect{v}_{\mathrm{i}}\right)=&0\\
+    m_{\mathrm{i}} n \vect{v}_{\mathrm{i}} \cdot \nabla \vect{v}_{\mathrm{i}}=&\vect{J} \times \vect{B}-\nabla p-\nabla \cdot \tens{\Pi}_{\mathrm{i}}\\
+    \frac{\nabla \cdot\left(p \vect{v}_{\mathrm{i}}\right)}{\Gamma-1}+p \nabla \cdot \vect{v}_{\mathrm{i}}+\nabla \cdot \vect{q}=&\eta J^{2}-\tens{\Pi}_{\mathrm{i}}: \nabla \vect{v}_{\mathrm{i}}-\frac{\vect{J}}{n e(\Gamma-1)} \cdot\left(\Gamma p_{\mathrm{e}} \frac{\nabla n}{n}-\nabla p_{\mathrm{e}}\right)\\
+    \nabla \times \vect{E}=&0\\
+    \nabla \times \vect{B}=&\mu_{0} \vect{J}
+\end{aligned}\end{equation}
+
+\begin{equation}\vect{E}=\eta \vect{J}-\vect{v}_{\mathrm{i}} \times \vect{B}+\frac{1}{n e}\left(\vect{J} \times \vect{B}-\nabla p_{\mathrm{e}}\right)\end{equation}
+
+\begin{equation}\tens{\Pi}_{i}=-\mu_{i}\left[\nabla \vect{v}_{i}+\left(\nabla \vect{v}_{i}\right)^{t}\right]\end{equation}
+
+\begin{equation}\vect{q}=-\kappa \nabla\left(T_{e}+T_{\mathrm{i}}\right)-\kappa_{\|} \vect{B}\left(\vect{B} \cdot \nabla T_{\mathrm{e}}\right) / B^{2}\end{equation}
+
+    
+\subsubsection{GENRAY}
+GENRAY 通过几何光学式的折射处理对射线进行迹线追踪和强度变化的检索。
+
+\section{数值方法}
+模拟用到了 XX 工具，它采用了 XX 的数值方法进行计算。
+本章节介绍了多种通过不同数值方法对于线圈激发的真空中电磁场进行计算和傅里叶分析。通过 SU2 程序采用有限体积方法，FEniCS 采用有限元方法，
+
+
+\subsubsection{CQL3D (Collisional QuasiLinear 3 D)}
+
+\begin{multline}
+\frac{d f}{d t}=\text{total derivative following the particle guiding center,}
+=\frac{\partial f}{\partial t}+\underline{v}_{\mathrm{g.c.}} \cdot \frac{\partial f}{\partial \underline{r}}+\frac{\partial f}{\partial \mu} \frac{d \mu}{d t}+\frac{\partial f}{\partial \varepsilon} \frac{d \varepsilon}{d t}
+\end{multline}
+
+
+\begin{equation}\frac{d f}{d t}=\frac{\partial f}{\partial t}+v_{\|} \hat{b} \cdot \nabla f+q E_{\|} v_{\|} \frac{\partial f}{\partial \varepsilon}+O(\delta)\end{equation}

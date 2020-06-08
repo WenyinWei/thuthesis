@@ -1,0 +1,81 @@
+
+\chapter{共振扰动场作用下的磁岛半径推导}
+
+在该附录中，我们推导出磁岛半径的解析表达式，首先定义磁场的各个分量：
+% In this appendix, we derive the analytical expression of the islands widths.
+% Defining:
+\[
+\begin{aligned}
+B^{1} & \equiv \vec{B} \cdot \vec{\nabla} s \\
+B^{2} & \equiv \vec{B} \cdot \vec{\nabla} \theta^{*} \\
+B^{3} & \equiv \vec{B} \cdot \vec{\nabla} \varphi
+\end{aligned}
+\]
+其中 $s, \theta^{*}$ 和 $\varphi$ 是平衡态本征的径向、极向和环向坐标。 $s$ 和 $\theta^{*}$ 沿磁力线对 $\varphi$ 的导数可以写为：
+% are the intrinsic equilibrium radial, poloidal and toroidal coordinates the variations of $s$ and $\theta^{*}$ with respect to $\varphi$ along a field line can be written:
+\[
+\begin{aligned}
+\left.\frac{d s}{d \varphi}\right|_{F L} &=\frac{B^{1}}{B^{3}} \\
+\left.\frac{d \theta^{*}}{d \varphi}\right|_{F L} &=\frac{B^{2}}{B^{3}}
+\end{aligned}
+\]
+为了研究有理面 $q=m/n$  上磁力线的轨迹，通常我们定义：
+% In order to study the trajectory of a field line near the rational surface $q=\frac{m}{n},$ it is convenient to define:
+\[
+\chi \equiv \theta^{*}-\frac{n}{m} \varphi
+\]
+which implies:
+\[
+\left.\frac{d \chi}{d \varphi}\right|_{F L}=\frac{B^{2}}{B^{3}}-\frac{n}{m}
+\]
+在 $q=m/n$, 径向位于 $s=s_{0}$ 的有理面附近我们有如下逼近： 
+% In the vicinity of the $q=\frac{m}{n}$ surface (located at radius $s=s_{0}$ ), we can use the following approximation:
+\[
+\begin{aligned}
+\frac{B^{2}}{B^{3}} &=\frac{1}{q} \\
+& \simeq \frac{1}{\frac{m}{n}+\bar{s} q^{\prime}} \\
+& \simeq \frac{n}{m}\left(1-\frac{n}{m} \bar{s} q^{\prime}\right)
+\end{aligned}
+\]
+
+where $\bar{s} \equiv s-s_{0}$ and $\left.q^{\prime} \equiv \frac{d q}{d s}\right|_{s=s_{0}} .$ Introducing this into eq. A.7, we find:
+\[
+\begin{aligned}
+\left.\frac{d \chi}{d \varphi}\right|_{F L} & \simeq-\left(\frac{n}{m}\right)^{2} \bar{s} q^{\prime} \\
+& \simeq-q^{-2} \bar{s} q^{\prime}
+\end{aligned}
+\]
+于是我们有：
+% We can then write:
+\[
+\begin{aligned}
+\left.\frac{d \bar{s}}{d \chi}\right|_{F L} &=\left.\left.\frac{d \bar{s}}{d \varphi}\right|_{F L} \cdot \frac{d \varphi}{d \chi}\right|_{F L} \\
+&=\left.\frac{d s}{d \varphi}\right|_{F L} \cdot\left(\left.\frac{d \chi}{d \varphi}\right|_{F L}\right)^{-1} \\
+& \simeq-\frac{B^{1}}{B^{3}} \frac{q^{2}}{s q^{\prime}}
+\end{aligned}
+\]
+Now, if in eq. A.15 we keep only the resonant component of $\frac{B^{1}}{B^{3}}$ and assume that it can be written in the form:
+\[
+\left(\frac{B^{1}}{B^{3}}\right)_{r e s}=\tilde{b}_{r e s}^{1} \sin (m \chi)
+\]
+(the most general expression would be $\left(\frac{B^{1}}{B^{3}}\right)_{\text {res}}=\tilde{b}_{\text {res}}^{1} \sin \left(m\left(\chi-\chi_{0}\right)\right)$ but in that case
+we would redefine $\chi$ as $\chi-\chi_{0}$ ), then eq. A.15 can be integrated easily. Indeed, we can rewrite eq. A.15 in the form:
+
+(the most general expression would be $\left(\frac{B^{1}}{B^{3}}\right)_{\text {res}}=\tilde{b}_{\text {res}}^{1} \sin \left(m\left(\chi-\chi_{0}\right)\right)$ but in that case
+we would redefine $\chi$ as $\chi-\chi_{0}$ ), then eq. A.15 can be integrated easily. Indeed, we can rewrite eq. A.15 in the form:
+\[
+\bar{s} d \bar{s} \simeq-\frac{q^{2} \tilde{b}_{r e s}^{1}}{q^{\prime}} \sin (m \chi) d \chi
+\]
+i.e.:
+\[
+\frac{1}{2} d\left(\bar{s}^{2}\right) \simeq \frac{q^{2} \tilde{b}_{r e s}^{1}}{q^{\prime} m} d[\cos (m \chi)]
+\]
+which gives, after integration:
+\[
+\bar{s}^{2} \simeq \frac{2 q^{2} \tilde{b}_{r e s}^{1}}{q^{\prime} m}[\cos (m \chi)+C]
+\]
+这一方程的解对于一系列的积分常数我们将在之后的图中看到，展示了典型的磁岛结构。其中磁岛的分界面用粗线标记出来了，它表示这磁岛中约束粒子和通行粒子之间的分界，并对应着 $C=1$ 的曲线。磁岛半径 $\delta$ 可以用 $C=1$ 时 $\bar{s}$ 的最大值来表示。
+% The solutions of this equation for a set of values of the integration constant $C,$ in the $(\chi, \bar{s})$ plane are displayed on fig. A.1, showing the typical island structure. The island separatrix, in bold line, is the limit between "trapped" and "passing" trajectories, and corresponds to $C=1 .$ The island half-width $\delta$ can be expressed by taking the maximum of $\bar{s}$ for $C=1$
+\[
+\delta_{q=\frac{m}{n}}=\left(\frac{4 q^{2} \tilde{b}_{r e s}^{1}}{q^{\prime} m}\right)^{\frac{1}{2}}
+\]
