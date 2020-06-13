@@ -1,6 +1,8 @@
 \chapter{介绍}
 
 \section{托卡马卡及 EAST}
+托卡马克是一类聚变磁约束装置，其环向场线圈产生特斯拉级别的约束磁场，而后等离子体中的电流产生了可以遏制极性漂移的极向场。环向场与极向场对约束起到了很关键的作用，且托卡马克的建设相对简单，其相关实验设备的参数在近数十年保持领先。
+
 EAST (\textbf{E}xperimental \textbf{A}dvanced \textbf{S}uperconducting \textbf{T}okamak 实验先进超导托卡马克) 作为世界首个全超导托卡马克，多项参数取得领先，位于合肥等离子体物理研究所。
 
 \begin{table}[htb]
@@ -13,7 +15,7 @@ EAST (\textbf{E}xperimental \textbf{A}dvanced \textbf{S}uperconducting \textbf{T
         \midrule[1pt]
         $R$ 大半径 &  \SI{1.7}{\meter} & $a$ 小半径 & \SI{0.4}{\meter}\\ 
         $B_t$ 环向中心磁感应强度 &  \SI{3.5}{\tesla} & 环径比 $R/a$ & $4.25$\\ 
-        等离子体电流 $I_p$ & \SI{0.5}{\mega\ampere}& $\delta$ 三角形变系数 &\\ 
+        等离子体电流 $I_p$ & \SI{0.5}{\mega\ampere}&  &\\  % $\delta$ 三角形变系数
         \bottomrule[1.5pt]
     \end{tabularx}
 \end{table}
@@ -112,7 +114,7 @@ I(\varphi)=I_{\max } \times \cos \left(n \varphi-\Phi_{i}\right)
       \includegraphics[height=8cm]{highm/coil_limiter_pos.png}
       \caption{极向截面上高 $m$ 线圈的位置}
     \end{subfigure}
-    \caption{高 $m$ 线圈在 \east 中的设计和所处的几何位置，来源于张华祥研究员 \cite{zhang_highm} 的报告}
+    \caption{高 $m$ 线圈在 \east 中的设计和所处的几何位置，\cite{zhang_highm}}
     \label{fig:highm-pos}
   \end{figure}
 
@@ -120,43 +122,6 @@ I(\varphi)=I_{\max } \times \cos \left(n \varphi-\Phi_{i}\right)
 
 
 
-\begin{figure}[htbp]
-    \centering%
-    \begin{subfigure}{0.33\textwidth}
-      \includegraphics[height=8cm]{highm/original_equilibrium_no_high_m.png}
-      \caption{平衡场}
-    \end{subfigure}%
-    % \hspace{4em}%
-    \begin{subfigure}{0.33\textwidth}
-      \includegraphics[height=8cm]{highm/original_equilibrium_with_high_m.png}
-      \caption{主要工作模式的线圈场}
-    \end{subfigure}
-    % \hspace{4em}%
-    \begin{subfigure}{0.33\textwidth}
-      \includegraphics[height=8cm]{highm/original_equilibrium_with_high_m_inverse.png}
-      \caption{次要工作模式的线圈场}
-    \end{subfigure}
-    \caption{高 m 线圈作用下的平衡场扰动情况，次要工作模式下的磁扰动情况较主要模式更深，来源于张华祥研究员 \cite{zhang_highm} 的报告}
-    \label{fig:highm-three-subfig-poincare}
-  \end{figure}
-
-  
-\begin{figure}[htbp]
-    \centering%
-    % \hspace{4em}%
-    \begin{subfigure}{0.8\textwidth}
-        \includegraphics[height=6.6cm]{highm/stretched_poincare_primary_state.png}
-        \caption{高 $m$ 线圈主要工作模式下展开的 \Poincare 图}
-    \end{subfigure}
-    % \hspace{4em}%
-    \begin{subfigure}{0.8\textwidth}
-        \includegraphics[height=6.6cm]{highm/stretched_poincare_secondary_state.png}
-        \caption{高 $m$ 线圈次要工作模式下展开的 \Poincare 图}
-    \end{subfigure}
-    \caption{高 $m$ 线圈作用下的 \Poincare 图，次要工作模式下的磁扰动情况较主要模式更深，来源于张华祥研究员 \cite{zhang_highm} 的报告}
-    \label{fig:highm-stretched-poincare}
-\end{figure}
-  
 
 
 
@@ -200,8 +165,15 @@ RMP 致命的弱点是线圈置于腔内，这在 DEMO 堆的设计中是不被�
 ​\section{主要目标}
 为了探究解决目前的\Hmode 等离子体所面临的 ELM 脉冲式热流和粒子流问题，\iter 设计为工作在\Hmode 状态但其如此强烈的脉冲式载荷却是在正式运行时是不允许的。
 
-为更好地控制 ELM， EAST 上先后测试了共振磁扰动线圈 RMP、高 m 线圈和低杂波驱动的螺旋电流丝，这三种扰动场产生机制有所差异，适用的范围也不尽相同。为了使扰动场相互配合达到最优的弱化乃至抑制边界局域模的效果，对它们在等离子体边界造成的扰动场协同作用的研究是很有必要的。 \textit{\textbf{(1)}} \textbf{低 $n$ 线圈}，该线圈布置在腔内，由它激发起环向模数为 $n=1,2$ 的扰动场后在 \east， \ddd 等托卡马克装置上验证了其抑制边界局域模的效应。 \textit{\textbf{(2)}} \textbf{高 m 线圈}，是 EAST 团队近两年实验中的线圈，在等离子体环外加上一组四个的线圈，它的特征是扰动场环向模数 n 分布较宽，极向模数 m 较高，由于只分布在一个环向位置 $\varphi=\text{const}$，扰动场的局域性很强。 \textit{\textbf{(3)}} 由低杂波驱动的\textbf{螺旋电流丝}，低杂波原本用于以朗道阻尼驱动芯部等离子体的电流，但在设计之外，实验发现它在等离子体边界会激发出螺旋电流丝，电流丝产生具体的物理机制还不甚明晰，但其亦具备调节边界磁拓扑的能力。由于低杂波天线不像共振磁扰动线圈在腔内，它具有应用在 DEMO 堆及日后商业堆的潜力。
+为更好地控制 ELM， EAST 上先后测试了共振磁扰动线圈 RMP、高 m 线圈和低杂波驱动的螺旋电流丝，这三种扰动场产生机制有所差异，适用的范围也不尽相同。为了使扰动场相互配合达到最优的弱化乃至抑制边界局域模的效果，对它们在等离子体边界造成的扰动场协同作用的研究是很有必要的。
 
-第二章便进入本文主体，线圈之间如何配合以能够对等离子体施加合适的磁扰动场，为此对磁扰动场径向分量在边界附近的磁面 Fourier 分析得到的磁谱 $\tilde{b}^1_{mn}$ 和 \Poincare 图是必要的。这一章的主体是通过扰动场之间的配合达到较好的抑制 ELM 及保持芯部等离子体较好约束的效果。进一步在第三章中将讨论不同扰动场的配置下第一壁材料上的热负荷和粒子流分布。尽管主要依赖于对 ELM 的抑制效果来选择磁扰动场，但基于扰动场的热负荷优化分布或时间调制能够给出了一种新的调节视角。对下一代托卡马克而言，\Hmode 等离子体会造成难以承受的热流和粒子流，扰动场可以此提供一种调节手段，避免脉冲式的 ELM 破裂造成的材料损害。
+\textit{\textbf{(1)}} \textbf{低 $n$ 线圈}，该线圈布置在腔内，由它激发起环向模数为 $n=1,2$ 的扰动场后在 \east， \ddd 等托卡马克装置上验证了其抑制边界局域模的效应。 
+
+\textit{\textbf{(2)}} \textbf{高 m 线圈}，是 EAST 团队近两年实验中的线圈，在等离子体环外加上一组四个的线圈，它的特征是扰动场环向模数 n 分布较宽，极向模数 m 较高，由于只分布在一个环向位置 $\varphi=\text{const}$，扰动场的局域性很强。 
+
+
+\textit{\textbf{(3)}} \textbf{螺旋电流丝}（由低杂波驱动），低杂波原本用于以朗道阻尼驱动芯部等离子体的电流，但在设计之外，实验发现它在等离子体边界会激发出螺旋电流丝，电流丝产生具体的物理机制还不甚明晰，但其亦具备调节边界磁拓扑的能力。由于低杂波天线不像共振磁扰动线圈在腔内，它具有应用在 DEMO 堆及日后商业堆的潜力。
+
+第二章首先给出几种扰动场的主要磁谱特征，对磁扰动场径向分量在磁面 Fourier 分析得到的磁谱 $\tilde{b}^1_{mn}$ 和 \Poincare 图。第三章进入本文主体，线圈之间如何配合以能够对等离子体施加合适的磁扰动场，为此。这一章的主体是通过扰动场之间的配合达到较好的抑制 ELM 及保持芯部等离子体较好约束的效果。进一步在第三章中将讨论不同扰动场的配置下第一壁材料上的热负荷和粒子流分布。尽管主要依赖于对 ELM 的抑制效果来选择磁扰动场，但基于扰动场的热负荷优化分布或时间调制能够给出了一种新的调节视角。对下一代托卡马克而言，\Hmode 等离子体会造成难以承受的热流和粒子流，扰动场可以此提供一种调节手段，避免脉冲式的 ELM 破裂造成的材料损害。
 
 本论文着重在通过模拟的手段对现有的多种三维磁场进行模拟仿真，它们的磁谱被设计用来弱化或者调节边界局域模的发生。但同时也研究给定扰动场对粒子束流和热流的调节作用。
